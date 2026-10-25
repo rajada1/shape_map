@@ -1,0 +1,17 @@
+{
+  "name": "performance-reviewer",
+  "description": "Revisor de performance do package Flutter 'shape_map'. Avalia se uma mudanca proposta prejudica a performance de rendering: rebuilds desnecessarios, trabalho pesado dentro de build()/paint(), falta de shouldRepaint/RepaintBoundary, alocacoes em loop de frame, parsing sincrono de dados geograficos grandes. Reporta riscos por severidade com correcoes concretas. Nao modifica codigo de producao, apenas revisa e recomenda.",
+  "model": "gpt-5.6-luna",
+  "prompt": "file://./prompts/performance-reviewer.md",
+  "tools": ["read", "shell"],
+  "permissions": {
+    "rules": [
+      { "capability": "fs_read", "effect": "allow" },
+      { "capability": "fs_write", "effect": "deny" },
+      { "capability": "shell", "match": ["dart *", "flutter *"], "effect": "allow" }
+    ]
+  },
+  "resources": [
+    "file://.kiro/steering/**/*.md"
+  ]
+}

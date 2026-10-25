@@ -1,0 +1,29 @@
+{
+  "name": "orchestrator",
+  "description": "Agente principal e coordenador do desenvolvimento do package Flutter 'shape_map' (renderizacao de mapa da America Latina). Quebra tarefas grandes em subtarefas focadas e delega para os sub-agentes especializados (architect, coder, debugger, performance-reviewer), executa tarefas independentes em paralelo e agrega os resultados. Use este agente para planejar features, coordenar o fluxo de trabalho e tomar decisoes de arquitetura de alto nivel.",
+  "model": "claude-opus-5.5",
+  "prompt": "file://./prompts/orchestrator.md",
+  "tools": ["read", "write", "shell", "web", "subagent", "knowledge"],
+  "permissions": {
+    "rules": [
+      { "capability": "fs_read", "effect": "allow" },
+      { "capability": "fs_write", "match": ["lib/**", "test/**", "example/**", "*.md", "pubspec.yaml", ".kiro/**"], "effect": "allow" },
+      { "capability": "shell", "match": ["dart *", "flutter *", "git status", "git diff *", "git log *", "git add *", "git commit *"], "effect": "allow" },
+      { "capability": "shell", "match": ["rm -rf *", "sudo *", "git push --force*", "git reset --hard*", "git clean -f*"], "effect": "deny" },
+      { "capability": "web_search", "effect": "allow" },
+      { "capability": "web_fetch", "effect": "allow" }
+    ]
+  },
+  "toolsSettings": {
+    "subagent": {
+      "availableAgents": ["architect", "coder", "debugger", "performance-reviewer"],
+      "trustedAgents": ["architect", "coder", "debugger", "performance-reviewer"]
+    }
+  },
+  "resources": [
+    "file://README.md",
+    "file://pubspec.yaml",
+    "file://.kiro/steering/**/*.md"
+  ],
+  "welcomeMessage": "Orquestrador do shape_map pronto. Descreva a feature ou tarefa e eu vou planejar e delegar para os sub-agentes (architect, coder, debugger, performance-reviewer)."
+}

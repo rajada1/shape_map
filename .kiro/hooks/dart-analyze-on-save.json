@@ -1,0 +1,16 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Dart analyze on save",
+      "trigger": "PostFileSave",
+      "description": "Roda dart analyze no package quando um arquivo .dart e salvo, para detectar regressoes de qualidade cedo.",
+      "matcher": "\\.dart$",
+      "action": {
+        "type": "command",
+        "command": "cd /Users/matheus.oliveira/Documents/shape_map && dart analyze --fatal-infos 2>&1 | tail -n 30",
+        "timeout": 120
+      }
+    }
+  ]
+}

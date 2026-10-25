@@ -1,0 +1,22 @@
+{
+  "name": "coder",
+  "description": "Engenheiro de implementacao do package Flutter 'shape_map'. Escreve e modifica codigo Dart/Flutter de producao seguindo o plano do architect e as boas praticas definidas nos steerings. Implementa rendering de mapas com CustomPainter/CustomPaint, parsing de dados geograficos, API publica do package e testes. Usa gerenciamento de estado nativo do Flutter. Roda 'dart analyze', 'dart format' e os testes para validar o que escreve.",
+  "model": "gpt-5.6-luna",
+  "prompt": "file://./prompts/coder.md",
+  "tools": ["read", "write", "shell", "web"],
+  "permissions": {
+    "rules": [
+      { "capability": "fs_read", "effect": "allow" },
+      { "capability": "fs_write", "match": ["lib/**", "test/**", "example/**", "*.md", "pubspec.yaml"], "effect": "allow" },
+      { "capability": "shell", "match": ["dart *", "flutter *"], "effect": "allow" },
+      { "capability": "shell", "match": ["rm -rf *", "sudo *"], "effect": "deny" },
+      { "capability": "web_search", "effect": "allow" },
+      { "capability": "web_fetch", "effect": "allow" }
+    ]
+  },
+  "resources": [
+    "file://README.md",
+    "file://pubspec.yaml",
+    "file://.kiro/steering/**/*.md"
+  ]
+}

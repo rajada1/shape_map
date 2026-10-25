@@ -1,0 +1,19 @@
+{
+  "name": "debugger",
+  "description": "Especialista em depuracao do package Flutter 'shape_map'. Investiga falhas de teste, excecoes de runtime, erros de layout (overflow, unbounded constraints) e comportamento inesperado de rendering. Reproduz o problema, isola a causa raiz, aplica a correcao minima e valida rodando analise estatica e testes. Use quando algo esta quebrado ou se comportando de forma incorreta.",
+  "model": "gpt-5.6-luna",
+  "prompt": "file://./prompts/debugger.md",
+  "tools": ["read", "write", "shell"],
+  "permissions": {
+    "rules": [
+      { "capability": "fs_read", "effect": "allow" },
+      { "capability": "fs_write", "match": ["lib/**", "test/**", "example/**"], "effect": "allow" },
+      { "capability": "shell", "match": ["dart *", "flutter *", "git diff *", "git log *"], "effect": "allow" },
+      { "capability": "shell", "match": ["rm -rf *", "sudo *"], "effect": "deny" }
+    ]
+  },
+  "resources": [
+    "file://pubspec.yaml",
+    "file://.kiro/steering/**/*.md"
+  ]
+}
