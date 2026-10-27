@@ -1,6 +1,7 @@
 # Map data attribution
 
 - Natural Earth 50m admin-0 cultural (manifest date 2025-02-01): public domain, downloaded from https://naciscdn.org/naturalearth/50m/cultural/ne_50m_admin_0_countries.zip.
+- Natural Earth 10m admin-1 states and provinces (manifest date 2025-02-01): public domain, SHA-256 `efc59726337323058f9446210adc96673179cd344e053666ee3d28cb58ba2b05`, downloaded from https://naciscdn.org/naturalearth/10m/cultural/ne_10m_admin_1_states_provinces.zip. These focus layers contain admin-1 regions only; they never contain cities or municipalities.
 - IBGE UFs (manifest date 2025-02-01): https://servicodados.ibge.gov.br/api/v3/malhas/paises/BR?formato=application/vnd.geo+json&intrarregiao=UF&qualidade=intermediaria, intermediate quality; names from https://servicodados.ibge.gov.br/api/v1/localidades/estados. The geometry was simplified with a 0.6 view-box-unit tolerance, topology-preserving keep-shapes, and quantized to a 0.25 view-box-unit grid.
 - IBGE municipalities (manifest date 2025-02-01): https://servicodados.ibge.gov.br/api/v3/malhas/paises/BR?formato=application/vnd.geo+json&intrarregiao=municipio&qualidade=intermediaria, intermediate quality; names from https://servicodados.ibge.gov.br/api/v1/localidades/municipios. Simplified and quantized like the UFs; distributed only as the optional example asset example/assets/maps/brazil_municipalities.smap, not inside lib/.
 - Source credit: "Fonte: IBGE" must accompany apps that display the Brazilian layers. Confirm the current IBGE terms of use before commercial distribution.

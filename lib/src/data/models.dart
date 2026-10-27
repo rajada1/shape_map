@@ -3,6 +3,8 @@
 import 'dart:typed_data';
 import 'dart:ui';
 
+import '../style/style.dart';
+
 /// A single SVG-like command used to describe map geometry.
 class MapPathCommand {
   /// Creates a move command.
@@ -289,6 +291,7 @@ class MapDefinition {
     required List<MapRegion> regions,
     List<MapPolyline> innerBorders = const [],
     List<MapPolyline> outline = const [],
+    this.focusRegionPrefix,
   }) : regions = List.unmodifiable(regions),
        innerBorders = List.unmodifiable(innerBorders),
        outline = List.unmodifiable(outline);
@@ -307,6 +310,32 @@ class MapDefinition {
 
   /// The external outline of the union of all regions.
   final List<MapPolyline> outline;
+
+  /// Prefix identifying the focused country's admin-1 regions, when present.
+  ///
+  /// Focus maps use IDs such as `BR-SP` for the selected country and ISO
+  /// alpha-2 IDs for the surrounding context. The prefix lets camera code fit
+  /// the whole country without requiring a synthetic region.
+  final String? focusRegionPrefix;
+
+  /// Bounds enclosing all regions in [focusRegionPrefix].
+  Rect? get focusBounds {
+    final explicitPrefix = focusRegionPrefix;
+    final prefix =
+        explicitPrefix ??
+        (id.startsWith('southamericafocus')
+            ? '${id.substring('southamericafocus'.length).toUpperCase()}-'
+            : null);
+    if (prefix == null) return null;
+    Rect? result;
+    for (final region in regions) {
+      if (!region.id.startsWith(prefix)) continue;
+      result = result == null
+          ? region.bounds
+          : result.expandToInclude(region.bounds);
+    }
+    return result;
+  }
 
   /// Whether this definition contains shared border streams.
   bool get hasSharedBorders => innerBorders.isNotEmpty || outline.isNotEmpty;
@@ -449,6 +478,7 @@ class MapMarkerData {
     this.label,
     this.position,
     this.diameter,
+    this.diameterUnit,
     this.showLabel = true,
   });
 
@@ -464,8 +494,12 @@ class MapMarkerData {
   /// Optional position override in view-box coordinates.
   final Offset? position;
 
-  /// Optional diameter override in view-box units.
+  /// Optional diameter override. Its unit is [diameterUnit], or the marker
+  /// style scale unit when [diameterUnit] is null.
   final double? diameter;
+
+  /// Optional diameter override unit. Null uses the marker style scale unit.
+  final MarkerDiameterUnit? diameterUnit;
 
   /// Whether marker text should be painted. Set false for a text-free badge.
   final bool showLabel;
@@ -478,9 +512,17 @@ class MapMarkerData {
       other.label == label &&
       other.position == position &&
       other.diameter == diameter &&
+      other.diameterUnit == diameterUnit &&
       other.showLabel == showLabel;
 
   @override
-  int get hashCode =>
-      Object.hash(regionId, value, label, position, diameter, showLabel);
+  int get hashCode => Object.hash(
+    regionId,
+    value,
+    label,
+    position,
+    diameter,
+    diameterUnit,
+    showLabel,
+  );
 }

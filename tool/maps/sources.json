@@ -8,6 +8,15 @@
     "quality": "admin-0 cultural",
     "date": "2025-02-01"
   },
+  "naturalEarth10mAdmin1": {
+    "id": "naturalEarth10mAdmin1",
+    "url": "https://naciscdn.org/naturalearth/10m/cultural/ne_10m_admin_1_states_provinces.zip",
+    "sha256": "efc59726337323058f9446210adc96673179cd344e053666ee3d28cb58ba2b05",
+    "license": "Public domain (Natural Earth)",
+    "scale": "10m",
+    "quality": "admin-1 states and provinces",
+    "date": "2025-02-01"
+  },
   "ibgeStatesIntermediate": {
     "id": "ibgeStatesIntermediate",
     "url": "https://servicodados.ibge.gov.br/api/v3/malhas/paises/BR?formato=application/vnd.geo+json&intrarregiao=UF&qualidade=intermediaria",

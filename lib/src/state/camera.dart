@@ -198,6 +198,10 @@ class ShapeMapCameraController extends ChangeNotifier {
   void panBy(Offset delta) => _dispatch(_CameraRequest(2, offset: delta));
 
   /// Fits [regionId] inside the viewport with [padding] pixels.
+  ///
+  /// On a country focus map, passing the two-letter country ISO (for example
+  /// `BR`) fits [MapDefinition.focusBounds], while an ISO 3166-2 id fits one
+  /// admin-1 region.
   void zoomToRegion(
     String regionId, {
     double padding = 16,

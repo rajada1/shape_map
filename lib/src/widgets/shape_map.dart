@@ -669,12 +669,15 @@ class _ShapeMapState extends State<ShapeMap>
   }) {
     if (_lastLayoutSize == null) return;
     final region = widget.map.regionById(regionId);
-    if (region == null) return;
+    final bounds =
+        region?.bounds ??
+        (regionId.length == 2 ? widget.map.focusBounds : null);
+    if (bounds == null) return;
     final destination = ShapeMapCameraMath.zoomToRegion(
       base: _cache.transform,
       viewBox: widget.map.viewBox,
       viewport: _lastLayoutSize!,
-      regionBounds: region.bounds,
+      regionBounds: bounds,
       minScale: widget.minScale,
       maxScale: widget.maxScale,
       padding: padding,

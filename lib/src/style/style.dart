@@ -1,5 +1,14 @@
 import 'package:flutter/material.dart';
 
+/// Units used to resolve marker diameters and border widths.
+enum MarkerDiameterUnit {
+  /// Logical map view-box units, converted using the fitted map scale.
+  viewBox,
+
+  /// Physical logical screen pixels, unaffected by camera zoom.
+  screenPixels,
+}
+
 /// Controls linear marker diameter interpolation.
 class MarkerScale {
   /// Creates a scale from [minDiameter] to [maxDiameter].
@@ -8,6 +17,7 @@ class MarkerScale {
     this.maxValue = 100,
     this.minDiameter = 10,
     this.maxDiameter = 49,
+    this.unit = MarkerDiameterUnit.viewBox,
   });
 
   /// Minimum input value.
@@ -21,6 +31,9 @@ class MarkerScale {
 
   /// Diameter at [maxValue].
   final double maxDiameter;
+
+  /// Diameter unit used by interpolated markers.
+  final MarkerDiameterUnit unit;
 
   /// Calculates a clamped linearly interpolated diameter.
   double diameterFor(num value) {
@@ -37,10 +50,44 @@ class MarkerScale {
       other.minValue == minValue &&
       other.maxValue == maxValue &&
       other.minDiameter == minDiameter &&
-      other.maxDiameter == maxDiameter;
+      other.maxDiameter == maxDiameter &&
+      other.unit == unit;
 
   @override
-  int get hashCode => Object.hash(minValue, maxValue, minDiameter, maxDiameter);
+  int get hashCode =>
+      Object.hash(minValue, maxValue, minDiameter, maxDiameter, unit);
+}
+
+/// Configures the optional marker drop shadow.
+class MarkerShadow {
+  /// Creates a marker shadow. Transparent color and zero blur disable it.
+  const MarkerShadow({
+    this.color = const Color(0x00000000),
+    this.blurRadius = 0,
+    this.offset = Offset.zero,
+  });
+
+  /// Shadow color. A transparent color disables shadow painting.
+  final Color color;
+
+  /// Gaussian blur radius in the same unit as the marker.
+  final double blurRadius;
+
+  /// Shadow offset in the same unit as the marker.
+  final Offset offset;
+
+  /// Whether this shadow contributes any pixels.
+  bool get enabled => color.a > 0 && (blurRadius > 0 || offset != Offset.zero);
+
+  @override
+  bool operator ==(Object other) =>
+      other is MarkerShadow &&
+      other.color == color &&
+      other.blurRadius == blurRadius &&
+      other.offset == offset;
+
+  @override
+  int get hashCode => Object.hash(color, blurRadius, offset);
 }
 
 /// Styling for map markers.
@@ -53,6 +100,7 @@ class MarkerStyle {
     this.textColor = const Color(0xFFFFFFFF),
     this.textStyle = const TextStyle(fontSize: 11, fontWeight: FontWeight.w600),
     this.scale = const MarkerScale(),
+    this.shadow = const MarkerShadow(),
   });
 
   /// Marker fill color.
@@ -61,7 +109,7 @@ class MarkerStyle {
   /// Marker border color.
   final Color borderColor;
 
-  /// Marker border width in view-box units.
+  /// Marker border width in the unit selected by [scale].
   final double borderWidth;
 
   /// Marker text color.
@@ -73,6 +121,9 @@ class MarkerStyle {
   /// Value-to-diameter scale.
   final MarkerScale scale;
 
+  /// Optional shadow painted beneath each marker.
+  final MarkerShadow shadow;
+
   @override
   bool operator ==(Object other) =>
       other is MarkerStyle &&
@@ -81,7 +132,8 @@ class MarkerStyle {
       other.borderWidth == borderWidth &&
       other.textColor == textColor &&
       other.textStyle == textStyle &&
-      other.scale == scale;
+      other.scale == scale &&
+      other.shadow == shadow;
 
   @override
   int get hashCode => Object.hash(
@@ -91,6 +143,7 @@ class MarkerStyle {
     textColor,
     textStyle,
     scale,
+    shadow,
   );
 }
 

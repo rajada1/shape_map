@@ -1,3 +1,10 @@
+## 0.5.0
+
+* Adiciona `ShapeMaps.southAmericaFocus(String)` e `ShapeMaps.preloadFocus(String)` para os 12 países sul-americanos, com estados/províncias admin-1 e vizinhos em contexto no mesmo viewBox de `southAmerica`.
+* Expõe `MapDefinition.focusBounds` para enquadrar o país inteiro, além de `ShapeMapId` para preload individual. Os mapas não contêm cidades nem municípios.
+* Adiciona `MarkerDiameterUnit.screenPixels`, `MarkerShadow` e `MapMarkerData.diameterUnit`; o diâmetro e a borda em pixels permanecem constantes durante zoom e a sombra é pintada antes do marcador.
+* Amplia o pipeline Natural Earth 10m admin-1, IDs ISO 3166-2, contagens esperadas, âncoras internas e relatório de topologia.
+
 ## 0.4.0
 
 * Adiciona zoom, pan e seleção controlados por `ShapeMapCameraController`, com gestos opcionais e zoom por região.

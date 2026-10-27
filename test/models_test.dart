@@ -18,6 +18,63 @@ void main() {
     }
   });
 
+  test(
+    'focus maps keep the South America viewBox and expose country bounds',
+    () {
+      const expected = <String, int>{
+        'AR': 24,
+        'BO': 9,
+        'BR': 27,
+        'CL': 16,
+        'CO': 33,
+        'EC': 24,
+        'GY': 10,
+        'PE': 26,
+        'PY': 18,
+        'SR': 10,
+        'UY': 19,
+        'VE': 25,
+      };
+      for (final entry in expected.entries) {
+        final map = ShapeMaps.southAmericaFocus(entry.key);
+        expect(map.viewBox, ShapeMaps.southAmerica.viewBox);
+        expect(map.focusBounds, isNotNull);
+        final focusRegions = map.regions
+            .where((region) => region.id.startsWith('${entry.key}-'))
+            .toList();
+        expect(focusRegions, hasLength(entry.value));
+        expect(
+          focusRegions.map((region) => region.id).toSet(),
+          hasLength(entry.value),
+        );
+        for (final region in focusRegions) {
+          expect(
+            region.geometry.path.contains(region.markerAnchor),
+            isTrue,
+            reason: '${entry.key} ${region.id} ${region.markerAnchor}',
+          );
+        }
+        final bounds = map.focusBounds!;
+        for (final region in focusRegions) {
+          expect(region.bounds.left, greaterThanOrEqualTo(bounds.left));
+          expect(region.bounds.top, greaterThanOrEqualTo(bounds.top));
+          expect(region.bounds.right, lessThanOrEqualTo(bounds.right));
+          expect(region.bounds.bottom, lessThanOrEqualTo(bounds.bottom));
+        }
+        expect(map.regions.any((region) => region.id == 'GF'), isTrue);
+      }
+    },
+  );
+
+  test('focus maps expose the same camera region-fit API', () {
+    final map = ShapeMaps.southAmericaFocus('BR');
+    final region = map.regionById('BR-SP');
+    expect(region, isNotNull);
+    expect(region!.bounds.left, greaterThanOrEqualTo(map.focusBounds!.left));
+    expect(region.bounds.top, greaterThanOrEqualTo(map.focusBounds!.top));
+    expect(region.bounds.right, lessThanOrEqualTo(map.focusBounds!.right));
+    expect(region.bounds.bottom, lessThanOrEqualTo(map.focusBounds!.bottom));
+  });
   test('generated Brazil map has 27 UFs including DF', () {
     final map = ShapeMaps.brazilStates;
     expect(map.viewBox, const Size(900, 1000));

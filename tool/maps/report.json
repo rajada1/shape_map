@@ -55,6 +55,222 @@
       "outlineEdges": 1506,
       "nearlySharedEdges": 0
     },
+    "south_america_focus_ar": {
+      "regions": 36,
+      "vertices": 5405,
+      "bytes": 24108,
+      "maxRegionVertices": 931,
+      "viewBox": [
+        820,
+        1040
+      ],
+      "quantizationScale": 0.25,
+      "simplificationTolerance": 0.6,
+      "estimatedMaxError": 0.6,
+      "innerBorders": 83,
+      "outlinePolylines": 483,
+      "innerEdges": 1059,
+      "outlineEdges": 3287,
+      "nearlySharedEdges": 773
+    },
+    "south_america_focus_bo": {
+      "regions": 21,
+      "vertices": 4393,
+      "bytes": 19050,
+      "maxRegionVertices": 860,
+      "viewBox": [
+        820,
+        1040
+      ],
+      "quantizationScale": 0.25,
+      "simplificationTolerance": 0.6,
+      "estimatedMaxError": 0.6,
+      "innerBorders": 212,
+      "outlinePolylines": 253,
+      "innerEdges": 957,
+      "outlineEdges": 2479,
+      "nearlySharedEdges": 361
+    },
+    "south_america_focus_br": {
+      "regions": 39,
+      "vertices": 6691,
+      "bytes": 29300,
+      "maxRegionVertices": 740,
+      "viewBox": [
+        820,
+        1040
+      ],
+      "quantizationScale": 0.25,
+      "simplificationTolerance": 0.6,
+      "estimatedMaxError": 0.6,
+      "innerBorders": 76,
+      "outlinePolylines": 709,
+      "innerEdges": 1666,
+      "outlineEdges": 3359,
+      "nearlySharedEdges": 491
+    },
+    "south_america_focus_cl": {
+      "regions": 28,
+      "vertices": 4603,
+      "bytes": 21484,
+      "maxRegionVertices": 770,
+      "viewBox": [
+        820,
+        1040
+      ],
+      "quantizationScale": 0.25,
+      "simplificationTolerance": 0.6,
+      "estimatedMaxError": 0.6,
+      "innerBorders": 48,
+      "outlinePolylines": 601,
+      "innerEdges": 865,
+      "outlineEdges": 2873,
+      "nearlySharedEdges": 540
+    },
+    "south_america_focus_co": {
+      "regions": 45,
+      "vertices": 5150,
+      "bytes": 22134,
+      "maxRegionVertices": 829,
+      "viewBox": [
+        820,
+        1040
+      ],
+      "quantizationScale": 0.25,
+      "simplificationTolerance": 0.6,
+      "estimatedMaxError": 0.6,
+      "innerBorders": 155,
+      "outlinePolylines": 246,
+      "innerEdges": 1335,
+      "outlineEdges": 2480,
+      "nearlySharedEdges": 413
+    },
+    "south_america_focus_ec": {
+      "regions": 36,
+      "vertices": 4122,
+      "bytes": 18127,
+      "maxRegionVertices": 770,
+      "viewBox": [
+        820,
+        1040
+      ],
+      "quantizationScale": 0.25,
+      "simplificationTolerance": 0.6,
+      "estimatedMaxError": 0.6,
+      "innerBorders": 80,
+      "outlinePolylines": 341,
+      "innerEdges": 1116,
+      "outlineEdges": 1890,
+      "nearlySharedEdges": 176
+    },
+    "south_america_focus_gy": {
+      "regions": 22,
+      "vertices": 3996,
+      "bytes": 17124,
+      "maxRegionVertices": 839,
+      "viewBox": [
+        820,
+        1040
+      ],
+      "quantizationScale": 0.25,
+      "simplificationTolerance": 0.6,
+      "estimatedMaxError": 0.6,
+      "innerBorders": 49,
+      "outlinePolylines": 313,
+      "innerEdges": 943,
+      "outlineEdges": 2110,
+      "nearlySharedEdges": 364
+    },
+    "south_america_focus_pe": {
+      "regions": 38,
+      "vertices": 5031,
+      "bytes": 23439,
+      "maxRegionVertices": 849,
+      "viewBox": [
+        820,
+        1040
+      ],
+      "quantizationScale": 0.25,
+      "simplificationTolerance": 0.6,
+      "estimatedMaxError": 0.6,
+      "innerBorders": 83,
+      "outlinePolylines": 702,
+      "innerEdges": 1230,
+      "outlineEdges": 2571,
+      "nearlySharedEdges": 476
+    },
+    "south_america_focus_py": {
+      "regions": 30,
+      "vertices": 4166,
+      "bytes": 17627,
+      "maxRegionVertices": 831,
+      "viewBox": [
+        820,
+        1040
+      ],
+      "quantizationScale": 0.25,
+      "simplificationTolerance": 0.6,
+      "estimatedMaxError": 0.6,
+      "innerBorders": 67,
+      "outlinePolylines": 222,
+      "innerEdges": 997,
+      "outlineEdges": 2172,
+      "nearlySharedEdges": 317
+    },
+    "south_america_focus_sr": {
+      "regions": 22,
+      "vertices": 3748,
+      "bytes": 15717,
+      "maxRegionVertices": 798,
+      "viewBox": [
+        820,
+        1040
+      ],
+      "quantizationScale": 0.25,
+      "simplificationTolerance": 0.6,
+      "estimatedMaxError": 0.6,
+      "innerBorders": 49,
+      "outlinePolylines": 244,
+      "innerEdges": 936,
+      "outlineEdges": 1876,
+      "nearlySharedEdges": 217
+    },
+    "south_america_focus_uy": {
+      "regions": 31,
+      "vertices": 3792,
+      "bytes": 17444,
+      "maxRegionVertices": 803,
+      "viewBox": [
+        820,
+        1040
+      ],
+      "quantizationScale": 0.25,
+      "simplificationTolerance": 0.6,
+      "estimatedMaxError": 0.6,
+      "innerBorders": 62,
+      "outlinePolylines": 500,
+      "innerEdges": 1037,
+      "outlineEdges": 1718,
+      "nearlySharedEdges": 97
+    },
+    "south_america_focus_ve": {
+      "regions": 37,
+      "vertices": 4598,
+      "bytes": 20533,
+      "maxRegionVertices": 826,
+      "viewBox": [
+        820,
+        1040
+      ],
+      "quantizationScale": 0.25,
+      "simplificationTolerance": 0.6,
+      "estimatedMaxError": 0.6,
+      "innerBorders": 75,
+      "outlinePolylines": 444,
+      "innerEdges": 1119,
+      "outlineEdges": 2360,
+      "nearlySharedEdges": 283
+    },
     "brazil_states": {
       "regions": 27,
       "vertices": 5412,

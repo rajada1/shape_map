@@ -14,6 +14,12 @@ void main() {
     expect(identical(ShapeMaps.world, world), isTrue);
   });
 
+  test('preloadFocus decodes the requested country focus map', () async {
+    await ShapeMaps.preloadFocus('AR');
+    final map = ShapeMaps.southAmericaFocus('AR');
+    expect(map.focusBounds, isNotNull);
+    expect(map.regionById('AR-B'), isNotNull);
+  });
   test('preload is a no-op for maps already decoded', () async {
     final before = ShapeMaps.brazilStates;
     final decodeCount = shapeMapDecodeCount;

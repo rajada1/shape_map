@@ -319,6 +319,90 @@ void main() {
     camera.dispose();
   });
 
+  test('screen-pixel marker diameter and shadow are camera invariant', () {
+    final map = MapDefinition(
+      id: 'marker-screen-pixels',
+      viewBox: const Size(100, 100),
+      regions: [
+        MapRegion(
+          id: 'R',
+          name: 'Region',
+          geometry: MapGeometry([
+            const MapPathCommand.move(10, 10),
+            const MapPathCommand.line(90, 10),
+            const MapPathCommand.line(90, 90),
+            const MapPathCommand.line(10, 90),
+            const MapPathCommand.close(),
+          ]),
+          markerAnchor: const Offset(50, 50),
+        ),
+      ],
+    );
+    final cache = MapRenderCache()
+      ..update(map, const Size(200, 200), BoxFit.contain, Alignment.center);
+    final layout = MarkerLayoutCache()
+      ..update(
+        map,
+        const [
+          MapMarkerData(
+            regionId: 'R',
+            value: 1,
+            diameter: 10,
+            diameterUnit: MarkerDiameterUnit.screenPixels,
+            showLabel: false,
+          ),
+        ],
+        const MarkerStyle(
+          shadow: MarkerShadow(
+            color: Color(0x55000000),
+            blurRadius: 2,
+            offset: Offset(1, 2),
+          ),
+        ),
+        const {},
+      );
+    final camera = ShapeMapCameraController();
+    final animation = const AlwaysStoppedAnimation<double>(1);
+    final painter = MarkerPainter(
+      cache: cache,
+      layoutCache: layout,
+      style: const MarkerStyle(
+        shadow: MarkerShadow(
+          color: Color(0x55000000),
+          blurRadius: 2,
+          offset: Offset(1, 2),
+        ),
+      ),
+      animation: animation,
+      progress: animation,
+      entrance: null,
+      repaint: animation,
+      camera: camera,
+    );
+    final firstCanvas = TestRecordingCanvas();
+    painter.paint(firstCanvas, const Size(200, 200));
+    camera.updateFromHost(3, const Offset(-200, -200));
+    final secondCanvas = TestRecordingCanvas();
+    painter.paint(secondCanvas, const Size(200, 200));
+
+    double radius(TestRecordingCanvas canvas) =>
+        canvas.invocations
+                .where((entry) => entry.invocation.memberName == #drawCircle)
+                .elementAt(1)
+                .invocation
+                .positionalArguments[1]
+            as double;
+    expect(radius(secondCanvas), radius(firstCanvas));
+    expect(
+      firstCanvas.invocations.where(
+        (entry) => entry.invocation.memberName == #drawCircle,
+      ),
+      hasLength(3),
+    );
+    layout.dispose();
+    cache.dispose();
+    camera.dispose();
+  });
   testWidgets('trackpad pan-zoom updates scale and pan', (tester) async {
     final camera = ShapeMapCameraController();
     addTearDown(camera.dispose);

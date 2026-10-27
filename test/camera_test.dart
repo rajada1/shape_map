@@ -78,6 +78,30 @@ void main() {
     );
   });
 
+  testWidgets('focus country ISO fits the whole country bounds', (
+    tester,
+  ) async {
+    final camera = ShapeMapCameraController();
+    addTearDown(camera.dispose);
+    await tester.pumpWidget(
+      MaterialApp(
+        home: SizedBox(
+          width: 342,
+          height: 400,
+          child: ShapeMap(
+            map: ShapeMaps.southAmericaFocus('BR'),
+            cameraController: camera,
+            animationDuration: Duration.zero,
+            cameraAnimationDuration: Duration.zero,
+          ),
+        ),
+      ),
+    );
+    await tester.pump();
+    camera.zoomToRegion('BR', duration: Duration.zero);
+    await tester.pump();
+    expect(camera.scale, greaterThan(1));
+  });
   test('controller queues commands until a map is attached', () {
     final controller = ShapeMapCameraController();
     final host = _FakeCameraHost();

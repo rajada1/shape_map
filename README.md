@@ -10,6 +10,7 @@
 | `ShapeMaps.latinAmerica` | 33 países soberanos da América Latina e Caribe + `GF` | ISO alpha-2 |
 | `ShapeMaps.southAmerica` | `AR BO BR CL CO EC GF GY PE PY SR UY VE` | ISO alpha-2 |
 | `ShapeMaps.brazilStates` | 27 UFs (IBGE), incluindo `BR-DF` | `BR-XX` |
+| `ShapeMaps.southAmericaFocus(iso)` | Admin-1 do país selecionado + os demais países como contexto, no viewBox continental | ISO 3166-2 no país selecionado e ISO alpha-2 no contexto |
 
 Opcional, fora do core: os 5.570 municípios brasileiros (IBGE), IDs `BR-<código IBGE de 7 dígitos>` (ex.: `BR-3550308` = São Paulo). Veja [Municípios brasileiros](#municípios-brasileiros-opcionais).
 
@@ -32,6 +33,52 @@ ShapeMap(
 ```
 
 Os marcadores usam `MapRegion.markerAnchor` por padrão; `MapMarkerData.position` serve para layouts customizados. `MapMarkerData(showLabel: false)` cria um marcador sem texto. `ShapeMaps.southAmericaCountries` continua disponível como alias deprecated de `southAmerica`.
+
+### Mapas de foco
+
+`ShapeMaps.southAmericaFocus('BR')` (ou qualquer um dos 12 países `AR BO BR CL CO EC GY PE PY SR UY VE`) mantém exatamente o viewBox e a projeção de `ShapeMaps.southAmerica`. O país selecionado é dividido em estados, províncias, departamentos ou distritos admin-1; os vizinhos continuam visíveis como regiões de contexto com IDs ISO alpha-2. O package não inclui cidades nem municípios nesses mapas.
+
+O campo `MapDefinition.focusBounds` reúne as subdivisões do país selecionado para enquadramento. Isso permite usar `ShapeMapCameraController.zoomToRegion` para uma subdivisão e `focusBounds` com `ShapeMapCameraMath.zoomToRegion` quando o app quiser enquadrar o país inteiro. O `MapRegionData.fill` já permite esmaecer vizinhos sem mudar a API:
+
+```dart
+final map = ShapeMaps.southAmericaFocus('AR');
+final camera = ShapeMapCameraController();
+final data = {
+  for (final region in map.regions)
+    region.id: MapRegionData(
+      fill: region.id.startsWith('AR-')
+          ? const Color(0xFFFFDBC9)
+          : const Color(0xFFE2E9ED),
+    ),
+};
+// Para focar o país inteiro: camera.zoomToRegion('AR');
+// Para focar uma província: camera.zoomToRegion('AR-B');
+ShapeMap(map: map, cameraController: camera, data: data);
+```
+
+### Marcadores em pixels
+
+`MarkerScale` e `MapMarkerData` usam viewBox por padrão, preservando o comportamento anterior. Para um diâmetro constante em pixels de tela durante zoom da câmera, use `MarkerDiameterUnit.screenPixels`; `MarkerStyle.shadow` pinta uma sombra antes do círculo:
+
+```dart
+const style = MarkerStyle(
+  scale: MarkerScale(
+    minDiameter: 32,
+    maxDiameter: 64,
+    unit: MarkerDiameterUnit.screenPixels,
+  ),
+  shadow: MarkerShadow(
+    color: Color(0x24000000),
+    blurRadius: 8,
+    offset: Offset(0, 2),
+  ),
+);
+ShapeMap(
+  map: ShapeMaps.southAmerica,
+  style: style,
+  markers: const [MapMarkerData(regionId: 'BR', value: 9800)],
+);
+```
 
 ## Preload e primeiro frame
 
@@ -78,6 +125,7 @@ Usa a mesma projeção e viewBox de `ShapeMaps.brazilStates`, então as âncoras
 ## Fontes, licenças e geração
 
 - Países: [Natural Earth](https://www.naturalearthdata.com/) 50m admin-0, domínio público.
+- Países: [Natural Earth](https://www.naturalearthdata.com/) 10m admin-1 states/provinces, domínio público, usado pelos mapas de foco sul-americanos. Não há cidades ou municípios nesses mapas.
 - Brasil (UFs e municípios): malhas territoriais do [IBGE](https://servicodados.ibge.gov.br/api/docs/malhas?versao=3).
 
 URLs, hashes SHA-256 e qualidade ficam em `tool/maps/sources.json`; a atribuição completa está em [ATTRIBUTION.md](ATTRIBUTION.md). `mapshaper` e `polylabel` são dependências apenas de build, em `tool/`, e não vão para o app.

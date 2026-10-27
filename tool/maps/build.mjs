@@ -20,6 +20,7 @@ fs.mkdirSync(exampleAssetsDir, { recursive: true });
 
 const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
 const overrides = JSON.parse(fs.readFileSync(namesPath, 'utf8'));
+const normalizationBoundsByProjection = new Map();
 
 async function source(name) {
   const item = manifest[name];
@@ -115,6 +116,37 @@ function countryName(feature, id) {
   return overrides[id] || p.NAME_PT || p.NAME_EN || p.NAME || id;
 }
 
+function admin1CountryId(feature) {
+  const p = feature.properties ?? {};
+  const candidates = [p.ISO_A2, p.ISO_A2_EH, p.iso_a2, p.ADM0_A3]
+    .filter((value) => typeof value === 'string');
+  for (const candidate of candidates) {
+    const value = candidate.length === 3 ? alpha2ByA3[candidate.toUpperCase()] : candidate.toUpperCase();
+    if (value && /^[A-Z]{2}$/.test(value)) return value;
+  }
+  return null;
+}
+
+function admin1Id(feature, countryId) {
+  const p = feature.properties ?? {};
+  if (countryId === 'CO' && String(p.name ?? p.NAME ?? '').toLowerCase() === 'bogota') return 'CO-DC';
+  if (countryId === 'PE' && String(p.name ?? p.NAME ?? '').toLowerCase() === 'lima province') return 'PE-LMA';
+  const rawIso = p.iso_3166_2 ?? p.ISO_3166_2;
+  if (typeof rawIso === 'string' && rawIso.includes('~')) return null;
+  if (typeof rawIso === 'string' && new RegExp(`^${countryId}-[A-Z0-9]+$`).test(rawIso.toUpperCase())) {
+    return rawIso.toUpperCase();
+  }
+  const rawCode = p.postal ?? p.POSTAL ?? p.code_local ?? p.CODE_LOCAL ?? p.code_hasc?.split('-').pop();
+  const code = String(rawCode ?? '').trim().toUpperCase().replace(/[^A-Z0-9]/g, '');
+  if (!code || code.startsWith('X')) return null;
+  return `${countryId}-${code}`;
+}
+
+function admin1Name(feature, id) {
+  const p = feature.properties ?? {};
+  return p.name_pt || p.NAME_PT || p.name_en || p.NAME_EN || p.name || p.NAME || id;
+}
+
 function featureFor(feature, id, name) {
   return { type: 'Feature', properties: { id, name }, geometry: feature.geometry };
 }
@@ -142,6 +174,13 @@ async function projectAndNormalize(collection, mapConfig) {
   const all = geo.features.flatMap((feature) => pointsFromGeometry(feature.geometry));
   let minX = Infinity; let minY = Infinity; let maxX = -Infinity; let maxY = -Infinity;
   for (const [x, y] of all) { minX = Math.min(minX, x); minY = Math.min(minY, y); maxX = Math.max(maxX, x); maxY = Math.max(maxY, y); }
+  const computedBounds = { minX, minY, maxX, maxY };
+  const bounds = mapConfig.normalizationBounds ?? normalizationBoundsByProjection.get(mapConfig.proj) ?? computedBounds;
+  if (mapConfig.captureNormalizationBounds) {
+    normalizationBoundsByProjection.set(mapConfig.proj, computedBounds);
+    mapConfig.normalizationBounds = computedBounds;
+  }
+  ({ minX, minY, maxX, maxY } = bounds);
   const padding = 12;
   const sx = (mapConfig.width - padding * 2) / (maxX - minX);
   const sy = (mapConfig.height - padding * 2) / (maxY - minY);
@@ -378,7 +417,7 @@ function mapModel(geo, config) {
   });
   const ids = new Set();
   for (const region of regions) {
-    if (!/^[A-Z]{2}$/.test(region.id) && !/^BR-(?:[A-Z]{2}|\d{7})$/.test(region.id)) throw new Error(`${config.id}: invalid id ${region.id}`);
+    if (!/^[A-Z]{2}$/.test(region.id) && !/^[A-Z]{2}-[A-Z0-9]{1,3}$/.test(region.id) && !/^BR-\d{7}$/.test(region.id)) throw new Error(`${config.id}: invalid id ${region.id}`);
     if (!ids.add(region.id)) throw new Error(`${config.id}: duplicate id ${region.id}`);
     if (region.rings.isEmpty) throw new Error(`${config.id}: empty geometry for ${region.id}`);
     for (const ring of region.rings) {
@@ -392,7 +431,7 @@ function mapModel(geo, config) {
     }
   }
   const lines = sharedLines(regions);
-  return { id: config.id, width: config.width, height: config.height, scale, regions, inner: lines.inner, outline: lines.outline, nearlyShared: lines.nearlyShared, edgeCounts: lines.edgeCounts };
+  return { id: config.id, width: config.width, height: config.height, scale, focusRegionPrefix: config.focusRegionPrefix, regions, inner: lines.inner, outline: lines.outline, nearlyShared: lines.nearlyShared, edgeCounts: lines.edgeCounts };
 }
 
 function writeAsset(map, filename) {
@@ -406,7 +445,7 @@ function writeGenerated(map) {
   const symbol = map.id.replace(/(^|_)(.)/g, (_, __, c) => c.toUpperCase());
   const target = path.join(generatedDir, `${map.id}.g.dart`);
   const publicId = map.id.replaceAll('_', '');
-  fs.writeFileSync(target, `// GENERATED CODE - DO NOT MODIFY BY HAND.\nimport 'dart:convert';\nimport '../codec.dart';\nimport '../models.dart';\n\nconst String _data = '${base64}';\nMapDefinition? _cache${symbol};\n\n/// Lazily decodes the embedded ${publicId} map.\nMapDefinition get generated${symbol} => _cache${symbol} ??= decodeGenerated(\n  base64Decode(_data),\n  id: '${publicId}',\n);\n\n/// Decodes and caches the embedded ${publicId} map off the UI isolate.\nFuture<MapDefinition> preloadGenerated${symbol}() async {\n  final cached = _cache${symbol};\n  if (cached != null) return cached;\n  final decoded = await decodeGeneratedAsync(_data, id: '${publicId}');\n  return _cache${symbol} ??= decoded;\n}\n`);
+  fs.writeFileSync(target, `// GENERATED CODE - DO NOT MODIFY BY HAND.\nimport 'dart:convert';\nimport '../codec.dart';\nimport '../models.dart';\n\nconst String _data = '${base64}';\nMapDefinition? _cache${symbol};\n\n/// Lazily decodes the embedded ${publicId} map.\nMapDefinition get generated${symbol} => _cache${symbol} ??= decodeGenerated(\n  base64Decode(_data),\n  id: '${publicId}',${map.focusRegionPrefix ? `\n  focusRegionPrefix: '${map.focusRegionPrefix}',` : ''}\n);\n\n/// Decodes and caches the embedded ${publicId} map off the UI isolate.\nFuture<MapDefinition> preloadGenerated${symbol}() async {\n  final cached = _cache${symbol};\n  if (cached != null) return cached;\n  final decoded = await decodeGeneratedAsync(_data, id: '${publicId}',${map.focusRegionPrefix ? ` focusRegionPrefix: '${map.focusRegionPrefix}',` : ''});\n  return _cache${symbol} ??= decoded;\n}\n`);
   return { bytes: bytes.length, vertices: map.regions.reduce((sum, region) => sum + region.rings.reduce((n, ring) => n + ring.length / 2, 0), 0), maxRegionVertices: Math.max(...map.regions.map((r) => r.rings.reduce((n, ring) => n + ring.length / 2, 0))) };
 }
 
@@ -423,6 +462,16 @@ async function main() {
     await convertToGeoJson(path.join(extracted, shp), neJsonPath);
   }
   const ne = JSON.parse(fs.readFileSync(neJsonPath, 'utf8'));
+  const admin1Zip = await source('naturalEarth10mAdmin1');
+  const admin1JsonPath = path.join(cacheDir, 'natural-earth-admin1.json');
+  if (!fs.existsSync(admin1JsonPath)) {
+    const extracted = path.join(cacheDir, 'admin1-extracted'); fs.mkdirSync(extracted, { recursive: true });
+    execFileSync('unzip', ['-o', admin1Zip, '-d', extracted], { stdio: 'ignore' });
+    const shp = fs.readdirSync(extracted).find((file) => file.endsWith('.shp'));
+    if (!shp) throw new Error('Natural Earth admin-1 zip did not contain a shapefile');
+    await convertToGeoJson(path.join(extracted, shp), admin1JsonPath);
+  }
+  const admin1 = JSON.parse(fs.readFileSync(admin1JsonPath, 'utf8'));
   const countries = []; let france;
   const excludedDisputedA3 = new Set(['SOL', 'CYN']);
   for (const feature of ne.features) {
@@ -441,10 +490,11 @@ async function main() {
   const southIds = new Set(['AR','BO','BR','CL','CO','EC','GF','GY','PE','PY','SR','UY','VE']);
   const latinIds = new Set(['AR','BO','BR','CL','CO','EC','GF','GY','PE','PY','SR','UY','VE','MX','BZ','CR','SV','GT','HN','NI','PA','AG','BS','BB','CU','DM','DO','GD','HT','JM','KN','LC','VC','TT']);
   const buildFeatures = (ids, includeGf) => countries.filter((item) => ids.has(item.id)).map((item) => featureFor(item.id === 'FR' ? franceWithoutGf : item.feature, item.id, item.name)).concat(includeGf ? [gf] : []);
+  const southConfig = { id: 'south_america', width: 820, height: 1040, proj: '+proj=aea +lat_1=-5 +lat_2=-42 +lon_0=-60', simplifyTolerance: 0.6, captureNormalizationBounds: true, features: buildFeatures(southIds, true) };
   const configs = [
     { id: 'world', width: 1200, height: 620, proj: '+proj=eqearth', simplifyTolerance: 0.6, features: countries.filter((item) => item.id !== 'AQ').map((item) => featureFor(item.id === 'FR' ? france : item.feature, item.id, item.name)) },
     { id: 'latin_america', width: 1100, height: 780, proj: '+proj=lcc +lat_1=10 +lat_2=-25 +lon_0=-65', simplifyTolerance: 0.6, features: buildFeatures(latinIds, true) },
-    { id: 'south_america', width: 820, height: 1040, proj: '+proj=aea +lat_1=-5 +lat_2=-42 +lon_0=-60', simplifyTolerance: 0.6, features: buildFeatures(southIds, true) },
+    southConfig,
   ];
   const stateData = JSON.parse(fs.readFileSync(statesUrl, 'utf8'));
   const stateNames = JSON.parse(fs.readFileSync(namesUrl, 'utf8'));
@@ -456,6 +506,41 @@ async function main() {
   const names = new Map(stateNames.map((state) => [String(state.sigla).toUpperCase(), state.nome]));
   const ibgeCodes = { '11':'RO', '12':'AC', '13':'AM', '14':'RR', '15':'PA', '16':'AP', '17':'TO', '21':'MA', '22':'PI', '23':'CE', '24':'RN', '25':'PB', '26':'PE', '27':'AL', '28':'SE', '29':'BA', '31':'MG', '32':'ES', '33':'RJ', '35':'SP', '41':'PR', '42':'SC', '43':'RS', '50':'MS', '51':'MT', '52':'GO', '53':'DF' };
   const stateFeatures = stateData.features.map((feature) => { const p = feature.properties ?? {}; const sigla = String(p.sigla ?? p.SIGLA ?? p.abbrev ?? ibgeCodes[String(p.codarea)] ?? '').toUpperCase(); const name = names.get(sigla) ?? p.nome ?? p.NM_UF; if (!/^[A-Z]{2}$/.test(sigla)) throw new Error(`IBGE UF without sigla: ${JSON.stringify(p)}`); return featureFor(feature, `BR-${sigla}`, name); });
+  const admin1Countries = new Set(['AR', 'BO', 'CL', 'CO', 'EC', 'GY', 'PE', 'PY', 'SR', 'UY', 'VE']);
+  const admin1FeaturesByCountry = new Map();
+  for (const feature of admin1.features) {
+    const countryId = admin1CountryId(feature);
+    if (!countryId || !admin1Countries.has(countryId)) continue;
+    const id = admin1Id(feature, countryId);
+    if (!id) continue;
+    const list = admin1FeaturesByCountry.get(countryId) ?? [];
+    list.push(featureFor(feature, id, admin1Name(feature, id)));
+    admin1FeaturesByCountry.set(countryId, list);
+  }
+  const expectedAdmin1Counts = { AR: 24, BO: 9, CL: 16, CO: 33, EC: 24, GY: 10, PE: 26, PY: 18, SR: 10, UY: 19, VE: 25 };
+  for (const [countryId, expected] of Object.entries(expectedAdmin1Counts)) {
+    const features = admin1FeaturesByCountry.get(countryId) ?? [];
+    const ids = new Set(features.map((feature) => feature.properties.id));
+    if (features.length !== expected || ids.size !== expected) {
+      throw new Error(`Natural Earth admin-1 ${countryId}: expected ${expected} unique regions, got ${features.length}`);
+    }
+  }
+  const contextFeatures = buildFeatures(southIds, true);
+  const focusCountries = ['AR', 'BO', 'BR', 'CL', 'CO', 'EC', 'GY', 'PE', 'PY', 'SR', 'UY', 'VE'];
+  for (const countryId of focusCountries) {
+    const selected = countryId === 'BR' ? stateFeatures : admin1FeaturesByCountry.get(countryId);
+    if (!selected || selected.length === 0) throw new Error(`Missing focus regions for ${countryId}`);
+    configs.push({
+      id: `south_america_focus_${countryId.toLowerCase()}`,
+      width: southConfig.width,
+      height: southConfig.height,
+      proj: southConfig.proj,
+      normalizationBounds: southConfig.normalizationBounds,
+      simplifyTolerance: 0.6,
+      focusRegionPrefix: `${countryId}-`,
+      features: contextFeatures.filter((feature) => feature.properties.id !== countryId).concat(selected),
+    });
+  }
   configs.push({ id: 'brazil_states', width: 900, height: 1000, proj: '+proj=aea +lat_1=-2 +lat_2=-22 +lon_0=-54', simplifyTolerance: 0.6, features: stateFeatures });
   const municipalityFeatures = municipalityData.features.map((feature) => {
     const p = feature.properties ?? {};
@@ -469,17 +554,31 @@ async function main() {
   if (municipalityFeatures.length !== 5570) throw new Error(`Expected 5570 municipalities, got ${municipalityFeatures.length}`);
   configs.push({ id: 'brazil_municipalities', width: 900, height: 1000, proj: '+proj=aea +lat_1=-2 +lat_2=-22 +lon_0=-54', simplifyTolerance: 0.4, features: municipalityFeatures, asset: 'brazil_municipalities.smap' });
   const report = { format: 'SMAP v2', maps: {} };
+  const focusExpectedRegions = {
+    south_america_focus_ar: 36,
+    south_america_focus_bo: 21,
+    south_america_focus_br: 39,
+    south_america_focus_cl: 28,
+    south_america_focus_co: 45,
+    south_america_focus_ec: 36,
+    south_america_focus_gy: 22,
+    south_america_focus_pe: 38,
+    south_america_focus_py: 30,
+    south_america_focus_sr: 22,
+    south_america_focus_uy: 31,
+    south_america_focus_ve: 37,
+  };
   for (const config of configs) {
     const geo = await projectAndNormalize(makeCollection(config.features), config);
     const model = mapModel(geo, config);
-    const expected = { world: 170, latin_america: 34, south_america: 13, brazil_states: 27, brazil_municipalities: 5570 }[config.id];
+    const expected = { world: 170, latin_america: 34, south_america: 13, brazil_states: 27, brazil_municipalities: 5570, ...focusExpectedRegions }[config.id];
     if (model.regions.length !== expected && config.id !== 'world') throw new Error(`${config.id}: expected ${expected} regions, got ${model.regions.length}`);
     if (config.id === 'brazil_municipalities') {
       const prefixes = new Set(model.regions.map((region) => region.id.slice(3, 5)));
       const expectedUfPrefixes = new Set(['11','12','13','14','15','16','17','21','22','23','24','25','26','27','28','29','31','32','33','35','41','42','43','50','51','52','53']);
       for (const prefix of expectedUfPrefixes) if (!prefixes.has(prefix)) throw new Error(`Missing municipalities for UF code ${prefix}`);
     }
-    const limit = { world: 40000, latin_america: 20000, south_america: 12000, brazil_states: 12000, brazil_municipalities: 300000 }[config.id];
+    const limit = { world: 40000, latin_america: 20000, south_america: 12000, brazil_states: 12000, brazil_municipalities: 300000, ...Object.fromEntries(Object.keys(focusExpectedRegions).map((id) => [id, 30000])) }[config.id];
     const stats = config.asset ? writeAsset(model, config.asset) : writeGenerated(model);
     if (stats.vertices > limit) throw new Error(`${config.id}: ${stats.vertices} vertices exceed ${limit}`);
     report.maps[config.id] = {
@@ -500,7 +599,7 @@ async function main() {
     };
   }
   fs.writeFileSync(path.join(here, 'report.json'), `${JSON.stringify(report, null, 2)}\n`);
-  fs.writeFileSync(path.join(root, 'ATTRIBUTION.md'), `# Map data attribution\n\n- Natural Earth 50m admin-0 cultural (manifest date 2025-02-01): public domain, downloaded from https://naciscdn.org/naturalearth/50m/cultural/ne_50m_admin_0_countries.zip.\n- IBGE UFs (manifest date 2025-02-01): https://servicodados.ibge.gov.br/api/v3/malhas/paises/BR?formato=application/vnd.geo+json&intrarregiao=UF&qualidade=intermediaria, intermediate quality; names from https://servicodados.ibge.gov.br/api/v1/localidades/estados. The geometry was simplified with a 0.6 view-box-unit tolerance, topology-preserving keep-shapes, and quantized to a 0.25 view-box-unit grid.\n- IBGE municipalities (manifest date 2025-02-01): https://servicodados.ibge.gov.br/api/v3/malhas/paises/BR?formato=application/vnd.geo+json&intrarregiao=municipio&qualidade=intermediaria, intermediate quality; names from https://servicodados.ibge.gov.br/api/v1/localidades/municipios. Simplified and quantized like the UFs; distributed only as the optional example asset example/assets/maps/brazil_municipalities.smap, not inside lib/.\n- Source credit: \"Fonte: IBGE\" must accompany apps that display the Brazilian layers. Confirm the current IBGE terms of use before commercial distribution.\n- Build tools: mapshaper 0.7.98 (MIT), polylabel 2.1.0 (ISC). They are build-only dependencies; the Flutter package has no runtime dependency.\n\nKosovo is retained as XK when present. Somaliland, Northern Cyprus and other unrecognized disputed fragments are omitted in favor of their sovereign feature; Antarctica is excluded. French Guiana is merged into FR for the world map and retained as GF in regional maps.\n`);
+  fs.writeFileSync(path.join(root, 'ATTRIBUTION.md'), `# Map data attribution\n\n- Natural Earth 50m admin-0 cultural (manifest date 2025-02-01): public domain, downloaded from https://naciscdn.org/naturalearth/50m/cultural/ne_50m_admin_0_countries.zip.\n- Natural Earth 10m admin-1 states and provinces (manifest date 2025-02-01): public domain, SHA-256 `efc59726337323058f9446210adc96673179cd344e053666ee3d28cb58ba2b05`, downloaded from https://naciscdn.org/naturalearth/10m/cultural/ne_10m_admin_1_states_provinces.zip. These focus layers contain admin-1 regions only; they never contain cities or municipalities.\n- IBGE UFs (manifest date 2025-02-01): https://servicodados.ibge.gov.br/api/v3/malhas/paises/BR?formato=application/vnd.geo+json&intrarregiao=UF&qualidade=intermediaria, intermediate quality; names from https://servicodados.ibge.gov.br/api/v1/localidades/estados. The geometry was simplified with a 0.6 view-box-unit tolerance, topology-preserving keep-shapes, and quantized to a 0.25 view-box-unit grid.\n- IBGE municipalities (manifest date 2025-02-01): https://servicodados.ibge.gov.br/api/v3/malhas/paises/BR?formato=application/vnd.geo+json&intrarregiao=municipio&qualidade=intermediaria, intermediate quality; names from https://servicodados.ibge.gov.br/api/v1/localidades/municipios. Simplified and quantized like the UFs; distributed only as the optional example asset example/assets/maps/brazil_municipalities.smap, not inside lib/.\n- Source credit: \"Fonte: IBGE\" must accompany apps that display the Brazilian layers. Confirm the current IBGE terms of use before commercial distribution.\n- Build tools: mapshaper 0.7.98 (MIT), polylabel 2.1.0 (ISC). They are build-only dependencies; the Flutter package has no runtime dependency.\n\nKosovo is retained as XK when present. Somaliland, Northern Cyprus and other unrecognized disputed fragments are omitted in favor of their sovereign feature; Antarctica is excluded. French Guiana is merged into FR for the world map and retained as GF in regional maps.\n`);
   console.log(JSON.stringify(report, null, 2));
 }
 

@@ -17,6 +17,7 @@ class MarkerLayoutEntry {
     required this.position,
     required this.targetDiameter,
     required this.previousDiameter,
+    required this.diameterUnit,
     required this.textPainter,
     required this.showLabel,
   });
@@ -35,6 +36,9 @@ class MarkerLayoutEntry {
 
   /// Previous diameter used by the marker animation.
   final double previousDiameter;
+
+  /// Unit used to resolve diameter and border width.
+  final MarkerDiameterUnit diameterUnit;
 
   /// Pre-laid-out label painter, when labels are enabled.
   final TextPainter? textPainter;
@@ -96,6 +100,7 @@ class MarkerLayoutCache {
             targetDiameter:
                 marker.diameter ?? style.scale.diameterFor(marker.value),
             previousDiameter: previousDiameters[marker.regionId] ?? 0,
+            diameterUnit: marker.diameterUnit ?? style.scale.unit,
             textPainter: textPainter,
             showLabel: marker.showLabel && label.isNotEmpty,
           );
@@ -168,14 +173,13 @@ class MarkerPainter extends CustomPainter {
   final int _cacheVersion;
   final Paint _fillPaint = Paint();
   final Paint _borderPaint = Paint()..style = PaintingStyle.stroke;
+  final Paint _shadowPaint = Paint();
 
   @override
   void paint(Canvas canvas, Size size) {
     final scale = cache.transform.scale;
     _fillPaint.color = style.fillColor;
-    _borderPaint
-      ..color = style.borderColor
-      ..strokeWidth = style.borderWidth * scale;
+    _borderPaint.color = style.borderColor;
     final t = animation.value;
     final p = progress.value;
     final viewport = Offset.zero & size;
@@ -192,8 +196,14 @@ class MarkerPainter extends CustomPainter {
       final diameter =
           entry.previousDiameter +
           (entry.targetDiameter - entry.previousDiameter) * t;
-      final radius = diameter * scale / 2;
+      final markerScale = entry.diameterUnit == MarkerDiameterUnit.screenPixels
+          ? 1.0
+          : scale;
+      final radius = diameter * markerScale / 2;
       if (radius <= 0) continue;
+      final shadow = style.shadow;
+      final shadowOffset = shadow.offset * markerScale;
+      final shadowBlur = shadow.blurRadius * markerScale;
       var factor = 1.0;
       if (p < 1 && entrance != null) {
         final markerProgress = _clamp01((p - _regionPhaseEnd) / _markerPhase);
@@ -206,6 +216,14 @@ class MarkerPainter extends CustomPainter {
       }
       final effectiveRadius = radius * factor;
       var bounds = Rect.fromCircle(center: center, radius: effectiveRadius);
+      if (shadow.enabled) {
+        bounds = bounds.expandToInclude(
+          Rect.fromCircle(
+            center: center + shadowOffset,
+            radius: effectiveRadius + shadowBlur,
+          ),
+        );
+      }
       final textPainter = entry.textPainter;
       if (entry.showLabel && textPainter != null) {
         final halfSize = Offset(
@@ -222,13 +240,29 @@ class MarkerPainter extends CustomPainter {
       }
       if (!bounds.overlaps(viewport)) continue;
       if (factor == 1) {
-        _paintMarker(canvas, center, radius, entry);
+        _paintMarker(
+          canvas,
+          center,
+          radius,
+          entry,
+          shadowOffset: shadowOffset,
+          shadowBlur: shadowBlur,
+          markerScale: markerScale,
+        );
       } else {
         canvas.save();
         canvas.translate(center.dx, center.dy);
         canvas.scale(factor, factor);
         canvas.translate(-center.dx, -center.dy);
-        _paintMarker(canvas, center, radius, entry);
+        _paintMarker(
+          canvas,
+          center,
+          radius,
+          entry,
+          shadowOffset: shadowOffset,
+          shadowBlur: shadowBlur,
+          markerScale: markerScale,
+        );
         canvas.restore();
       }
     }
@@ -238,8 +272,23 @@ class MarkerPainter extends CustomPainter {
     Canvas canvas,
     Offset center,
     double radius,
-    MarkerLayoutEntry entry,
-  ) {
+    MarkerLayoutEntry entry, {
+    required Offset shadowOffset,
+    required double shadowBlur,
+    required double markerScale,
+  }) {
+    _borderPaint
+      ..color = style.borderColor
+      ..strokeWidth = style.borderWidth * markerScale;
+    if (style.shadow.enabled) {
+      _shadowPaint
+        ..style = PaintingStyle.fill
+        ..color = style.shadow.color
+        ..maskFilter = shadowBlur > 0
+            ? MaskFilter.blur(BlurStyle.normal, shadowBlur)
+            : null;
+      canvas.drawCircle(center + shadowOffset, radius, _shadowPaint);
+    }
     canvas.drawCircle(center, radius, _fillPaint);
     canvas.drawCircle(center, radius, _borderPaint);
     final textPainter = entry.textPainter;

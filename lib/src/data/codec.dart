@@ -15,9 +15,17 @@ const _outlineFlag = 2;
 int shapeMapDecodeCount = 0;
 
 /// Decodes one generated map and increments the testing counter.
-MapDefinition decodeGenerated(Uint8List bytes, {required String id}) {
+MapDefinition decodeGenerated(
+  Uint8List bytes, {
+  required String id,
+  String? focusRegionPrefix,
+}) {
   shapeMapDecodeCount++;
-  return ShapeMapData.decodeSync(bytes, id: id);
+  return ShapeMapData.decodeSync(
+    bytes,
+    id: id,
+    focusRegionPrefix: focusRegionPrefix,
+  );
 }
 
 /// Decodes an embedded base64 map off the UI isolate without touching the
@@ -25,30 +33,39 @@ MapDefinition decodeGenerated(Uint8List bytes, {required String id}) {
 Future<MapDefinition> decodeGeneratedAsync(
   String encoded, {
   required String id,
+  String? focusRegionPrefix,
 }) async {
   final decoded = await Isolate.run(() => _parse(base64Decode(encoded)));
-  return _materialize(decoded, id: id);
+  return _materialize(decoded, id: id, focusRegionPrefix: focusRegionPrefix);
 }
 
 /// SMAP v2 decoder for embedded and application-provided map data.
 abstract final class ShapeMapData {
   /// Decodes [bytes] synchronously on the current isolate.
-  static MapDefinition decodeSync(Uint8List bytes, {String? id}) =>
-      _materialize(_parse(bytes), id: id);
+  static MapDefinition decodeSync(
+    Uint8List bytes, {
+    String? id,
+    String? focusRegionPrefix,
+  }) =>
+      _materialize(_parse(bytes), id: id, focusRegionPrefix: focusRegionPrefix);
 
   /// Decodes [bytes] off the UI isolate and materializes lazy map geometry.
   ///
   /// The isolate returns flat typed buffers rather than nested coordinate
   /// lists. This keeps the transfer and materialization cost proportional to
   /// the compact binary payload and does not construct any [Path] eagerly.
-  static Future<MapDefinition> decode(ByteData bytes, {String? id}) async {
+  static Future<MapDefinition> decode(
+    ByteData bytes, {
+    String? id,
+    String? focusRegionPrefix,
+  }) async {
     final raw = Uint8List.sublistView(
       bytes.buffer.asUint8List(),
       bytes.offsetInBytes,
       bytes.offsetInBytes + bytes.lengthInBytes,
     );
     final decoded = await Isolate.run(() => _parse(raw));
-    return _materialize(decoded, id: id);
+    return _materialize(decoded, id: id, focusRegionPrefix: focusRegionPrefix);
   }
 }
 
@@ -193,7 +210,11 @@ class _Lines {
   final Uint32List offsets;
 }
 
-MapDefinition _materialize(Map<String, Object> decoded, {String? id}) {
+MapDefinition _materialize(
+  Map<String, Object> decoded, {
+  String? id,
+  String? focusRegionPrefix,
+}) {
   final scale = decoded['scale']! as double;
   final ids = decoded['ids']! as List<String>;
   final names = decoded['names']! as List<String>;
@@ -258,6 +279,7 @@ MapDefinition _materialize(Map<String, Object> decoded, {String? id}) {
           scale: scale,
         ),
     ],
+    focusRegionPrefix: focusRegionPrefix,
   );
 }
 
