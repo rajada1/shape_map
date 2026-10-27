@@ -43,10 +43,18 @@ class ShapeMapCameraMath {
         ? pan.dx
               .clamp(visible.right - mapLeft - mapWidth, visible.left - mapLeft)
               .toDouble()
+        : insets != EdgeInsets.zero
+        ? pan.dx
+              .clamp(visible.left - mapLeft - mapWidth, visible.right - mapLeft)
+              .toDouble()
         : visible.center.dx - mapLeft - mapWidth / 2;
     final y = mapHeight >= visible.height
         ? pan.dy
               .clamp(visible.bottom - mapTop - mapHeight, visible.top - mapTop)
+              .toDouble()
+        : insets != EdgeInsets.zero
+        ? pan.dy
+              .clamp(visible.top - mapTop - mapHeight, visible.bottom - mapTop)
               .toDouble()
         : visible.center.dy - mapTop - mapHeight / 2;
     return Offset(x, y);

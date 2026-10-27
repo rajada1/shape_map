@@ -86,6 +86,29 @@ void main() {
     expect(screenCenter.dy, closeTo(190, 1e-6));
   });
 
+  test('inset clamp preserves a shifted fit when the map is smaller', () {
+    const base = MapTransform(1, Offset.zero);
+    const viewport = Size(300, 300);
+    const bounds = Rect.fromLTRB(20, 20, 80, 90);
+    final destination = ShapeMapCameraMath.zoomToBounds(
+      base: base,
+      viewBox: const Size(100, 100),
+      viewport: viewport,
+      viewBoxBounds: bounds,
+      minScale: 1,
+      maxScale: 1,
+      insets: const EdgeInsets.only(top: 100, bottom: 20),
+      padding: 0,
+    );
+    final screenCenter = ShapeMapCameraMath.apply(
+      base,
+      destination.scale,
+      destination.pan,
+      bounds.center,
+    );
+    expect(screenCenter, const Offset(150, 190));
+  });
+
   test(
     'contentBounds unions region geometry bounds and memoizes the result',
     () {
