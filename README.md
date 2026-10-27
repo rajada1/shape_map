@@ -38,7 +38,7 @@ Os marcadores usam `MapRegion.markerAnchor` por padrão; `MapMarkerData.position
 
 `ShapeMaps.southAmericaFocus('BR')` (ou qualquer um dos 12 países `AR BO BR CL CO EC GY PE PY SR UY VE`) mantém exatamente o viewBox e a projeção de `ShapeMaps.southAmerica`. O país selecionado é dividido em estados, províncias, departamentos ou distritos admin-1; os vizinhos continuam visíveis como regiões de contexto com IDs ISO alpha-2. O package não inclui cidades nem municípios nesses mapas.
 
-O campo `MapDefinition.focusBounds` reúne as subdivisões do país selecionado para enquadramento. Isso permite usar `ShapeMapCameraController.zoomToRegion` para uma subdivisão e `focusBounds` com `ShapeMapCameraMath.zoomToRegion` quando o app quiser enquadrar o país inteiro. O `MapRegionData.fill` já permite esmaecer vizinhos sem mudar a API:
+O campo `MapDefinition.focusBounds` reúne as subdivisões do país selecionado para enquadramento, enquanto `MapDefinition.contentBounds` reúne a geometria visível de todas as regiões. Use `ShapeMapCameraController.zoomToBounds` quando overlays ocuparem parte do viewport. O parâmetro `insets` é aplicado à área disponível antes do `padding` simétrico:
 
 ```dart
 final map = ShapeMaps.southAmericaFocus('AR');
@@ -51,10 +51,18 @@ final data = {
           : const Color(0xFFE2E9ED),
     ),
 };
-// Para focar o país inteiro: camera.zoomToRegion('AR');
-// Para focar uma província: camera.zoomToRegion('AR-B');
 ShapeMap(map: map, cameraController: camera, data: data);
+
+// Enquadra o país inteiro acima de um painel inferior.
+camera.zoomToBounds(
+  map.focusBounds!,
+  insets: const EdgeInsets.only(top: 72, bottom: 280),
+  padding: 16,
+);
+// Para focar uma província: camera.zoomToRegion('AR-B');
 ```
+
+`zoomToRegion` mantém o `padding` simétrico anterior e também aceita `insets`.
 
 ### Marcadores em pixels
 

@@ -188,6 +188,7 @@ class _ShapeMapState extends State<ShapeMap>
   Listenable? _tooltipRepaint;
   bool _animationsDisabled = false;
   bool _cameraRevisionScheduled = false;
+  EdgeInsets _cameraClampInsets = EdgeInsets.zero;
 
   ShapeMapController get _controller => _activeController;
 
@@ -507,6 +508,7 @@ class _ShapeMapState extends State<ShapeMap>
         viewport: size,
         scale: scale,
         pan: pan,
+        insets: _cameraClampInsets,
       );
     }
     _activeCameraController.updateFromHost(
@@ -535,17 +537,20 @@ class _ShapeMapState extends State<ShapeMap>
   void _animateCamera(
     double scale,
     Offset pan, {
+    EdgeInsets? clampInsets,
     Duration? duration,
     Curve? curve,
   }) {
     final actualDuration = duration ?? widget.cameraAnimationDuration;
     _cameraCurve = curve ?? widget.cameraAnimationCurve;
+    _cameraClampInsets = clampInsets ?? _cameraClampInsets;
     final clampedPan = ShapeMapCameraMath.clampPan(
       base: _cache.transform,
       viewBox: widget.map.viewBox,
       viewport: _lastLayoutSize!,
       scale: scale,
       pan: pan,
+      insets: _cameraClampInsets,
     );
     if (_animationsDisabled || actualDuration == Duration.zero) {
       _cameraAnimationController.stop();
@@ -664,6 +669,7 @@ class _ShapeMapState extends State<ShapeMap>
   void cameraZoomToRegion(
     String regionId, {
     double padding = 16,
+    EdgeInsets insets = EdgeInsets.zero,
     Duration? duration,
     Curve? curve,
   }) {
@@ -673,18 +679,38 @@ class _ShapeMapState extends State<ShapeMap>
         region?.bounds ??
         (regionId.length == 2 ? widget.map.focusBounds : null);
     if (bounds == null) return;
-    final destination = ShapeMapCameraMath.zoomToRegion(
+    cameraZoomToBounds(
+      bounds,
+      insets: insets,
+      padding: padding,
+      duration: duration,
+      curve: curve,
+    );
+  }
+
+  @override
+  void cameraZoomToBounds(
+    Rect viewBoxBounds, {
+    EdgeInsets insets = EdgeInsets.zero,
+    double padding = 16,
+    Duration? duration,
+    Curve? curve,
+  }) {
+    if (_lastLayoutSize == null) return;
+    final destination = ShapeMapCameraMath.zoomToBounds(
       base: _cache.transform,
       viewBox: widget.map.viewBox,
       viewport: _lastLayoutSize!,
-      regionBounds: bounds,
+      viewBoxBounds: viewBoxBounds,
       minScale: widget.minScale,
       maxScale: widget.maxScale,
+      insets: insets,
       padding: padding,
     );
     _animateCamera(
       destination.scale,
       destination.pan,
+      clampInsets: insets,
       duration: duration,
       curve: curve,
     );
@@ -696,6 +722,7 @@ class _ShapeMapState extends State<ShapeMap>
     _animateCamera(
       widget.minScale.clamp(1, widget.maxScale).toDouble(),
       Offset.zero,
+      clampInsets: EdgeInsets.zero,
       duration: duration,
       curve: curve,
     );
@@ -703,6 +730,7 @@ class _ShapeMapState extends State<ShapeMap>
 
   void _resetCameraImmediately() {
     _cameraAnimationController.stop();
+    _cameraClampInsets = EdgeInsets.zero;
     _markCameraSettled();
     _activeCameraController.updateFromHost(1, Offset.zero);
   }

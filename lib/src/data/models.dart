@@ -318,6 +318,22 @@ class MapDefinition {
   /// the whole country without requiring a synthetic region.
   final String? focusRegionPrefix;
 
+  /// Bounds enclosing the geometry of every region in this map.
+  ///
+  /// The union is calculated on first access and memoized for subsequent
+  /// camera fits and layout calculations.
+  Rect get contentBounds {
+    final cached = _contentBounds;
+    if (cached != null) return cached;
+    Rect? result;
+    for (final region in regions) {
+      result = result == null
+          ? region.bounds
+          : result.expandToInclude(region.bounds);
+    }
+    return _contentBounds = result ?? Rect.zero;
+  }
+
   /// Bounds enclosing all regions in [focusRegionPrefix].
   Rect? get focusBounds {
     final explicitPrefix = focusRegionPrefix;
@@ -342,6 +358,7 @@ class MapDefinition {
 
   Map<String, int>? _regionIndices;
   _MapSpatialGrid? _spatialGrid;
+  Rect? _contentBounds;
 
   /// Finds the region with [id], or null when it is not part of this map.
   MapRegion? regionById(String id) {

@@ -1,3 +1,9 @@
+## 0.5.1
+
+* Adiciona `MapDefinition.contentBounds`, união memoizada da geometria das regiões.
+* Adiciona `ShapeMapCameraController.zoomToBounds` e insets assimétricos em `zoomToRegion`, permitindo enquadrar conteúdo em áreas visíveis sob overlays.
+* Ajusta o clamp de pan para respeitar a área visível durante enquadramentos com insets, sem alterar o comportamento existente quando não há insets.
+
 ## 0.5.0
 
 * Adiciona `ShapeMaps.southAmericaFocus(String)` e `ShapeMaps.preloadFocus(String)` para os 12 países sul-americanos, com estados/províncias admin-1 e vizinhos em contexto no mesmo viewBox de `southAmerica`.

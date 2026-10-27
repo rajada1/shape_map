@@ -33,6 +33,16 @@ class _FakeCameraHost implements ShapeMapCameraHost {
   void cameraZoomToRegion(
     String regionId, {
     double padding = 16,
+    EdgeInsets insets = EdgeInsets.zero,
+    Duration? duration,
+    Curve? curve,
+  }) => commands++;
+
+  @override
+  void cameraZoomToBounds(
+    Rect viewBoxBounds, {
+    EdgeInsets insets = EdgeInsets.zero,
+    double padding = 16,
     Duration? duration,
     Curve? curve,
   }) => commands++;
@@ -51,6 +61,72 @@ void main() {
     final targetPan = focal - (base.offset + viewBoxPoint * base.scale) * 3;
     expect(ShapeMapCameraMath.apply(base, 3, targetPan, viewBoxPoint), focal);
   });
+
+  test('zoomToBounds centers content in an asymmetric visible viewport', () {
+    const base = MapTransform(1, Offset.zero);
+    const viewport = Size(300, 300);
+    const bounds = Rect.fromLTRB(20, 20, 80, 80);
+    final destination = ShapeMapCameraMath.zoomToBounds(
+      base: base,
+      viewBox: const Size(100, 100),
+      viewport: viewport,
+      viewBoxBounds: bounds,
+      minScale: 1,
+      maxScale: 10,
+      insets: const EdgeInsets.only(top: 100, bottom: 20),
+      padding: 0,
+    );
+    final screenCenter = ShapeMapCameraMath.apply(
+      base,
+      destination.scale,
+      destination.pan,
+      bounds.center,
+    );
+    expect(screenCenter.dx, closeTo(150, 1e-6));
+    expect(screenCenter.dy, closeTo(190, 1e-6));
+  });
+
+  test(
+    'contentBounds unions region geometry bounds and memoizes the result',
+    () {
+      MapGeometry geometry(
+        double left,
+        double top,
+        double right,
+        double bottom,
+      ) {
+        return MapGeometry([
+          MapPathCommand.move(left, top),
+          MapPathCommand.line(right, top),
+          MapPathCommand.line(right, bottom),
+          MapPathCommand.line(left, bottom),
+          const MapPathCommand.close(),
+        ]);
+      }
+
+      final map = MapDefinition(
+        id: 'bounds',
+        viewBox: const Size(100, 100),
+        regions: [
+          MapRegion(
+            id: 'A',
+            name: 'A',
+            geometry: geometry(10, 20, 30, 40),
+            markerAnchor: const Offset(20, 30),
+          ),
+          MapRegion(
+            id: 'B',
+            name: 'B',
+            geometry: geometry(50, 5, 70, 80),
+            markerAnchor: const Offset(60, 40),
+          ),
+        ],
+      );
+      final bounds = map.contentBounds;
+      expect(bounds, const Rect.fromLTRB(10, 5, 70, 80));
+      expect(identical(bounds, map.contentBounds), isTrue);
+    },
+  );
 
   test('camera clamp centers small content and limits large content', () {
     const base = MapTransform(1, Offset.zero);

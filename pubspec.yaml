@@ -1,6 +1,6 @@
 name: shape_map
 description: A performant Flutter widget for rendering and animating customizable geographic maps.
-version: 0.5.0
+version: 0.5.1
 
 environment:
   sdk: ^3.12.1

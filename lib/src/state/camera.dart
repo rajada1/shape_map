@@ -1,4 +1,5 @@
 import 'package:flutter/animation.dart';
+import 'package:flutter/painting.dart';
 import 'package:flutter/foundation.dart';
 
 import '../rendering/transform.dart';
@@ -31,18 +32,62 @@ class ShapeMapCameraMath {
     required Size viewport,
     required double scale,
     required Offset pan,
+    EdgeInsets insets = EdgeInsets.zero,
   }) {
+    final visible = _insetViewport(viewport, insets);
     final mapLeft = base.offset.dx * scale;
     final mapTop = base.offset.dy * scale;
     final mapWidth = base.scale * viewBox.width * scale;
     final mapHeight = base.scale * viewBox.height * scale;
-    final x = mapWidth >= viewport.width
-        ? pan.dx.clamp(viewport.width - mapLeft - mapWidth, -mapLeft).toDouble()
-        : viewport.width / 2 - mapLeft - mapWidth / 2;
-    final y = mapHeight >= viewport.height
-        ? pan.dy.clamp(viewport.height - mapTop - mapHeight, -mapTop).toDouble()
-        : viewport.height / 2 - mapTop - mapHeight / 2;
+    final x = mapWidth >= visible.width
+        ? pan.dx
+              .clamp(visible.right - mapLeft - mapWidth, visible.left - mapLeft)
+              .toDouble()
+        : visible.center.dx - mapLeft - mapWidth / 2;
+    final y = mapHeight >= visible.height
+        ? pan.dy
+              .clamp(visible.bottom - mapTop - mapHeight, visible.top - mapTop)
+              .toDouble()
+        : visible.center.dy - mapTop - mapHeight / 2;
     return Offset(x, y);
+  }
+
+  /// Calculates a zoom destination centered on [viewBoxBounds].
+  static ({double scale, Offset pan}) zoomToBounds({
+    required MapTransform base,
+    required Size viewBox,
+    required Size viewport,
+    required Rect viewBoxBounds,
+    required double minScale,
+    required double maxScale,
+    EdgeInsets insets = EdgeInsets.zero,
+    double padding = 16,
+  }) {
+    final visible = _insetViewport(viewport, insets);
+    final target = _paddedRect(visible, padding);
+    final width = viewBoxBounds.width.abs().clamp(1e-6, double.infinity);
+    final height = viewBoxBounds.height.abs().clamp(1e-6, double.infinity);
+    final widthScale = (target.width / (base.scale * width))
+        .clamp(minScale, maxScale)
+        .toDouble();
+    final heightScale = (target.height / (base.scale * height))
+        .clamp(minScale, maxScale)
+        .toDouble();
+    final scale = widthScale < heightScale ? widthScale : heightScale;
+    final pan =
+        target.center -
+        (base.offset + viewBoxBounds.center * base.scale) * scale;
+    return (
+      scale: scale,
+      pan: clampPan(
+        base: base,
+        viewBox: viewBox,
+        viewport: viewport,
+        scale: scale,
+        pan: pan,
+        insets: insets,
+      ),
+    );
   }
 
   /// Calculates a zoom destination centered on [regionBounds].
@@ -53,37 +98,40 @@ class ShapeMapCameraMath {
     required Rect regionBounds,
     required double minScale,
     required double maxScale,
-    required double padding,
-  }) {
-    final width = regionBounds.width.abs().clamp(1e-6, double.infinity);
-    final height = regionBounds.height.abs().clamp(1e-6, double.infinity);
-    final availableWidth = (viewport.width - padding * 2).clamp(
-      1e-6,
-      double.infinity,
+    double padding = 16,
+    EdgeInsets insets = EdgeInsets.zero,
+  }) => zoomToBounds(
+    base: base,
+    viewBox: viewBox,
+    viewport: viewport,
+    viewBoxBounds: regionBounds,
+    minScale: minScale,
+    maxScale: maxScale,
+    insets: insets,
+    padding: padding,
+  );
+
+  static Rect _insetViewport(Size viewport, EdgeInsets insets) {
+    final left = insets.left.clamp(0, viewport.width).toDouble();
+    final top = insets.top.clamp(0, viewport.height).toDouble();
+    final right = insets.right.clamp(0, viewport.width - left).toDouble();
+    final bottom = insets.bottom.clamp(0, viewport.height - top).toDouble();
+    return Rect.fromLTWH(
+      left,
+      top,
+      (viewport.width - left - right).clamp(1e-6, double.infinity).toDouble(),
+      (viewport.height - top - bottom).clamp(1e-6, double.infinity).toDouble(),
     );
-    final availableHeight = (viewport.height - padding * 2).clamp(
-      1e-6,
-      double.infinity,
-    );
-    final targetScale = (availableWidth / (base.scale * width))
-        .clamp(minScale, maxScale)
-        .toDouble();
-    final heightScale = (availableHeight / (base.scale * height))
-        .clamp(minScale, maxScale)
-        .toDouble();
-    final scale = targetScale < heightScale ? targetScale : heightScale;
-    final pan =
-        Offset(viewport.width / 2, viewport.height / 2) -
-        (base.offset + regionBounds.center * base.scale) * scale;
-    return (
-      scale: scale,
-      pan: clampPan(
-        base: base,
-        viewBox: viewBox,
-        viewport: viewport,
-        scale: scale,
-        pan: pan,
-      ),
+  }
+
+  static Rect _paddedRect(Rect rect, double padding) {
+    final horizontal = padding.clamp(0, rect.width / 2).toDouble();
+    final vertical = padding.clamp(0, rect.height / 2).toDouble();
+    return Rect.fromLTWH(
+      rect.left + horizontal,
+      rect.top + vertical,
+      (rect.width - horizontal * 2).clamp(1e-6, double.infinity).toDouble(),
+      (rect.height - vertical * 2).clamp(1e-6, double.infinity).toDouble(),
     );
   }
 }
@@ -113,6 +161,16 @@ abstract interface class ShapeMapCameraHost {
   void cameraZoomToRegion(
     String regionId, {
     double padding,
+    EdgeInsets insets,
+    Duration? duration,
+    Curve? curve,
+  });
+
+  /// Executes a pending bounds-fit command.
+  void cameraZoomToBounds(
+    Rect viewBoxBounds, {
+    EdgeInsets insets,
+    double padding,
     Duration? duration,
     Curve? curve,
   });
@@ -128,6 +186,8 @@ class _CameraRequest {
     this.offset,
     this.focal,
     this.regionId,
+    this.bounds,
+    this.insets = EdgeInsets.zero,
     this.padding,
     this.duration,
     this.curve,
@@ -137,6 +197,8 @@ class _CameraRequest {
   final Offset? offset;
   final Offset? focal;
   final String? regionId;
+  final Rect? bounds;
+  final EdgeInsets insets;
   final double? padding;
   final Duration? duration;
   final Curve? curve;
@@ -197,7 +259,34 @@ class ShapeMapCameraController extends ChangeNotifier {
   /// Moves the map by [delta] viewport pixels.
   void panBy(Offset delta) => _dispatch(_CameraRequest(2, offset: delta));
 
+  /// Fits [viewBoxBounds] inside the viewport, excluding [insets].
+  ///
+  /// The fitted bounds are centered in the remaining visible rectangle and
+  /// receive [padding] on each side.
+  void zoomToBounds(
+    Rect viewBoxBounds, {
+    EdgeInsets insets = EdgeInsets.zero,
+    double padding = 16,
+    Duration? duration,
+    Curve? curve,
+  }) {
+    _dispatch(
+      _CameraRequest(
+        5,
+        bounds: viewBoxBounds,
+        insets: insets,
+        padding: padding,
+        duration: duration,
+        curve: curve,
+      ),
+    );
+  }
+
   /// Fits [regionId] inside the viewport with [padding] pixels.
+  ///
+  /// [insets] describes viewport areas covered by overlays. The symmetric
+  /// [padding] behavior remains available for callers that do not use
+  /// overlays.
   ///
   /// On a country focus map, passing the two-letter country ISO (for example
   /// `BR`) fits [MapDefinition.focusBounds], while an ISO 3166-2 id fits one
@@ -205,6 +294,7 @@ class ShapeMapCameraController extends ChangeNotifier {
   void zoomToRegion(
     String regionId, {
     double padding = 16,
+    EdgeInsets insets = EdgeInsets.zero,
     Duration? duration,
     Curve? curve,
   }) {
@@ -213,6 +303,7 @@ class ShapeMapCameraController extends ChangeNotifier {
         3,
         regionId: regionId,
         padding: padding,
+        insets: insets,
         duration: duration,
         curve: curve,
       ),
@@ -255,11 +346,20 @@ class ShapeMapCameraController extends ChangeNotifier {
         host.cameraZoomToRegion(
           request.regionId!,
           padding: request.padding!,
+          insets: request.insets,
           duration: request.duration,
           curve: request.curve,
         );
       case 4:
         host.cameraReset(duration: request.duration, curve: request.curve);
+      case 5:
+        host.cameraZoomToBounds(
+          request.bounds!,
+          insets: request.insets,
+          padding: request.padding!,
+          duration: request.duration,
+          curve: request.curve,
+        );
     }
   }
 
