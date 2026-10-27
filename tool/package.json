@@ -1,0 +1,9 @@
+{
+  "name": "shape-map-build-tools",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "mapshaper": "0.7.98",
+    "polylabel": "2.1.0"
+  }
+}

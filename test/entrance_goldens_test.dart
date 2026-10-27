@@ -41,7 +41,7 @@ Future<void> _pumpAt(
           width: 342,
           height: 400,
           child: ShapeMap(
-            map: ShapeMaps.southAmericaCountries,
+            map: ShapeMaps.southAmerica,
             data: _data,
             markers: _markers,
             animationDuration: Duration.zero,

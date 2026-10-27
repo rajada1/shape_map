@@ -17,7 +17,7 @@ Widget _map({
       width: 342,
       height: 400,
       child: ShapeMap(
-        map: ShapeMaps.southAmericaCountries,
+        map: ShapeMaps.southAmerica,
         data: _data,
         controller: controller,
         entrance: entrance ?? const ShapeMapEntrance(),
@@ -56,7 +56,7 @@ void main() {
             width: 342,
             height: 400,
             child: ShapeMap(
-              map: ShapeMaps.southAmericaCountries,
+              map: ShapeMaps.southAmerica,
               data: _data,
               controller: controller,
               entrance: const ShapeMapEntrance(
@@ -76,7 +76,7 @@ void main() {
     animation.value = 1;
     await tester.pump();
     final transform = calculateTransform(
-      ShapeMaps.southAmericaCountries,
+      ShapeMaps.southAmerica,
       tester.getSize(map),
       BoxFit.contain,
       Alignment.center,
@@ -84,7 +84,7 @@ void main() {
     await tester.tapAt(
       tester.getTopLeft(map) +
           transform.forward(
-            ShapeMaps.southAmericaCountries.regionById('BR')!.markerAnchor,
+            ShapeMaps.southAmerica.regionById('BR')!.markerAnchor,
           ),
     );
     expect(tapped?.id, 'BR');
@@ -103,7 +103,7 @@ void main() {
             width: 342,
             height: 400,
             child: ShapeMap(
-              map: ShapeMaps.southAmericaCountries,
+              map: ShapeMaps.southAmerica,
               data: _data,
               controller: controller,
               entrance: const ShapeMapEntrance(
@@ -162,10 +162,7 @@ void main() {
         home: SizedBox(
           width: 342,
           height: 400,
-          child: ShapeMap(
-            map: ShapeMaps.southAmericaCountries,
-            entrance: entrance,
-          ),
+          child: ShapeMap(map: ShapeMaps.southAmerica, entrance: entrance),
         ),
       ),
     );
@@ -186,7 +183,7 @@ void main() {
   test('top-to-bottom stagger starts with the smallest transformed y', () {
     final cache = MapRenderCache();
     cache.update(
-      ShapeMaps.southAmericaCountries,
+      ShapeMaps.southAmerica,
       const Size(342, 400),
       BoxFit.contain,
       Alignment.center,

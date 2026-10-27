@@ -144,6 +144,9 @@ class ShapeMapStyle {
     this.borderWidth = 2,
     this.hoverColor,
     this.selectedColor,
+    this.selectedBorderColor,
+    this.selectedBorderWidth = 0,
+    this.selectedOpacity = 70 / 255,
     this.marker = const MarkerStyle(),
     this.tooltip = const TooltipStyle(),
   });
@@ -166,6 +169,15 @@ class ShapeMapStyle {
   /// Optional selected highlight color.
   final Color? selectedColor;
 
+  /// Optional border color for the selected region.
+  final Color? selectedBorderColor;
+
+  /// Selected-region border width in screen pixels.
+  final double selectedBorderWidth;
+
+  /// Opacity of the selected-region fill.
+  final double selectedOpacity;
+
   /// Marker configuration.
   final MarkerStyle marker;
 
@@ -181,6 +193,9 @@ class ShapeMapStyle {
       other.borderWidth == borderWidth &&
       other.hoverColor == hoverColor &&
       other.selectedColor == selectedColor &&
+      other.selectedBorderColor == selectedBorderColor &&
+      other.selectedBorderWidth == selectedBorderWidth &&
+      other.selectedOpacity == selectedOpacity &&
       other.marker == marker &&
       other.tooltip == tooltip;
 
@@ -192,6 +207,9 @@ class ShapeMapStyle {
     borderWidth,
     hoverColor,
     selectedColor,
+    selectedBorderColor,
+    selectedBorderWidth,
+    selectedOpacity,
     marker,
     tooltip,
   );

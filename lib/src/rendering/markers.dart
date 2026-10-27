@@ -4,6 +4,7 @@ import 'package:flutter/rendering.dart';
 
 import '../animation/entrance.dart';
 import '../data/models.dart';
+import '../state/camera.dart';
 import '../style/style.dart';
 import 'transform.dart';
 
@@ -150,6 +151,7 @@ class MarkerPainter extends CustomPainter {
     required this.progress,
     required this.entrance,
     required this.repaint,
+    this.camera,
   }) : _version = layoutCache.version,
        _cacheVersion = cache.version,
        super(repaint: repaint);
@@ -161,6 +163,7 @@ class MarkerPainter extends CustomPainter {
   final Animation<double> progress;
   final ShapeMapEntrance? entrance;
   final Listenable repaint;
+  final ShapeMapCameraController? camera;
   final int _version;
   final int _cacheVersion;
   final Paint _fillPaint = Paint();
@@ -175,9 +178,17 @@ class MarkerPainter extends CustomPainter {
       ..strokeWidth = style.borderWidth * scale;
     final t = animation.value;
     final p = progress.value;
+    final viewport = Offset.zero & size;
     for (var index = 0; index < layoutCache.entries.length; index++) {
       final entry = layoutCache.entries[index];
-      final center = cache.transform.forward(entry.position);
+      final center = camera == null
+          ? cache.transform.forward(entry.position)
+          : ShapeMapCameraMath.apply(
+              cache.transform,
+              camera!.scale,
+              camera!.pan,
+              entry.position,
+            );
       final diameter =
           entry.previousDiameter +
           (entry.targetDiameter - entry.previousDiameter) * t;
@@ -193,6 +204,23 @@ class MarkerPainter extends CustomPainter {
         factor = Curves.easeOutBack.transform(local);
         if (factor <= 0) continue;
       }
+      final effectiveRadius = radius * factor;
+      var bounds = Rect.fromCircle(center: center, radius: effectiveRadius);
+      final textPainter = entry.textPainter;
+      if (entry.showLabel && textPainter != null) {
+        final halfSize = Offset(
+          textPainter.width * factor / 2,
+          textPainter.height * factor / 2,
+        );
+        bounds = bounds.expandToInclude(
+          Rect.fromCenter(
+            center: center,
+            width: halfSize.dx * 2,
+            height: halfSize.dy * 2,
+          ),
+        );
+      }
+      if (!bounds.overlaps(viewport)) continue;
       if (factor == 1) {
         _paintMarker(canvas, center, radius, entry);
       } else {
@@ -232,7 +260,8 @@ class MarkerPainter extends CustomPainter {
       !identical(oldDelegate.animation, animation) ||
       !identical(oldDelegate.progress, progress) ||
       oldDelegate.entrance != entrance ||
-      !identical(oldDelegate.repaint, repaint);
+      !identical(oldDelegate.repaint, repaint) ||
+      oldDelegate.camera != camera;
 }
 
 const _regionPhaseEnd = 0.78;

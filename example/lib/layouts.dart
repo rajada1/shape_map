@@ -1,8 +1,6 @@
-import 'dart:ui';
-
 import 'package:shape_map/shape_map.dart';
 
-/// Data and marker fixtures matching mapa_view_1.svg.
+/// Data and markers using anchors computed from public map geometry.
 class ReferenceLayouts {
   ReferenceLayouts._();
 
@@ -18,64 +16,16 @@ class ReferenceLayouts {
     'UY': MapRegionData(value: 90),
   };
 
-  /// South American markers with the exact reference centers and diameters.
+  /// South American markers anchored by each region's polylabel position.
   static const southAmericaMarkers = <MapMarkerData>[
-    MapMarkerData(
-      regionId: 'BR',
-      value: 9800,
-      label: '9,8 mil',
-      diameter: 66,
-      position: Offset(215, 125),
-    ),
-    MapMarkerData(
-      regionId: 'AR',
-      value: 820,
-      label: '820',
-      diameter: 38,
-      position: Offset(142, 268),
-    ),
-    MapMarkerData(
-      regionId: 'PE',
-      value: 610,
-      label: '610',
-      diameter: 36,
-      position: Offset(92, 112),
-    ),
-    MapMarkerData(
-      regionId: 'CL',
-      value: 450,
-      label: '450',
-      diameter: 34,
-      position: Offset(88, 240),
-    ),
-    MapMarkerData(
-      regionId: 'BO',
-      value: 290,
-      label: '290',
-      diameter: 32,
-      position: Offset(140, 150),
-    ),
-    MapMarkerData(
-      regionId: 'PY',
-      value: 180,
-      label: '180',
-      diameter: 32,
-      position: Offset(172, 186),
-    ),
-    MapMarkerData(
-      regionId: 'EC',
-      value: 150,
-      label: '150',
-      diameter: 30,
-      position: Offset(64, 72),
-    ),
-    MapMarkerData(
-      regionId: 'UY',
-      value: 90,
-      label: '90',
-      diameter: 30,
-      position: Offset(188, 236),
-    ),
+    MapMarkerData(regionId: 'BR', value: 9800, label: '9,8 mil', diameter: 66),
+    MapMarkerData(regionId: 'AR', value: 820, label: '820', diameter: 38),
+    MapMarkerData(regionId: 'PE', value: 610, label: '610', diameter: 36),
+    MapMarkerData(regionId: 'CL', value: 450, label: '450', diameter: 34),
+    MapMarkerData(regionId: 'BO', value: 290, label: '290', diameter: 32),
+    MapMarkerData(regionId: 'PY', value: 180, label: '180', diameter: 32),
+    MapMarkerData(regionId: 'EC', value: 150, label: '150', diameter: 30),
+    MapMarkerData(regionId: 'UY', value: 90, label: '90', diameter: 30),
   ];
 
   /// All Brazilian federative units have data in the reference layout.
@@ -89,7 +39,49 @@ class ReferenceLayouts {
     };
   }
 
-  /// Brazilian markers mapped to the 25 reference SVG badges.
+  /// Latin American sample data (largest economies of the region).
+  static const latinAmericaData = <String, MapRegionData>{
+    'BR': MapRegionData(value: 9800),
+    'MX': MapRegionData(value: 7400),
+    'AR': MapRegionData(value: 820),
+    'CO': MapRegionData(value: 760),
+    'CL': MapRegionData(value: 450),
+    'PE': MapRegionData(value: 610),
+    'CU': MapRegionData(value: 210),
+    'GT': MapRegionData(value: 180),
+  };
+
+  /// Markers for [latinAmericaData].
+  static const latinAmericaMarkers = <MapMarkerData>[
+    MapMarkerData(regionId: 'BR', value: 9800, label: '9,8 mil', diameter: 60),
+    MapMarkerData(regionId: 'MX', value: 7400, label: '7,4 mil', diameter: 54),
+    MapMarkerData(regionId: 'AR', value: 820, label: '820', diameter: 36),
+    MapMarkerData(regionId: 'CO', value: 760, label: '760', diameter: 34),
+    MapMarkerData(regionId: 'PE', value: 610, label: '610', diameter: 32),
+    MapMarkerData(regionId: 'CL', value: 450, label: '450', diameter: 30),
+  ];
+
+  /// World sample data, one highlighted country per continent.
+  static const worldData = <String, MapRegionData>{
+    'BR': MapRegionData(value: 9800),
+    'US': MapRegionData(value: 8700),
+    'CN': MapRegionData(value: 7600),
+    'IN': MapRegionData(value: 5100),
+    'DE': MapRegionData(value: 2300),
+    'NG': MapRegionData(value: 1200),
+    'AU': MapRegionData(value: 900),
+  };
+
+  /// Markers for [worldData].
+  static const worldMarkers = <MapMarkerData>[
+    MapMarkerData(regionId: 'BR', value: 9800, label: '9,8 mil', diameter: 44),
+    MapMarkerData(regionId: 'US', value: 8700, label: '8,7 mil', diameter: 42),
+    MapMarkerData(regionId: 'CN', value: 7600, label: '7,6 mil', diameter: 40),
+    MapMarkerData(regionId: 'IN', value: 5100, label: '5,1 mil', diameter: 34),
+    MapMarkerData(regionId: 'AU', value: 900, label: '900', diameter: 26),
+  ];
+
+  /// Brazilian markers scaled over the 27 computed UF anchors.
   static const brazilMarkers = <MapMarkerData>[
     MapMarkerData(regionId: 'BR-AP', value: 1, diameter: 9.5, showLabel: false),
     MapMarkerData(regionId: 'BR-AC', value: 1, diameter: 9.5, showLabel: false),

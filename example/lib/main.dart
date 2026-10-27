@@ -1,11 +1,18 @@
+import 'dart:async';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:shape_map/shape_map.dart';
 
 import 'layouts.dart';
 
-void main() => runApp(const ShapeMapExampleApp());
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  // Garante que nenhum getter decodifique um mapa durante o primeiro build.
+  await ShapeMaps.preload();
+  runApp(const ShapeMapExampleApp());
+}
 
 class ShapeMapExampleApp extends StatelessWidget {
   const ShapeMapExampleApp({super.key});
@@ -27,18 +34,37 @@ class MapGallery extends StatefulWidget {
 
 class _MapGalleryState extends State<MapGallery>
     with SingleTickerProviderStateMixin {
+  static const _municipalityColors = [
+    Color(0xFFE8F5E9),
+    Color(0xFFA5D6A7),
+    Color(0xFF66BB6A),
+    Color(0xFF2E7D32),
+    Color(0xFF0D4D21),
+  ];
+
   final _random = Random();
   final _controller = ShapeMapController();
+  final _camera = ShapeMapCameraController();
   late final AnimationController _entrance;
-  int _tab = 0;
+  int _tab = 2;
   ShapeMapEntranceStyle _style = ShapeMapEntranceStyle.fade;
   ShapeMapStaggerOrder _order = ShapeMapStaggerOrder.topToBottom;
   Duration _entranceDuration = const Duration(milliseconds: 1200);
   Map<String, MapRegionData> _data = ReferenceLayouts.southAmericaData;
   List<MapMarkerData> _markers = ReferenceLayouts.southAmericaMarkers;
+  MapDefinition? _municipalityMap;
+  Map<String, MapRegionData> _municipalityData = const {};
+  List<MapMarkerData> _municipalityMarkers = const [];
+  Object? _municipalityError;
+  bool _municipalityLoading = false;
 
-  MapDefinition get _map =>
-      _tab == 0 ? ShapeMaps.southAmericaCountries : ShapeMaps.brazilStates;
+  MapDefinition get _map => switch (_tab) {
+    0 => ShapeMaps.world,
+    1 => ShapeMaps.latinAmerica,
+    2 => ShapeMaps.southAmerica,
+    3 => ShapeMaps.brazilStates,
+    _ => _municipalityMap ?? ShapeMaps.brazilStates,
+  };
 
   @override
   void initState() {
@@ -48,6 +74,93 @@ class _MapGalleryState extends State<MapGallery>
       duration: _entranceDuration,
       value: 0,
     )..forward();
+  }
+
+  Future<void> _loadMunicipalities() async {
+    if (_municipalityLoading) return;
+    setState(() {
+      _municipalityLoading = true;
+      _municipalityError = null;
+    });
+    try {
+      final bytes = await rootBundle.load(
+        'assets/maps/brazil_municipalities.smap',
+      );
+      final map = await ShapeMapData.decode(bytes, id: 'brazilMunicipalities');
+      await map.warmUp();
+      final data = <String, MapRegionData>{};
+      for (final region in map.regions) {
+        final code = region.id.substring(3);
+        var hash = 17;
+        for (final character in code.codeUnits) {
+          hash = (hash * 31 + character) & 0x7fffffff;
+        }
+        final value = hash % 1000;
+        final band = value * _municipalityColors.length ~/ 1000;
+        data[region.id] = MapRegionData(
+          value: value,
+          fill:
+              _municipalityColors[band.clamp(
+                0,
+                _municipalityColors.length - 1,
+              )],
+        );
+      }
+      const capitalCodes = <String>[
+        '1200401',
+        '2704302',
+        '1600303',
+        '1302603',
+        '2927408',
+        '2304400',
+        '5300108',
+        '3205309',
+        '5208707',
+        '2111300',
+        '5103403',
+        '5002704',
+        '3106200',
+        '1501402',
+        '2507507',
+        '4106902',
+        '2611606',
+        '2211001',
+        '3304557',
+        '2408102',
+        '4314902',
+        '1100205',
+        '1400100',
+        '4205407',
+        '3550308',
+        '2800308',
+        '1721000',
+      ];
+      final markers = [
+        for (final code in capitalCodes)
+          if (map.regionById('BR-$code') case final region?)
+            MapMarkerData(
+              regionId: region.id,
+              value: data[region.id]?.value ?? 0,
+              position: region.markerAnchor,
+              diameter: 8,
+              showLabel: false,
+            ),
+      ];
+      if (!mounted) return;
+      setState(() {
+        _municipalityMap = map;
+        _municipalityData = data;
+        _municipalityMarkers = markers;
+        _municipalityLoading = false;
+      });
+      _entrance.forward(from: 0);
+    } catch (error) {
+      if (!mounted) return;
+      setState(() {
+        _municipalityError = error;
+        _municipalityLoading = false;
+      });
+    }
   }
 
   void _randomize() {
@@ -76,17 +189,34 @@ class _MapGalleryState extends State<MapGallery>
   void _changeTab(int tab) {
     setState(() {
       _tab = tab;
-      if (tab == 0) {
-        _data = ReferenceLayouts.southAmericaData;
-        _markers = ReferenceLayouts.southAmericaMarkers;
-        _controller.clearSelection();
-      } else {
-        _data = ReferenceLayouts.brazilData();
-        _markers = ReferenceLayouts.brazilMarkers;
-        _controller.select('BR-BA');
+      switch (tab) {
+        case 2:
+          _data = ReferenceLayouts.southAmericaData;
+          _markers = ReferenceLayouts.southAmericaMarkers;
+          _controller.clearSelection();
+          break;
+        case 3:
+          _data = ReferenceLayouts.brazilData();
+          _markers = ReferenceLayouts.brazilMarkers;
+          _controller.select('BR-BA');
+          break;
+        case 4:
+          _data = _municipalityData;
+          _markers = _municipalityMarkers;
+          _controller.clearSelection();
+          break;
+        case 0:
+          _data = ReferenceLayouts.worldData;
+          _markers = ReferenceLayouts.worldMarkers;
+          _controller.clearSelection();
+        case 1:
+          _data = ReferenceLayouts.latinAmericaData;
+          _markers = ReferenceLayouts.latinAmericaMarkers;
+          _controller.clearSelection();
       }
       _replay();
     });
+    if (tab == 4 && _municipalityMap == null) unawaited(_loadMunicipalities());
   }
 
   void _replay() {
@@ -112,6 +242,7 @@ class _MapGalleryState extends State<MapGallery>
   void dispose() {
     _entrance.dispose();
     _controller.dispose();
+    _camera.dispose();
     super.dispose();
   }
 
@@ -131,57 +262,142 @@ class _MapGalleryState extends State<MapGallery>
       padding: const EdgeInsets.all(16),
       child: Column(
         children: [
-          Row(
-            children: [
-              Expanded(
-                child: FilledButton.tonal(
-                  onPressed: _tab == 0 ? null : () => _changeTab(0),
-                  child: const Text('América do Sul'),
-                ),
-              ),
-              const SizedBox(width: 8),
-              Expanded(
-                child: FilledButton.tonal(
-                  onPressed: _tab == 1 ? null : () => _changeTab(1),
-                  child: const Text('Brasil'),
-                ),
-              ),
-            ],
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: SegmentedButton<int>(
+              segments: const [
+                ButtonSegment(value: 0, label: Text('Mundo')),
+                ButtonSegment(value: 1, label: Text('América Latina')),
+                ButtonSegment(value: 2, label: Text('América do Sul')),
+                ButtonSegment(value: 3, label: Text('Brasil')),
+                ButtonSegment(value: 4, label: Text('Municípios (BR)')),
+              ],
+              selected: {_tab},
+              onSelectionChanged: (selection) => _changeTab(selection.first),
+            ),
           ),
           const SizedBox(height: 16),
           Expanded(
             child: LayoutBuilder(
               builder: (context, constraints) {
-                final map = RepaintBoundary(
-                  child: ShapeMap(
-                    map: _map,
-                    data: _data,
-                    markers: _markers,
-                    controller: _controller,
-                    entrance: ShapeMapEntrance(
-                      style: _style,
-                      duration: _entranceDuration,
-                      staggerOrder: _order,
-                    ),
-                    entranceAnimation: _entrance,
-                    animationDuration: const Duration(milliseconds: 300),
-                    onRegionTap: (region) =>
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(
-                            content: Text('Selecionado: ${region.name}'),
-                          ),
+                if (_tab == 4 && _municipalityMap == null) {
+                  return _MunicipalityStatus(
+                    loading: _municipalityLoading,
+                    error: _municipalityError,
+                    onRetry: _loadMunicipalities,
+                  );
+                }
+                final mapData = _tab == 4 ? _municipalityData : _data;
+                final mapMarkers = _tab == 4 ? _municipalityMarkers : _markers;
+                final map = Stack(
+                  fit: StackFit.expand,
+                  children: [
+                    RepaintBoundary(
+                      child: ShapeMap(
+                        map: _map,
+                        data: mapData,
+                        markers: mapMarkers,
+                        controller: _controller,
+                        cameraController: _camera,
+                        zoomEnabled: true,
+                        maxScale: _tab == 4 ? 40 : 10,
+                        entrance: ShapeMapEntrance(
+                          style: _tab == 4
+                              ? ShapeMapEntranceStyle.fade
+                              : _style,
+                          duration: _entranceDuration,
+                          staggerOrder: _order,
                         ),
-                    style: ShapeMapStyle(
-                      selectedColor: const Color(0xFFFF9A76),
-                      marker: MarkerStyle(
-                        borderWidth: _tab == 1 ? 1.5 : 2,
-                        textStyle: const TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w600,
+                        entranceAnimation: _entrance,
+                        animationDuration: const Duration(milliseconds: 300),
+                        onRegionTap: (_) {},
+                        style: ShapeMapStyle(
+                          selectedColor: const Color(0xFFFF9A76),
+                          // 5.570 municípios: borda fina para não cobrir os
+                          // municípios pequenos (unidades do viewBox).
+                          borderWidth: _tab == 4 ? 0.5 : 2,
+                          marker: MarkerStyle(
+                            borderWidth: _tab == 3 ? 1.5 : 2,
+                            textStyle: const TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
                         ),
                       ),
                     ),
-                  ),
+                    Positioned(
+                      top: 8,
+                      left: 8,
+                      right: 8,
+                      child: ListenableBuilder(
+                        listenable: _controller,
+                        builder: (context, child) {
+                          final selected = _controller.selectedRegionId;
+                          final region = selected == null
+                              ? null
+                              : _map.regionById(selected);
+                          return Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              if (region != null)
+                                Material(
+                                  color: Theme.of(
+                                    context,
+                                  ).colorScheme.surface.withValues(alpha: 0.92),
+                                  borderRadius: BorderRadius.circular(20),
+                                  child: Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                      horizontal: 12,
+                                      vertical: 7,
+                                    ),
+                                    child: Text(region.name),
+                                  ),
+                                )
+                              else
+                                const SizedBox.shrink(),
+                              Material(
+                                color: Theme.of(
+                                  context,
+                                ).colorScheme.surface.withValues(alpha: 0.92),
+                                borderRadius: BorderRadius.circular(20),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    IconButton(
+                                      tooltip: 'Ampliar',
+                                      onPressed: () => _camera.zoomBy(1.5),
+                                      icon: const Icon(Icons.add),
+                                    ),
+                                    IconButton(
+                                      tooltip: 'Reduzir',
+                                      onPressed: () => _camera.zoomBy(1 / 1.5),
+                                      icon: const Icon(Icons.remove),
+                                    ),
+                                    IconButton(
+                                      tooltip: 'Redefinir zoom',
+                                      onPressed: _camera.resetZoom,
+                                      icon: const Icon(Icons.refresh),
+                                    ),
+                                    IconButton(
+                                      tooltip: 'Ampliar seleção',
+                                      onPressed: region == null
+                                          ? null
+                                          : () =>
+                                                _camera.zoomToRegion(region.id),
+                                      icon: const Icon(
+                                        Icons.center_focus_strong,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          );
+                        },
+                      ),
+                    ),
+                  ],
                 );
                 final controls = _EntranceControls(
                   animation: _entrance,
@@ -438,4 +654,47 @@ class _EntranceControls extends StatelessWidget {
       label: Text(label),
     ),
   );
+}
+
+class _MunicipalityStatus extends StatelessWidget {
+  const _MunicipalityStatus({
+    required this.loading,
+    required this.error,
+    required this.onRetry,
+  });
+
+  final bool loading;
+  final Object? error;
+  final Future<void> Function() onRetry;
+
+  @override
+  Widget build(BuildContext context) {
+    if (loading) {
+      return const Center(child: CircularProgressIndicator());
+    }
+    return Center(
+      child: Padding(
+        padding: const EdgeInsets.all(24),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const Text(
+              'Não foi possível carregar a malha municipal.',
+              textAlign: TextAlign.center,
+            ),
+            if (error != null) ...[
+              const SizedBox(height: 8),
+              Text('$error', textAlign: TextAlign.center),
+            ],
+            const SizedBox(height: 12),
+            FilledButton.icon(
+              onPressed: onRetry,
+              icon: const Icon(Icons.refresh),
+              label: const Text('Tentar novamente'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
 }

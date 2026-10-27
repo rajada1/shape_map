@@ -14,62 +14,14 @@ const _southData = <String, MapRegionData>{
 };
 
 const _southMarkers = <MapMarkerData>[
-  MapMarkerData(
-    regionId: 'BR',
-    value: 9800,
-    label: '9,8 mil',
-    diameter: 66,
-    position: Offset(215, 125),
-  ),
-  MapMarkerData(
-    regionId: 'AR',
-    value: 820,
-    label: '820',
-    diameter: 38,
-    position: Offset(142, 268),
-  ),
-  MapMarkerData(
-    regionId: 'PE',
-    value: 610,
-    label: '610',
-    diameter: 36,
-    position: Offset(92, 112),
-  ),
-  MapMarkerData(
-    regionId: 'CL',
-    value: 450,
-    label: '450',
-    diameter: 34,
-    position: Offset(88, 240),
-  ),
-  MapMarkerData(
-    regionId: 'BO',
-    value: 290,
-    label: '290',
-    diameter: 32,
-    position: Offset(140, 150),
-  ),
-  MapMarkerData(
-    regionId: 'PY',
-    value: 180,
-    label: '180',
-    diameter: 32,
-    position: Offset(172, 186),
-  ),
-  MapMarkerData(
-    regionId: 'EC',
-    value: 150,
-    label: '150',
-    diameter: 30,
-    position: Offset(64, 72),
-  ),
-  MapMarkerData(
-    regionId: 'UY',
-    value: 90,
-    label: '90',
-    diameter: 30,
-    position: Offset(188, 236),
-  ),
+  MapMarkerData(regionId: 'BR', value: 9800, label: '9,8 mil', diameter: 66),
+  MapMarkerData(regionId: 'AR', value: 820, label: '820', diameter: 38),
+  MapMarkerData(regionId: 'PE', value: 610, label: '610', diameter: 36),
+  MapMarkerData(regionId: 'CL', value: 450, label: '450', diameter: 34),
+  MapMarkerData(regionId: 'BO', value: 290, label: '290', diameter: 32),
+  MapMarkerData(regionId: 'PY', value: 180, label: '180', diameter: 32),
+  MapMarkerData(regionId: 'EC', value: 150, label: '150', diameter: 30),
+  MapMarkerData(regionId: 'UY', value: 90, label: '90', diameter: 30),
 ];
 
 const _brazilMarkers = <MapMarkerData>[
@@ -109,6 +61,44 @@ Map<String, MapRegionData> _brazilData() => {
     ),
 };
 
+const _latinData = <String, MapRegionData>{
+  'BR': MapRegionData(value: 9800),
+  'MX': MapRegionData(value: 7400),
+  'AR': MapRegionData(value: 820),
+  'CO': MapRegionData(value: 760),
+  'CL': MapRegionData(value: 450),
+  'PE': MapRegionData(value: 610),
+  'CU': MapRegionData(value: 210),
+  'GT': MapRegionData(value: 180),
+};
+
+const _latinMarkers = <MapMarkerData>[
+  MapMarkerData(regionId: 'BR', value: 1, label: '9,8 mil', diameter: 60),
+  MapMarkerData(regionId: 'MX', value: 1, label: '7,4 mil', diameter: 54),
+  MapMarkerData(regionId: 'AR', value: 1, label: '820', diameter: 36),
+  MapMarkerData(regionId: 'CO', value: 1, label: '760', diameter: 34),
+  MapMarkerData(regionId: 'PE', value: 1, label: '610', diameter: 32),
+  MapMarkerData(regionId: 'CL', value: 1, label: '450', diameter: 30),
+];
+
+const _worldData = <String, MapRegionData>{
+  'BR': MapRegionData(value: 9800),
+  'US': MapRegionData(value: 8700),
+  'CN': MapRegionData(value: 7600),
+  'IN': MapRegionData(value: 5100),
+  'DE': MapRegionData(value: 2300),
+  'NG': MapRegionData(value: 1200),
+  'AU': MapRegionData(value: 900),
+};
+
+const _worldMarkers = <MapMarkerData>[
+  MapMarkerData(regionId: 'BR', value: 1, label: '9,8 mil', diameter: 44),
+  MapMarkerData(regionId: 'US', value: 1, label: '8,7 mil', diameter: 42),
+  MapMarkerData(regionId: 'CN', value: 1, label: '7,6 mil', diameter: 40),
+  MapMarkerData(regionId: 'IN', value: 1, label: '5,1 mil', diameter: 34),
+  MapMarkerData(regionId: 'AU', value: 1, label: '900', diameter: 26),
+];
+
 void _setGoldenSize(WidgetTester tester, Size size) {
   tester.view.physicalSize = size;
   tester.view.devicePixelRatio = 1;
@@ -116,24 +106,30 @@ void _setGoldenSize(WidgetTester tester, Size size) {
   addTearDown(tester.view.resetDevicePixelRatio);
 }
 
-void main() {
-  testWidgets('South America reference layout', (tester) async {
-    _setGoldenSize(tester, const Size(342, 400));
-    await tester.pumpWidget(
-      MaterialApp(
-        home: Center(
-          child: SizedBox(
-            width: 342,
-            height: 400,
-            child: ShapeMap(
-              map: ShapeMaps.southAmericaCountries,
-              data: _southData,
-              markers: _southMarkers,
-              animationDuration: Duration.zero,
-            ),
-          ),
-        ),
+Widget _map(
+  MapDefinition definition,
+  Map<String, MapRegionData> data,
+  List<MapMarkerData> markers,
+) => MaterialApp(
+  home: Center(
+    child: SizedBox(
+      width: definition.viewBox.width,
+      height: definition.viewBox.height,
+      child: ShapeMap(
+        map: definition,
+        data: data,
+        markers: markers,
+        animationDuration: Duration.zero,
       ),
+    ),
+  ),
+);
+
+void main() {
+  testWidgets('South America layout', (tester) async {
+    _setGoldenSize(tester, const Size(820, 1040));
+    await tester.pumpWidget(
+      _map(ShapeMaps.southAmerica, _southData, _southMarkers),
     );
     await tester.pump();
     await expectLater(
@@ -142,15 +138,15 @@ void main() {
     );
   });
 
-  testWidgets('Brazil reference layout', (tester) async {
-    _setGoldenSize(tester, const Size(342, 330));
+  testWidgets('Brazil states layout', (tester) async {
+    _setGoldenSize(tester, const Size(900, 1000));
     final controller = ShapeMapController()..select('BR-BA');
     await tester.pumpWidget(
       MaterialApp(
         home: Center(
           child: SizedBox(
-            width: 342,
-            height: 330,
+            width: 900,
+            height: 1000,
             child: ShapeMap(
               map: ShapeMaps.brazilStates,
               data: _brazilData(),
@@ -174,8 +170,30 @@ void main() {
     await tester.pump();
     await expectLater(
       find.byType(ShapeMap),
-      matchesGoldenFile('goldens/brazil.png'),
+      matchesGoldenFile('goldens/brazil_states.png'),
     );
     controller.dispose();
+  });
+
+  testWidgets('World layout', (tester) async {
+    _setGoldenSize(tester, const Size(1200, 620));
+    await tester.pumpWidget(_map(ShapeMaps.world, _worldData, _worldMarkers));
+    await tester.pump();
+    await expectLater(
+      find.byType(ShapeMap),
+      matchesGoldenFile('goldens/world.png'),
+    );
+  });
+
+  testWidgets('Latin America layout', (tester) async {
+    _setGoldenSize(tester, const Size(1100, 780));
+    await tester.pumpWidget(
+      _map(ShapeMaps.latinAmerica, _latinData, _latinMarkers),
+    );
+    await tester.pump();
+    await expectLater(
+      find.byType(ShapeMap),
+      matchesGoldenFile('goldens/latin_america.png'),
+    );
   });
 }

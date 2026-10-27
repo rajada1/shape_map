@@ -1,0 +1,97 @@
+{
+  "format": "SMAP v2",
+  "maps": {
+    "world": {
+      "regions": 234,
+      "vertices": 9700,
+      "bytes": 48230,
+      "maxRegionVertices": 702,
+      "viewBox": [
+        1200,
+        620
+      ],
+      "quantizationScale": 0.25,
+      "simplificationTolerance": 0.6,
+      "estimatedMaxError": 0.6,
+      "innerBorders": 340,
+      "outlinePolylines": 294,
+      "innerEdges": 2459,
+      "outlineEdges": 4782,
+      "nearlySharedEdges": 96
+    },
+    "latin_america": {
+      "regions": 34,
+      "vertices": 3288,
+      "bytes": 13746,
+      "maxRegionVertices": 617,
+      "viewBox": [
+        1100,
+        780
+      ],
+      "quantizationScale": 0.25,
+      "simplificationTolerance": 0.6,
+      "estimatedMaxError": 0.6,
+      "innerBorders": 37,
+      "outlinePolylines": 53,
+      "innerEdges": 756,
+      "outlineEdges": 1776,
+      "nearlySharedEdges": 0
+    },
+    "south_america": {
+      "regions": 13,
+      "vertices": 3358,
+      "bytes": 12638,
+      "maxRegionVertices": 770,
+      "viewBox": [
+        820,
+        1040
+      ],
+      "quantizationScale": 0.25,
+      "simplificationTolerance": 0.6,
+      "estimatedMaxError": 0.6,
+      "innerBorders": 26,
+      "outlinePolylines": 42,
+      "innerEdges": 926,
+      "outlineEdges": 1506,
+      "nearlySharedEdges": 0
+    },
+    "brazil_states": {
+      "regions": 27,
+      "vertices": 5412,
+      "bytes": 19425,
+      "maxRegionVertices": 391,
+      "viewBox": [
+        900,
+        1000
+      ],
+      "quantizationScale": 0.25,
+      "simplificationTolerance": 0.6,
+      "estimatedMaxError": 0.6,
+      "innerBorders": 52,
+      "outlinePolylines": 14,
+      "innerEdges": 1968,
+      "outlineEdges": 1476,
+      "nearlySharedEdges": 0
+    },
+    "brazil_municipalities": {
+      "regions": 5570,
+      "vertices": 94740,
+      "bytes": 675530,
+      "maxRegionVertices": 310,
+      "viewBox": [
+        900,
+        1000
+      ],
+      "quantizationScale": 0.25,
+      "simplificationTolerance": 0.4,
+      "estimatedMaxError": 0.4,
+      "innerBorders": 15860,
+      "outlinePolylines": 23,
+      "innerEdges": 46199,
+      "outlineEdges": 2334,
+      "nearlySharedEdges": 12,
+      "asset": "example/assets/maps/brazil_municipalities.smap",
+      "assetBytes": 675530
+    }
+  }
+}

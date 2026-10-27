@@ -1,3 +1,24 @@
+## 0.4.0
+
+* Adiciona zoom, pan e seleção controlados por `ShapeMapCameraController`, com gestos opcionais e zoom por região.
+* Novos parâmetros em `ShapeMap`: `cameraController`, `zoomEnabled` (padrão `false`, sem mudança para quem já usa o package), `minScale`, `maxScale`, `cameraAnimationDuration`, `cameraAnimationCurve` e `onRegionSelected` (`ShapeMapSelectionCallback`). Novos campos em `ShapeMapStyle`: `selectedBorderColor`, `selectedBorderWidth` e `selectedOpacity`.
+* Melhora o caminho de mapas grandes: grade espacial 8×8 com culling de fills e bordas durante zoom/pan, crossfade por tile e bucket de escala para evitar regravações desnecessárias de bordas; marcadores fora da viewport são ignorados.
+* Documenta `warmUp()` como preparação recomendada para o índice de hit-test de mapas grandes.
+
+## 0.3.0
+
+Breaking: a geometria passa a vir de dados geográficos reais em vez dos SVGs de referência de design.
+
+* Substitui as referências SVG por geometrias Natural Earth 50m (países, domínio público) e IBGE (UFs), projetadas, simplificadas topologicamente (tolerância de 0,6 unidade do viewBox) e quantizadas (grade de 0,25). Os SVGs foram movidos para `design/` apenas como referência.
+* Adiciona `ShapeMaps.world`, `ShapeMaps.latinAmerica` e `ShapeMaps.southAmerica`; `ShapeMaps.southAmericaCountries` passa a ser alias deprecated.
+* Adiciona o formato binário SMAP v2 (varints, deltas zigzag, bordas compartilhadas encadeadas), `ShapeMapData.decodeSync`/`decode` (parsing em isolate) e geometria com `Path` lazy sobre buffers tipados planos.
+* Adiciona `ShapeMaps.preload` e `ShapeMapId` (decodificação assíncrona dos mapas embutidos) e `MapDefinition.warmUp` (materializa paths e hit-test em fatias cooperativas).
+* Adiciona índice espacial 64×64 para hit-test (`MapDefinition.hitTest`).
+* Mapas com mais de 1.000 regiões: transformação única de canvas, fill e borda em `ui.Picture` no viewBox (custo de pintura independente do número de cores), crossfade de dados entre Pictures, entrada `fade` em lote e `stagger` em até 48 bandas agrupadas por banda e cor; `grow` e `draw` caem para `fade`.
+* Malha opcional dos 5.570 municípios brasileiros (`BR-<código IBGE>`), fora do core, distribuída como asset do app de exemplo e carregada sob demanda.
+* Pipeline offline determinístico (`dart run tool/generate_maps.dart`) com mapshaper e polylabel pinados (somente em tempo de build), fontes com SHA-256 em `tool/maps/sources.json` e atribuição em `ATTRIBUTION.md`.
+* Correções: orientação vertical cartográfica, polylines de borda com 2 pontos, largura da borda em mapas grandes e invalidação da borda no resize de mapas pequenos.
+
 ## 0.2.0
 
 * Adiciona animação de entrada configurável para regiões e marcadores (`fade`, `grow`, `stagger` e `draw`), com controller interno ou externo.

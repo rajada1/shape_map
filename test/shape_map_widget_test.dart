@@ -15,7 +15,7 @@ void main() {
             width: 342,
             height: 400,
             child: ShapeMap(
-              map: ShapeMaps.southAmericaCountries,
+              map: ShapeMaps.southAmerica,
               data: const {'BR': MapRegionData(value: 620)},
               animationDuration: Duration.zero,
               onRegionTap: (region) => tapped = region,
@@ -28,14 +28,12 @@ void main() {
     expect(find.byType(CustomPaint), findsAtLeastNWidgets(4));
     final mapFinder = find.byType(ShapeMap);
     final transform = calculateTransform(
-      ShapeMaps.southAmericaCountries,
+      ShapeMaps.southAmerica,
       tester.getSize(mapFinder),
       BoxFit.contain,
       Alignment.center,
     );
-    final brazilAnchor = ShapeMaps.southAmericaCountries
-        .regionById('BR')!
-        .markerAnchor;
+    final brazilAnchor = ShapeMaps.southAmerica.regionById('BR')!.markerAnchor;
     final tapPosition =
         tester.getTopLeft(mapFinder) + transform.forward(brazilAnchor);
     await tester.tapAt(tapPosition);

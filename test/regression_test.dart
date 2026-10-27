@@ -20,17 +20,33 @@ void main() {
     expect(const ShapeMapStyle(), const ShapeMapStyle());
   });
 
-  test('map definition memoizes region lookup', () {
-    final map = ShapeMaps.southAmericaCountries;
-    expect(map.regionById('BR')?.name, 'Brasil');
-    expect(map.indexOf('BR'), greaterThanOrEqualTo(0));
-    expect(map.indexOf('missing'), -1);
+  test('generated map anchors preserve geographic orientation', () {
+    Offset anchor(MapDefinition map, String id) =>
+        map.regionById(id)!.markerAnchor;
+
+    final brazil = ShapeMaps.brazilStates;
+    expect(anchor(brazil, 'BR-RR').dy, lessThan(anchor(brazil, 'BR-RS').dy));
+    expect(anchor(brazil, 'BR-AC').dx, lessThan(anchor(brazil, 'BR-PE').dx));
+
+    final world = ShapeMaps.world;
+    expect(anchor(world, 'GL').dy, lessThan(anchor(world, 'AR').dy));
+    expect(anchor(world, 'NO').dy, lessThan(anchor(world, 'ZA').dy));
+    expect(anchor(world, 'US').dx, lessThan(anchor(world, 'CN').dx));
+
+    expect(
+      anchor(ShapeMaps.southAmerica, 'VE').dy,
+      lessThan(anchor(ShapeMaps.southAmerica, 'AR').dy),
+    );
+    expect(
+      anchor(ShapeMaps.latinAmerica, 'MX').dy,
+      lessThan(anchor(ShapeMaps.latinAmerica, 'CL').dy),
+    );
   });
 
   test('marker cache does not create a painter for hidden labels', () {
     final cache = MarkerLayoutCache();
     cache.update(
-      ShapeMaps.southAmericaCountries,
+      ShapeMaps.southAmerica,
       const [MapMarkerData(regionId: 'BR', value: 1, showLabel: false)],
       const MarkerStyle(),
       const {},
@@ -51,7 +67,7 @@ void main() {
             width: 342,
             height: 400,
             child: ShapeMap(
-              map: ShapeMaps.southAmericaCountries,
+              map: ShapeMaps.southAmerica,
               controller: controller,
               animationDuration: Duration.zero,
               data: const {'BR': MapRegionData(value: 620)},
@@ -78,14 +94,12 @@ void main() {
     );
 
     final transform = calculateTransform(
-      ShapeMaps.southAmericaCountries,
+      ShapeMaps.southAmerica,
       tester.getSize(mapFinder),
       BoxFit.contain,
       Alignment.center,
     );
-    final peAnchor = ShapeMaps.southAmericaCountries
-        .regionById('PE')!
-        .markerAnchor;
+    final peAnchor = ShapeMaps.southAmerica.regionById('PE')!.markerAnchor;
     await tester.tapAt(
       tester.getTopLeft(mapFinder) + transform.forward(peAnchor),
     );
@@ -102,7 +116,7 @@ void main() {
             width: 342,
             height: 400,
             child: ShapeMap(
-              map: ShapeMaps.southAmericaCountries,
+              map: ShapeMaps.southAmerica,
               controller: controller,
               animationDuration: Duration.zero,
             ),
@@ -127,7 +141,7 @@ void main() {
           width: 342,
           height: 400,
           child: ShapeMap(
-            map: ShapeMaps.southAmericaCountries,
+            map: ShapeMaps.southAmerica,
             data: data,
             animationDuration: const Duration(milliseconds: 300),
           ),
@@ -156,7 +170,7 @@ void main() {
             width: 342,
             height: 400,
             child: ShapeMap(
-              map: ShapeMaps.southAmericaCountries,
+              map: ShapeMaps.southAmerica,
               data: const {'BR': MapRegionData(value: 1)},
               markers: const [
                 MapMarkerData(regionId: 'BR', value: 1, diameter: 20),

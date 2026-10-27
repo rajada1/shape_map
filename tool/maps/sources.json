@@ -1,0 +1,47 @@
+{
+  "naturalEarth50mCountries": {
+    "id": "naturalEarth50mCountries",
+    "url": "https://naciscdn.org/naturalearth/50m/cultural/ne_50m_admin_0_countries.zip",
+    "sha256": "5fed433373581fa648920435f937d95f2d3c0200e067409c6478dcdf1b853139",
+    "license": "Public domain (Natural Earth)",
+    "scale": "50m",
+    "quality": "admin-0 cultural",
+    "date": "2025-02-01"
+  },
+  "ibgeStatesIntermediate": {
+    "id": "ibgeStatesIntermediate",
+    "url": "https://servicodados.ibge.gov.br/api/v3/malhas/paises/BR?formato=application/vnd.geo+json&intrarregiao=UF&qualidade=intermediaria",
+    "sha256": "09bc90c2391229ed1b07f11bbde0986180139f64b5e882379d8926c21eff0052",
+    "license": "IBGE open data (CC BY 4.0)",
+    "scale": "intermediaria",
+    "quality": "UF",
+    "date": "2025-02-01"
+  },
+  "ibgeStateNames": {
+    "id": "ibgeStateNames",
+    "url": "https://servicodados.ibge.gov.br/api/v1/localidades/estados",
+    "sha256": "7ca1368dea3af83cba1af84ae8a7e88f1173c97586831d086cc8b3c1ba9c6596",
+    "license": "IBGE open data (CC BY 4.0)",
+    "scale": "administrative states",
+    "quality": "names",
+    "date": "2025-02-01"
+  },
+  "ibgeMunicipalitiesIntermediate": {
+    "id": "ibgeMunicipalitiesIntermediate",
+    "url": "https://servicodados.ibge.gov.br/api/v3/malhas/paises/BR?formato=application/vnd.geo+json&intrarregiao=municipio&qualidade=intermediaria",
+    "sha256": "4bae3d8d9c8dd5ec520c94a35dadf0d273f5f661a63cf0b5e95e9efdb3047588",
+    "license": "IBGE open data (CC BY 4.0)",
+    "scale": "intermediaria",
+    "quality": "municipio",
+    "date": "2025-02-01"
+  },
+  "ibgeMunicipalityNames": {
+    "id": "ibgeMunicipalityNames",
+    "url": "https://servicodados.ibge.gov.br/api/v1/localidades/municipios",
+    "sha256": "86ecdccdf97d72e7e5e46f0854cfcea8bacc28154cc1bc4ed0e6110e3a6c9c02",
+    "license": "IBGE open data (CC BY 4.0)",
+    "scale": "municipalities",
+    "quality": "names",
+    "date": "2025-02-01"
+  }
+}
