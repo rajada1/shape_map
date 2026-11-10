@@ -544,24 +544,53 @@ List<List<_FocusPiece>> _focusComponents(
   List<_FocusPiece> pieces,
   Size viewBox,
 ) {
-  final remaining = {...pieces};
   final threshold = math.max(viewBox.width, viewBox.height) * 0.015;
+  final buckets = <String, List<int>>{};
+  String key(int x, int y) => '$x:$y';
+  for (var index = 0; index < pieces.length; index++) {
+    final bounds = pieces[index].bounds;
+    final left = (bounds.left / threshold).floor();
+    final right = (bounds.right / threshold).floor();
+    final top = (bounds.top / threshold).floor();
+    final bottom = (bounds.bottom / threshold).floor();
+    for (var y = top; y <= bottom; y++) {
+      for (var x = left; x <= right; x++) {
+        (buckets[key(x, y)] ??= <int>[]).add(index);
+      }
+    }
+  }
+
+  final remaining = <int>{
+    ...List<int>.generate(pieces.length, (index) => index),
+  };
   final components = <List<_FocusPiece>>[];
   while (remaining.isNotEmpty) {
     final component = <_FocusPiece>[];
-    final queue = <_FocusPiece>[remaining.first];
+    final queue = <int>[remaining.first];
     remaining.remove(queue.first);
     while (queue.isNotEmpty) {
-      final current = queue.removeLast();
+      final currentIndex = queue.removeLast();
+      final current = pieces[currentIndex];
       component.add(current);
-      final connected = remaining
-          .where(
-            (candidate) =>
-                _rectGap(current.bounds, candidate.bounds) <= threshold,
-          )
-          .toList();
-      remaining.removeAll(connected);
-      queue.addAll(connected);
+      final left = ((current.bounds.left - threshold) / threshold).floor();
+      final right = ((current.bounds.right + threshold) / threshold).floor();
+      final top = ((current.bounds.top - threshold) / threshold).floor();
+      final bottom = ((current.bounds.bottom + threshold) / threshold).floor();
+      final candidates = <int>{};
+      for (var y = top; y <= bottom; y++) {
+        for (var x = left; x <= right; x++) {
+          candidates.addAll(buckets[key(x, y)] ?? const <int>[]);
+        }
+      }
+      for (final candidateIndex in candidates) {
+        if (!remaining.contains(candidateIndex)) continue;
+        if (_rectGap(current.bounds, pieces[candidateIndex].bounds) >
+            threshold) {
+          continue;
+        }
+        remaining.remove(candidateIndex);
+        queue.add(candidateIndex);
+      }
     }
     components.add(component);
   }
