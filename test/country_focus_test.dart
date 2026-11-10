@@ -11,6 +11,74 @@ Map<String, dynamic> _catalog() =>
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
+  test('all generated focus maps stay inside their viewBox', () async {
+    expect(ShapeMaps.focusCountries, hasLength(198));
+    for (final iso in ShapeMaps.focusCountries) {
+      final map = await ShapeMaps.loadCountryFocus(iso);
+      final viewBox = Offset.zero & map.viewBox;
+      final tolerance = viewBox.inflate(0.5);
+      final content = map.contentBounds;
+      final focus = map.focusBounds;
+      final primary = map.primaryFocusBounds;
+      expect(tolerance.contains(content.topLeft), isTrue, reason: iso);
+      expect(tolerance.contains(content.bottomRight), isTrue, reason: iso);
+      expect(focus, isNotNull, reason: iso);
+      expect(tolerance.contains(focus!.topLeft), isTrue, reason: iso);
+      expect(tolerance.contains(focus.bottomRight), isTrue, reason: iso);
+      expect(primary, isNotNull, reason: iso);
+      expect(tolerance.contains(primary!.topLeft), isTrue, reason: iso);
+      expect(tolerance.contains(primary.bottomRight), isTrue, reason: iso);
+      expect(content.width, greaterThan(0), reason: iso);
+      expect(content.height, greaterThan(0), reason: iso);
+      expect(focus.width, greaterThan(0), reason: iso);
+      expect(focus.height, greaterThan(0), reason: iso);
+    }
+  });
+
+  test('primary focus bounds follow principal-territory rules', () async {
+    for (final iso in ['FR', 'US', 'NL', 'PT', 'CL', 'EC', 'ES', 'NO']) {
+      final map = await ShapeMaps.loadCountryFocus(iso);
+      final primary = map.primaryFocusBounds!;
+      final focus = map.focusBounds!;
+      expect(
+        primary.width < focus.width * 0.95 ||
+            primary.height < focus.height * 0.95,
+        isTrue,
+        reason: iso,
+      );
+    }
+    for (final iso in ['DE', 'BR']) {
+      final map = await ShapeMaps.loadCountryFocus(iso);
+      final primary = map.primaryFocusBounds!;
+      final focus = map.focusBounds!;
+      expect(
+        primary.width,
+        closeTo(focus.width, focus.width * 0.05),
+        reason: iso,
+      );
+      expect(
+        primary.height,
+        closeTo(focus.height, focus.height * 0.05),
+        reason: iso,
+      );
+    }
+    for (final iso in ['ID', 'JP', 'NZ']) {
+      final map = await ShapeMaps.loadCountryFocus(iso);
+      final primary = map.primaryFocusBounds!;
+      final focus = map.focusBounds!;
+      expect(
+        primary.width,
+        closeTo(focus.width, focus.width * 0.05),
+        reason: iso,
+      );
+      expect(
+        primary.height,
+        closeTo(focus.height, focus.height * 0.05),
+        reason: iso,
+      );
+    }
+  });
+
   test('country focus catalog exposes non-South-American examples', () {
     for (final iso in ['US', 'FR', 'IN', 'JP', 'ZA', 'AU']) {
       expect(ShapeMaps.hasFocus(iso), isTrue, reason: iso);

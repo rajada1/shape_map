@@ -2,6 +2,7 @@
 
 import 'dart:typed_data';
 import 'dart:ui';
+import 'dart:math' as math;
 
 import '../style/style.dart';
 
@@ -165,6 +166,9 @@ class MapGeometry {
 
   /// Whether this geometry was loaded from quantized rings.
   bool get isQuantized => _coordinates != null;
+
+  /// View-box units represented by one quantized integer unit.
+  double get quantizationScale => _scale;
 
   /// Integer rings used by the binary codec, when available.
   List<Int32List> get quantizedRings {
@@ -353,12 +357,72 @@ class MapDefinition {
     return result;
   }
 
+  /// Bounds of the principal territory in the focused country.
+  ///
+  /// Focus regions are grouped by touching or nearby bounds. The largest
+  /// connected land cluster is selected, with small nearby components included
+  /// for compact annexed islands such as Corsica. If no cluster represents at
+  /// least 70% of the land-area score, the whole focus is retained. This
+  /// threshold tolerates simplified administrative polygons. Indonesia, Japan
+  /// and New Zealand explicitly retain their full archipelagos because none has
+  /// one unambiguous principal territory.
+  Rect? get primaryFocusBounds {
+    final cached = _primaryFocusBounds;
+    if (cached != null) return cached;
+    final prefix = focusRegionPrefix;
+    if (prefix == null) return null;
+    final focused = regions
+        .where((region) => region.id.startsWith(prefix))
+        .toList();
+    if (focused.isEmpty) return null;
+
+    final pieces = _focusPieces(focused);
+    if (pieces.length == 1) {
+      return _primaryFocusBounds = pieces.single.bounds;
+    }
+    final components = _focusComponents(pieces, viewBox);
+    if (components.length == 1) {
+      return _primaryFocusBounds = focusBounds;
+    }
+    final scored = [
+      for (final component in components)
+        (
+          pieces: component,
+          score: component.fold<double>(0, (sum, piece) => sum + piece.score),
+        ),
+    ]..sort((a, b) => b.score.compareTo(a.score));
+    final largest = scored.first;
+    final countryIso = prefix.length >= 2 ? prefix.substring(0, 2) : '';
+    const noPrincipalTerritory = {'ID', 'JP', 'NZ'};
+    if (noPrincipalTerritory.contains(countryIso)) {
+      return _primaryFocusBounds = focusBounds;
+    }
+    final totalScore = scored.fold<double>(0, (sum, item) => sum + item.score);
+    if (largest.score / totalScore < 0.70) {
+      return _primaryFocusBounds = focusBounds;
+    }
+
+    var selected = <_FocusPiece>[...largest.pieces];
+    var selectedBounds = _unionPieceBounds(selected);
+    final proximity = viewBox.longestSide * 0.06;
+    for (final candidate in scored.skip(1)) {
+      final candidateBounds = _unionPieceBounds(candidate.pieces);
+      final gap = _rectGap(selectedBounds, candidateBounds);
+      if (gap <= proximity && candidate.score <= largest.score * 0.12) {
+        selected = [...selected, ...candidate.pieces];
+        selectedBounds = _unionPieceBounds(selected);
+      }
+    }
+    return _primaryFocusBounds = selectedBounds;
+  }
+
   /// Whether this definition contains shared border streams.
   bool get hasSharedBorders => innerBorders.isNotEmpty || outline.isNotEmpty;
 
   Map<String, int>? _regionIndices;
   _MapSpatialGrid? _spatialGrid;
   Rect? _contentBounds;
+  Rect? _primaryFocusBounds;
 
   /// Finds the region with [id], or null when it is not part of this map.
   MapRegion? regionById(String id) {
@@ -408,6 +472,100 @@ class MapDefinition {
   /// lazy path test. The index is built once and memoized per map definition.
   MapRegion? hitTest(Offset point) =>
       (_spatialGrid ??= _MapSpatialGrid(this)).hitTest(point);
+}
+
+class _FocusPiece {
+  const _FocusPiece(this.bounds, this.score);
+
+  final Rect bounds;
+  final double score;
+}
+
+List<_FocusPiece> _focusPieces(List<MapRegion> regions) {
+  final pieces = <_FocusPiece>[];
+  for (final region in regions) {
+    final rings = region.geometry.quantizedRings;
+    if (rings.isEmpty) {
+      final bounds = region.bounds;
+      pieces.add(_FocusPiece(bounds, bounds.width * bounds.height));
+      continue;
+    }
+    for (final ring in rings) {
+      var minX = double.infinity;
+      var minY = double.infinity;
+      var maxX = double.negativeInfinity;
+      var maxY = double.negativeInfinity;
+      var signedArea = 0.0;
+      for (var index = 0; index < ring.length; index += 2) {
+        final next = (index + 2) % ring.length;
+        final x = ring[index] * region.geometry.quantizationScale;
+        final y = ring[index + 1] * region.geometry.quantizationScale;
+        final nextX = ring[next] * region.geometry.quantizationScale;
+        final nextY = ring[next + 1] * region.geometry.quantizationScale;
+        signedArea += x * nextY - nextX * y;
+        minX = math.min(minX, x);
+        minY = math.min(minY, y);
+        maxX = math.max(maxX, x);
+        maxY = math.max(maxY, y);
+      }
+      final bounds = Rect.fromLTRB(minX, minY, maxX, maxY);
+      final score = signedArea.abs() / 2;
+      pieces.add(
+        _FocusPiece(bounds, score == 0 ? bounds.width * bounds.height : score),
+      );
+    }
+  }
+  return pieces;
+}
+
+Rect _unionPieceBounds(List<_FocusPiece> pieces) {
+  var result = pieces.first.bounds;
+  for (final piece in pieces.skip(1)) {
+    result = result.expandToInclude(piece.bounds);
+  }
+  return result;
+}
+
+double _rectGap(Rect a, Rect b) {
+  final dx = a.right < b.left
+      ? b.left - a.right
+      : b.right < a.left
+      ? a.left - b.right
+      : 0;
+  final dy = a.bottom < b.top
+      ? b.top - a.bottom
+      : b.bottom < a.top
+      ? a.top - b.bottom
+      : 0;
+  return math.sqrt(dx * dx + dy * dy);
+}
+
+List<List<_FocusPiece>> _focusComponents(
+  List<_FocusPiece> pieces,
+  Size viewBox,
+) {
+  final remaining = {...pieces};
+  final threshold = math.max(viewBox.width, viewBox.height) * 0.015;
+  final components = <List<_FocusPiece>>[];
+  while (remaining.isNotEmpty) {
+    final component = <_FocusPiece>[];
+    final queue = <_FocusPiece>[remaining.first];
+    remaining.remove(queue.first);
+    while (queue.isNotEmpty) {
+      final current = queue.removeLast();
+      component.add(current);
+      final connected = remaining
+          .where(
+            (candidate) =>
+                _rectGap(current.bounds, candidate.bounds) <= threshold,
+          )
+          .toList();
+      remaining.removeAll(connected);
+      queue.addAll(connected);
+    }
+    components.add(component);
+  }
+  return components;
 }
 
 class _MapSpatialGrid {

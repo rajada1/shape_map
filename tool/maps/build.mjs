@@ -452,6 +452,17 @@ function pointsFromGeometry(geometry) {
   return featureParts({ geometry }).flatMap((part) => part.flatMap((ring) => ring.map((p) => [p[0], p[1]])));
 }
 
+function crossesAntimeridian(collection) {
+  let min = Infinity; let max = -Infinity;
+  for (const [longitude] of collection.features
+    .flatMap((feature) => pointsFromGeometry(feature.geometry))) {
+    min = Math.min(min, longitude);
+    max = Math.max(max, longitude);
+  }
+  if (!Number.isFinite(min)) return false;
+  return min < -150 && max > 150 && max - min > 180;
+}
+
 function projectCommand(proj, input, output, dissolveById = false) {
   return `-i ${quote(input)}${dissolveById ? ' -dissolve2 field=id' : ''} -proj ${proj} -o format=geojson ${quote(output)}`;
 }
@@ -461,8 +472,12 @@ async function projectAndNormalize(collection, mapConfig) {
   const projected = path.join(cacheDir, `${mapConfig.id}-projected.json`);
   const normalized = path.join(cacheDir, `${mapConfig.id}-normalized.json`);
   const simplified = path.join(cacheDir, `${mapConfig.id}-simplified.json`);
+  const isCountryFocus = mapConfig.id.startsWith('country_focus_');
+  const projection = isCountryFocus && crossesAntimeridian(collection)
+    ? `${mapConfig.proj} +lon_0=180`
+    : mapConfig.proj;
   fs.writeFileSync(raw, JSON.stringify(collection));
-  await runMapshaper(projectCommand(mapConfig.proj, raw, projected, mapConfig.dissolveById));
+  await runMapshaper(projectCommand(projection, raw, projected, mapConfig.dissolveById));
   const geo = JSON.parse(fs.readFileSync(projected, 'utf8'));
   const inputNames = new Map(JSON.parse(fs.readFileSync(raw, 'utf8')).features.map((feature) => [feature.properties?.id, feature.properties?.name]));
   for (const feature of geo.features) {
@@ -473,8 +488,12 @@ async function projectAndNormalize(collection, mapConfig) {
   let minX = Infinity; let minY = Infinity; let maxX = -Infinity; let maxY = -Infinity;
   for (const [x, y] of all) { minX = Math.min(minX, x); minY = Math.min(minY, y); maxX = Math.max(maxX, x); maxY = Math.max(maxY, y); }
   const computedBounds = { minX, minY, maxX, maxY };
-  const bounds = mapConfig.normalizationBounds ?? normalizationBoundsByProjection.get(mapConfig.proj) ?? computedBounds;
-  if (mapConfig.captureNormalizationBounds) {
+  // Country focus maps are independently normalized. They must never inherit
+  // or update the projection-wide bounds used by the regional/world maps.
+  const bounds = isCountryFocus
+    ? computedBounds
+    : mapConfig.normalizationBounds ?? normalizationBoundsByProjection.get(mapConfig.proj) ?? computedBounds;
+  if (!isCountryFocus && mapConfig.captureNormalizationBounds) {
     normalizationBoundsByProjection.set(mapConfig.proj, computedBounds);
     mapConfig.normalizationBounds = computedBounds;
   }
@@ -733,6 +752,45 @@ function mapModel(geo, config) {
   return { id: config.id, width: config.width, height: config.height, scale, focusRegionPrefix: config.focusRegionPrefix, regions, inner: lines.inner, outline: lines.outline, nearlyShared: lines.nearlyShared, edgeCounts: lines.edgeCounts };
 }
 
+function boundsForRegions(regions, scale, predicate = () => true) {
+  let minX = Infinity; let minY = Infinity; let maxX = -Infinity; let maxY = -Infinity;
+  for (const region of regions) {
+    if (!predicate(region)) continue;
+    minX = Math.min(minX, region.bbox[0] * scale);
+    minY = Math.min(minY, region.bbox[1] * scale);
+    maxX = Math.max(maxX, region.bbox[2] * scale);
+    maxY = Math.max(maxY, region.bbox[3] * scale);
+  }
+  return { minX, minY, maxX, maxY };
+}
+
+function validateBoundsWithinViewBox(map, config) {
+  const tolerance = 1;
+  const viewBox = { minX: 0, minY: 0, maxX: config.width, maxY: config.height };
+  const check = (bounds, label, requireFill = true) => {
+    if (!Number.isFinite(bounds.minX)) throw new Error(`${config.id}: ${label} is empty`);
+    if (bounds.minX < viewBox.minX - tolerance || bounds.minY < viewBox.minY - tolerance ||
+        bounds.maxX > viewBox.maxX + tolerance || bounds.maxY > viewBox.maxY + tolerance) {
+      throw new Error(`${config.id}: ${label} leaves viewBox ${JSON.stringify(bounds)}`);
+    }
+    const width = bounds.maxX - bounds.minX;
+    const height = bounds.maxY - bounds.minY;
+    if (requireFill && width < config.width * 0.75 && height < config.height * 0.75) {
+      throw new Error(`${config.id}: ${label} does not fill the viewBox reasonably: ${JSON.stringify(bounds)}`);
+    }
+  };
+  check(boundsForRegions(map.regions, map.scale), 'contentBounds', !config.id.includes('focus'));
+  if (config.focusRegionPrefix) {
+    check(
+      boundsForRegions(map.regions, map.scale, (region) =>
+        region.id.startsWith(config.focusRegionPrefix),
+      ),
+      'focusBounds',
+      !config.id.includes('focus'),
+    );
+  }
+}
+
 function writeAsset(map, filename, directory = exampleAssetsDir) {
   const bytes = encode(map);
   fs.mkdirSync(directory, { recursive: true });
@@ -931,7 +989,6 @@ async function main() {
       height: 700,
       proj: '+proj=eqearth',
       simplifyTolerance: 0.6,
-      captureNormalizationBounds: true,
       focusRegionPrefix: `${countryId}-`,
       packageAsset: `${countryId}.smap`,
       allowLongSegments: true,
@@ -1105,6 +1162,7 @@ async function main() {
       if (focused.length === 0) throw new Error(`${config.id}: no region matches focus prefix ${config.focusRegionPrefix}`);
       if (focused.some((region) => !region.id.startsWith(config.focusRegionPrefix))) throw new Error(`${config.id}: focus prefix mismatch`);
     }
+    validateBoundsWithinViewBox(model, config);
     if (config.id === 'brazil_municipalities') {
       const prefixes = new Set(model.regions.map((region) => region.id.slice(3, 5)));
       const expectedUfPrefixes = new Set(['11','12','13','14','15','16','17','21','22','23','24','25','26','27','28','29','31','32','33','35','41','42','43','50','51','52','53']);

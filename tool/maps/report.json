@@ -30563,9 +30563,9 @@
     },
     "country_focus_ae": {
       "regions": 7,
-      "vertices": 1549,
-      "bytes": 9799,
-      "maxRegionVertices": 615,
+      "vertices": 1147,
+      "bytes": 4792,
+      "maxRegionVertices": 490,
       "viewBox": [
         900,
         700
@@ -30575,17 +30575,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 23,
       "outlinePolylines": 15,
-      "innerEdges": 359,
-      "outlineEdges": 831,
+      "innerEdges": 234,
+      "outlineEdges": 679,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/AE.smap",
-      "assetBytes": 9799
+      "assetBytes": 4792
     },
     "country_focus_af": {
       "regions": 34,
-      "vertices": 7444,
-      "bytes": 25999,
-      "maxRegionVertices": 556,
+      "vertices": 4463,
+      "bytes": 16228,
+      "maxRegionVertices": 350,
       "viewBox": [
         900,
         700
@@ -30595,17 +30595,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 80,
       "outlinePolylines": 1,
-      "innerEdges": 3070,
-      "outlineEdges": 1304,
+      "innerEdges": 1811,
+      "outlineEdges": 841,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/AF.smap",
-      "assetBytes": 25999
+      "assetBytes": 16228
     },
     "country_focus_ag": {
       "regions": 8,
-      "vertices": 83,
-      "bytes": 775,
-      "maxRegionVertices": 20,
+      "vertices": 179,
+      "bytes": 1152,
+      "maxRegionVertices": 44,
       "viewBox": [
         900,
         700
@@ -30615,17 +30615,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 9,
       "outlinePolylines": 3,
-      "innerEdges": 17,
-      "outlineEdges": 49,
-      "nearlySharedEdges": 2,
+      "innerEdges": 33,
+      "outlineEdges": 113,
+      "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/AG.smap",
-      "assetBytes": 775
+      "assetBytes": 1152
     },
     "country_focus_ai": {
       "regions": 1,
-      "vertices": 21,
-      "bytes": 171,
-      "maxRegionVertices": 21,
+      "vertices": 23,
+      "bytes": 182,
+      "maxRegionVertices": 23,
       "viewBox": [
         900,
         700
@@ -30636,16 +30636,16 @@
       "innerBorders": 0,
       "outlinePolylines": 4,
       "innerEdges": 0,
-      "outlineEdges": 21,
+      "outlineEdges": 23,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/AI.smap",
-      "assetBytes": 171
+      "assetBytes": 182
     },
     "country_focus_al": {
       "regions": 12,
-      "vertices": 2424,
-      "bytes": 10743,
-      "maxRegionVertices": 289,
+      "vertices": 1677,
+      "bytes": 6182,
+      "maxRegionVertices": 194,
       "viewBox": [
         900,
         700
@@ -30655,17 +30655,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 22,
       "outlinePolylines": 1,
-      "innerEdges": 942,
-      "outlineEdges": 540,
+      "innerEdges": 608,
+      "outlineEdges": 461,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/AL.smap",
-      "assetBytes": 10743
+      "assetBytes": 6182
     },
     "country_focus_am": {
       "regions": 11,
-      "vertices": 1175,
-      "bytes": 4656,
-      "maxRegionVertices": 154,
+      "vertices": 1256,
+      "bytes": 4908,
+      "maxRegionVertices": 163,
       "viewBox": [
         900,
         700
@@ -30675,17 +30675,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 20,
       "outlinePolylines": 4,
-      "innerEdges": 391,
-      "outlineEdges": 393,
+      "innerEdges": 430,
+      "outlineEdges": 396,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/AM.smap",
-      "assetBytes": 4656
+      "assetBytes": 4908
     },
     "country_focus_ao": {
       "regions": 18,
-      "vertices": 6154,
-      "bytes": 22366,
-      "maxRegionVertices": 665,
+      "vertices": 2621,
+      "bytes": 9546,
+      "maxRegionVertices": 258,
       "viewBox": [
         900,
         700
@@ -30695,17 +30695,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 34,
       "outlinePolylines": 3,
-      "innerEdges": 2339,
-      "outlineEdges": 1476,
+      "innerEdges": 1005,
+      "outlineEdges": 611,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/AO.smap",
-      "assetBytes": 22366
+      "assetBytes": 9546
     },
     "country_focus_ar": {
       "regions": 24,
-      "vertices": 3866,
-      "bytes": 15006,
-      "maxRegionVertices": 296,
+      "vertices": 2059,
+      "bytes": 8465,
+      "maxRegionVertices": 137,
       "viewBox": [
         900,
         700
@@ -30714,18 +30714,18 @@
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
       "innerBorders": 43,
-      "outlinePolylines": 8,
-      "innerEdges": 1055,
-      "outlineEdges": 1756,
+      "outlinePolylines": 6,
+      "innerEdges": 598,
+      "outlineEdges": 863,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/AR.smap",
-      "assetBytes": 15006
+      "assetBytes": 8465
     },
     "country_focus_at": {
       "regions": 9,
-      "vertices": 340,
-      "bytes": 1669,
-      "maxRegionVertices": 62,
+      "vertices": 1753,
+      "bytes": 6584,
+      "maxRegionVertices": 310,
       "viewBox": [
         900,
         700
@@ -30735,17 +30735,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 14,
       "outlinePolylines": 1,
-      "innerEdges": 101,
-      "outlineEdges": 138,
+      "innerEdges": 486,
+      "outlineEdges": 781,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/AT.smap",
-      "assetBytes": 1669
+      "assetBytes": 6584
     },
     "country_focus_au": {
       "regions": 8,
-      "vertices": 12690,
-      "bytes": 52034,
-      "maxRegionVertices": 3136,
+      "vertices": 1873,
+      "bytes": 7952,
+      "maxRegionVertices": 456,
       "viewBox": [
         900,
         700
@@ -30754,18 +30754,18 @@
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
       "innerBorders": 10,
-      "outlinePolylines": 92,
-      "innerEdges": 771,
-      "outlineEdges": 11148,
+      "outlinePolylines": 28,
+      "innerEdges": 167,
+      "outlineEdges": 1539,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/AU.smap",
-      "assetBytes": 52034
+      "assetBytes": 7952
     },
     "country_focus_az": {
       "regions": 77,
-      "vertices": 901,
-      "bytes": 7190,
-      "maxRegionVertices": 26,
+      "vertices": 3814,
+      "bytes": 16774,
+      "maxRegionVertices": 172,
       "viewBox": [
         900,
         700
@@ -30773,19 +30773,19 @@
       "quantizationScale": 0.25,
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
-      "innerBorders": 163,
-      "outlinePolylines": 2,
-      "innerEdges": 366,
-      "outlineEdges": 169,
+      "innerBorders": 164,
+      "outlinePolylines": 8,
+      "innerEdges": 1477,
+      "outlineEdges": 860,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/AZ.smap",
-      "assetBytes": 7190
+      "assetBytes": 16774
     },
     "country_focus_ba": {
       "regions": 11,
-      "vertices": 1009,
-      "bytes": 4259,
-      "maxRegionVertices": 167,
+      "vertices": 1062,
+      "bytes": 4456,
+      "maxRegionVertices": 172,
       "viewBox": [
         900,
         700
@@ -30795,17 +30795,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 14,
       "outlinePolylines": 2,
-      "innerEdges": 240,
-      "outlineEdges": 529,
+      "innerEdges": 250,
+      "outlineEdges": 562,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/BA.smap",
-      "assetBytes": 4259
+      "assetBytes": 4456
     },
     "country_focus_bb": {
       "regions": 11,
-      "vertices": 147,
-      "bytes": 1208,
-      "maxRegionVertices": 17,
+      "vertices": 265,
+      "bytes": 1729,
+      "maxRegionVertices": 35,
       "viewBox": [
         900,
         700
@@ -30815,17 +30815,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 20,
       "outlinePolylines": 1,
-      "innerEdges": 55,
-      "outlineEdges": 37,
+      "innerEdges": 113,
+      "outlineEdges": 39,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/BB.smap",
-      "assetBytes": 1208
+      "assetBytes": 1729
     },
     "country_focus_bd": {
       "regions": 7,
-      "vertices": 3253,
-      "bytes": 19571,
-      "maxRegionVertices": 758,
+      "vertices": 2075,
+      "bytes": 8310,
+      "maxRegionVertices": 499,
       "viewBox": [
         900,
         700
@@ -30835,17 +30835,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 10,
       "outlinePolylines": 22,
-      "innerEdges": 509,
-      "outlineEdges": 2235,
+      "innerEdges": 282,
+      "outlineEdges": 1511,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/BD.smap",
-      "assetBytes": 19571
+      "assetBytes": 8310
     },
     "country_focus_be": {
       "regions": 11,
-      "vertices": 1216,
-      "bytes": 4778,
-      "maxRegionVertices": 156,
+      "vertices": 1654,
+      "bytes": 6345,
+      "maxRegionVertices": 223,
       "viewBox": [
         900,
         700
@@ -30855,17 +30855,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 22,
       "outlinePolylines": 1,
-      "innerEdges": 432,
-      "outlineEdges": 352,
+      "innerEdges": 529,
+      "outlineEdges": 596,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/BE.smap",
-      "assetBytes": 4778
+      "assetBytes": 6345
     },
     "country_focus_bf": {
       "regions": 45,
-      "vertices": 5444,
-      "bytes": 21120,
-      "maxRegionVertices": 290,
+      "vertices": 4290,
+      "bytes": 16245,
+      "maxRegionVertices": 206,
       "viewBox": [
         900,
         700
@@ -30875,17 +30875,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 108,
       "outlinePolylines": 1,
-      "innerEdges": 2205,
-      "outlineEdges": 1034,
+      "innerEdges": 1791,
+      "outlineEdges": 708,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/BF.smap",
-      "assetBytes": 21120
+      "assetBytes": 16245
     },
     "country_focus_bg": {
       "regions": 28,
-      "vertices": 2672,
-      "bytes": 10330,
-      "maxRegionVertices": 195,
+      "vertices": 3163,
+      "bytes": 11852,
+      "maxRegionVertices": 228,
       "viewBox": [
         900,
         700
@@ -30895,17 +30895,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 62,
       "outlinePolylines": 1,
-      "innerEdges": 1081,
-      "outlineEdges": 510,
+      "innerEdges": 1239,
+      "outlineEdges": 685,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/BG.smap",
-      "assetBytes": 10330
+      "assetBytes": 11852
     },
     "country_focus_bh": {
       "regions": 5,
-      "vertices": 130,
-      "bytes": 857,
-      "maxRegionVertices": 61,
+      "vertices": 161,
+      "bytes": 1031,
+      "maxRegionVertices": 86,
       "viewBox": [
         900,
         700
@@ -30916,16 +30916,16 @@
       "innerBorders": 5,
       "outlinePolylines": 7,
       "innerEdges": 13,
-      "outlineEdges": 104,
+      "outlineEdges": 135,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/BH.smap",
-      "assetBytes": 857
+      "assetBytes": 1031
     },
     "country_focus_bi": {
       "regions": 17,
-      "vertices": 1147,
-      "bytes": 6045,
-      "maxRegionVertices": 117,
+      "vertices": 1127,
+      "bytes": 4735,
+      "maxRegionVertices": 114,
       "viewBox": [
         900,
         700
@@ -30935,17 +30935,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 34,
       "outlinePolylines": 1,
-      "innerEdges": 422,
-      "outlineEdges": 303,
+      "innerEdges": 415,
+      "outlineEdges": 297,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/BI.smap",
-      "assetBytes": 6045
+      "assetBytes": 4735
     },
     "country_focus_bj": {
       "regions": 12,
-      "vertices": 1188,
-      "bytes": 5107,
-      "maxRegionVertices": 196,
+      "vertices": 821,
+      "bytes": 3538,
+      "maxRegionVertices": 140,
       "viewBox": [
         900,
         700
@@ -30955,17 +30955,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 20,
       "outlinePolylines": 1,
-      "innerEdges": 309,
-      "outlineEdges": 570,
+      "innerEdges": 227,
+      "outlineEdges": 367,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/BJ.smap",
-      "assetBytes": 5107
+      "assetBytes": 3538
     },
     "country_focus_bm": {
       "regions": 11,
-      "vertices": 69,
-      "bytes": 906,
-      "maxRegionVertices": 14,
+      "vertices": 138,
+      "bytes": 1442,
+      "maxRegionVertices": 21,
       "viewBox": [
         900,
         700
@@ -30973,19 +30973,19 @@
       "quantizationScale": 0.25,
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
-      "innerBorders": 10,
-      "outlinePolylines": 1,
-      "innerEdges": 17,
-      "outlineEdges": 35,
+      "innerBorders": 12,
+      "outlinePolylines": 2,
+      "innerEdges": 22,
+      "outlineEdges": 94,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/BM.smap",
-      "assetBytes": 906
+      "assetBytes": 1442
     },
     "country_focus_bn": {
       "regions": 4,
-      "vertices": 206,
-      "bytes": 1674,
-      "maxRegionVertices": 74,
+      "vertices": 203,
+      "bytes": 1147,
+      "maxRegionVertices": 73,
       "viewBox": [
         900,
         700
@@ -30995,17 +30995,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 2,
       "outlinePolylines": 2,
-      "innerEdges": 26,
-      "outlineEdges": 154,
+      "innerEdges": 25,
+      "outlineEdges": 153,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/BN.smap",
-      "assetBytes": 1674
+      "assetBytes": 1147
     },
     "country_focus_bo": {
       "regions": 9,
-      "vertices": 4149,
-      "bytes": 16945,
-      "maxRegionVertices": 702,
+      "vertices": 1609,
+      "bytes": 6007,
+      "maxRegionVertices": 265,
       "viewBox": [
         900,
         700
@@ -31015,17 +31015,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 16,
       "outlinePolylines": 1,
-      "innerEdges": 1354,
-      "outlineEdges": 1441,
+      "innerEdges": 503,
+      "outlineEdges": 603,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/BO.smap",
-      "assetBytes": 16945
+      "assetBytes": 6007
     },
     "country_focus_br": {
       "regions": 27,
-      "vertices": 11705,
-      "bytes": 40247,
-      "maxRegionVertices": 846,
+      "vertices": 3821,
+      "bytes": 14117,
+      "maxRegionVertices": 273,
       "viewBox": [
         900,
         700
@@ -31033,19 +31033,19 @@
       "quantizationScale": 0.25,
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
-      "innerBorders": 53,
-      "outlinePolylines": 19,
-      "innerEdges": 4241,
-      "outlineEdges": 3223,
+      "innerBorders": 52,
+      "outlinePolylines": 5,
+      "innerEdges": 1401,
+      "outlineEdges": 1019,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/BR.smap",
-      "assetBytes": 40247
+      "assetBytes": 14117
     },
     "country_focus_bs": {
       "regions": 29,
-      "vertices": 172,
-      "bytes": 2251,
-      "maxRegionVertices": 18,
+      "vertices": 1027,
+      "bytes": 5774,
+      "maxRegionVertices": 91,
       "viewBox": [
         900,
         700
@@ -31054,18 +31054,18 @@
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
       "innerBorders": 8,
-      "outlinePolylines": 22,
-      "innerEdges": 11,
-      "outlineEdges": 150,
-      "nearlySharedEdges": 14,
+      "outlinePolylines": 36,
+      "innerEdges": 17,
+      "outlineEdges": 993,
+      "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/BS.smap",
-      "assetBytes": 2251
+      "assetBytes": 5774
     },
     "country_focus_bt": {
       "regions": 20,
-      "vertices": 1311,
-      "bytes": 5367,
-      "maxRegionVertices": 115,
+      "vertices": 2131,
+      "bytes": 7980,
+      "maxRegionVertices": 192,
       "viewBox": [
         900,
         700
@@ -31075,17 +31075,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 41,
       "outlinePolylines": 1,
-      "innerEdges": 529,
-      "outlineEdges": 253,
+      "innerEdges": 911,
+      "outlineEdges": 309,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/BT.smap",
-      "assetBytes": 5367
+      "assetBytes": 7980
     },
     "country_focus_bw": {
       "regions": 15,
-      "vertices": 1421,
-      "bytes": 6632,
-      "maxRegionVertices": 408,
+      "vertices": 808,
+      "bytes": 3844,
+      "maxRegionVertices": 221,
       "viewBox": [
         900,
         700
@@ -31095,17 +31095,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 25,
       "outlinePolylines": 1,
-      "innerEdges": 277,
-      "outlineEdges": 867,
+      "innerEdges": 162,
+      "outlineEdges": 484,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/BW.smap",
-      "assetBytes": 6632
+      "assetBytes": 3844
     },
     "country_focus_by": {
       "regions": 7,
-      "vertices": 1622,
-      "bytes": 5863,
-      "maxRegionVertices": 330,
+      "vertices": 2712,
+      "bytes": 9477,
+      "maxRegionVertices": 551,
       "viewBox": [
         900,
         700
@@ -31115,17 +31115,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 11,
       "outlinePolylines": 1,
-      "innerEdges": 541,
-      "outlineEdges": 540,
+      "innerEdges": 922,
+      "outlineEdges": 868,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/BY.smap",
-      "assetBytes": 5863
+      "assetBytes": 9477
     },
     "country_focus_bz": {
       "regions": 6,
-      "vertices": 554,
-      "bytes": 2497,
-      "maxRegionVertices": 166,
+      "vertices": 737,
+      "bytes": 3110,
+      "maxRegionVertices": 207,
       "viewBox": [
         900,
         700
@@ -31135,17 +31135,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 9,
       "outlinePolylines": 10,
-      "innerEdges": 118,
-      "outlineEdges": 318,
+      "innerEdges": 163,
+      "outlineEdges": 411,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/BZ.smap",
-      "assetBytes": 2497
+      "assetBytes": 3110
     },
     "country_focus_ca": {
       "regions": 13,
-      "vertices": 63367,
-      "bytes": 283226,
-      "maxRegionVertices": 31766,
+      "vertices": 4740,
+      "bytes": 22596,
+      "maxRegionVertices": 2209,
       "viewBox": [
         900,
         700
@@ -31153,19 +31153,19 @@
       "quantizationScale": 0.25,
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
-      "innerBorders": 26,
-      "outlinePolylines": 3370,
-      "innerEdges": 2962,
-      "outlineEdges": 57443,
-      "nearlySharedEdges": 0,
+      "innerBorders": 21,
+      "outlinePolylines": 643,
+      "innerEdges": 390,
+      "outlineEdges": 3960,
+      "nearlySharedEdges": 12,
       "asset": "assets/maps/country_focus/CA.smap",
-      "assetBytes": 283226
+      "assetBytes": 22596
     },
     "country_focus_cd": {
       "regions": 11,
-      "vertices": 1172,
-      "bytes": 4579,
-      "maxRegionVertices": 211,
+      "vertices": 2289,
+      "bytes": 8384,
+      "maxRegionVertices": 426,
       "viewBox": [
         900,
         700
@@ -31174,18 +31174,18 @@
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
       "innerBorders": 20,
-      "outlinePolylines": 1,
-      "innerEdges": 383,
-      "outlineEdges": 406,
+      "outlinePolylines": 2,
+      "innerEdges": 726,
+      "outlineEdges": 837,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/CD.smap",
-      "assetBytes": 4579
+      "assetBytes": 8384
     },
     "country_focus_cf": {
       "regions": 17,
-      "vertices": 1617,
-      "bytes": 6314,
-      "maxRegionVertices": 174,
+      "vertices": 2967,
+      "bytes": 10840,
+      "maxRegionVertices": 352,
       "viewBox": [
         900,
         700
@@ -31195,16 +31195,16 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 31,
       "outlinePolylines": 1,
-      "innerEdges": 573,
-      "outlineEdges": 471,
+      "innerEdges": 1034,
+      "outlineEdges": 899,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/CF.smap",
-      "assetBytes": 6314
+      "assetBytes": 10840
     },
     "country_focus_cg": {
       "regions": 12,
       "vertices": 1919,
-      "bytes": 7165,
+      "bytes": 7169,
       "maxRegionVertices": 247,
       "viewBox": [
         900,
@@ -31219,13 +31219,13 @@
       "outlineEdges": 737,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/CG.smap",
-      "assetBytes": 7165
+      "assetBytes": 7169
     },
     "country_focus_ch": {
       "regions": 26,
-      "vertices": 1362,
-      "bytes": 6102,
-      "maxRegionVertices": 140,
+      "vertices": 3306,
+      "bytes": 12323,
+      "maxRegionVertices": 337,
       "viewBox": [
         900,
         700
@@ -31233,19 +31233,19 @@
       "quantizationScale": 0.25,
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
-      "innerBorders": 76,
+      "innerBorders": 82,
       "outlinePolylines": 1,
-      "innerEdges": 524,
-      "outlineEdges": 314,
+      "innerEdges": 1325,
+      "outlineEdges": 656,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/CH.smap",
-      "assetBytes": 6102
+      "assetBytes": 12323
     },
     "country_focus_ci": {
       "regions": 19,
-      "vertices": 5291,
-      "bytes": 19184,
-      "maxRegionVertices": 715,
+      "vertices": 3183,
+      "bytes": 11739,
+      "maxRegionVertices": 418,
       "viewBox": [
         900,
         700
@@ -31255,17 +31255,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 44,
       "outlinePolylines": 2,
-      "innerEdges": 1901,
-      "outlineEdges": 1489,
+      "innerEdges": 1117,
+      "outlineEdges": 949,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/CI.smap",
-      "assetBytes": 19184
+      "assetBytes": 11739
     },
     "country_focus_cl": {
       "regions": 16,
-      "vertices": 10886,
-      "bytes": 45485,
-      "maxRegionVertices": 5163,
+      "vertices": 1800,
+      "bytes": 8400,
+      "maxRegionVertices": 639,
       "viewBox": [
         900,
         700
@@ -31274,18 +31274,18 @@
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
       "innerBorders": 16,
-      "outlinePolylines": 160,
-      "innerEdges": 543,
-      "outlineEdges": 9800,
-      "nearlySharedEdges": 0,
+      "outlinePolylines": 78,
+      "innerEdges": 171,
+      "outlineEdges": 1458,
+      "nearlySharedEdges": 2,
       "asset": "assets/maps/country_focus/CL.smap",
-      "assetBytes": 45485
+      "assetBytes": 8400
     },
     "country_focus_cm": {
       "regions": 10,
-      "vertices": 621,
-      "bytes": 2676,
-      "maxRegionVertices": 88,
+      "vertices": 1566,
+      "bytes": 5941,
+      "maxRegionVertices": 240,
       "viewBox": [
         900,
         700
@@ -31295,17 +31295,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 18,
       "outlinePolylines": 1,
-      "innerEdges": 184,
-      "outlineEdges": 253,
+      "innerEdges": 459,
+      "outlineEdges": 648,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/CM.smap",
-      "assetBytes": 2676
+      "assetBytes": 5941
     },
     "country_focus_cn": {
       "regions": 31,
-      "vertices": 17377,
-      "bytes": 59831,
-      "maxRegionVertices": 1290,
+      "vertices": 6894,
+      "bytes": 24345,
+      "maxRegionVertices": 576,
       "viewBox": [
         900,
         700
@@ -31314,18 +31314,18 @@
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
       "innerBorders": 72,
-      "outlinePolylines": 55,
-      "innerEdges": 6099,
-      "outlineEdges": 5179,
+      "outlinePolylines": 13,
+      "innerEdges": 2564,
+      "outlineEdges": 1766,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/CN.smap",
-      "assetBytes": 59831
+      "assetBytes": 24345
     },
     "country_focus_co": {
       "regions": 33,
-      "vertices": 2089,
-      "bytes": 8787,
-      "maxRegionVertices": 115,
+      "vertices": 3599,
+      "bytes": 13594,
+      "maxRegionVertices": 211,
       "viewBox": [
         900,
         700
@@ -31334,18 +31334,18 @@
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
       "innerBorders": 72,
-      "outlinePolylines": 4,
-      "innerEdges": 812,
-      "outlineEdges": 465,
+      "outlinePolylines": 6,
+      "innerEdges": 1399,
+      "outlineEdges": 801,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/CO.smap",
-      "assetBytes": 8787
+      "assetBytes": 13594
     },
     "country_focus_cr": {
       "regions": 7,
-      "vertices": 419,
-      "bytes": 1838,
-      "maxRegionVertices": 143,
+      "vertices": 1128,
+      "bytes": 4339,
+      "maxRegionVertices": 419,
       "viewBox": [
         900,
         700
@@ -31354,18 +31354,18 @@
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
       "innerBorders": 14,
-      "outlinePolylines": 1,
-      "innerEdges": 126,
-      "outlineEdges": 167,
+      "outlinePolylines": 3,
+      "innerEdges": 313,
+      "outlineEdges": 502,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/CR.smap",
-      "assetBytes": 1838
+      "assetBytes": 4339
     },
     "country_focus_cu": {
       "regions": 16,
-      "vertices": 2741,
-      "bytes": 11036,
-      "maxRegionVertices": 388,
+      "vertices": 2712,
+      "bytes": 10930,
+      "maxRegionVertices": 385,
       "viewBox": [
         900,
         700
@@ -31375,17 +31375,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 20,
       "outlinePolylines": 40,
-      "innerEdges": 571,
-      "outlineEdges": 1599,
+      "innerEdges": 565,
+      "outlineEdges": 1582,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/CU.smap",
-      "assetBytes": 11036
+      "assetBytes": 10930
     },
     "country_focus_cv": {
       "regions": 22,
-      "vertices": 393,
-      "bytes": 2804,
-      "maxRegionVertices": 39,
+      "vertices": 546,
+      "bytes": 3340,
+      "maxRegionVertices": 59,
       "viewBox": [
         900,
         700
@@ -31395,17 +31395,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 24,
       "outlinePolylines": 11,
-      "innerEdges": 66,
-      "outlineEdges": 261,
+      "innerEdges": 81,
+      "outlineEdges": 384,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/CV.smap",
-      "assetBytes": 2804
+      "assetBytes": 3340
     },
     "country_focus_cy": {
       "regions": 5,
-      "vertices": 540,
-      "bytes": 2215,
-      "maxRegionVertices": 164,
+      "vertices": 743,
+      "bytes": 2911,
+      "maxRegionVertices": 239,
       "viewBox": [
         900,
         700
@@ -31415,17 +31415,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 6,
       "outlinePolylines": 4,
-      "innerEdges": 143,
-      "outlineEdges": 254,
+      "innerEdges": 232,
+      "outlineEdges": 279,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/CY.smap",
-      "assetBytes": 2215
+      "assetBytes": 2911
     },
     "country_focus_cz": {
       "regions": 14,
-      "vertices": 3949,
-      "bytes": 14404,
-      "maxRegionVertices": 574,
+      "vertices": 2537,
+      "bytes": 9194,
+      "maxRegionVertices": 315,
       "viewBox": [
         900,
         700
@@ -31435,17 +31435,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 26,
       "outlinePolylines": 1,
-      "innerEdges": 1531,
-      "outlineEdges": 887,
+      "innerEdges": 912,
+      "outlineEdges": 713,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/CZ.smap",
-      "assetBytes": 14404
+      "assetBytes": 9194
     },
     "country_focus_de": {
       "regions": 16,
-      "vertices": 7128,
-      "bytes": 24920,
-      "maxRegionVertices": 888,
+      "vertices": 4655,
+      "bytes": 16677,
+      "maxRegionVertices": 581,
       "viewBox": [
         900,
         700
@@ -31454,18 +31454,18 @@
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
       "innerBorders": 30,
-      "outlinePolylines": 20,
-      "innerEdges": 2418,
-      "outlineEdges": 2292,
+      "outlinePolylines": 19,
+      "innerEdges": 1549,
+      "outlineEdges": 1557,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/DE.smap",
-      "assetBytes": 24920
+      "assetBytes": 16677
     },
     "country_focus_dj": {
       "regions": 6,
-      "vertices": 224,
-      "bytes": 1214,
-      "maxRegionVertices": 53,
+      "vertices": 297,
+      "bytes": 1606,
+      "maxRegionVertices": 73,
       "viewBox": [
         900,
         700
@@ -31475,17 +31475,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 7,
       "outlinePolylines": 1,
-      "innerEdges": 37,
-      "outlineEdges": 150,
+      "innerEdges": 47,
+      "outlineEdges": 203,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/DJ.smap",
-      "assetBytes": 1214
+      "assetBytes": 1606
     },
     "country_focus_dk": {
       "regions": 5,
-      "vertices": 2304,
-      "bytes": 9736,
-      "maxRegionVertices": 667,
+      "vertices": 1947,
+      "bytes": 8049,
+      "maxRegionVertices": 555,
       "viewBox": [
         900,
         700
@@ -31495,17 +31495,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 4,
       "outlinePolylines": 15,
-      "innerEdges": 122,
-      "outlineEdges": 2060,
+      "innerEdges": 109,
+      "outlineEdges": 1729,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/DK.smap",
-      "assetBytes": 9736
+      "assetBytes": 8049
     },
     "country_focus_dm": {
       "regions": 10,
-      "vertices": 155,
-      "bytes": 1173,
-      "maxRegionVertices": 29,
+      "vertices": 287,
+      "bytes": 1700,
+      "maxRegionVertices": 60,
       "viewBox": [
         900,
         700
@@ -31515,17 +31515,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 17,
       "outlinePolylines": 1,
-      "innerEdges": 48,
-      "outlineEdges": 59,
+      "innerEdges": 104,
+      "outlineEdges": 79,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/DM.smap",
-      "assetBytes": 1173
+      "assetBytes": 1700
     },
     "country_focus_do": {
       "regions": 32,
-      "vertices": 1859,
-      "bytes": 12013,
-      "maxRegionVertices": 105,
+      "vertices": 1785,
+      "bytes": 7979,
+      "maxRegionVertices": 99,
       "viewBox": [
         900,
         700
@@ -31535,17 +31535,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 71,
       "outlinePolylines": 3,
-      "innerEdges": 638,
-      "outlineEdges": 583,
+      "innerEdges": 620,
+      "outlineEdges": 545,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/DO.smap",
-      "assetBytes": 12013
+      "assetBytes": 7979
     },
     "country_focus_dz": {
       "regions": 48,
-      "vertices": 6932,
-      "bytes": 26619,
-      "maxRegionVertices": 285,
+      "vertices": 2410,
+      "bytes": 10594,
+      "maxRegionVertices": 110,
       "viewBox": [
         900,
         700
@@ -31553,19 +31553,19 @@
       "quantizationScale": 0.25,
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
-      "innerBorders": 117,
+      "innerBorders": 115,
       "outlinePolylines": 1,
-      "innerEdges": 2956,
-      "outlineEdges": 1020,
+      "innerEdges": 992,
+      "outlineEdges": 426,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/DZ.smap",
-      "assetBytes": 26619
+      "assetBytes": 10594
     },
     "country_focus_ec": {
       "regions": 24,
-      "vertices": 1549,
-      "bytes": 6596,
-      "maxRegionVertices": 132,
+      "vertices": 2465,
+      "bytes": 9620,
+      "maxRegionVertices": 209,
       "viewBox": [
         900,
         700
@@ -31575,17 +31575,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 53,
       "outlinePolylines": 13,
-      "innerEdges": 552,
-      "outlineEdges": 445,
+      "innerEdges": 869,
+      "outlineEdges": 727,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/EC.smap",
-      "assetBytes": 6596
+      "assetBytes": 9620
     },
     "country_focus_ee": {
       "regions": 15,
-      "vertices": 941,
-      "bytes": 4216,
-      "maxRegionVertices": 109,
+      "vertices": 2172,
+      "bytes": 8369,
+      "maxRegionVertices": 234,
       "viewBox": [
         900,
         700
@@ -31594,18 +31594,18 @@
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
       "innerBorders": 25,
-      "outlinePolylines": 7,
-      "innerEdges": 269,
-      "outlineEdges": 403,
+      "outlinePolylines": 8,
+      "innerEdges": 644,
+      "outlineEdges": 884,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/EE.smap",
-      "assetBytes": 4216
+      "assetBytes": 8369
     },
     "country_focus_eg": {
       "regions": 27,
-      "vertices": 3823,
-      "bytes": 15626,
-      "maxRegionVertices": 671,
+      "vertices": 1946,
+      "bytes": 8260,
+      "maxRegionVertices": 376,
       "viewBox": [
         900,
         700
@@ -31613,19 +31613,19 @@
       "quantizationScale": 0.25,
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
-      "innerBorders": 64,
-      "outlinePolylines": 8,
-      "innerEdges": 1160,
-      "outlineEdges": 1503,
+      "innerBorders": 63,
+      "outlinePolylines": 5,
+      "innerEdges": 638,
+      "outlineEdges": 670,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/EG.smap",
-      "assetBytes": 15626
+      "assetBytes": 8260
     },
     "country_focus_er": {
       "regions": 6,
-      "vertices": 702,
-      "bytes": 2987,
-      "maxRegionVertices": 255,
+      "vertices": 968,
+      "bytes": 4027,
+      "maxRegionVertices": 367,
       "viewBox": [
         900,
         700
@@ -31635,17 +31635,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 9,
       "outlinePolylines": 3,
-      "innerEdges": 112,
-      "outlineEdges": 478,
+      "innerEdges": 145,
+      "outlineEdges": 678,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/ER.smap",
-      "assetBytes": 2987
+      "assetBytes": 4027
     },
     "country_focus_es": {
       "regions": 52,
-      "vertices": 8183,
-      "bytes": 30095,
-      "maxRegionVertices": 274,
+      "vertices": 4085,
+      "bytes": 16214,
+      "maxRegionVertices": 142,
       "viewBox": [
         900,
         700
@@ -31653,19 +31653,19 @@
       "quantizationScale": 0.25,
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
-      "innerBorders": 127,
-      "outlinePolylines": 18,
-      "innerEdges": 3156,
-      "outlineEdges": 1871,
+      "innerBorders": 122,
+      "outlinePolylines": 16,
+      "innerEdges": 1613,
+      "outlineEdges": 859,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/ES.smap",
-      "assetBytes": 30095
+      "assetBytes": 16214
     },
     "country_focus_et": {
       "regions": 11,
-      "vertices": 2156,
-      "bytes": 7591,
-      "maxRegionVertices": 631,
+      "vertices": 2522,
+      "bytes": 8760,
+      "maxRegionVertices": 744,
       "viewBox": [
         900,
         700
@@ -31675,17 +31675,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 20,
       "outlinePolylines": 1,
-      "innerEdges": 875,
-      "outlineEdges": 406,
+      "innerEdges": 1026,
+      "outlineEdges": 470,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/ET.smap",
-      "assetBytes": 7591
+      "assetBytes": 8760
     },
     "country_focus_fi": {
       "regions": 18,
-      "vertices": 2217,
-      "bytes": 8921,
-      "maxRegionVertices": 255,
+      "vertices": 3789,
+      "bytes": 14465,
+      "maxRegionVertices": 454,
       "viewBox": [
         900,
         700
@@ -31694,18 +31694,18 @@
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
       "innerBorders": 39,
-      "outlinePolylines": 25,
-      "innerEdges": 707,
-      "outlineEdges": 803,
+      "outlinePolylines": 40,
+      "innerEdges": 1122,
+      "outlineEdges": 1545,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/FI.smap",
-      "assetBytes": 8921
+      "assetBytes": 14465
     },
     "country_focus_fj": {
       "regions": 5,
-      "vertices": 892,
-      "bytes": 4240,
-      "maxRegionVertices": 286,
+      "vertices": 631,
+      "bytes": 3007,
+      "maxRegionVertices": 194,
       "viewBox": [
         900,
         700
@@ -31713,19 +31713,19 @@
       "quantizationScale": 0.25,
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
-      "innerBorders": 1,
-      "outlinePolylines": 42,
-      "innerEdges": 55,
-      "outlineEdges": 782,
+      "innerBorders": 2,
+      "outlinePolylines": 37,
+      "innerEdges": 40,
+      "outlineEdges": 551,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/FJ.smap",
-      "assetBytes": 4240
+      "assetBytes": 3007
     },
     "country_focus_fm": {
       "regions": 4,
-      "vertices": 14,
-      "bytes": 270,
-      "maxRegionVertices": 4,
+      "vertices": 37,
+      "bytes": 368,
+      "maxRegionVertices": 18,
       "viewBox": [
         900,
         700
@@ -31734,18 +31734,18 @@
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
       "innerBorders": 0,
-      "outlinePolylines": 4,
+      "outlinePolylines": 5,
       "innerEdges": 0,
-      "outlineEdges": 14,
-      "nearlySharedEdges": 12,
+      "outlineEdges": 37,
+      "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/FM.smap",
-      "assetBytes": 270
+      "assetBytes": 368
     },
     "country_focus_fr": {
       "regions": 101,
-      "vertices": 5861,
-      "bytes": 25110,
-      "maxRegionVertices": 176,
+      "vertices": 1223,
+      "bytes": 9878,
+      "maxRegionVertices": 34,
       "viewBox": [
         900,
         700
@@ -31753,19 +31753,19 @@
       "quantizationScale": 0.25,
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
-      "innerBorders": 237,
-      "outlinePolylines": 13,
-      "innerEdges": 2371,
-      "outlineEdges": 1119,
-      "nearlySharedEdges": 0,
+      "innerBorders": 235,
+      "outlinePolylines": 8,
+      "innerEdges": 501,
+      "outlineEdges": 221,
+      "nearlySharedEdges": 2,
       "asset": "assets/maps/country_focus/FR.smap",
-      "assetBytes": 25110
+      "assetBytes": 9878
     },
     "country_focus_ga": {
       "regions": 9,
-      "vertices": 207,
-      "bytes": 1227,
-      "maxRegionVertices": 28,
+      "vertices": 1653,
+      "bytes": 6466,
+      "maxRegionVertices": 370,
       "viewBox": [
         900,
         700
@@ -31774,18 +31774,18 @@
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
       "innerBorders": 15,
-      "outlinePolylines": 1,
-      "innerEdges": 63,
-      "outlineEdges": 81,
+      "outlinePolylines": 2,
+      "innerEdges": 378,
+      "outlineEdges": 897,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/GA.smap",
-      "assetBytes": 1227
+      "assetBytes": 6466
     },
     "country_focus_gb": {
       "regions": 232,
-      "vertices": 10749,
-      "bytes": 51230,
-      "maxRegionVertices": 653,
+      "vertices": 8837,
+      "bytes": 43940,
+      "maxRegionVertices": 542,
       "viewBox": [
         900,
         700
@@ -31794,18 +31794,18 @@
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
       "innerBorders": 549,
-      "outlinePolylines": 54,
-      "innerEdges": 3742,
-      "outlineEdges": 3265,
+      "outlinePolylines": 52,
+      "innerEdges": 3104,
+      "outlineEdges": 2629,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/GB.smap",
-      "assetBytes": 51230
+      "assetBytes": 43940
     },
     "country_focus_gd": {
       "regions": 7,
-      "vertices": 60,
-      "bytes": 679,
-      "maxRegionVertices": 13,
+      "vertices": 113,
+      "bytes": 958,
+      "maxRegionVertices": 27,
       "viewBox": [
         900,
         700
@@ -31815,17 +31815,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 9,
       "outlinePolylines": 2,
-      "innerEdges": 15,
-      "outlineEdges": 30,
+      "innerEdges": 24,
+      "outlineEdges": 65,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/GD.smap",
-      "assetBytes": 679
+      "assetBytes": 958
     },
     "country_focus_ge": {
       "regions": 12,
-      "vertices": 1309,
-      "bytes": 7535,
-      "maxRegionVertices": 182,
+      "vertices": 1209,
+      "bytes": 4871,
+      "maxRegionVertices": 164,
       "viewBox": [
         900,
         700
@@ -31835,17 +31835,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 22,
       "outlinePolylines": 1,
-      "innerEdges": 398,
-      "outlineEdges": 513,
+      "innerEdges": 377,
+      "outlineEdges": 455,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/GE.smap",
-      "assetBytes": 7535
+      "assetBytes": 4871
     },
     "country_focus_gh": {
       "regions": 10,
-      "vertices": 2862,
-      "bytes": 10020,
-      "maxRegionVertices": 576,
+      "vertices": 2056,
+      "bytes": 7308,
+      "maxRegionVertices": 408,
       "viewBox": [
         900,
         700
@@ -31855,17 +31855,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 18,
       "outlinePolylines": 1,
-      "innerEdges": 1091,
-      "outlineEdges": 680,
+      "innerEdges": 768,
+      "outlineEdges": 520,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/GH.smap",
-      "assetBytes": 10020
+      "assetBytes": 7308
     },
     "country_focus_gl": {
       "regions": 6,
-      "vertices": 10434,
-      "bytes": 44223,
-      "maxRegionVertices": 3242,
+      "vertices": 2574,
+      "bytes": 14072,
+      "maxRegionVertices": 807,
       "viewBox": [
         900,
         700
@@ -31874,18 +31874,18 @@
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
       "innerBorders": 10,
-      "outlinePolylines": 126,
-      "innerEdges": 149,
-      "outlineEdges": 10136,
-      "nearlySharedEdges": 0,
+      "outlinePolylines": 634,
+      "innerEdges": 67,
+      "outlineEdges": 2440,
+      "nearlySharedEdges": 6,
       "asset": "assets/maps/country_focus/GL.smap",
-      "assetBytes": 44223
+      "assetBytes": 14072
     },
     "country_focus_gm": {
       "regions": 6,
-      "vertices": 119,
-      "bytes": 775,
-      "maxRegionVertices": 30,
+      "vertices": 479,
+      "bytes": 2242,
+      "maxRegionVertices": 109,
       "viewBox": [
         900,
         700
@@ -31893,19 +31893,19 @@
       "quantizationScale": 0.25,
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
-      "innerBorders": 4,
+      "innerBorders": 5,
       "outlinePolylines": 1,
-      "innerEdges": 13,
-      "outlineEdges": 93,
-      "nearlySharedEdges": 2,
+      "innerEdges": 55,
+      "outlineEdges": 369,
+      "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/GM.smap",
-      "assetBytes": 775
+      "assetBytes": 2242
     },
     "country_focus_gn": {
       "regions": 34,
-      "vertices": 3931,
-      "bytes": 16865,
-      "maxRegionVertices": 270,
+      "vertices": 2813,
+      "bytes": 11674,
+      "maxRegionVertices": 170,
       "viewBox": [
         900,
         700
@@ -31915,17 +31915,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 73,
       "outlinePolylines": 1,
-      "innerEdges": 1176,
-      "outlineEdges": 1579,
+      "innerEdges": 856,
+      "outlineEdges": 1101,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/GN.smap",
-      "assetBytes": 16865
+      "assetBytes": 11674
     },
     "country_focus_gq": {
       "regions": 7,
-      "vertices": 443,
-      "bytes": 1910,
-      "maxRegionVertices": 148,
+      "vertices": 454,
+      "bytes": 1938,
+      "maxRegionVertices": 151,
       "viewBox": [
         900,
         700
@@ -31935,17 +31935,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 5,
       "outlinePolylines": 3,
-      "innerEdges": 138,
-      "outlineEdges": 167,
+      "innerEdges": 140,
+      "outlineEdges": 174,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/GQ.smap",
-      "assetBytes": 1910
+      "assetBytes": 1938
     },
     "country_focus_gr": {
       "regions": 14,
-      "vertices": 4182,
-      "bytes": 17472,
-      "maxRegionVertices": 677,
+      "vertices": 3765,
+      "bytes": 15671,
+      "maxRegionVertices": 592,
       "viewBox": [
         900,
         700
@@ -31954,18 +31954,18 @@
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
       "innerBorders": 14,
-      "outlinePolylines": 72,
-      "innerEdges": 404,
-      "outlineEdges": 3374,
+      "outlinePolylines": 71,
+      "innerEdges": 377,
+      "outlineEdges": 3011,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/GR.smap",
-      "assetBytes": 17472
+      "assetBytes": 15671
     },
     "country_focus_gt": {
       "regions": 22,
-      "vertices": 1550,
-      "bytes": 6413,
-      "maxRegionVertices": 138,
+      "vertices": 2039,
+      "bytes": 7869,
+      "maxRegionVertices": 192,
       "viewBox": [
         900,
         700
@@ -31975,17 +31975,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 48,
       "outlinePolylines": 1,
-      "innerEdges": 642,
-      "outlineEdges": 266,
+      "innerEdges": 852,
+      "outlineEdges": 335,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/GT.smap",
-      "assetBytes": 6413
+      "assetBytes": 7869
     },
     "country_focus_gw": {
       "regions": 9,
-      "vertices": 1403,
-      "bytes": 5782,
-      "maxRegionVertices": 299,
+      "vertices": 1964,
+      "bytes": 7800,
+      "maxRegionVertices": 382,
       "viewBox": [
         900,
         700
@@ -31995,17 +31995,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 12,
       "outlinePolylines": 13,
-      "innerEdges": 237,
-      "outlineEdges": 929,
+      "innerEdges": 382,
+      "outlineEdges": 1200,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/GW.smap",
-      "assetBytes": 5782
+      "assetBytes": 7800
     },
     "country_focus_gy": {
       "regions": 10,
-      "vertices": 2354,
-      "bytes": 9465,
-      "maxRegionVertices": 528,
+      "vertices": 1342,
+      "bytes": 5354,
+      "maxRegionVertices": 320,
       "viewBox": [
         900,
         700
@@ -32015,17 +32015,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 18,
       "outlinePolylines": 2,
-      "innerEdges": 633,
-      "outlineEdges": 1088,
+      "innerEdges": 347,
+      "outlineEdges": 648,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/GY.smap",
-      "assetBytes": 9465
+      "assetBytes": 5354
     },
     "country_focus_hn": {
       "regions": 18,
-      "vertices": 1723,
-      "bytes": 6850,
-      "maxRegionVertices": 209,
+      "vertices": 2386,
+      "bytes": 9113,
+      "maxRegionVertices": 314,
       "viewBox": [
         900,
         700
@@ -32035,17 +32035,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 34,
       "outlinePolylines": 6,
-      "innerEdges": 562,
-      "outlineEdges": 599,
+      "innerEdges": 765,
+      "outlineEdges": 856,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/HN.smap",
-      "assetBytes": 6850
+      "assetBytes": 9113
     },
     "country_focus_hr": {
       "regions": 21,
-      "vertices": 2899,
-      "bytes": 11836,
-      "maxRegionVertices": 299,
+      "vertices": 3390,
+      "bytes": 13378,
+      "maxRegionVertices": 360,
       "viewBox": [
         900,
         700
@@ -32055,17 +32055,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 38,
       "outlinePolylines": 25,
-      "innerEdges": 725,
-      "outlineEdges": 1449,
+      "innerEdges": 843,
+      "outlineEdges": 1704,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/HR.smap",
-      "assetBytes": 11836
+      "assetBytes": 13378
     },
     "country_focus_ht": {
       "regions": 10,
-      "vertices": 981,
-      "bytes": 4179,
-      "maxRegionVertices": 171,
+      "vertices": 1050,
+      "bytes": 4517,
+      "maxRegionVertices": 181,
       "viewBox": [
         900,
         700
@@ -32075,17 +32075,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 16,
       "outlinePolylines": 5,
-      "innerEdges": 211,
-      "outlineEdges": 559,
+      "innerEdges": 223,
+      "outlineEdges": 604,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/HT.smap",
-      "assetBytes": 4179
+      "assetBytes": 4517
     },
     "country_focus_hu": {
       "regions": 43,
-      "vertices": 3206,
-      "bytes": 13482,
-      "maxRegionVertices": 216,
+      "vertices": 3016,
+      "bytes": 12294,
+      "maxRegionVertices": 199,
       "viewBox": [
         900,
         700
@@ -32095,17 +32095,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 86,
       "outlinePolylines": 1,
-      "innerEdges": 1221,
-      "outlineEdges": 764,
+      "innerEdges": 1177,
+      "outlineEdges": 662,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/HU.smap",
-      "assetBytes": 13482
+      "assetBytes": 12294
     },
     "country_focus_id": {
       "regions": 33,
-      "vertices": 20899,
-      "bytes": 86410,
-      "maxRegionVertices": 1864,
+      "vertices": 4412,
+      "bytes": 19755,
+      "maxRegionVertices": 351,
       "viewBox": [
         900,
         700
@@ -32114,18 +32114,18 @@
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
       "innerBorders": 31,
-      "outlinePolylines": 260,
-      "innerEdges": 1833,
-      "outlineEdges": 17233,
+      "outlinePolylines": 156,
+      "innerEdges": 465,
+      "outlineEdges": 3482,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/ID.smap",
-      "assetBytes": 86410
+      "assetBytes": 19755
     },
     "country_focus_ie": {
       "regions": 34,
-      "vertices": 664,
-      "bytes": 4061,
-      "maxRegionVertices": 48,
+      "vertices": 4704,
+      "bytes": 17959,
+      "maxRegionVertices": 405,
       "viewBox": [
         900,
         700
@@ -32134,18 +32134,18 @@
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
       "innerBorders": 74,
-      "outlinePolylines": 2,
-      "innerEdges": 233,
-      "outlineEdges": 198,
+      "outlinePolylines": 7,
+      "innerEdges": 1416,
+      "outlineEdges": 1872,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/IE.smap",
-      "assetBytes": 4061
+      "assetBytes": 17959
     },
     "country_focus_il": {
       "regions": 6,
-      "vertices": 624,
-      "bytes": 2646,
-      "maxRegionVertices": 177,
+      "vertices": 559,
+      "bytes": 2371,
+      "maxRegionVertices": 155,
       "viewBox": [
         900,
         700
@@ -32155,17 +32155,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 6,
       "outlinePolylines": 1,
-      "innerEdges": 125,
-      "outlineEdges": 374,
+      "innerEdges": 108,
+      "outlineEdges": 343,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/IL.smap",
-      "assetBytes": 2646
+      "assetBytes": 2371
     },
     "country_focus_in": {
       "regions": 36,
-      "vertices": 23767,
-      "bytes": 80960,
-      "maxRegionVertices": 1821,
+      "vertices": 4779,
+      "bytes": 17756,
+      "maxRegionVertices": 368,
       "viewBox": [
         900,
         700
@@ -32173,19 +32173,19 @@
       "quantizationScale": 0.25,
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
-      "innerBorders": 73,
-      "outlinePolylines": 28,
-      "innerEdges": 8657,
-      "outlineEdges": 6453,
-      "nearlySharedEdges": 0,
+      "innerBorders": 70,
+      "outlinePolylines": 11,
+      "innerEdges": 1770,
+      "outlineEdges": 1239,
+      "nearlySharedEdges": 5,
       "asset": "assets/maps/country_focus/IN.smap",
-      "assetBytes": 80960
+      "assetBytes": 17756
     },
     "country_focus_iq": {
       "regions": 18,
-      "vertices": 791,
-      "bytes": 3577,
-      "maxRegionVertices": 72,
+      "vertices": 2068,
+      "bytes": 7790,
+      "maxRegionVertices": 213,
       "viewBox": [
         900,
         700
@@ -32195,17 +32195,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 40,
       "outlinePolylines": 1,
-      "innerEdges": 314,
-      "outlineEdges": 163,
+      "innerEdges": 817,
+      "outlineEdges": 434,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/IQ.smap",
-      "assetBytes": 3577
+      "assetBytes": 7790
     },
     "country_focus_ir": {
       "regions": 31,
-      "vertices": 4555,
-      "bytes": 17514,
-      "maxRegionVertices": 450,
+      "vertices": 3556,
+      "bytes": 13732,
+      "maxRegionVertices": 309,
       "viewBox": [
         900,
         700
@@ -32214,18 +32214,18 @@
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
       "innerBorders": 74,
-      "outlinePolylines": 12,
-      "innerEdges": 1510,
-      "outlineEdges": 1535,
+      "outlinePolylines": 9,
+      "innerEdges": 1268,
+      "outlineEdges": 1020,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/IR.smap",
-      "assetBytes": 17514
+      "assetBytes": 13732
     },
     "country_focus_is": {
       "regions": 9,
-      "vertices": 748,
-      "bytes": 3310,
-      "maxRegionVertices": 160,
+      "vertices": 2207,
+      "bytes": 9053,
+      "maxRegionVertices": 542,
       "viewBox": [
         900,
         700
@@ -32234,18 +32234,18 @@
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
       "innerBorders": 15,
-      "outlinePolylines": 1,
-      "innerEdges": 115,
-      "outlineEdges": 518,
+      "outlinePolylines": 5,
+      "innerEdges": 227,
+      "outlineEdges": 1753,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/IS.smap",
-      "assetBytes": 3310
+      "assetBytes": 9053
     },
     "country_focus_it": {
       "regions": 110,
-      "vertices": 11187,
-      "bytes": 43447,
-      "maxRegionVertices": 195,
+      "vertices": 6440,
+      "bytes": 27076,
+      "maxRegionVertices": 109,
       "viewBox": [
         900,
         700
@@ -32253,19 +32253,19 @@
       "quantizationScale": 0.25,
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
-      "innerBorders": 253,
-      "outlinePolylines": 29,
-      "innerEdges": 4415,
-      "outlineEdges": 2357,
+      "innerBorders": 249,
+      "outlinePolylines": 19,
+      "innerEdges": 2568,
+      "outlineEdges": 1304,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/IT.smap",
-      "assetBytes": 43447
+      "assetBytes": 27076
     },
     "country_focus_jm": {
       "regions": 14,
-      "vertices": 283,
-      "bytes": 1809,
-      "maxRegionVertices": 27,
+      "vertices": 786,
+      "bytes": 3606,
+      "maxRegionVertices": 87,
       "viewBox": [
         900,
         700
@@ -32275,17 +32275,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 23,
       "outlinePolylines": 1,
-      "innerEdges": 86,
-      "outlineEdges": 111,
+      "innerEdges": 262,
+      "outlineEdges": 262,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/JM.smap",
-      "assetBytes": 1809
+      "assetBytes": 3606
     },
     "country_focus_jo": {
       "regions": 12,
-      "vertices": 989,
-      "bytes": 4621,
-      "maxRegionVertices": 151,
+      "vertices": 755,
+      "bytes": 3369,
+      "maxRegionVertices": 100,
       "viewBox": [
         900,
         700
@@ -32295,17 +32295,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 23,
       "outlinePolylines": 1,
-      "innerEdges": 335,
-      "outlineEdges": 319,
+      "innerEdges": 266,
+      "outlineEdges": 223,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/JO.smap",
-      "assetBytes": 4621
+      "assetBytes": 3369
     },
     "country_focus_jp": {
       "regions": 47,
-      "vertices": 9665,
-      "bytes": 38186,
-      "maxRegionVertices": 620,
+      "vertices": 2618,
+      "bytes": 11979,
+      "maxRegionVertices": 202,
       "viewBox": [
         900,
         700
@@ -32314,18 +32314,18 @@
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
       "innerBorders": 86,
-      "outlinePolylines": 98,
-      "innerEdges": 2129,
-      "outlineEdges": 5407,
+      "outlinePolylines": 43,
+      "innerEdges": 661,
+      "outlineEdges": 1296,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/JP.smap",
-      "assetBytes": 38186
+      "assetBytes": 11979
     },
     "country_focus_ke": {
       "regions": 8,
-      "vertices": 862,
-      "bytes": 3354,
-      "maxRegionVertices": 247,
+      "vertices": 1522,
+      "bytes": 5578,
+      "maxRegionVertices": 422,
       "viewBox": [
         900,
         700
@@ -32335,17 +32335,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 14,
       "outlinePolylines": 2,
-      "innerEdges": 317,
-      "outlineEdges": 228,
+      "innerEdges": 561,
+      "outlineEdges": 400,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/KE.smap",
-      "assetBytes": 3354
+      "assetBytes": 5578
     },
     "country_focus_kg": {
       "regions": 8,
-      "vertices": 1390,
-      "bytes": 5304,
-      "maxRegionVertices": 257,
+      "vertices": 2126,
+      "bytes": 7827,
+      "maxRegionVertices": 401,
       "viewBox": [
         900,
         700
@@ -32355,17 +32355,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 11,
       "outlinePolylines": 4,
-      "innerEdges": 371,
-      "outlineEdges": 648,
+      "innerEdges": 576,
+      "outlineEdges": 974,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/KG.smap",
-      "assetBytes": 5304
+      "assetBytes": 7827
     },
     "country_focus_kh": {
       "regions": 24,
-      "vertices": 2627,
-      "bytes": 10341,
-      "maxRegionVertices": 281,
+      "vertices": 2897,
+      "bytes": 11101,
+      "maxRegionVertices": 316,
       "viewBox": [
         900,
         700
@@ -32375,17 +32375,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 44,
       "outlinePolylines": 6,
-      "innerEdges": 903,
-      "outlineEdges": 821,
+      "innerEdges": 1000,
+      "outlineEdges": 897,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/KH.smap",
-      "assetBytes": 10341
+      "assetBytes": 11101
     },
     "country_focus_km": {
       "regions": 3,
-      "vertices": 92,
-      "bytes": 557,
-      "maxRegionVertices": 41,
+      "vertices": 124,
+      "bytes": 733,
+      "maxRegionVertices": 57,
       "viewBox": [
         900,
         700
@@ -32396,15 +32396,15 @@
       "innerBorders": 0,
       "outlinePolylines": 3,
       "innerEdges": 0,
-      "outlineEdges": 92,
+      "outlineEdges": 124,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/KM.smap",
-      "assetBytes": 557
+      "assetBytes": 733
     },
     "country_focus_kn": {
       "regions": 14,
-      "vertices": 163,
-      "bytes": 1581,
+      "vertices": 165,
+      "bytes": 1706,
       "maxRegionVertices": 22,
       "viewBox": [
         900,
@@ -32416,16 +32416,16 @@
       "innerBorders": 19,
       "outlinePolylines": 2,
       "innerEdges": 57,
-      "outlineEdges": 49,
+      "outlineEdges": 51,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/KN.smap",
-      "assetBytes": 1581
+      "assetBytes": 1706
     },
     "country_focus_kp": {
       "regions": 11,
-      "vertices": 4348,
-      "bytes": 22001,
-      "maxRegionVertices": 670,
+      "vertices": 2534,
+      "bytes": 9503,
+      "maxRegionVertices": 349,
       "viewBox": [
         900,
         700
@@ -32435,17 +32435,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 18,
       "outlinePolylines": 10,
-      "innerEdges": 1287,
-      "outlineEdges": 1774,
+      "innerEdges": 680,
+      "outlineEdges": 1174,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/KP.smap",
-      "assetBytes": 22001
+      "assetBytes": 9503
     },
     "country_focus_kr": {
       "regions": 17,
-      "vertices": 3064,
-      "bytes": 12473,
-      "maxRegionVertices": 843,
+      "vertices": 2970,
+      "bytes": 12116,
+      "maxRegionVertices": 801,
       "viewBox": [
         900,
         700
@@ -32455,17 +32455,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 27,
       "outlinePolylines": 52,
-      "innerEdges": 598,
-      "outlineEdges": 1868,
+      "innerEdges": 587,
+      "outlineEdges": 1796,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/KR.smap",
-      "assetBytes": 12473
+      "assetBytes": 12116
     },
     "country_focus_kw": {
       "regions": 6,
-      "vertices": 222,
-      "bytes": 1277,
-      "maxRegionVertices": 114,
+      "vertices": 273,
+      "bytes": 1560,
+      "maxRegionVertices": 143,
       "viewBox": [
         900,
         700
@@ -32475,17 +32475,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 10,
       "outlinePolylines": 4,
-      "innerEdges": 24,
-      "outlineEdges": 174,
+      "innerEdges": 26,
+      "outlineEdges": 221,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/KW.smap",
-      "assetBytes": 1277
+      "assetBytes": 1560
     },
     "country_focus_kz": {
       "regions": 16,
-      "vertices": 5915,
-      "bytes": 27431,
-      "maxRegionVertices": 659,
+      "vertices": 2678,
+      "bytes": 10283,
+      "maxRegionVertices": 278,
       "viewBox": [
         900,
         700
@@ -32494,18 +32494,18 @@
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
       "innerBorders": 28,
-      "outlinePolylines": 7,
-      "innerEdges": 1040,
-      "outlineEdges": 3835,
+      "outlinePolylines": 6,
+      "innerEdges": 750,
+      "outlineEdges": 1178,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/KZ.smap",
-      "assetBytes": 27431
+      "assetBytes": 10283
     },
     "country_focus_la": {
       "regions": 17,
-      "vertices": 1174,
-      "bytes": 4924,
-      "maxRegionVertices": 97,
+      "vertices": 2237,
+      "bytes": 8569,
+      "maxRegionVertices": 184,
       "viewBox": [
         900,
         700
@@ -32515,17 +32515,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 27,
       "outlinePolylines": 1,
-      "innerEdges": 356,
-      "outlineEdges": 462,
+      "innerEdges": 667,
+      "outlineEdges": 903,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/LA.smap",
-      "assetBytes": 4924
+      "assetBytes": 8569
     },
     "country_focus_lb": {
       "regions": 6,
-      "vertices": 314,
-      "bytes": 1460,
-      "maxRegionVertices": 90,
+      "vertices": 758,
+      "bytes": 2995,
+      "maxRegionVertices": 182,
       "viewBox": [
         900,
         700
@@ -32535,17 +32535,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 8,
       "outlinePolylines": 1,
-      "innerEdges": 86,
-      "outlineEdges": 142,
+      "innerEdges": 232,
+      "outlineEdges": 294,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/LB.smap",
-      "assetBytes": 1460
+      "assetBytes": 2995
     },
     "country_focus_lc": {
       "regions": 11,
-      "vertices": 175,
-      "bytes": 1281,
-      "maxRegionVertices": 27,
+      "vertices": 179,
+      "bytes": 1469,
+      "maxRegionVertices": 28,
       "viewBox": [
         900,
         700
@@ -32555,16 +32555,16 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 19,
       "outlinePolylines": 1,
-      "innerEdges": 62,
-      "outlineEdges": 51,
+      "innerEdges": 63,
+      "outlineEdges": 53,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/LC.smap",
-      "assetBytes": 1281
+      "assetBytes": 1469
     },
     "country_focus_li": {
       "regions": 11,
       "vertices": 207,
-      "bytes": 1519,
+      "bytes": 1729,
       "maxRegionVertices": 38,
       "viewBox": [
         900,
@@ -32579,13 +32579,13 @@
       "outlineEdges": 39,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/LI.smap",
-      "assetBytes": 1519
+      "assetBytes": 1729
     },
     "country_focus_lk": {
       "regions": 25,
-      "vertices": 3016,
-      "bytes": 19016,
-      "maxRegionVertices": 187,
+      "vertices": 2423,
+      "bytes": 9396,
+      "maxRegionVertices": 156,
       "viewBox": [
         900,
         700
@@ -32595,17 +32595,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 58,
       "outlinePolylines": 5,
-      "innerEdges": 1098,
-      "outlineEdges": 820,
+      "innerEdges": 935,
+      "outlineEdges": 553,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/LK.smap",
-      "assetBytes": 19016
+      "assetBytes": 9396
     },
     "country_focus_lr": {
       "regions": 13,
-      "vertices": 1665,
-      "bytes": 6480,
-      "maxRegionVertices": 203,
+      "vertices": 1589,
+      "bytes": 6175,
+      "maxRegionVertices": 198,
       "viewBox": [
         900,
         700
@@ -32615,17 +32615,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 19,
       "outlinePolylines": 1,
-      "innerEdges": 501,
-      "outlineEdges": 663,
+      "innerEdges": 479,
+      "outlineEdges": 631,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/LR.smap",
-      "assetBytes": 6480
+      "assetBytes": 6175
     },
     "country_focus_ls": {
       "regions": 10,
-      "vertices": 1139,
-      "bytes": 4311,
-      "maxRegionVertices": 161,
+      "vertices": 1564,
+      "bytes": 5674,
+      "maxRegionVertices": 207,
       "viewBox": [
         900,
         700
@@ -32635,17 +32635,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 20,
       "outlinePolylines": 1,
-      "innerEdges": 448,
-      "outlineEdges": 243,
+      "innerEdges": 630,
+      "outlineEdges": 304,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/LS.smap",
-      "assetBytes": 4311
+      "assetBytes": 5674
     },
     "country_focus_lt": {
       "regions": 10,
-      "vertices": 2659,
-      "bytes": 9256,
-      "maxRegionVertices": 434,
+      "vertices": 2301,
+      "bytes": 8041,
+      "maxRegionVertices": 381,
       "viewBox": [
         900,
         700
@@ -32655,17 +32655,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 18,
       "outlinePolylines": 2,
-      "innerEdges": 1073,
-      "outlineEdges": 513,
+      "innerEdges": 907,
+      "outlineEdges": 487,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/LT.smap",
-      "assetBytes": 9256
+      "assetBytes": 8041
     },
     "country_focus_lu": {
       "regions": 3,
-      "vertices": 241,
-      "bytes": 1056,
-      "maxRegionVertices": 104,
+      "vertices": 333,
+      "bytes": 1507,
+      "maxRegionVertices": 140,
       "viewBox": [
         900,
         700
@@ -32675,17 +32675,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 3,
       "outlinePolylines": 1,
-      "innerEdges": 48,
-      "outlineEdges": 145,
+      "innerEdges": 70,
+      "outlineEdges": 193,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/LU.smap",
-      "assetBytes": 1056
+      "assetBytes": 1507
     },
     "country_focus_lv": {
       "regions": 119,
-      "vertices": 6415,
-      "bytes": 33041,
-      "maxRegionVertices": 151,
+      "vertices": 5286,
+      "bytes": 23190,
+      "maxRegionVertices": 121,
       "viewBox": [
         900,
         700
@@ -32695,17 +32695,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 304,
       "outlinePolylines": 1,
-      "innerEdges": 2935,
-      "outlineEdges": 545,
+      "innerEdges": 2405,
+      "outlineEdges": 476,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/LV.smap",
-      "assetBytes": 33041
+      "assetBytes": 23190
     },
     "country_focus_ly": {
       "regions": 22,
-      "vertices": 1653,
-      "bytes": 8139,
-      "maxRegionVertices": 134,
+      "vertices": 1301,
+      "bytes": 5646,
+      "maxRegionVertices": 116,
       "viewBox": [
         900,
         700
@@ -32715,17 +32715,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 44,
       "outlinePolylines": 1,
-      "innerEdges": 568,
-      "outlineEdges": 517,
+      "innerEdges": 491,
+      "outlineEdges": 319,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/LY.smap",
-      "assetBytes": 8139
+      "assetBytes": 5646
     },
     "country_focus_ma": {
       "regions": 16,
-      "vertices": 1628,
-      "bytes": 6470,
-      "maxRegionVertices": 190,
+      "vertices": 1572,
+      "bytes": 6291,
+      "maxRegionVertices": 188,
       "viewBox": [
         900,
         700
@@ -32735,17 +32735,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 26,
       "outlinePolylines": 1,
-      "innerEdges": 549,
-      "outlineEdges": 530,
+      "innerEdges": 529,
+      "outlineEdges": 514,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/MA.smap",
-      "assetBytes": 6470
+      "assetBytes": 6291
     },
     "country_focus_md": {
       "regions": 40,
-      "vertices": 994,
-      "bytes": 5505,
-      "maxRegionVertices": 43,
+      "vertices": 2393,
+      "bytes": 10170,
+      "maxRegionVertices": 97,
       "viewBox": [
         900,
         700
@@ -32755,17 +32755,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 95,
       "outlinePolylines": 1,
-      "innerEdges": 392,
-      "outlineEdges": 210,
+      "innerEdges": 882,
+      "outlineEdges": 629,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/MD.smap",
-      "assetBytes": 5505
+      "assetBytes": 10170
     },
     "country_focus_me": {
       "regions": 21,
-      "vertices": 890,
-      "bytes": 4167,
-      "maxRegionVertices": 72,
+      "vertices": 949,
+      "bytes": 4514,
+      "maxRegionVertices": 77,
       "viewBox": [
         900,
         700
@@ -32775,17 +32775,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 41,
       "outlinePolylines": 1,
-      "innerEdges": 290,
-      "outlineEdges": 310,
+      "innerEdges": 302,
+      "outlineEdges": 345,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/ME.smap",
-      "assetBytes": 4167
+      "assetBytes": 4514
     },
     "country_focus_mg": {
       "regions": 22,
-      "vertices": 6213,
-      "bytes": 23980,
-      "maxRegionVertices": 700,
+      "vertices": 2191,
+      "bytes": 8493,
+      "maxRegionVertices": 195,
       "viewBox": [
         900,
         700
@@ -32795,17 +32795,117 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 50,
       "outlinePolylines": 3,
-      "innerEdges": 2292,
-      "outlineEdges": 1629,
+      "innerEdges": 776,
+      "outlineEdges": 639,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/MG.smap",
-      "assetBytes": 23980
+      "assetBytes": 8493
     },
     "country_focus_mh": {
       "regions": 2,
-      "vertices": 12,
-      "bytes": 180,
-      "maxRegionVertices": 7,
+      "vertices": 28,
+      "bytes": 264,
+      "maxRegionVertices": 17,
+      "viewBox": [
+        900,
+        700
+      ],
+      "quantizationScale": 0.25,
+      "simplificationTolerance": 0.6,
+      "estimatedMaxError": 0.6,
+      "innerBorders": 0,
+      "outlinePolylines": 5,
+      "innerEdges": 0,
+      "outlineEdges": 28,
+      "nearlySharedEdges": 0,
+      "asset": "assets/maps/country_focus/MH.smap",
+      "assetBytes": 264
+    },
+    "country_focus_mk": {
+      "regions": 84,
+      "vertices": 5724,
+      "bytes": 22596,
+      "maxRegionVertices": 155,
+      "viewBox": [
+        900,
+        700
+      ],
+      "quantizationScale": 0.25,
+      "simplificationTolerance": 0.6,
+      "estimatedMaxError": 0.6,
+      "innerBorders": 212,
+      "outlinePolylines": 1,
+      "innerEdges": 2689,
+      "outlineEdges": 346,
+      "nearlySharedEdges": 0,
+      "asset": "assets/maps/country_focus/MK.smap",
+      "assetBytes": 22596
+    },
+    "country_focus_ml": {
+      "regions": 9,
+      "vertices": 1242,
+      "bytes": 4860,
+      "maxRegionVertices": 250,
+      "viewBox": [
+        900,
+        700
+      ],
+      "quantizationScale": 0.25,
+      "simplificationTolerance": 0.6,
+      "estimatedMaxError": 0.6,
+      "innerBorders": 11,
+      "outlinePolylines": 1,
+      "innerEdges": 346,
+      "outlineEdges": 550,
+      "nearlySharedEdges": 0,
+      "asset": "assets/maps/country_focus/ML.smap",
+      "assetBytes": 4860
+    },
+    "country_focus_mm": {
+      "regions": 14,
+      "vertices": 2230,
+      "bytes": 8679,
+      "maxRegionVertices": 290,
+      "viewBox": [
+        900,
+        700
+      ],
+      "quantizationScale": 0.25,
+      "simplificationTolerance": 0.6,
+      "estimatedMaxError": 0.6,
+      "innerBorders": 27,
+      "outlinePolylines": 21,
+      "innerEdges": 590,
+      "outlineEdges": 1050,
+      "nearlySharedEdges": 0,
+      "asset": "assets/maps/country_focus/MM.smap",
+      "assetBytes": 8679
+    },
+    "country_focus_mn": {
+      "regions": 22,
+      "vertices": 2471,
+      "bytes": 9416,
+      "maxRegionVertices": 174,
+      "viewBox": [
+        900,
+        700
+      ],
+      "quantizationScale": 0.25,
+      "simplificationTolerance": 0.6,
+      "estimatedMaxError": 0.6,
+      "innerBorders": 45,
+      "outlinePolylines": 1,
+      "innerEdges": 906,
+      "outlineEdges": 659,
+      "nearlySharedEdges": 0,
+      "asset": "assets/maps/country_focus/MN.smap",
+      "assetBytes": 9416
+    },
+    "country_focus_mo": {
+      "regions": 1,
+      "vertices": 87,
+      "bytes": 556,
+      "maxRegionVertices": 87,
       "viewBox": [
         900,
         700
@@ -32816,116 +32916,16 @@
       "innerBorders": 0,
       "outlinePolylines": 2,
       "innerEdges": 0,
-      "outlineEdges": 12,
-      "nearlySharedEdges": 0,
-      "asset": "assets/maps/country_focus/MH.smap",
-      "assetBytes": 180
-    },
-    "country_focus_mk": {
-      "regions": 84,
-      "vertices": 1496,
-      "bytes": 9904,
-      "maxRegionVertices": 37,
-      "viewBox": [
-        900,
-        700
-      ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
-      "innerBorders": 212,
-      "outlinePolylines": 1,
-      "innerEdges": 678,
-      "outlineEdges": 140,
-      "nearlySharedEdges": 0,
-      "asset": "assets/maps/country_focus/MK.smap",
-      "assetBytes": 9904
-    },
-    "country_focus_ml": {
-      "regions": 9,
-      "vertices": 2552,
-      "bytes": 11929,
-      "maxRegionVertices": 668,
-      "viewBox": [
-        900,
-        700
-      ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
-      "innerBorders": 11,
-      "outlinePolylines": 1,
-      "innerEdges": 489,
-      "outlineEdges": 1574,
-      "nearlySharedEdges": 0,
-      "asset": "assets/maps/country_focus/ML.smap",
-      "assetBytes": 11929
-    },
-    "country_focus_mm": {
-      "regions": 14,
-      "vertices": 2777,
-      "bytes": 10761,
-      "maxRegionVertices": 369,
-      "viewBox": [
-        900,
-        700
-      ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
-      "innerBorders": 27,
-      "outlinePolylines": 26,
-      "innerEdges": 712,
-      "outlineEdges": 1353,
-      "nearlySharedEdges": 0,
-      "asset": "assets/maps/country_focus/MM.smap",
-      "assetBytes": 10761
-    },
-    "country_focus_mn": {
-      "regions": 22,
-      "vertices": 2284,
-      "bytes": 8779,
-      "maxRegionVertices": 159,
-      "viewBox": [
-        900,
-        700
-      ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
-      "innerBorders": 45,
-      "outlinePolylines": 1,
-      "innerEdges": 839,
-      "outlineEdges": 606,
-      "nearlySharedEdges": 0,
-      "asset": "assets/maps/country_focus/MN.smap",
-      "assetBytes": 8779
-    },
-    "country_focus_mo": {
-      "regions": 1,
-      "vertices": 3,
-      "bytes": 79,
-      "maxRegionVertices": 3,
-      "viewBox": [
-        900,
-        700
-      ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
-      "innerBorders": 0,
-      "outlinePolylines": 1,
-      "innerEdges": 0,
-      "outlineEdges": 3,
+      "outlineEdges": 87,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/MO.smap",
-      "assetBytes": 79
+      "assetBytes": 556
     },
     "country_focus_mr": {
       "regions": 13,
-      "vertices": 1809,
-      "bytes": 12999,
-      "maxRegionVertices": 306,
+      "vertices": 812,
+      "bytes": 3690,
+      "maxRegionVertices": 168,
       "viewBox": [
         900,
         700
@@ -32934,18 +32934,18 @@
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
       "innerBorders": 21,
-      "outlinePolylines": 5,
-      "innerEdges": 368,
-      "outlineEdges": 1073,
+      "outlinePolylines": 2,
+      "innerEdges": 233,
+      "outlineEdges": 346,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/MR.smap",
-      "assetBytes": 12999
+      "assetBytes": 3690
     },
     "country_focus_ms": {
       "regions": 3,
-      "vertices": 15,
-      "bytes": 240,
-      "maxRegionVertices": 6,
+      "vertices": 39,
+      "bytes": 438,
+      "maxRegionVertices": 16,
       "viewBox": [
         900,
         700
@@ -32955,16 +32955,16 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 3,
       "outlinePolylines": 1,
-      "innerEdges": 3,
-      "outlineEdges": 9,
+      "innerEdges": 8,
+      "outlineEdges": 23,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/MS.smap",
-      "assetBytes": 240
+      "assetBytes": 438
     },
     "country_focus_mt": {
       "regions": 68,
-      "vertices": 1166,
-      "bytes": 8927,
+      "vertices": 1164,
+      "bytes": 7636,
       "maxRegionVertices": 50,
       "viewBox": [
         900,
@@ -32975,17 +32975,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 160,
       "outlinePolylines": 2,
-      "innerEdges": 543,
+      "innerEdges": 542,
       "outlineEdges": 80,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/MT.smap",
-      "assetBytes": 8927
+      "assetBytes": 7636
     },
     "country_focus_mu": {
       "regions": 16,
-      "vertices": 335,
-      "bytes": 2884,
-      "maxRegionVertices": 50,
+      "vertices": 180,
+      "bytes": 1547,
+      "maxRegionVertices": 23,
       "viewBox": [
         900,
         700
@@ -32995,17 +32995,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 32,
       "outlinePolylines": 3,
-      "innerEdges": 112,
-      "outlineEdges": 111,
+      "innerEdges": 63,
+      "outlineEdges": 54,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/MU.smap",
-      "assetBytes": 2884
+      "assetBytes": 1547
     },
     "country_focus_mv": {
       "regions": 21,
-      "vertices": 81,
-      "bytes": 1475,
-      "maxRegionVertices": 8,
+      "vertices": 83,
+      "bytes": 1483,
+      "maxRegionVertices": 10,
       "viewBox": [
         900,
         700
@@ -33016,16 +33016,16 @@
       "innerBorders": 0,
       "outlinePolylines": 21,
       "innerEdges": 0,
-      "outlineEdges": 81,
-      "nearlySharedEdges": 22,
+      "outlineEdges": 83,
+      "nearlySharedEdges": 9,
       "asset": "assets/maps/country_focus/MV.smap",
-      "assetBytes": 1475
+      "assetBytes": 1483
     },
     "country_focus_mw": {
       "regions": 28,
-      "vertices": 1506,
-      "bytes": 6642,
-      "maxRegionVertices": 145,
+      "vertices": 1527,
+      "bytes": 6661,
+      "maxRegionVertices": 148,
       "viewBox": [
         900,
         700
@@ -33035,17 +33035,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 55,
       "outlinePolylines": 3,
-      "innerEdges": 511,
-      "outlineEdges": 484,
+      "innerEdges": 517,
+      "outlineEdges": 493,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/MW.smap",
-      "assetBytes": 6642
+      "assetBytes": 6661
     },
     "country_focus_mx": {
       "regions": 32,
-      "vertices": 9175,
-      "bytes": 33756,
-      "maxRegionVertices": 746,
+      "vertices": 4598,
+      "bytes": 17444,
+      "maxRegionVertices": 301,
       "viewBox": [
         900,
         700
@@ -33053,19 +33053,19 @@
       "quantizationScale": 0.25,
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
-      "innerBorders": 71,
-      "outlinePolylines": 39,
-      "innerEdges": 2884,
-      "outlineEdges": 3407,
+      "innerBorders": 70,
+      "outlinePolylines": 19,
+      "innerEdges": 1541,
+      "outlineEdges": 1516,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/MX.smap",
-      "assetBytes": 33756
+      "assetBytes": 17444
     },
     "country_focus_my": {
       "regions": 16,
-      "vertices": 1254,
-      "bytes": 5565,
-      "maxRegionVertices": 294,
+      "vertices": 1829,
+      "bytes": 7603,
+      "maxRegionVertices": 436,
       "viewBox": [
         900,
         700
@@ -33074,18 +33074,18 @@
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
       "innerBorders": 20,
-      "outlinePolylines": 15,
-      "innerEdges": 236,
-      "outlineEdges": 782,
+      "outlinePolylines": 16,
+      "innerEdges": 341,
+      "outlineEdges": 1147,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/MY.smap",
-      "assetBytes": 5565
+      "assetBytes": 7603
     },
     "country_focus_mz": {
       "regions": 11,
-      "vertices": 2076,
-      "bytes": 7929,
-      "maxRegionVertices": 253,
+      "vertices": 1600,
+      "bytes": 6206,
+      "maxRegionVertices": 197,
       "viewBox": [
         900,
         700
@@ -33095,17 +33095,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 16,
       "outlinePolylines": 6,
-      "innerEdges": 541,
-      "outlineEdges": 994,
+      "innerEdges": 420,
+      "outlineEdges": 760,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/MZ.smap",
-      "assetBytes": 7929
+      "assetBytes": 6206
     },
     "country_focus_na": {
       "regions": 13,
-      "vertices": 1249,
-      "bytes": 4870,
-      "maxRegionVertices": 165,
+      "vertices": 1590,
+      "bytes": 6059,
+      "maxRegionVertices": 219,
       "viewBox": [
         900,
         700
@@ -33115,16 +33115,16 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 24,
       "outlinePolylines": 1,
-      "innerEdges": 454,
-      "outlineEdges": 341,
+      "innerEdges": 565,
+      "outlineEdges": 460,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/NA.smap",
-      "assetBytes": 4870
+      "assetBytes": 6059
     },
     "country_focus_ne": {
       "regions": 8,
       "vertices": 752,
-      "bytes": 3162,
+      "bytes": 3161,
       "maxRegionVertices": 192,
       "viewBox": [
         900,
@@ -33139,13 +33139,13 @@
       "outlineEdges": 326,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/NE.smap",
-      "assetBytes": 3162
+      "assetBytes": 3161
     },
     "country_focus_ng": {
       "regions": 37,
-      "vertices": 4097,
-      "bytes": 15159,
-      "maxRegionVertices": 234,
+      "vertices": 4489,
+      "bytes": 16490,
+      "maxRegionVertices": 255,
       "viewBox": [
         900,
         700
@@ -33155,17 +33155,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 85,
       "outlinePolylines": 3,
-      "innerEdges": 1678,
-      "outlineEdges": 741,
+      "innerEdges": 1814,
+      "outlineEdges": 861,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/NG.smap",
-      "assetBytes": 15159
+      "assetBytes": 16490
     },
     "country_focus_ni": {
       "regions": 17,
-      "vertices": 1140,
-      "bytes": 4899,
-      "maxRegionVertices": 197,
+      "vertices": 1900,
+      "bytes": 7493,
+      "maxRegionVertices": 339,
       "viewBox": [
         900,
         700
@@ -33174,18 +33174,18 @@
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
       "innerBorders": 37,
-      "outlinePolylines": 3,
-      "innerEdges": 374,
-      "outlineEdges": 392,
+      "outlinePolylines": 4,
+      "innerEdges": 610,
+      "outlineEdges": 680,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/NI.smap",
-      "assetBytes": 4899
+      "assetBytes": 7493
     },
     "country_focus_nl": {
       "regions": 15,
-      "vertices": 1455,
-      "bytes": 6093,
-      "maxRegionVertices": 170,
+      "vertices": 217,
+      "bytes": 1608,
+      "maxRegionVertices": 28,
       "viewBox": [
         900,
         700
@@ -33193,19 +33193,19 @@
       "quantizationScale": 0.25,
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
-      "innerBorders": 25,
-      "outlinePolylines": 12,
-      "innerEdges": 406,
-      "outlineEdges": 643,
-      "nearlySharedEdges": 0,
+      "innerBorders": 24,
+      "outlinePolylines": 5,
+      "innerEdges": 69,
+      "outlineEdges": 79,
+      "nearlySharedEdges": 3,
       "asset": "assets/maps/country_focus/NL.smap",
-      "assetBytes": 6093
+      "assetBytes": 1608
     },
     "country_focus_no": {
       "regions": 20,
-      "vertices": 1021,
-      "bytes": 4996,
-      "maxRegionVertices": 144,
+      "vertices": 3549,
+      "bytes": 16091,
+      "maxRegionVertices": 532,
       "viewBox": [
         900,
         700
@@ -33213,19 +33213,19 @@
       "quantizationScale": 0.25,
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
-      "innerBorders": 35,
-      "outlinePolylines": 23,
-      "innerEdges": 196,
-      "outlineEdges": 629,
-      "nearlySharedEdges": 4,
+      "innerBorders": 36,
+      "outlinePolylines": 269,
+      "innerEdges": 453,
+      "outlineEdges": 2643,
+      "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/NO.smap",
-      "assetBytes": 4996
+      "assetBytes": 16091
     },
     "country_focus_np": {
       "regions": 14,
-      "vertices": 991,
-      "bytes": 4107,
-      "maxRegionVertices": 113,
+      "vertices": 2253,
+      "bytes": 8313,
+      "maxRegionVertices": 245,
       "viewBox": [
         900,
         700
@@ -33235,17 +33235,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 21,
       "outlinePolylines": 1,
-      "innerEdges": 321,
-      "outlineEdges": 349,
+      "innerEdges": 738,
+      "outlineEdges": 777,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/NP.smap",
-      "assetBytes": 4107
+      "assetBytes": 8313
     },
     "country_focus_nr": {
       "regions": 14,
-      "vertices": 62,
-      "bytes": 1025,
-      "maxRegionVertices": 8,
+      "vertices": 78,
+      "bytes": 1172,
+      "maxRegionVertices": 13,
       "viewBox": [
         900,
         700
@@ -33255,17 +33255,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 24,
       "outlinePolylines": 1,
-      "innerEdges": 24,
-      "outlineEdges": 14,
+      "innerEdges": 31,
+      "outlineEdges": 16,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/NR.smap",
-      "assetBytes": 1025
+      "assetBytes": 1172
     },
     "country_focus_nz": {
       "regions": 17,
-      "vertices": 6105,
-      "bytes": 44957,
-      "maxRegionVertices": 890,
+      "vertices": 2360,
+      "bytes": 9565,
+      "maxRegionVertices": 306,
       "viewBox": [
         900,
         700
@@ -33274,18 +33274,18 @@
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
       "innerBorders": 23,
-      "outlinePolylines": 17,
-      "innerEdges": 930,
-      "outlineEdges": 4245,
+      "outlinePolylines": 13,
+      "innerEdges": 468,
+      "outlineEdges": 1424,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/NZ.smap",
-      "assetBytes": 44957
+      "assetBytes": 9565
     },
     "country_focus_om": {
       "regions": 11,
-      "vertices": 82,
-      "bytes": 932,
-      "maxRegionVertices": 12,
+      "vertices": 605,
+      "bytes": 3092,
+      "maxRegionVertices": 118,
       "viewBox": [
         900,
         700
@@ -33294,18 +33294,18 @@
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
       "innerBorders": 17,
-      "outlinePolylines": 2,
-      "innerEdges": 24,
-      "outlineEdges": 34,
+      "outlinePolylines": 7,
+      "innerEdges": 67,
+      "outlineEdges": 471,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/OM.smap",
-      "assetBytes": 932
+      "assetBytes": 3092
     },
     "country_focus_pa": {
       "regions": 12,
-      "vertices": 1426,
-      "bytes": 5818,
-      "maxRegionVertices": 219,
+      "vertices": 2839,
+      "bytes": 10920,
+      "maxRegionVertices": 472,
       "viewBox": [
         900,
         700
@@ -33314,18 +33314,18 @@
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
       "innerBorders": 21,
-      "outlinePolylines": 13,
-      "innerEdges": 363,
-      "outlineEdges": 700,
+      "outlinePolylines": 15,
+      "innerEdges": 651,
+      "outlineEdges": 1537,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/PA.smap",
-      "assetBytes": 5818
+      "assetBytes": 10920
     },
     "country_focus_pe": {
       "regions": 26,
-      "vertices": 7648,
-      "bytes": 27431,
-      "maxRegionVertices": 966,
+      "vertices": 2765,
+      "bytes": 10538,
+      "maxRegionVertices": 344,
       "viewBox": [
         900,
         700
@@ -33334,18 +33334,18 @@
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
       "innerBorders": 54,
-      "outlinePolylines": 5,
-      "innerEdges": 2752,
-      "outlineEdges": 2144,
+      "outlinePolylines": 1,
+      "innerEdges": 1012,
+      "outlineEdges": 741,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/PE.smap",
-      "assetBytes": 27431
+      "assetBytes": 10538
     },
     "country_focus_pg": {
       "regions": 20,
-      "vertices": 1570,
-      "bytes": 7421,
-      "maxRegionVertices": 213,
+      "vertices": 2694,
+      "bytes": 11704,
+      "maxRegionVertices": 386,
       "viewBox": [
         900,
         700
@@ -33354,18 +33354,18 @@
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
       "innerBorders": 32,
-      "outlinePolylines": 41,
-      "innerEdges": 253,
-      "outlineEdges": 1064,
+      "outlinePolylines": 53,
+      "innerEdges": 373,
+      "outlineEdges": 1948,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/PG.smap",
-      "assetBytes": 7421
+      "assetBytes": 11704
     },
     "country_focus_ph": {
       "regions": 118,
-      "vertices": 5319,
-      "bytes": 26430,
-      "maxRegionVertices": 352,
+      "vertices": 3711,
+      "bytes": 20462,
+      "maxRegionVertices": 214,
       "viewBox": [
         900,
         700
@@ -33374,18 +33374,18 @@
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
       "innerBorders": 206,
-      "outlinePolylines": 90,
-      "innerEdges": 1139,
-      "outlineEdges": 3041,
+      "outlinePolylines": 80,
+      "innerEdges": 847,
+      "outlineEdges": 2017,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/PH.smap",
-      "assetBytes": 26430
+      "assetBytes": 20462
     },
     "country_focus_pk": {
       "regions": 8,
-      "vertices": 1605,
-      "bytes": 6128,
-      "maxRegionVertices": 354,
+      "vertices": 1991,
+      "bytes": 7497,
+      "maxRegionVertices": 450,
       "viewBox": [
         900,
         700
@@ -33395,17 +33395,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 14,
       "outlinePolylines": 2,
-      "innerEdges": 430,
-      "outlineEdges": 745,
+      "innerEdges": 529,
+      "outlineEdges": 933,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/PK.smap",
-      "assetBytes": 6128
+      "assetBytes": 7497
     },
     "country_focus_pl": {
       "regions": 16,
-      "vertices": 1647,
-      "bytes": 6384,
-      "maxRegionVertices": 154,
+      "vertices": 2701,
+      "bytes": 10070,
+      "maxRegionVertices": 246,
       "viewBox": [
         900,
         700
@@ -33415,17 +33415,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 34,
       "outlinePolylines": 1,
-      "innerEdges": 616,
-      "outlineEdges": 415,
+      "innerEdges": 925,
+      "outlineEdges": 851,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/PL.smap",
-      "assetBytes": 6384
+      "assetBytes": 10070
     },
     "country_focus_pt": {
       "regions": 20,
-      "vertices": 2587,
-      "bytes": 9929,
-      "maxRegionVertices": 194,
+      "vertices": 1228,
+      "bytes": 5280,
+      "maxRegionVertices": 101,
       "viewBox": [
         900,
         700
@@ -33434,18 +33434,18 @@
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
       "innerBorders": 34,
-      "outlinePolylines": 16,
-      "innerEdges": 842,
-      "outlineEdges": 903,
+      "outlinePolylines": 12,
+      "innerEdges": 403,
+      "outlineEdges": 422,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/PT.smap",
-      "assetBytes": 9929
+      "assetBytes": 5280
     },
     "country_focus_pw": {
       "regions": 16,
-      "vertices": 79,
-      "bytes": 1193,
-      "maxRegionVertices": 9,
+      "vertices": 160,
+      "bytes": 1469,
+      "maxRegionVertices": 28,
       "viewBox": [
         900,
         700
@@ -33454,18 +33454,18 @@
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
       "innerBorders": 15,
-      "outlinePolylines": 8,
-      "innerEdges": 18,
-      "outlineEdges": 43,
+      "outlinePolylines": 9,
+      "innerEdges": 25,
+      "outlineEdges": 110,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/PW.smap",
-      "assetBytes": 1193
+      "assetBytes": 1469
     },
     "country_focus_py": {
       "regions": 18,
-      "vertices": 2620,
-      "bytes": 9944,
-      "maxRegionVertices": 288,
+      "vertices": 1995,
+      "bytes": 7704,
+      "maxRegionVertices": 224,
       "viewBox": [
         900,
         700
@@ -33475,17 +33475,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 39,
       "outlinePolylines": 1,
-      "innerEdges": 928,
-      "outlineEdges": 764,
+      "innerEdges": 705,
+      "outlineEdges": 585,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/PY.smap",
-      "assetBytes": 9944
+      "assetBytes": 7704
     },
     "country_focus_qa": {
       "regions": 7,
-      "vertices": 221,
-      "bytes": 1257,
-      "maxRegionVertices": 83,
+      "vertices": 339,
+      "bytes": 1842,
+      "maxRegionVertices": 128,
       "viewBox": [
         900,
         700
@@ -33495,17 +33495,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 13,
       "outlinePolylines": 1,
-      "innerEdges": 47,
-      "outlineEdges": 127,
+      "innerEdges": 51,
+      "outlineEdges": 237,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/QA.smap",
-      "assetBytes": 1257
+      "assetBytes": 1842
     },
     "country_focus_ro": {
       "regions": 42,
-      "vertices": 7656,
-      "bytes": 27840,
-      "maxRegionVertices": 340,
+      "vertices": 4860,
+      "bytes": 17865,
+      "maxRegionVertices": 202,
       "viewBox": [
         900,
         700
@@ -33515,17 +33515,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 102,
       "outlinePolylines": 1,
-      "innerEdges": 3261,
-      "outlineEdges": 1134,
+      "innerEdges": 2024,
+      "outlineEdges": 812,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/RO.smap",
-      "assetBytes": 27840
+      "assetBytes": 17865
     },
     "country_focus_rs": {
       "regions": 25,
-      "vertices": 3084,
-      "bytes": 11325,
-      "maxRegionVertices": 190,
+      "vertices": 4016,
+      "bytes": 14256,
+      "maxRegionVertices": 249,
       "viewBox": [
         900,
         700
@@ -33535,17 +33535,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 53,
       "outlinePolylines": 1,
-      "innerEdges": 1226,
-      "outlineEdges": 632,
+      "innerEdges": 1633,
+      "outlineEdges": 750,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/RS.smap",
-      "assetBytes": 11325
+      "assetBytes": 14256
     },
     "country_focus_ru": {
       "regions": 85,
-      "vertices": 86325,
-      "bytes": 304391,
-      "maxRegionVertices": 6746,
+      "vertices": 5201,
+      "bytes": 22539,
+      "maxRegionVertices": 349,
       "viewBox": [
         900,
         700
@@ -33553,19 +33553,19 @@
       "quantizationScale": 0.25,
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
-      "innerBorders": 376,
-      "outlinePolylines": 216,
-      "innerEdges": 28198,
-      "outlineEdges": 29929,
+      "innerBorders": 201,
+      "outlinePolylines": 32,
+      "innerEdges": 1819,
+      "outlineEdges": 1563,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/RU.smap",
-      "assetBytes": 304391
+      "assetBytes": 22539
     },
     "country_focus_rw": {
       "regions": 5,
-      "vertices": 32,
-      "bytes": 387,
-      "maxRegionVertices": 8,
+      "vertices": 776,
+      "bytes": 2970,
+      "maxRegionVertices": 233,
       "viewBox": [
         900,
         700
@@ -33575,17 +33575,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 8,
       "outlinePolylines": 1,
-      "innerEdges": 10,
-      "outlineEdges": 12,
+      "innerEdges": 236,
+      "outlineEdges": 304,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/RW.smap",
-      "assetBytes": 387
+      "assetBytes": 2970
     },
     "country_focus_sa": {
       "regions": 13,
-      "vertices": 4772,
-      "bytes": 19533,
-      "maxRegionVertices": 791,
+      "vertices": 2020,
+      "bytes": 7545,
+      "maxRegionVertices": 297,
       "viewBox": [
         900,
         700
@@ -33594,18 +33594,18 @@
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
       "innerBorders": 27,
-      "outlinePolylines": 11,
-      "innerEdges": 1323,
-      "outlineEdges": 2126,
+      "outlinePolylines": 8,
+      "innerEdges": 731,
+      "outlineEdges": 558,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/SA.smap",
-      "assetBytes": 19533
+      "assetBytes": 7545
     },
     "country_focus_sb": {
       "regions": 10,
-      "vertices": 529,
-      "bytes": 2912,
-      "maxRegionVertices": 147,
+      "vertices": 1155,
+      "bytes": 5428,
+      "maxRegionVertices": 317,
       "viewBox": [
         900,
         700
@@ -33614,18 +33614,18 @@
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
       "innerBorders": 1,
-      "outlinePolylines": 34,
-      "innerEdges": 3,
-      "outlineEdges": 523,
+      "outlinePolylines": 45,
+      "innerEdges": 6,
+      "outlineEdges": 1143,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/SB.smap",
-      "assetBytes": 2912
+      "assetBytes": 5428
     },
     "country_focus_sc": {
       "regions": 25,
-      "vertices": 146,
-      "bytes": 2003,
-      "maxRegionVertices": 12,
+      "vertices": 367,
+      "bytes": 2879,
+      "maxRegionVertices": 50,
       "viewBox": [
         900,
         700
@@ -33634,18 +33634,18 @@
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
       "innerBorders": 41,
-      "outlinePolylines": 4,
-      "innerEdges": 45,
-      "outlineEdges": 56,
+      "outlinePolylines": 18,
+      "innerEdges": 73,
+      "outlineEdges": 221,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/SC.smap",
-      "assetBytes": 2003
+      "assetBytes": 2879
     },
     "country_focus_sd": {
       "regions": 17,
-      "vertices": 2714,
-      "bytes": 13726,
-      "maxRegionVertices": 394,
+      "vertices": 1441,
+      "bytes": 6101,
+      "maxRegionVertices": 163,
       "viewBox": [
         900,
         700
@@ -33653,19 +33653,19 @@
       "quantizationScale": 0.25,
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
-      "innerBorders": 54,
+      "innerBorders": 46,
       "outlinePolylines": 2,
-      "innerEdges": 817,
-      "outlineEdges": 1080,
+      "innerEdges": 478,
+      "outlineEdges": 485,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/SD.smap",
-      "assetBytes": 13726
+      "assetBytes": 6101
     },
     "country_focus_se": {
       "regions": 21,
-      "vertices": 2032,
-      "bytes": 8424,
-      "maxRegionVertices": 195,
+      "vertices": 2974,
+      "bytes": 12010,
+      "maxRegionVertices": 305,
       "viewBox": [
         900,
         700
@@ -33674,18 +33674,18 @@
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
       "innerBorders": 40,
-      "outlinePolylines": 19,
-      "innerEdges": 551,
-      "outlineEdges": 930,
+      "outlinePolylines": 33,
+      "innerEdges": 733,
+      "outlineEdges": 1508,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/SE.smap",
-      "assetBytes": 8424
+      "assetBytes": 12010
     },
     "country_focus_sg": {
       "regions": 5,
-      "vertices": 63,
-      "bytes": 535,
-      "maxRegionVertices": 17,
+      "vertices": 167,
+      "bytes": 1187,
+      "maxRegionVertices": 44,
       "viewBox": [
         900,
         700
@@ -33695,17 +33695,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 6,
       "outlinePolylines": 1,
-      "innerEdges": 21,
-      "outlineEdges": 21,
+      "innerEdges": 62,
+      "outlineEdges": 43,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/SG.smap",
-      "assetBytes": 535
+      "assetBytes": 1187
     },
     "country_focus_sh": {
       "regions": 3,
-      "vertices": 79,
-      "bytes": 771,
-      "maxRegionVertices": 32,
+      "vertices": 12,
+      "bytes": 255,
+      "maxRegionVertices": 4,
       "viewBox": [
         900,
         700
@@ -33714,18 +33714,18 @@
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
       "innerBorders": 0,
-      "outlinePolylines": 4,
+      "outlinePolylines": 3,
       "innerEdges": 0,
-      "outlineEdges": 79,
+      "outlineEdges": 12,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/SH.smap",
-      "assetBytes": 771
+      "assetBytes": 255
     },
     "country_focus_si": {
       "regions": 193,
-      "vertices": 1100,
-      "bytes": 15322,
-      "maxRegionVertices": 15,
+      "vertices": 5705,
+      "bytes": 29739,
+      "maxRegionVertices": 83,
       "viewBox": [
         900,
         700
@@ -33733,19 +33733,19 @@
       "quantizationScale": 0.25,
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
-      "innerBorders": 484,
+      "innerBorders": 492,
       "outlinePolylines": 1,
-      "innerEdges": 505,
-      "outlineEdges": 90,
+      "innerEdges": 2607,
+      "outlineEdges": 491,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/SI.smap",
-      "assetBytes": 15322
+      "assetBytes": 29739
     },
     "country_focus_sk": {
       "regions": 8,
-      "vertices": 2342,
-      "bytes": 8195,
-      "maxRegionVertices": 380,
+      "vertices": 1797,
+      "bytes": 6385,
+      "maxRegionVertices": 300,
       "viewBox": [
         900,
         700
@@ -33755,17 +33755,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 12,
       "outlinePolylines": 1,
-      "innerEdges": 904,
-      "outlineEdges": 534,
+      "innerEdges": 651,
+      "outlineEdges": 495,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/SK.smap",
-      "assetBytes": 8195
+      "assetBytes": 6385
     },
     "country_focus_sl": {
       "regions": 4,
-      "vertices": 1109,
-      "bytes": 4268,
-      "maxRegionVertices": 438,
+      "vertices": 1069,
+      "bytes": 4096,
+      "maxRegionVertices": 421,
       "viewBox": [
         900,
         700
@@ -33775,17 +33775,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 5,
       "outlinePolylines": 2,
-      "innerEdges": 247,
-      "outlineEdges": 615,
+      "innerEdges": 235,
+      "outlineEdges": 599,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/SL.smap",
-      "assetBytes": 4268
+      "assetBytes": 4096
     },
     "country_focus_sm": {
       "regions": 9,
-      "vertices": 84,
-      "bytes": 848,
-      "maxRegionVertices": 14,
+      "vertices": 149,
+      "bytes": 1336,
+      "maxRegionVertices": 30,
       "viewBox": [
         900,
         700
@@ -33795,17 +33795,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 15,
       "outlinePolylines": 1,
-      "innerEdges": 33,
-      "outlineEdges": 18,
+      "innerEdges": 63,
+      "outlineEdges": 23,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/SM.smap",
-      "assetBytes": 848
+      "assetBytes": 1336
     },
     "country_focus_sn": {
       "regions": 14,
-      "vertices": 3253,
-      "bytes": 21701,
-      "maxRegionVertices": 457,
+      "vertices": 2206,
+      "bytes": 8556,
+      "maxRegionVertices": 315,
       "viewBox": [
         900,
         700
@@ -33815,17 +33815,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 24,
       "outlinePolylines": 1,
-      "innerEdges": 940,
-      "outlineEdges": 1373,
+      "innerEdges": 598,
+      "outlineEdges": 1010,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/SN.smap",
-      "assetBytes": 21701
+      "assetBytes": 8556
     },
     "country_focus_so": {
       "regions": 13,
-      "vertices": 683,
-      "bytes": 3827,
-      "maxRegionVertices": 224,
+      "vertices": 449,
+      "bytes": 2472,
+      "maxRegionVertices": 114,
       "viewBox": [
         900,
         700
@@ -33835,17 +33835,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 21,
       "outlinePolylines": 1,
-      "innerEdges": 110,
-      "outlineEdges": 463,
+      "innerEdges": 99,
+      "outlineEdges": 251,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/SO.smap",
-      "assetBytes": 3827
+      "assetBytes": 2472
     },
     "country_focus_sr": {
       "regions": 10,
-      "vertices": 534,
-      "bytes": 2464,
-      "maxRegionVertices": 258,
+      "vertices": 1135,
+      "bytes": 4607,
+      "maxRegionVertices": 536,
       "viewBox": [
         900,
         700
@@ -33855,17 +33855,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 18,
       "outlinePolylines": 1,
-      "innerEdges": 138,
-      "outlineEdges": 258,
+      "innerEdges": 282,
+      "outlineEdges": 571,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/SR.smap",
-      "assetBytes": 2464
+      "assetBytes": 4607
     },
     "country_focus_ss": {
       "regions": 10,
-      "vertices": 1842,
-      "bytes": 7447,
-      "maxRegionVertices": 337,
+      "vertices": 1375,
+      "bytes": 5551,
+      "maxRegionVertices": 229,
       "viewBox": [
         900,
         700
@@ -33875,17 +33875,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 18,
       "outlinePolylines": 1,
-      "innerEdges": 479,
-      "outlineEdges": 884,
+      "innerEdges": 371,
+      "outlineEdges": 633,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/SS.smap",
-      "assetBytes": 7447
+      "assetBytes": 5551
     },
     "country_focus_st": {
       "regions": 2,
-      "vertices": 40,
-      "bytes": 285,
-      "maxRegionVertices": 26,
+      "vertices": 90,
+      "bytes": 489,
+      "maxRegionVertices": 51,
       "viewBox": [
         900,
         700
@@ -33896,16 +33896,16 @@
       "innerBorders": 0,
       "outlinePolylines": 2,
       "innerEdges": 0,
-      "outlineEdges": 40,
+      "outlineEdges": 90,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/ST.smap",
-      "assetBytes": 285
+      "assetBytes": 489
     },
     "country_focus_sv": {
       "regions": 14,
-      "vertices": 1596,
-      "bytes": 6204,
-      "maxRegionVertices": 179,
+      "vertices": 1713,
+      "bytes": 6518,
+      "maxRegionVertices": 199,
       "viewBox": [
         900,
         700
@@ -33915,17 +33915,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 26,
       "outlinePolylines": 3,
-      "innerEdges": 616,
-      "outlineEdges": 364,
+      "innerEdges": 673,
+      "outlineEdges": 367,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/SV.smap",
-      "assetBytes": 6204
+      "assetBytes": 6518
     },
     "country_focus_sy": {
       "regions": 14,
-      "vertices": 2576,
-      "bytes": 9831,
-      "maxRegionVertices": 392,
+      "vertices": 1507,
+      "bytes": 5866,
+      "maxRegionVertices": 209,
       "viewBox": [
         900,
         700
@@ -33935,17 +33935,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 23,
       "outlinePolylines": 1,
-      "innerEdges": 1001,
-      "outlineEdges": 574,
+      "innerEdges": 545,
+      "outlineEdges": 417,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/SY.smap",
-      "assetBytes": 9831
+      "assetBytes": 5866
     },
     "country_focus_sz": {
       "regions": 4,
-      "vertices": 327,
-      "bytes": 1308,
-      "maxRegionVertices": 101,
+      "vertices": 541,
+      "bytes": 2053,
+      "maxRegionVertices": 177,
       "viewBox": [
         900,
         700
@@ -33955,17 +33955,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 5,
       "outlinePolylines": 1,
-      "innerEdges": 131,
-      "outlineEdges": 65,
+      "innerEdges": 232,
+      "outlineEdges": 77,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/SZ.smap",
-      "assetBytes": 1308
+      "assetBytes": 2053
     },
     "country_focus_td": {
       "regions": 21,
-      "vertices": 4232,
-      "bytes": 17297,
-      "maxRegionVertices": 409,
+      "vertices": 1452,
+      "bytes": 6093,
+      "maxRegionVertices": 115,
       "viewBox": [
         900,
         700
@@ -33975,17 +33975,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 42,
       "outlinePolylines": 1,
-      "innerEdges": 1533,
-      "outlineEdges": 1166,
+      "innerEdges": 529,
+      "outlineEdges": 394,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/TD.smap",
-      "assetBytes": 17297
+      "assetBytes": 6093
     },
     "country_focus_tg": {
       "regions": 5,
-      "vertices": 291,
-      "bytes": 1303,
-      "maxRegionVertices": 75,
+      "vertices": 626,
+      "bytes": 2514,
+      "maxRegionVertices": 176,
       "viewBox": [
         900,
         700
@@ -33995,17 +33995,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 4,
       "outlinePolylines": 1,
-      "innerEdges": 64,
-      "outlineEdges": 163,
+      "innerEdges": 142,
+      "outlineEdges": 342,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/TG.smap",
-      "assetBytes": 1303
+      "assetBytes": 2514
     },
     "country_focus_th": {
       "regions": 77,
-      "vertices": 10796,
-      "bytes": 39816,
-      "maxRegionVertices": 370,
+      "vertices": 4580,
+      "bytes": 19411,
+      "maxRegionVertices": 156,
       "viewBox": [
         900,
         700
@@ -34014,18 +34014,18 @@
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
       "innerBorders": 176,
-      "outlinePolylines": 19,
-      "innerEdges": 4223,
-      "outlineEdges": 2350,
+      "outlinePolylines": 15,
+      "innerEdges": 1778,
+      "outlineEdges": 1024,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/TH.smap",
-      "assetBytes": 39816
+      "assetBytes": 19411
     },
     "country_focus_tj": {
       "regions": 4,
-      "vertices": 541,
-      "bytes": 2388,
-      "maxRegionVertices": 209,
+      "vertices": 1214,
+      "bytes": 5093,
+      "maxRegionVertices": 464,
       "viewBox": [
         900,
         700
@@ -34034,18 +34034,18 @@
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
       "innerBorders": 1,
-      "outlinePolylines": 4,
-      "innerEdges": 8,
-      "outlineEdges": 525,
+      "outlinePolylines": 5,
+      "innerEdges": 20,
+      "outlineEdges": 1174,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/TJ.smap",
-      "assetBytes": 2388
+      "assetBytes": 5093
     },
     "country_focus_tl": {
       "regions": 13,
-      "vertices": 598,
-      "bytes": 2844,
-      "maxRegionVertices": 58,
+      "vertices": 683,
+      "bytes": 3149,
+      "maxRegionVertices": 69,
       "viewBox": [
         900,
         700
@@ -34055,17 +34055,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 22,
       "outlinePolylines": 3,
-      "innerEdges": 180,
-      "outlineEdges": 238,
+      "innerEdges": 204,
+      "outlineEdges": 275,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/TL.smap",
-      "assetBytes": 2844
+      "assetBytes": 3149
     },
     "country_focus_tm": {
       "regions": 5,
-      "vertices": 2292,
-      "bytes": 9558,
-      "maxRegionVertices": 964,
+      "vertices": 1332,
+      "bytes": 5326,
+      "maxRegionVertices": 510,
       "viewBox": [
         900,
         700
@@ -34075,17 +34075,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 7,
       "outlinePolylines": 3,
-      "innerEdges": 356,
-      "outlineEdges": 1580,
+      "innerEdges": 206,
+      "outlineEdges": 920,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/TM.smap",
-      "assetBytes": 9558
+      "assetBytes": 5326
     },
     "country_focus_tn": {
       "regions": 23,
-      "vertices": 1512,
-      "bytes": 6385,
-      "maxRegionVertices": 139,
+      "vertices": 1722,
+      "bytes": 7009,
+      "maxRegionVertices": 159,
       "viewBox": [
         900,
         700
@@ -34095,16 +34095,16 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 47,
       "outlinePolylines": 4,
-      "innerEdges": 535,
-      "outlineEdges": 442,
+      "innerEdges": 616,
+      "outlineEdges": 490,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/TN.smap",
-      "assetBytes": 6385
+      "assetBytes": 7009
     },
     "country_focus_to": {
       "regions": 5,
-      "vertices": 110,
-      "bytes": 783,
+      "vertices": 109,
+      "bytes": 737,
       "maxRegionVertices": 33,
       "viewBox": [
         900,
@@ -34116,16 +34116,16 @@
       "innerBorders": 0,
       "outlinePolylines": 10,
       "innerEdges": 0,
-      "outlineEdges": 110,
+      "outlineEdges": 109,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/TO.smap",
-      "assetBytes": 783
+      "assetBytes": 737
     },
     "country_focus_tr": {
       "regions": 81,
-      "vertices": 7226,
-      "bytes": 28991,
-      "maxRegionVertices": 319,
+      "vertices": 5949,
+      "bytes": 23947,
+      "maxRegionVertices": 220,
       "viewBox": [
         900,
         700
@@ -34135,17 +34135,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 209,
       "outlinePolylines": 6,
-      "innerEdges": 2677,
-      "outlineEdges": 1872,
+      "innerEdges": 2298,
+      "outlineEdges": 1353,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/TR.smap",
-      "assetBytes": 28991
+      "assetBytes": 23947
     },
     "country_focus_tt": {
       "regions": 16,
-      "vertices": 231,
-      "bytes": 1828,
-      "maxRegionVertices": 27,
+      "vertices": 528,
+      "bytes": 2840,
+      "maxRegionVertices": 74,
       "viewBox": [
         900,
         700
@@ -34155,17 +34155,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 22,
       "outlinePolylines": 2,
-      "innerEdges": 71,
-      "outlineEdges": 89,
+      "innerEdges": 167,
+      "outlineEdges": 194,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/TT.smap",
-      "assetBytes": 1828
+      "assetBytes": 2840
     },
     "country_focus_tw": {
       "regions": 21,
-      "vertices": 1753,
-      "bytes": 7505,
-      "maxRegionVertices": 158,
+      "vertices": 1629,
+      "bytes": 6547,
+      "maxRegionVertices": 143,
       "viewBox": [
         900,
         700
@@ -34175,17 +34175,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 33,
       "outlinePolylines": 8,
-      "innerEdges": 602,
-      "outlineEdges": 549,
+      "innerEdges": 585,
+      "outlineEdges": 459,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/TW.smap",
-      "assetBytes": 7505
+      "assetBytes": 6547
     },
     "country_focus_tz": {
       "regions": 30,
-      "vertices": 4995,
-      "bytes": 19262,
-      "maxRegionVertices": 348,
+      "vertices": 3316,
+      "bytes": 12475,
+      "maxRegionVertices": 226,
       "viewBox": [
         900,
         700
@@ -34195,17 +34195,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 60,
       "outlinePolylines": 7,
-      "innerEdges": 1752,
-      "outlineEdges": 1491,
+      "innerEdges": 1296,
+      "outlineEdges": 724,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/TZ.smap",
-      "assetBytes": 19262
+      "assetBytes": 12475
     },
     "country_focus_ua": {
       "regions": 25,
-      "vertices": 4300,
-      "bytes": 15523,
-      "maxRegionVertices": 280,
+      "vertices": 5242,
+      "bytes": 18484,
+      "maxRegionVertices": 342,
       "viewBox": [
         900,
         700
@@ -34215,17 +34215,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 54,
       "outlinePolylines": 4,
-      "innerEdges": 1621,
-      "outlineEdges": 1058,
+      "innerEdges": 1987,
+      "outlineEdges": 1268,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/UA.smap",
-      "assetBytes": 15523
+      "assetBytes": 18484
     },
     "country_focus_ug": {
       "regions": 112,
-      "vertices": 3717,
-      "bytes": 18505,
-      "maxRegionVertices": 64,
+      "vertices": 4275,
+      "bytes": 19932,
+      "maxRegionVertices": 79,
       "viewBox": [
         900,
         700
@@ -34235,17 +34235,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 288,
       "outlinePolylines": 1,
-      "innerEdges": 1694,
-      "outlineEdges": 329,
+      "innerEdges": 1933,
+      "outlineEdges": 409,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/UG.smap",
-      "assetBytes": 18505
+      "assetBytes": 19932
     },
     "country_focus_us": {
       "regions": 51,
-      "vertices": 27831,
-      "bytes": 112427,
-      "maxRegionVertices": 10616,
+      "vertices": 2420,
+      "bytes": 11803,
+      "maxRegionVertices": 610,
       "viewBox": [
         900,
         700
@@ -34253,19 +34253,19 @@
       "quantizationScale": 0.25,
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
-      "innerBorders": 120,
-      "outlinePolylines": 306,
-      "innerEdges": 4010,
-      "outlineEdges": 19811,
-      "nearlySharedEdges": 0,
+      "innerBorders": 110,
+      "outlinePolylines": 36,
+      "innerEdges": 598,
+      "outlineEdges": 1224,
+      "nearlySharedEdges": 6,
       "asset": "assets/maps/country_focus/US.smap",
-      "assetBytes": 112427
+      "assetBytes": 11803
     },
     "country_focus_uy": {
       "regions": 19,
-      "vertices": 124,
-      "bytes": 1475,
-      "maxRegionVertices": 9,
+      "vertices": 2543,
+      "bytes": 9273,
+      "maxRegionVertices": 200,
       "viewBox": [
         900,
         700
@@ -34273,19 +34273,19 @@
       "quantizationScale": 0.25,
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
-      "innerBorders": 38,
+      "innerBorders": 37,
       "outlinePolylines": 1,
-      "innerEdges": 50,
-      "outlineEdges": 24,
+      "innerEdges": 1017,
+      "outlineEdges": 509,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/UY.smap",
-      "assetBytes": 1475
+      "assetBytes": 9273
     },
     "country_focus_uz": {
       "regions": 14,
-      "vertices": 2429,
-      "bytes": 9633,
-      "maxRegionVertices": 260,
+      "vertices": 1593,
+      "bytes": 6430,
+      "maxRegionVertices": 179,
       "viewBox": [
         900,
         700
@@ -34295,17 +34295,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 20,
       "outlinePolylines": 4,
-      "innerEdges": 644,
-      "outlineEdges": 1141,
+      "innerEdges": 416,
+      "outlineEdges": 761,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/UZ.smap",
-      "assetBytes": 9633
+      "assetBytes": 6430
     },
     "country_focus_vc": {
       "regions": 6,
-      "vertices": 46,
-      "bytes": 540,
-      "maxRegionVertices": 12,
+      "vertices": 146,
+      "bytes": 944,
+      "maxRegionVertices": 55,
       "viewBox": [
         900,
         700
@@ -34314,18 +34314,18 @@
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
       "innerBorders": 7,
-      "outlinePolylines": 2,
-      "innerEdges": 14,
-      "outlineEdges": 18,
+      "outlinePolylines": 5,
+      "innerEdges": 32,
+      "outlineEdges": 82,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/VC.smap",
-      "assetBytes": 540
+      "assetBytes": 944
     },
     "country_focus_ve": {
       "regions": 25,
-      "vertices": 10336,
-      "bytes": 41808,
-      "maxRegionVertices": 884,
+      "vertices": 3541,
+      "bytes": 13454,
+      "maxRegionVertices": 388,
       "viewBox": [
         900,
         700
@@ -34334,18 +34334,18 @@
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
       "innerBorders": 50,
-      "outlinePolylines": 24,
-      "innerEdges": 3609,
-      "outlineEdges": 3118,
+      "outlinePolylines": 17,
+      "innerEdges": 1127,
+      "outlineEdges": 1287,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/VE.smap",
-      "assetBytes": 41808
+      "assetBytes": 13454
     },
     "country_focus_vn": {
       "regions": 63,
-      "vertices": 3614,
-      "bytes": 17506,
-      "maxRegionVertices": 133,
+      "vertices": 2965,
+      "bytes": 13628,
+      "maxRegionVertices": 105,
       "viewBox": [
         900,
         700
@@ -34354,18 +34354,18 @@
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
       "innerBorders": 128,
-      "outlinePolylines": 250,
-      "innerEdges": 1133,
-      "outlineEdges": 1348,
-      "nearlySharedEdges": 2,
+      "outlinePolylines": 16,
+      "innerEdges": 958,
+      "outlineEdges": 1049,
+      "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/VN.smap",
-      "assetBytes": 17506
+      "assetBytes": 13628
     },
     "country_focus_vu": {
       "regions": 6,
-      "vertices": 289,
-      "bytes": 1630,
-      "maxRegionVertices": 69,
+      "vertices": 559,
+      "bytes": 2716,
+      "maxRegionVertices": 124,
       "viewBox": [
         900,
         700
@@ -34374,18 +34374,18 @@
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
       "innerBorders": 0,
-      "outlinePolylines": 21,
+      "outlinePolylines": 27,
       "innerEdges": 0,
-      "outlineEdges": 289,
+      "outlineEdges": 559,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/VU.smap",
-      "assetBytes": 1630
+      "assetBytes": 2716
     },
     "country_focus_wf": {
       "regions": 3,
-      "vertices": 34,
-      "bytes": 309,
-      "maxRegionVertices": 14,
+      "vertices": 61,
+      "bytes": 414,
+      "maxRegionVertices": 29,
       "viewBox": [
         900,
         700
@@ -34395,16 +34395,16 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 1,
       "outlinePolylines": 3,
-      "innerEdges": 2,
-      "outlineEdges": 30,
+      "innerEdges": 4,
+      "outlineEdges": 53,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/WF.smap",
-      "assetBytes": 309
+      "assetBytes": 414
     },
     "country_focus_ws": {
       "regions": 11,
       "vertices": 220,
-      "bytes": 1636,
+      "bytes": 1657,
       "maxRegionVertices": 30,
       "viewBox": [
         900,
@@ -34419,13 +34419,13 @@
       "outlineEdges": 136,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/WS.smap",
-      "assetBytes": 1636
+      "assetBytes": 1657
     },
     "country_focus_ye": {
       "regions": 21,
-      "vertices": 3074,
-      "bytes": 14541,
-      "maxRegionVertices": 378,
+      "vertices": 2149,
+      "bytes": 8400,
+      "maxRegionVertices": 259,
       "viewBox": [
         900,
         700
@@ -34435,17 +34435,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 45,
       "outlinePolylines": 9,
-      "innerEdges": 1039,
-      "outlineEdges": 996,
+      "innerEdges": 773,
+      "outlineEdges": 603,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/YE.smap",
-      "assetBytes": 14541
+      "assetBytes": 8400
     },
     "country_focus_za": {
       "regions": 9,
-      "vertices": 3773,
-      "bytes": 13365,
-      "maxRegionVertices": 674,
+      "vertices": 1641,
+      "bytes": 6046,
+      "maxRegionVertices": 316,
       "viewBox": [
         900,
         700
@@ -34454,18 +34454,18 @@
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
       "innerBorders": 17,
-      "outlinePolylines": 4,
-      "innerEdges": 1225,
-      "outlineEdges": 1323,
+      "outlinePolylines": 3,
+      "innerEdges": 550,
+      "outlineEdges": 541,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/ZA.smap",
-      "assetBytes": 13365
+      "assetBytes": 6046
     },
     "country_focus_zm": {
       "regions": 10,
-      "vertices": 1187,
-      "bytes": 4509,
-      "maxRegionVertices": 179,
+      "vertices": 2248,
+      "bytes": 8089,
+      "maxRegionVertices": 338,
       "viewBox": [
         900,
         700
@@ -34475,17 +34475,17 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 15,
       "outlinePolylines": 1,
-      "innerEdges": 403,
-      "outlineEdges": 381,
+      "innerEdges": 756,
+      "outlineEdges": 736,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/ZM.smap",
-      "assetBytes": 4509
+      "assetBytes": 8089
     },
     "country_focus_zw": {
       "regions": 10,
-      "vertices": 1784,
-      "bytes": 6415,
-      "maxRegionVertices": 251,
+      "vertices": 2352,
+      "bytes": 8251,
+      "maxRegionVertices": 341,
       "viewBox": [
         900,
         700
@@ -34495,11 +34495,11 @@
       "estimatedMaxError": 0.6,
       "innerBorders": 20,
       "outlinePolylines": 1,
-      "innerEdges": 692,
-      "outlineEdges": 400,
+      "innerEdges": 923,
+      "outlineEdges": 506,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/ZW.smap",
-      "assetBytes": 6415
+      "assetBytes": 8251
     },
     "brazil_states": {
       "regions": 27,
@@ -34541,12 +34541,12 @@
     }
   },
   "measurements": {
-    "newCountryFocusAssetsBytes": 2861315,
+    "newCountryFocusAssetsBytes": 1604029,
     "largestCountryFocus": {
-      "regions": 85,
-      "vertices": 86325,
-      "bytes": 304391,
-      "maxRegionVertices": 6746,
+      "regions": 232,
+      "vertices": 8837,
+      "bytes": 43940,
+      "maxRegionVertices": 542,
       "viewBox": [
         900,
         700
@@ -34554,19 +34554,19 @@
       "quantizationScale": 0.25,
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
-      "innerBorders": 376,
-      "outlinePolylines": 216,
-      "innerEdges": 28198,
-      "outlineEdges": 29929,
+      "innerBorders": 549,
+      "outlinePolylines": 52,
+      "innerEdges": 3104,
+      "outlineEdges": 2629,
       "nearlySharedEdges": 0,
-      "asset": "assets/maps/country_focus/RU.smap",
-      "assetBytes": 304391,
-      "iso2": "RU"
+      "asset": "assets/maps/country_focus/GB.smap",
+      "assetBytes": 43940,
+      "iso2": "GB"
     },
-    "averageCountryFocusAssetBytes": 14451,
+    "averageCountryFocusAssetBytes": 8101,
     "totalSubdivisions": 4395,
-    "packageRuntimeBytesBefore": 466358,
-    "packageRuntimeBytesAfter": 5074881,
+    "packageRuntimeBytesBefore": 467570,
+    "packageRuntimeBytesAfter": 3817595,
     "embeddedGeneratedBytesAfter": 467570,
     "catalogBytes": 1745996
   }
