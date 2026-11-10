@@ -11,6 +11,7 @@
 | `ShapeMaps.southAmerica` | `AR BO BR CL CO EC GF GY PE PY SR UY VE` | ISO alpha-2 |
 | `ShapeMaps.brazilStates` | 27 UFs (IBGE), incluindo `BR-DF` | `BR-XX` |
 | `ShapeMaps.southAmericaFocus(iso)` | Admin-1 do país selecionado + os demais países como contexto, no viewBox continental | ISO 3166-2 no país selecionado e ISO alpha-2 no contexto |
+| `ShapeMaps.loadCountryFocus(iso)` | Admin-1 country-only sob demanda para países com foco no catálogo | `<ISO>-...` |
 
 Opcional, fora do core: os 5.570 municípios brasileiros (IBGE), IDs `BR-<código IBGE de 7 dígitos>` (ex.: `BR-3550308` = São Paulo). Veja [Municípios brasileiros](#municípios-brasileiros-opcionais).
 
@@ -33,6 +34,25 @@ ShapeMap(
 ```
 
 Os marcadores usam `MapRegion.markerAnchor` por padrão; `MapMarkerData.position` serve para layouts customizados. `MapMarkerData(showLabel: false)` cria um marcador sem texto. `ShapeMaps.southAmericaCountries` continua disponível como alias deprecated de `southAmerica`.
+
+### Focos por país
+
+O pacote distribui sob demanda um asset SMAP country-only para cada país com admin-1 confiável no Natural Earth 10m. `ShapeMaps.focusCountries` é o conjunto canônico gerado pelo pipeline, e `ShapeMaps.hasFocus(iso)` verifica a disponibilidade sem decodificar geometria.
+
+```dart
+if (ShapeMaps.hasFocus(countryIso)) {
+  final map = await ShapeMaps.loadCountryFocus(countryIso);
+  await map.warmUp();
+  camera.zoomToBounds(map.focusBounds!);
+}
+
+// Pré-carrega em isolate e reutiliza a mesma instância em chamadas futuras.
+await ShapeMaps.preloadCountryFocus('JP');
+```
+
+`loadCountryFocus` normaliza o ISO alpha-2, carrega `assets/maps/country_focus/<ISO>.smap`, decodifica em isolate e mantém cache por país. O mapa retornado contém somente regiões com prefixo `<ISO>-`; um país sem foco lança `ArgumentError` claro. `focusBounds` sempre é calculado a partir dessas regiões.
+
+O catálogo canônico gerado está em `catalog/geo_catalog.json`. Ele contém países, subdivisões, nomes em inglês/português/espanhol, tipo, códigos de origem e aliases para integração com GeoNames. `source_codes` preserva os valores brutos; `aliases` contém somente formas canônicas não ambíguas, e o relatório registra colisões que não podem ser usadas para resolução automática. `code` é único no catálogo e em cada mapa de foco. Quando a fonte fornece o mesmo ISO 3166-2 para feições diferentes, o pipeline preserva cada geometria e usa um sufixo curto de código de origem quando ele é único; caso contrário, usa os três primeiros dígitos base36 de um hash SHA-256 de país, código base e identificador estável da fonte. O código antigo não vira alias quando é ambíguo. Feições multipartes reais permanecem uma única região porque já chegam como uma geometria `MultiPolygon`.
 
 ### Mapas de foco
 
@@ -133,7 +153,8 @@ Usa a mesma projeção e viewBox de `ShapeMaps.brazilStates`, então as âncoras
 ## Fontes, licenças e geração
 
 - Países: [Natural Earth](https://www.naturalearthdata.com/) 50m admin-0, domínio público.
-- Países: [Natural Earth](https://www.naturalearthdata.com/) 10m admin-1 states/provinces, domínio público, usado pelos mapas de foco sul-americanos. Não há cidades ou municípios nesses mapas.
+- Países: [Natural Earth](https://www.naturalearthdata.com/) 10m admin-1 states/provinces, domínio público, usado nos focos country-only e nos mapas de foco sul-americanos. Não há cidades ou municípios nesses mapas.
+- Catálogo canônico: `catalog/geo_catalog.json`, gerado no mesmo passo que os assets e contendo os aliases de origem/GeoNames.
 - Brasil (UFs e municípios): malhas territoriais do [IBGE](https://servicodados.ibge.gov.br/api/docs/malhas?versao=3).
 
 URLs, hashes SHA-256 e qualidade ficam em `tool/maps/sources.json`; a atribuição completa está em [ATTRIBUTION.md](ATTRIBUTION.md). `mapshaper` e `polylabel` são dependências apenas de build, em `tool/`, e não vão para o app.

@@ -1,5 +1,7 @@
-import 'models.dart';
+import 'package:flutter/services.dart';
+
 import 'generated/brazil_states.g.dart';
+import 'generated/country_focus_catalog.g.dart';
 import 'generated/latin_america.g.dart';
 import 'generated/south_america.g.dart';
 import 'generated/south_america_focus_ar.g.dart';
@@ -15,6 +17,8 @@ import 'generated/south_america_focus_sr.g.dart';
 import 'generated/south_america_focus_uy.g.dart';
 import 'generated/south_america_focus_ve.g.dart';
 import 'generated/world.g.dart';
+import 'codec.dart';
+import 'models.dart';
 
 /// Identifies a built-in map that can be preloaded.
 enum ShapeMapId {
@@ -40,6 +44,9 @@ enum ShapeMapId {
 abstract final class ShapeMaps {
   ShapeMaps._();
 
+  static final Map<String, MapDefinition> _countryFocusCache = {};
+  static final Map<String, Future<MapDefinition>> _countryFocusLoads = {};
+
   /// Map of countries and territories in Natural Earth 50m data.
   static MapDefinition get world => generatedWorld;
 
@@ -51,6 +58,62 @@ abstract final class ShapeMaps {
 
   /// Map of the 27 Brazilian federative units.
   static MapDefinition get brazilStates => generatedBrazilStates;
+
+  /// ISO alpha-2 countries with a generated country-only admin-1 focus.
+  static Set<String> get focusCountries => generatedCountryFocusCountries;
+
+  /// Whether a country has a generated country-only focus map.
+  static bool hasFocus(String countryIso) =>
+      focusCountries.contains(_normalizeCountryIso(countryIso));
+
+  /// Loads a country-only focus map from this package's SMAP asset.
+  ///
+  /// The asset is decoded in an isolate and cached by ISO alpha-2 code. The
+  /// returned map contains only that country's admin-1 regions and uses a
+  /// focus prefix such as `US-` for camera fitting.
+  static Future<MapDefinition> loadCountryFocus(String countryIso) {
+    final iso = _requireFocusCountry(countryIso);
+    final cached = _countryFocusCache[iso];
+    if (cached != null) return Future.value(cached);
+    return _countryFocusLoads[iso] ??= _loadCountryFocus(iso);
+  }
+
+  /// Preloads a country-only focus map and retains it in the package cache.
+  static Future<void> preloadCountryFocus(String countryIso) async {
+    await loadCountryFocus(countryIso);
+  }
+
+  static Future<MapDefinition> _loadCountryFocus(String iso) async {
+    try {
+      final bytes = await rootBundle.load(
+        'packages/shape_map/assets/maps/country_focus/$iso.smap',
+      );
+      final map = await ShapeMapData.decode(
+        bytes,
+        id: 'countryFocus$iso',
+        focusRegionPrefix: '$iso-',
+      );
+      _countryFocusCache[iso] = map;
+      return map;
+    } finally {
+      _countryFocusLoads.remove(iso);
+    }
+  }
+
+  static String _normalizeCountryIso(String countryIso) =>
+      countryIso.trim().toUpperCase();
+
+  static String _requireFocusCountry(String countryIso) {
+    final iso = _normalizeCountryIso(countryIso);
+    if (!RegExp(r'^[A-Z]{2}$').hasMatch(iso) || !hasFocus(iso)) {
+      throw ArgumentError.value(
+        countryIso,
+        'countryIso',
+        'Expected an ISO alpha-2 country with a generated admin-1 focus.',
+      );
+    }
+    return iso;
+  }
 
   /// Map of one South American country's admin-1 regions plus country context.
   ///
@@ -79,7 +142,7 @@ abstract final class ShapeMaps {
     };
   }
 
-  /// Preloads one focus map without synchronously decoding it.
+  /// Preloads one legacy South America focus map without synchronously decoding it.
   static Future<void> preloadFocus(String countryIso) async {
     final id = switch (countryIso.toUpperCase()) {
       'AR' => ShapeMapId.southAmericaFocusAr,
