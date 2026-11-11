@@ -19,12 +19,14 @@ MapDefinition decodeGenerated(
   Uint8List bytes, {
   required String id,
   String? focusRegionPrefix,
+  MercatorLatitudes? mercatorLatitudes,
 }) {
   shapeMapDecodeCount++;
   return ShapeMapData.decodeSync(
     bytes,
     id: id,
     focusRegionPrefix: focusRegionPrefix,
+    mercatorLatitudes: mercatorLatitudes,
   );
 }
 
@@ -34,9 +36,15 @@ Future<MapDefinition> decodeGeneratedAsync(
   String encoded, {
   required String id,
   String? focusRegionPrefix,
+  MercatorLatitudes? mercatorLatitudes,
 }) async {
   final decoded = await Isolate.run(() => _parse(base64Decode(encoded)));
-  return _materialize(decoded, id: id, focusRegionPrefix: focusRegionPrefix);
+  return _materialize(
+    decoded,
+    id: id,
+    focusRegionPrefix: focusRegionPrefix,
+    mercatorLatitudes: mercatorLatitudes,
+  );
 }
 
 /// SMAP v2 decoder for embedded and application-provided map data.
@@ -46,8 +54,13 @@ abstract final class ShapeMapData {
     Uint8List bytes, {
     String? id,
     String? focusRegionPrefix,
-  }) =>
-      _materialize(_parse(bytes), id: id, focusRegionPrefix: focusRegionPrefix);
+    MercatorLatitudes? mercatorLatitudes,
+  }) => _materialize(
+    _parse(bytes),
+    id: id,
+    focusRegionPrefix: focusRegionPrefix,
+    mercatorLatitudes: mercatorLatitudes,
+  );
 
   /// Decodes [bytes] off the UI isolate and materializes lazy map geometry.
   ///
@@ -58,6 +71,7 @@ abstract final class ShapeMapData {
     ByteData bytes, {
     String? id,
     String? focusRegionPrefix,
+    MercatorLatitudes? mercatorLatitudes,
   }) async {
     final raw = Uint8List.sublistView(
       bytes.buffer.asUint8List(),
@@ -65,7 +79,12 @@ abstract final class ShapeMapData {
       bytes.offsetInBytes + bytes.lengthInBytes,
     );
     final decoded = await Isolate.run(() => _parse(raw));
-    return _materialize(decoded, id: id, focusRegionPrefix: focusRegionPrefix);
+    return _materialize(
+      decoded,
+      id: id,
+      focusRegionPrefix: focusRegionPrefix,
+      mercatorLatitudes: mercatorLatitudes,
+    );
   }
 }
 
@@ -214,6 +233,7 @@ MapDefinition _materialize(
   Map<String, Object> decoded, {
   String? id,
   String? focusRegionPrefix,
+  MercatorLatitudes? mercatorLatitudes,
 }) {
   final scale = decoded['scale']! as double;
   final ids = decoded['ids']! as List<String>;
@@ -280,6 +300,7 @@ MapDefinition _materialize(
         ),
     ],
     focusRegionPrefix: focusRegionPrefix,
+    mercatorLatitudes: mercatorLatitudes,
   );
 }
 

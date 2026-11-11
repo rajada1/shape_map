@@ -2,6 +2,8 @@ export 'src/animation/entrance.dart'
     show ShapeMapEntrance, ShapeMapEntranceStyle, ShapeMapStaggerOrder;
 export 'src/data/catalog.dart' show ShapeMapId, ShapeMaps;
 export 'src/data/codec.dart' show ShapeMapData;
+export 'src/data/geo_catalog.dart'
+    show GeoCatalog, GeoCatalogCountry, GeoCatalogSubdivision;
 export 'src/data/models.dart'
     show
         MapDefinition,
@@ -11,7 +13,8 @@ export 'src/data/models.dart'
         MapPathCommandType,
         MapPolyline,
         MapRegion,
-        MapRegionData;
+        MapRegionData,
+        MercatorLatitudes;
 export 'src/state/camera.dart' show ShapeMapCameraController;
 export 'src/state/controller.dart' show ShapeMapController;
 export 'src/style/style.dart'
