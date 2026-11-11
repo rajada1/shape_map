@@ -30273,21 +30273,25 @@
   "maps": {
     "world": {
       "regions": 234,
-      "vertices": 9700,
-      "bytes": 48230,
-      "maxRegionVertices": 702,
+      "vertices": 13220,
+      "bytes": 63701,
+      "maxRegionVertices": 2149,
       "viewBox": [
         1200,
-        620
+        790
       ],
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
       "quantizationScale": 0.25,
       "simplificationTolerance": 0.6,
       "estimatedMaxError": 0.6,
-      "innerBorders": 340,
-      "outlinePolylines": 294,
-      "innerEdges": 2459,
-      "outlineEdges": 4782,
-      "nearlySharedEdges": 96
+      "innerBorders": 339,
+      "outlinePolylines": 529,
+      "innerEdges": 2500,
+      "outlineEdges": 8220,
+      "nearlySharedEdges": 78
     },
     "latin_america": {
       "regions": 34,
@@ -30544,3962 +30548,4754 @@
     "country_focus_ad": {
       "regions": 7,
       "vertices": 183,
-      "bytes": 1356,
+      "bytes": 1425,
       "maxRegionVertices": 31,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.00035664156586820444,
+      "simplificationTolerance": 0.0008559397580836907,
+      "estimatedMaxError": 0.0008559397580836907,
       "innerBorders": 10,
       "outlinePolylines": 1,
       "innerEdges": 66,
       "outlineEdges": 51,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/AD.smap",
-      "assetBytes": 1356
+      "assetBytes": 1425
     },
     "country_focus_ae": {
       "regions": 7,
-      "vertices": 1147,
-      "bytes": 4792,
-      "maxRegionVertices": 490,
+      "vertices": 1189,
+      "bytes": 5090,
+      "maxRegionVertices": 504,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.004506435146742897,
+      "simplificationTolerance": 0.010815444352182952,
+      "estimatedMaxError": 0.010815444352182952,
       "innerBorders": 23,
       "outlinePolylines": 15,
-      "innerEdges": 234,
-      "outlineEdges": 679,
+      "innerEdges": 245,
+      "outlineEdges": 699,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/AE.smap",
-      "assetBytes": 4792
+      "assetBytes": 5090
     },
     "country_focus_af": {
       "regions": 34,
-      "vertices": 4463,
-      "bytes": 16228,
-      "maxRegionVertices": 350,
+      "vertices": 4573,
+      "bytes": 16833,
+      "maxRegionVertices": 367,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.013285490514833666,
+      "simplificationTolerance": 0.031885177235600796,
+      "estimatedMaxError": 0.031885177235600796,
       "innerBorders": 80,
       "outlinePolylines": 1,
-      "innerEdges": 1811,
-      "outlineEdges": 841,
+      "innerEdges": 1848,
+      "outlineEdges": 877,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/AF.smap",
-      "assetBytes": 16228
+      "assetBytes": 16833
     },
     "country_focus_ag": {
       "regions": 8,
       "vertices": 179,
-      "bytes": 1152,
+      "bytes": 1205,
       "maxRegionVertices": 44,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.0009901162517898727,
+      "simplificationTolerance": 0.0023762790042956942,
+      "estimatedMaxError": 0.0023762790042956942,
       "innerBorders": 9,
       "outlinePolylines": 3,
       "innerEdges": 33,
       "outlineEdges": 113,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/AG.smap",
-      "assetBytes": 1152
+      "assetBytes": 1205
     },
     "country_focus_ai": {
       "regions": 1,
       "vertices": 23,
-      "bytes": 182,
+      "bytes": 213,
       "maxRegionVertices": 23,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.0004254354237224325,
+      "simplificationTolerance": 0.001021045016933838,
+      "estimatedMaxError": 0.001021045016933838,
       "innerBorders": 0,
       "outlinePolylines": 4,
       "innerEdges": 0,
       "outlineEdges": 23,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/AI.smap",
-      "assetBytes": 182
+      "assetBytes": 213
     },
     "country_focus_al": {
       "regions": 12,
-      "vertices": 1677,
-      "bytes": 6182,
-      "maxRegionVertices": 194,
+      "vertices": 1675,
+      "bytes": 6250,
+      "maxRegionVertices": 191,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.004772559286734956,
+      "simplificationTolerance": 0.011454142288163894,
+      "estimatedMaxError": 0.011454142288163894,
       "innerBorders": 22,
       "outlinePolylines": 1,
-      "innerEdges": 608,
+      "innerEdges": 607,
       "outlineEdges": 461,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/AL.smap",
-      "assetBytes": 6182
+      "assetBytes": 6250
     },
     "country_focus_am": {
       "regions": 11,
-      "vertices": 1256,
-      "bytes": 4908,
-      "maxRegionVertices": 163,
+      "vertices": 1266,
+      "bytes": 5004,
+      "maxRegionVertices": 165,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.003776039292727791,
+      "simplificationTolerance": 0.009062494302546699,
+      "estimatedMaxError": 0.009062494302546699,
       "innerBorders": 20,
       "outlinePolylines": 4,
-      "innerEdges": 430,
-      "outlineEdges": 396,
+      "innerEdges": 434,
+      "outlineEdges": 398,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/AM.smap",
-      "assetBytes": 4908
+      "assetBytes": 5004
     },
     "country_focus_ao": {
       "regions": 18,
-      "vertices": 2621,
-      "bytes": 9546,
-      "maxRegionVertices": 258,
+      "vertices": 2885,
+      "bytes": 10514,
+      "maxRegionVertices": 276,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.016554274792287202,
+      "simplificationTolerance": 0.039730259501489285,
+      "estimatedMaxError": 0.039730259501489285,
       "innerBorders": 34,
       "outlinePolylines": 3,
-      "innerEdges": 1005,
-      "outlineEdges": 611,
+      "innerEdges": 1104,
+      "outlineEdges": 677,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/AO.smap",
-      "assetBytes": 9546
+      "assetBytes": 10514
     },
     "country_focus_ar": {
       "regions": 24,
-      "vertices": 2059,
-      "bytes": 8465,
-      "maxRegionVertices": 137,
+      "vertices": 1892,
+      "bytes": 8013,
+      "maxRegionVertices": 154,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.05224907461199645,
+      "simplificationTolerance": 0.1253977790687915,
+      "estimatedMaxError": 0.1253977790687915,
       "innerBorders": 43,
       "outlinePolylines": 6,
-      "innerEdges": 598,
-      "outlineEdges": 863,
+      "innerEdges": 524,
+      "outlineEdges": 844,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/AR.smap",
-      "assetBytes": 8465
+      "assetBytes": 8013
     },
     "country_focus_at": {
       "regions": 9,
-      "vertices": 1753,
-      "bytes": 6584,
-      "maxRegionVertices": 310,
+      "vertices": 1799,
+      "bytes": 6787,
+      "maxRegionVertices": 319,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.007034165002235896,
+      "simplificationTolerance": 0.01688199600536615,
+      "estimatedMaxError": 0.01688199600536615,
       "innerBorders": 14,
       "outlinePolylines": 1,
-      "innerEdges": 486,
-      "outlineEdges": 781,
+      "innerEdges": 502,
+      "outlineEdges": 795,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/AT.smap",
-      "assetBytes": 6584
+      "assetBytes": 6787
     },
     "country_focus_au": {
       "regions": 8,
-      "vertices": 1873,
-      "bytes": 7952,
-      "maxRegionVertices": 456,
+      "vertices": 1978,
+      "bytes": 8602,
+      "maxRegionVertices": 450,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.04674752201515128,
+      "simplificationTolerance": 0.11219405283636308,
+      "estimatedMaxError": 0.11219405283636308,
       "innerBorders": 10,
-      "outlinePolylines": 28,
-      "innerEdges": 167,
-      "outlineEdges": 1539,
+      "outlinePolylines": 33,
+      "innerEdges": 142,
+      "outlineEdges": 1694,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/AU.smap",
-      "assetBytes": 7952
+      "assetBytes": 8602
     },
     "country_focus_az": {
       "regions": 77,
-      "vertices": 3814,
-      "bytes": 16774,
-      "maxRegionVertices": 172,
+      "vertices": 3818,
+      "bytes": 17306,
+      "maxRegionVertices": 173,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.00544886659674898,
+      "simplificationTolerance": 0.013077279832197553,
+      "estimatedMaxError": 0.013077279832197553,
       "innerBorders": 164,
       "outlinePolylines": 8,
-      "innerEdges": 1477,
-      "outlineEdges": 860,
+      "innerEdges": 1478,
+      "outlineEdges": 862,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/AZ.smap",
-      "assetBytes": 16774
+      "assetBytes": 17306
     },
     "country_focus_ba": {
       "regions": 11,
-      "vertices": 1062,
-      "bytes": 4456,
-      "maxRegionVertices": 172,
+      "vertices": 1057,
+      "bytes": 4490,
+      "maxRegionVertices": 171,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.004371122423322869,
+      "simplificationTolerance": 0.010490693815974885,
+      "estimatedMaxError": 0.010490693815974885,
       "innerBorders": 14,
       "outlinePolylines": 2,
-      "innerEdges": 250,
-      "outlineEdges": 562,
+      "innerEdges": 249,
+      "outlineEdges": 559,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/BA.smap",
-      "assetBytes": 4456
+      "assetBytes": 4490
     },
     "country_focus_bb": {
       "regions": 11,
-      "vertices": 265,
-      "bytes": 1729,
-      "maxRegionVertices": 35,
+      "vertices": 277,
+      "bytes": 1923,
+      "maxRegionVertices": 37,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.00035784084374852185,
+      "simplificationTolerance": 0.0008588180249964524,
+      "estimatedMaxError": 0.0008588180249964524,
       "innerBorders": 20,
       "outlinePolylines": 1,
-      "innerEdges": 113,
+      "innerEdges": 119,
       "outlineEdges": 39,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/BB.smap",
-      "assetBytes": 1729
+      "assetBytes": 1923
     },
     "country_focus_bd": {
       "regions": 7,
-      "vertices": 2075,
-      "bytes": 8310,
-      "maxRegionVertices": 499,
+      "vertices": 2209,
+      "bytes": 8937,
+      "maxRegionVertices": 528,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.007641184310679314,
+      "simplificationTolerance": 0.018338842345630355,
+      "estimatedMaxError": 0.018338842345630355,
       "innerBorders": 10,
       "outlinePolylines": 22,
-      "innerEdges": 282,
-      "outlineEdges": 1511,
+      "innerEdges": 298,
+      "outlineEdges": 1613,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/BD.smap",
-      "assetBytes": 8310
+      "assetBytes": 8937
     },
     "country_focus_be": {
       "regions": 11,
-      "vertices": 1654,
-      "bytes": 6345,
-      "maxRegionVertices": 223,
+      "vertices": 1659,
+      "bytes": 6451,
+      "maxRegionVertices": 224,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.0037498208101875733,
+      "simplificationTolerance": 0.008999569944450175,
+      "estimatedMaxError": 0.008999569944450175,
       "innerBorders": 22,
       "outlinePolylines": 1,
-      "innerEdges": 529,
-      "outlineEdges": 596,
+      "innerEdges": 530,
+      "outlineEdges": 599,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/BE.smap",
-      "assetBytes": 6345
+      "assetBytes": 6451
     },
     "country_focus_bf": {
       "regions": 45,
-      "vertices": 4290,
-      "bytes": 16245,
-      "maxRegionVertices": 206,
+      "vertices": 4448,
+      "bytes": 17064,
+      "maxRegionVertices": 214,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.007297526197959736,
+      "simplificationTolerance": 0.017514062875103365,
+      "estimatedMaxError": 0.017514062875103365,
       "innerBorders": 108,
       "outlinePolylines": 1,
-      "innerEdges": 1791,
-      "outlineEdges": 708,
+      "innerEdges": 1856,
+      "outlineEdges": 736,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/BF.smap",
-      "assetBytes": 16245
+      "assetBytes": 17064
     },
     "country_focus_bg": {
       "regions": 28,
-      "vertices": 3163,
-      "bytes": 11852,
+      "vertices": 3174,
+      "bytes": 12074,
       "maxRegionVertices": 228,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.005771900668022243,
+      "simplificationTolerance": 0.013852561603253384,
+      "estimatedMaxError": 0.013852561603253384,
       "innerBorders": 62,
       "outlinePolylines": 1,
-      "innerEdges": 1239,
-      "outlineEdges": 685,
+      "innerEdges": 1242,
+      "outlineEdges": 690,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/BG.smap",
-      "assetBytes": 11852
+      "assetBytes": 12074
     },
     "country_focus_bh": {
       "regions": 5,
       "vertices": 161,
-      "bytes": 1031,
+      "bytes": 1082,
       "maxRegionVertices": 86,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.0009351902278627205,
+      "simplificationTolerance": 0.002244456546870529,
+      "estimatedMaxError": 0.002244456546870529,
       "innerBorders": 5,
       "outlinePolylines": 7,
       "innerEdges": 13,
       "outlineEdges": 135,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/BH.smap",
-      "assetBytes": 1031
+      "assetBytes": 1082
     },
     "country_focus_bi": {
       "regions": 17,
-      "vertices": 1127,
-      "bytes": 4735,
-      "maxRegionVertices": 114,
+      "vertices": 1137,
+      "bytes": 4906,
+      "maxRegionVertices": 116,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.0025691708451998758,
+      "simplificationTolerance": 0.006166010028479702,
+      "estimatedMaxError": 0.006166010028479702,
       "innerBorders": 34,
       "outlinePolylines": 1,
-      "innerEdges": 415,
-      "outlineEdges": 297,
+      "innerEdges": 419,
+      "outlineEdges": 299,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/BI.smap",
-      "assetBytes": 4735
+      "assetBytes": 4906
     },
     "country_focus_bj": {
       "regions": 12,
-      "vertices": 821,
-      "bytes": 3538,
-      "maxRegionVertices": 140,
+      "vertices": 871,
+      "bytes": 3804,
+      "maxRegionVertices": 148,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.007445754082611981,
+      "simplificationTolerance": 0.017869809798268754,
+      "estimatedMaxError": 0.017869809798268754,
       "innerBorders": 20,
       "outlinePolylines": 1,
-      "innerEdges": 227,
-      "outlineEdges": 367,
+      "innerEdges": 235,
+      "outlineEdges": 401,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/BJ.smap",
-      "assetBytes": 3538
+      "assetBytes": 3804
     },
     "country_focus_bm": {
       "regions": 11,
       "vertices": 138,
-      "bytes": 1442,
+      "bytes": 1588,
       "maxRegionVertices": 21,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.0002198303960874333,
+      "simplificationTolerance": 0.0005275929506098399,
+      "estimatedMaxError": 0.0005275929506098399,
       "innerBorders": 12,
       "outlinePolylines": 2,
       "innerEdges": 22,
       "outlineEdges": 94,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/BM.smap",
-      "assetBytes": 1442
+      "assetBytes": 1588
     },
     "country_focus_bn": {
       "regions": 4,
       "vertices": 203,
-      "bytes": 1147,
+      "bytes": 1179,
       "maxRegionVertices": 73,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.0012560585889846733,
+      "simplificationTolerance": 0.003014540613563216,
+      "estimatedMaxError": 0.003014540613563216,
       "innerBorders": 2,
       "outlinePolylines": 2,
       "innerEdges": 25,
       "outlineEdges": 153,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/BN.smap",
-      "assetBytes": 1147
+      "assetBytes": 1179
     },
     "country_focus_bo": {
       "regions": 9,
-      "vertices": 1609,
-      "bytes": 6007,
-      "maxRegionVertices": 265,
+      "vertices": 1771,
+      "bytes": 6615,
+      "maxRegionVertices": 291,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.016398340338701474,
+      "simplificationTolerance": 0.03935601681288354,
+      "estimatedMaxError": 0.03935601681288354,
       "innerBorders": 16,
       "outlinePolylines": 1,
-      "innerEdges": 503,
-      "outlineEdges": 603,
+      "innerEdges": 557,
+      "outlineEdges": 657,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/BO.smap",
-      "assetBytes": 6007
+      "assetBytes": 6615
     },
     "country_focus_br": {
       "regions": 27,
-      "vertices": 3821,
-      "bytes": 14117,
-      "maxRegionVertices": 273,
+      "vertices": 4260,
+      "bytes": 15784,
+      "maxRegionVertices": 306,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.048896137366671005,
+      "simplificationTolerance": 0.11735072968001041,
+      "estimatedMaxError": 0.11735072968001041,
       "innerBorders": 52,
-      "outlinePolylines": 5,
-      "innerEdges": 1401,
-      "outlineEdges": 1019,
+      "outlinePolylines": 6,
+      "innerEdges": 1545,
+      "outlineEdges": 1170,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/BR.smap",
-      "assetBytes": 14117
+      "assetBytes": 15784
     },
     "country_focus_bs": {
       "regions": 29,
-      "vertices": 1027,
-      "bytes": 5774,
-      "maxRegionVertices": 91,
+      "vertices": 1093,
+      "bytes": 6228,
+      "maxRegionVertices": 97,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.007826333517102485,
+      "simplificationTolerance": 0.018783200441045964,
+      "estimatedMaxError": 0.018783200441045964,
       "innerBorders": 8,
-      "outlinePolylines": 36,
+      "outlinePolylines": 37,
       "innerEdges": 17,
-      "outlineEdges": 993,
+      "outlineEdges": 1059,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/BS.smap",
-      "assetBytes": 5774
+      "assetBytes": 6228
     },
     "country_focus_bt": {
       "regions": 20,
-      "vertices": 2131,
-      "bytes": 7980,
-      "maxRegionVertices": 192,
+      "vertices": 2081,
+      "bytes": 7922,
+      "maxRegionVertices": 186,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.003097568036135049,
+      "simplificationTolerance": 0.007434163286724117,
+      "estimatedMaxError": 0.007434163286724117,
       "innerBorders": 41,
       "outlinePolylines": 1,
-      "innerEdges": 911,
-      "outlineEdges": 309,
+      "innerEdges": 887,
+      "outlineEdges": 307,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/BT.smap",
-      "assetBytes": 7980
+      "assetBytes": 7922
     },
     "country_focus_bw": {
       "regions": 15,
-      "vertices": 808,
-      "bytes": 3844,
-      "maxRegionVertices": 221,
+      "vertices": 851,
+      "bytes": 4085,
+      "maxRegionVertices": 239,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.01171979566600125,
+      "simplificationTolerance": 0.028127509598403,
+      "estimatedMaxError": 0.028127509598403,
       "innerBorders": 25,
       "outlinePolylines": 1,
-      "innerEdges": 162,
-      "outlineEdges": 484,
+      "innerEdges": 168,
+      "outlineEdges": 515,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/BW.smap",
-      "assetBytes": 3844
+      "assetBytes": 4085
     },
     "country_focus_by": {
       "regions": 7,
-      "vertices": 2712,
-      "bytes": 9477,
-      "maxRegionVertices": 551,
+      "vertices": 2732,
+      "bytes": 9569,
+      "maxRegionVertices": 561,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.009925426218380634,
+      "simplificationTolerance": 0.023821022924113523,
+      "estimatedMaxError": 0.023821022924113523,
       "innerBorders": 11,
       "outlinePolylines": 1,
-      "innerEdges": 922,
-      "outlineEdges": 868,
+      "innerEdges": 931,
+      "outlineEdges": 870,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/BY.smap",
-      "assetBytes": 9477
+      "assetBytes": 9569
     },
     "country_focus_bz": {
       "regions": 6,
-      "vertices": 737,
-      "bytes": 3110,
-      "maxRegionVertices": 207,
+      "vertices": 758,
+      "bytes": 3256,
+      "maxRegionVertices": 212,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.0032467424286125807,
+      "simplificationTolerance": 0.007792181828670194,
+      "estimatedMaxError": 0.007792181828670194,
       "innerBorders": 9,
       "outlinePolylines": 10,
-      "innerEdges": 163,
-      "outlineEdges": 411,
+      "innerEdges": 168,
+      "outlineEdges": 422,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/BZ.smap",
-      "assetBytes": 3110
+      "assetBytes": 3256
     },
     "country_focus_ca": {
       "regions": 13,
-      "vertices": 4740,
-      "bytes": 22596,
-      "maxRegionVertices": 2209,
+      "vertices": 5545,
+      "bytes": 24154,
+      "maxRegionVertices": 3577,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
-      "innerBorders": 21,
-      "outlinePolylines": 643,
-      "innerEdges": 390,
-      "outlineEdges": 3960,
-      "nearlySharedEdges": 12,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.13745728372667623,
+      "simplificationTolerance": 0.32989748094402294,
+      "estimatedMaxError": 0.32989748094402294,
+      "innerBorders": 22,
+      "outlinePolylines": 266,
+      "innerEdges": 276,
+      "outlineEdges": 4993,
+      "nearlySharedEdges": 4,
       "asset": "assets/maps/country_focus/CA.smap",
-      "assetBytes": 22596
+      "assetBytes": 24154
     },
     "country_focus_cd": {
       "regions": 11,
-      "vertices": 2289,
-      "bytes": 8384,
-      "maxRegionVertices": 426,
+      "vertices": 2624,
+      "bytes": 9576,
+      "maxRegionVertices": 480,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.02251793431888622,
+      "simplificationTolerance": 0.05404304236532693,
+      "estimatedMaxError": 0.05404304236532693,
       "innerBorders": 20,
       "outlinePolylines": 2,
-      "innerEdges": 726,
-      "outlineEdges": 837,
+      "innerEdges": 836,
+      "outlineEdges": 952,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/CD.smap",
-      "assetBytes": 8384
+      "assetBytes": 9576
     },
     "country_focus_cf": {
       "regions": 17,
-      "vertices": 2967,
-      "bytes": 10840,
-      "maxRegionVertices": 352,
+      "vertices": 2993,
+      "bytes": 11018,
+      "maxRegionVertices": 355,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.012039076223570064,
+      "simplificationTolerance": 0.028893782936568153,
+      "estimatedMaxError": 0.028893782936568153,
       "innerBorders": 31,
       "outlinePolylines": 1,
-      "innerEdges": 1034,
+      "innerEdges": 1047,
       "outlineEdges": 899,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/CF.smap",
-      "assetBytes": 10840
+      "assetBytes": 11018
     },
     "country_focus_cg": {
       "regions": 12,
-      "vertices": 1919,
-      "bytes": 7169,
-      "maxRegionVertices": 247,
+      "vertices": 2104,
+      "bytes": 7859,
+      "maxRegionVertices": 278,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.010371788421591858,
+      "simplificationTolerance": 0.02489229221182046,
+      "estimatedMaxError": 0.02489229221182046,
       "innerBorders": 16,
       "outlinePolylines": 1,
-      "innerEdges": 591,
-      "outlineEdges": 737,
+      "innerEdges": 647,
+      "outlineEdges": 810,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/CG.smap",
-      "assetBytes": 7169
+      "assetBytes": 7859
     },
     "country_focus_ch": {
       "regions": 26,
-      "vertices": 3306,
-      "bytes": 12323,
-      "maxRegionVertices": 337,
+      "vertices": 3409,
+      "bytes": 12906,
+      "maxRegionVertices": 353,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.004161021119368461,
+      "simplificationTolerance": 0.009986450686484306,
+      "estimatedMaxError": 0.009986450686484306,
       "innerBorders": 82,
       "outlinePolylines": 1,
-      "innerEdges": 1325,
-      "outlineEdges": 656,
+      "innerEdges": 1372,
+      "outlineEdges": 665,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/CH.smap",
-      "assetBytes": 12323
+      "assetBytes": 12906
     },
     "country_focus_ci": {
       "regions": 19,
-      "vertices": 3183,
-      "bytes": 11739,
-      "maxRegionVertices": 418,
+      "vertices": 3480,
+      "bytes": 12882,
+      "maxRegionVertices": 462,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.007647616187406428,
+      "simplificationTolerance": 0.01835427884977543,
+      "estimatedMaxError": 0.01835427884977543,
       "innerBorders": 44,
       "outlinePolylines": 2,
-      "innerEdges": 1117,
-      "outlineEdges": 949,
+      "innerEdges": 1224,
+      "outlineEdges": 1032,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/CI.smap",
-      "assetBytes": 11739
+      "assetBytes": 12882
     },
     "country_focus_cl": {
       "regions": 16,
-      "vertices": 1800,
-      "bytes": 8400,
-      "maxRegionVertices": 639,
+      "vertices": 2202,
+      "bytes": 10506,
+      "maxRegionVertices": 934,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.05947380215034415,
+      "simplificationTolerance": 0.14273712516082596,
+      "estimatedMaxError": 0.14273712516082596,
       "innerBorders": 16,
-      "outlinePolylines": 78,
-      "innerEdges": 171,
-      "outlineEdges": 1458,
+      "outlinePolylines": 109,
+      "innerEdges": 169,
+      "outlineEdges": 1864,
       "nearlySharedEdges": 2,
       "asset": "assets/maps/country_focus/CL.smap",
-      "assetBytes": 8400
+      "assetBytes": 10506
     },
     "country_focus_cm": {
       "regions": 10,
-      "vertices": 1566,
-      "bytes": 5941,
-      "maxRegionVertices": 240,
+      "vertices": 1750,
+      "bytes": 6625,
+      "maxRegionVertices": 270,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.013702777213624529,
+      "simplificationTolerance": 0.03288666531269887,
+      "estimatedMaxError": 0.03288666531269887,
       "innerBorders": 18,
       "outlinePolylines": 1,
-      "innerEdges": 459,
-      "outlineEdges": 648,
+      "innerEdges": 520,
+      "outlineEdges": 710,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/CM.smap",
-      "assetBytes": 5941
+      "assetBytes": 6625
     },
     "country_focus_cn": {
       "regions": 31,
-      "vertices": 6894,
-      "bytes": 24345,
-      "maxRegionVertices": 576,
+      "vertices": 6484,
+      "bytes": 23110,
+      "maxRegionVertices": 626,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.0564142940289283,
+      "simplificationTolerance": 0.13539430566942792,
+      "estimatedMaxError": 0.13539430566942792,
       "innerBorders": 72,
-      "outlinePolylines": 13,
-      "innerEdges": 2564,
-      "outlineEdges": 1766,
+      "outlinePolylines": 7,
+      "innerEdges": 2397,
+      "outlineEdges": 1690,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/CN.smap",
-      "assetBytes": 24345
+      "assetBytes": 23110
     },
     "country_focus_co": {
       "regions": 33,
-      "vertices": 3599,
-      "bytes": 13594,
-      "maxRegionVertices": 211,
+      "vertices": 4053,
+      "bytes": 15330,
+      "maxRegionVertices": 236,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
-      "innerBorders": 72,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.021307780181508394,
+      "simplificationTolerance": 0.05113867243562014,
+      "estimatedMaxError": 0.05113867243562014,
+      "innerBorders": 73,
       "outlinePolylines": 6,
-      "innerEdges": 1399,
-      "outlineEdges": 801,
-      "nearlySharedEdges": 0,
+      "innerEdges": 1564,
+      "outlineEdges": 925,
+      "nearlySharedEdges": 2,
       "asset": "assets/maps/country_focus/CO.smap",
-      "assetBytes": 13594
+      "assetBytes": 15330
     },
     "country_focus_cr": {
       "regions": 7,
-      "vertices": 1128,
-      "bytes": 4339,
-      "maxRegionVertices": 419,
+      "vertices": 1242,
+      "bytes": 4802,
+      "maxRegionVertices": 466,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.006836976604345795,
+      "simplificationTolerance": 0.016408743850429907,
+      "estimatedMaxError": 0.016408743850429907,
       "innerBorders": 14,
-      "outlinePolylines": 3,
-      "innerEdges": 313,
-      "outlineEdges": 502,
+      "outlinePolylines": 4,
+      "innerEdges": 345,
+      "outlineEdges": 552,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/CR.smap",
-      "assetBytes": 4339
+      "assetBytes": 4802
     },
     "country_focus_cu": {
       "regions": 16,
-      "vertices": 2712,
-      "bytes": 10930,
-      "maxRegionVertices": 385,
+      "vertices": 2424,
+      "bytes": 10108,
+      "maxRegionVertices": 345,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.009975724433614478,
+      "simplificationTolerance": 0.023941738640674746,
+      "estimatedMaxError": 0.023941738640674746,
       "innerBorders": 20,
       "outlinePolylines": 40,
-      "innerEdges": 565,
-      "outlineEdges": 1582,
+      "innerEdges": 513,
+      "outlineEdges": 1398,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/CU.smap",
-      "assetBytes": 10930
+      "assetBytes": 10108
     },
     "country_focus_cv": {
       "regions": 22,
-      "vertices": 546,
-      "bytes": 3340,
-      "maxRegionVertices": 59,
+      "vertices": 565,
+      "bytes": 3537,
+      "maxRegionVertices": 60,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.002956559758504707,
+      "simplificationTolerance": 0.007095743420411297,
+      "estimatedMaxError": 0.007095743420411297,
       "innerBorders": 24,
       "outlinePolylines": 11,
-      "innerEdges": 81,
-      "outlineEdges": 384,
+      "innerEdges": 84,
+      "outlineEdges": 397,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/CV.smap",
-      "assetBytes": 3340
+      "assetBytes": 3537
     },
     "country_focus_cy": {
       "regions": 5,
-      "vertices": 743,
-      "bytes": 2911,
-      "maxRegionVertices": 239,
+      "vertices": 736,
+      "bytes": 2906,
+      "maxRegionVertices": 237,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.0016853117167085676,
+      "simplificationTolerance": 0.004044748120100562,
+      "estimatedMaxError": 0.004044748120100562,
       "innerBorders": 6,
       "outlinePolylines": 4,
-      "innerEdges": 232,
-      "outlineEdges": 279,
+      "innerEdges": 229,
+      "outlineEdges": 278,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/CY.smap",
-      "assetBytes": 2911
+      "assetBytes": 2906
     },
     "country_focus_cz": {
       "regions": 14,
-      "vertices": 2537,
-      "bytes": 9194,
-      "maxRegionVertices": 315,
+      "vertices": 2709,
+      "bytes": 9845,
+      "maxRegionVertices": 343,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.0062355981887648295,
+      "simplificationTolerance": 0.01496543565303559,
+      "estimatedMaxError": 0.01496543565303559,
       "innerBorders": 26,
       "outlinePolylines": 1,
-      "innerEdges": 912,
-      "outlineEdges": 713,
+      "innerEdges": 975,
+      "outlineEdges": 759,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/CZ.smap",
-      "assetBytes": 9194
+      "assetBytes": 9845
     },
     "country_focus_de": {
       "regions": 16,
-      "vertices": 4655,
-      "bytes": 16677,
-      "maxRegionVertices": 581,
+      "vertices": 4296,
+      "bytes": 15687,
+      "maxRegionVertices": 531,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.014863310309219937,
+      "simplificationTolerance": 0.03567194474212785,
+      "estimatedMaxError": 0.03567194474212785,
       "innerBorders": 30,
       "outlinePolylines": 19,
-      "innerEdges": 1549,
-      "outlineEdges": 1557,
+      "innerEdges": 1409,
+      "outlineEdges": 1478,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/DE.smap",
-      "assetBytes": 16677
+      "assetBytes": 15687
     },
     "country_focus_dj": {
       "regions": 6,
-      "vertices": 297,
-      "bytes": 1606,
-      "maxRegionVertices": 73,
+      "vertices": 300,
+      "bytes": 1669,
+      "maxRegionVertices": 74,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.0021571932146423065,
+      "simplificationTolerance": 0.005177263715141535,
+      "estimatedMaxError": 0.005177263715141535,
       "innerBorders": 7,
       "outlinePolylines": 1,
-      "innerEdges": 47,
-      "outlineEdges": 203,
+      "innerEdges": 48,
+      "outlineEdges": 204,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/DJ.smap",
-      "assetBytes": 1606
+      "assetBytes": 1669
     },
     "country_focus_dk": {
       "regions": 5,
-      "vertices": 1947,
-      "bytes": 8049,
-      "maxRegionVertices": 555,
+      "vertices": 2081,
+      "bytes": 8667,
+      "maxRegionVertices": 598,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.006820616452934597,
+      "simplificationTolerance": 0.01636947948704303,
+      "estimatedMaxError": 0.01636947948704303,
       "innerBorders": 4,
       "outlinePolylines": 15,
-      "innerEdges": 109,
-      "outlineEdges": 1729,
+      "innerEdges": 112,
+      "outlineEdges": 1857,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/DK.smap",
-      "assetBytes": 8049
+      "assetBytes": 8667
     },
     "country_focus_dm": {
       "regions": 10,
-      "vertices": 287,
-      "bytes": 1700,
-      "maxRegionVertices": 60,
+      "vertices": 297,
+      "bytes": 1823,
+      "maxRegionVertices": 64,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.0005322849508374445,
+      "simplificationTolerance": 0.0012774838820098669,
+      "estimatedMaxError": 0.0012774838820098669,
       "innerBorders": 17,
       "outlinePolylines": 1,
-      "innerEdges": 104,
+      "innerEdges": 109,
       "outlineEdges": 79,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/DM.smap",
-      "assetBytes": 1700
+      "assetBytes": 1823
     },
     "country_focus_do": {
       "regions": 32,
       "vertices": 1785,
-      "bytes": 7979,
+      "bytes": 8186,
       "maxRegionVertices": 99,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.003395016729113781,
+      "simplificationTolerance": 0.008148040149873075,
+      "estimatedMaxError": 0.008148040149873075,
       "innerBorders": 71,
       "outlinePolylines": 3,
       "innerEdges": 620,
       "outlineEdges": 545,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/DO.smap",
-      "assetBytes": 7979
+      "assetBytes": 8186
     },
     "country_focus_dz": {
       "regions": 48,
-      "vertices": 2410,
-      "bytes": 10594,
-      "maxRegionVertices": 110,
+      "vertices": 2654,
+      "bytes": 11716,
+      "maxRegionVertices": 111,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
-      "innerBorders": 115,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.024566355787560383,
+      "simplificationTolerance": 0.05895925389014492,
+      "estimatedMaxError": 0.05895925389014492,
+      "innerBorders": 117,
       "outlinePolylines": 1,
-      "innerEdges": 992,
-      "outlineEdges": 426,
+      "innerEdges": 1097,
+      "outlineEdges": 460,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/DZ.smap",
-      "assetBytes": 10594
+      "assetBytes": 11716
     },
     "country_focus_ec": {
       "regions": 24,
-      "vertices": 2465,
-      "bytes": 9620,
-      "maxRegionVertices": 209,
+      "vertices": 2219,
+      "bytes": 9008,
+      "maxRegionVertices": 190,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.015479331068678931,
+      "simplificationTolerance": 0.037150394564829436,
+      "estimatedMaxError": 0.037150394564829436,
       "innerBorders": 53,
       "outlinePolylines": 13,
-      "innerEdges": 869,
-      "outlineEdges": 727,
+      "innerEdges": 782,
+      "outlineEdges": 655,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/EC.smap",
-      "assetBytes": 9620
+      "assetBytes": 9008
     },
     "country_focus_ee": {
       "regions": 15,
-      "vertices": 2172,
-      "bytes": 8369,
-      "maxRegionVertices": 234,
+      "vertices": 2310,
+      "bytes": 8952,
+      "maxRegionVertices": 244,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.005860072392423116,
+      "simplificationTolerance": 0.014064173741815476,
+      "estimatedMaxError": 0.014064173741815476,
       "innerBorders": 25,
       "outlinePolylines": 8,
-      "innerEdges": 644,
-      "outlineEdges": 884,
+      "innerEdges": 689,
+      "outlineEdges": 932,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/EE.smap",
-      "assetBytes": 8369
+      "assetBytes": 8952
     },
     "country_focus_eg": {
       "regions": 27,
-      "vertices": 1946,
-      "bytes": 8260,
-      "maxRegionVertices": 376,
+      "vertices": 2075,
+      "bytes": 8888,
+      "maxRegionVertices": 390,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.012893984738525474,
+      "simplificationTolerance": 0.030945563372461137,
+      "estimatedMaxError": 0.030945563372461137,
       "innerBorders": 63,
       "outlinePolylines": 5,
-      "innerEdges": 638,
-      "outlineEdges": 670,
+      "innerEdges": 679,
+      "outlineEdges": 717,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/EG.smap",
-      "assetBytes": 8260
+      "assetBytes": 8888
     },
     "country_focus_er": {
       "regions": 6,
-      "vertices": 968,
-      "bytes": 4027,
-      "maxRegionVertices": 367,
+      "vertices": 1020,
+      "bytes": 4268,
+      "maxRegionVertices": 387,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.0069497670742772145,
+      "simplificationTolerance": 0.016679440978265313,
+      "estimatedMaxError": 0.016679440978265313,
       "innerBorders": 9,
       "outlinePolylines": 3,
-      "innerEdges": 145,
-      "outlineEdges": 678,
+      "innerEdges": 150,
+      "outlineEdges": 720,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/ER.smap",
-      "assetBytes": 4027
+      "assetBytes": 4268
     },
     "country_focus_es": {
       "regions": 52,
-      "vertices": 4085,
-      "bytes": 16214,
-      "maxRegionVertices": 142,
+      "vertices": 4460,
+      "bytes": 17814,
+      "maxRegionVertices": 154,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
-      "innerBorders": 122,
-      "outlinePolylines": 16,
-      "innerEdges": 1613,
-      "outlineEdges": 859,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.023831637050217198,
+      "simplificationTolerance": 0.05719592892052127,
+      "estimatedMaxError": 0.05719592892052127,
+      "innerBorders": 123,
+      "outlinePolylines": 15,
+      "innerEdges": 1773,
+      "outlineEdges": 914,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/ES.smap",
-      "assetBytes": 16214
+      "assetBytes": 17814
     },
     "country_focus_et": {
       "regions": 11,
-      "vertices": 2522,
-      "bytes": 8760,
-      "maxRegionVertices": 744,
+      "vertices": 2750,
+      "bytes": 9592,
+      "maxRegionVertices": 805,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.013825666610085066,
+      "simplificationTolerance": 0.03318159986420416,
+      "estimatedMaxError": 0.03318159986420416,
       "innerBorders": 20,
       "outlinePolylines": 1,
-      "innerEdges": 1026,
-      "outlineEdges": 470,
+      "innerEdges": 1116,
+      "outlineEdges": 518,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/ET.smap",
-      "assetBytes": 8760
+      "assetBytes": 9592
     },
     "country_focus_fi": {
       "regions": 18,
-      "vertices": 3789,
-      "bytes": 14465,
-      "maxRegionVertices": 454,
+      "vertices": 2649,
+      "bytes": 10573,
+      "maxRegionVertices": 340,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.029332261063890683,
+      "simplificationTolerance": 0.07039742655333764,
+      "estimatedMaxError": 0.07039742655333764,
       "innerBorders": 39,
-      "outlinePolylines": 40,
-      "innerEdges": 1122,
-      "outlineEdges": 1545,
+      "outlinePolylines": 30,
+      "innerEdges": 830,
+      "outlineEdges": 989,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/FI.smap",
-      "assetBytes": 14465
+      "assetBytes": 10573
     },
     "country_focus_fj": {
       "regions": 5,
-      "vertices": 631,
-      "bytes": 3007,
-      "maxRegionVertices": 194,
+      "vertices": 715,
+      "bytes": 3483,
+      "maxRegionVertices": 226,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
-      "innerBorders": 2,
-      "outlinePolylines": 37,
-      "innerEdges": 40,
-      "outlineEdges": 551,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.011492192283050639,
+      "simplificationTolerance": 0.027581261479321533,
+      "estimatedMaxError": 0.027581261479321533,
+      "innerBorders": 1,
+      "outlinePolylines": 39,
+      "innerEdges": 45,
+      "outlineEdges": 625,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/FJ.smap",
-      "assetBytes": 3007
+      "assetBytes": 3483
     },
     "country_focus_fm": {
       "regions": 4,
-      "vertices": 37,
-      "bytes": 368,
+      "vertices": 34,
+      "bytes": 378,
       "maxRegionVertices": 18,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.023040323906825994,
+      "simplificationTolerance": 0.05529677737638238,
+      "estimatedMaxError": 0.05529677737638238,
       "innerBorders": 0,
       "outlinePolylines": 5,
       "innerEdges": 0,
-      "outlineEdges": 37,
+      "outlineEdges": 34,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/FM.smap",
-      "assetBytes": 368
+      "assetBytes": 378
     },
     "country_focus_fr": {
       "regions": 101,
-      "vertices": 1223,
-      "bytes": 9878,
-      "maxRegionVertices": 34,
+      "vertices": 1505,
+      "bytes": 10760,
+      "maxRegionVertices": 27,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
-      "innerBorders": 235,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.10850480395247641,
+      "simplificationTolerance": 0.26041152948594337,
+      "estimatedMaxError": 0.26041152948594337,
+      "innerBorders": 236,
       "outlinePolylines": 8,
-      "innerEdges": 501,
-      "outlineEdges": 221,
-      "nearlySharedEdges": 2,
+      "innerEdges": 627,
+      "outlineEdges": 251,
+      "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/FR.smap",
-      "assetBytes": 9878
+      "assetBytes": 10760
     },
     "country_focus_ga": {
       "regions": 9,
-      "vertices": 1653,
-      "bytes": 6466,
-      "maxRegionVertices": 370,
+      "vertices": 1825,
+      "bytes": 7173,
+      "maxRegionVertices": 422,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.007434995893763399,
+      "simplificationTolerance": 0.017843990145032157,
+      "estimatedMaxError": 0.017843990145032157,
       "innerBorders": 15,
       "outlinePolylines": 2,
-      "innerEdges": 378,
-      "outlineEdges": 897,
+      "innerEdges": 409,
+      "outlineEdges": 1007,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/GA.smap",
-      "assetBytes": 6466
+      "assetBytes": 7173
     },
     "country_focus_gb": {
       "regions": 232,
-      "vertices": 8837,
-      "bytes": 43940,
-      "maxRegionVertices": 542,
+      "vertices": 7277,
+      "bytes": 40529,
+      "maxRegionVertices": 468,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.023143138729035784,
+      "simplificationTolerance": 0.05554353294968588,
+      "estimatedMaxError": 0.05554353294968588,
       "innerBorders": 549,
-      "outlinePolylines": 52,
-      "innerEdges": 3104,
-      "outlineEdges": 2629,
+      "outlinePolylines": 47,
+      "innerEdges": 2538,
+      "outlineEdges": 2201,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/GB.smap",
-      "assetBytes": 43940
+      "assetBytes": 40529
     },
     "country_focus_gd": {
       "regions": 7,
       "vertices": 113,
-      "bytes": 958,
+      "bytes": 1016,
       "maxRegionVertices": 27,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.0006402892287569828,
+      "simplificationTolerance": 0.0015366941490167587,
+      "estimatedMaxError": 0.0015366941490167587,
       "innerBorders": 9,
       "outlinePolylines": 2,
       "innerEdges": 24,
       "outlineEdges": 65,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/GD.smap",
-      "assetBytes": 958
+      "assetBytes": 1016
     },
     "country_focus_ge": {
       "regions": 12,
-      "vertices": 1209,
-      "bytes": 4871,
-      "maxRegionVertices": 164,
+      "vertices": 1232,
+      "bytes": 5031,
+      "maxRegionVertices": 167,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.006187211470476912,
+      "simplificationTolerance": 0.014849307529144588,
+      "estimatedMaxError": 0.014849307529144588,
       "innerBorders": 22,
       "outlinePolylines": 1,
-      "innerEdges": 377,
-      "outlineEdges": 455,
+      "innerEdges": 382,
+      "outlineEdges": 468,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/GE.smap",
-      "assetBytes": 4871
+      "assetBytes": 5031
     },
     "country_focus_gh": {
       "regions": 10,
-      "vertices": 2056,
-      "bytes": 7308,
-      "maxRegionVertices": 408,
+      "vertices": 2287,
+      "bytes": 8124,
+      "maxRegionVertices": 458,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.007707365780371454,
+      "simplificationTolerance": 0.01849767787289149,
+      "estimatedMaxError": 0.01849767787289149,
       "innerBorders": 18,
       "outlinePolylines": 1,
-      "innerEdges": 768,
-      "outlineEdges": 520,
+      "innerEdges": 857,
+      "outlineEdges": 573,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/GH.smap",
-      "assetBytes": 7308
+      "assetBytes": 8124
     },
     "country_focus_gl": {
       "regions": 6,
-      "vertices": 2574,
-      "bytes": 14072,
-      "maxRegionVertices": 807,
+      "vertices": 2747,
+      "bytes": 13100,
+      "maxRegionVertices": 1355,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.10810568407695885,
+      "simplificationTolerance": 0.2594536417847012,
+      "estimatedMaxError": 0.2594536417847012,
       "innerBorders": 10,
-      "outlinePolylines": 634,
-      "innerEdges": 67,
-      "outlineEdges": 2440,
-      "nearlySharedEdges": 6,
+      "outlinePolylines": 318,
+      "innerEdges": 60,
+      "outlineEdges": 2627,
+      "nearlySharedEdges": 4,
       "asset": "assets/maps/country_focus/GL.smap",
-      "assetBytes": 14072
+      "assetBytes": 13100
     },
     "country_focus_gm": {
       "regions": 6,
-      "vertices": 479,
-      "bytes": 2242,
-      "maxRegionVertices": 109,
+      "vertices": 469,
+      "bytes": 2194,
+      "maxRegionVertices": 107,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.0027768826053921358,
+      "simplificationTolerance": 0.006664518252941126,
+      "estimatedMaxError": 0.006664518252941126,
       "innerBorders": 5,
       "outlinePolylines": 1,
-      "innerEdges": 55,
-      "outlineEdges": 369,
+      "innerEdges": 52,
+      "outlineEdges": 365,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/GM.smap",
-      "assetBytes": 2242
+      "assetBytes": 2194
     },
     "country_focus_gn": {
       "regions": 34,
-      "vertices": 2813,
-      "bytes": 11674,
-      "maxRegionVertices": 170,
+      "vertices": 2936,
+      "bytes": 12352,
+      "maxRegionVertices": 185,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.0068418713532765844,
+      "simplificationTolerance": 0.0164204912478638,
+      "estimatedMaxError": 0.0164204912478638,
       "innerBorders": 73,
       "outlinePolylines": 1,
-      "innerEdges": 856,
-      "outlineEdges": 1101,
+      "innerEdges": 882,
+      "outlineEdges": 1172,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/GN.smap",
-      "assetBytes": 11674
+      "assetBytes": 12352
     },
     "country_focus_gq": {
       "regions": 7,
-      "vertices": 454,
-      "bytes": 1938,
-      "maxRegionVertices": 151,
+      "vertices": 479,
+      "bytes": 2052,
+      "maxRegionVertices": 159,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.006233503259041347,
+      "simplificationTolerance": 0.014960407821699231,
+      "estimatedMaxError": 0.014960407821699231,
       "innerBorders": 5,
       "outlinePolylines": 3,
-      "innerEdges": 140,
-      "outlineEdges": 174,
+      "innerEdges": 148,
+      "outlineEdges": 183,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/GQ.smap",
-      "assetBytes": 1938
+      "assetBytes": 2052
     },
     "country_focus_gr": {
       "regions": 14,
-      "vertices": 3765,
-      "bytes": 15671,
-      "maxRegionVertices": 592,
+      "vertices": 3818,
+      "bytes": 16192,
+      "maxRegionVertices": 584,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.010530106712290127,
+      "simplificationTolerance": 0.025272256109496304,
+      "estimatedMaxError": 0.025272256109496304,
       "innerBorders": 14,
       "outlinePolylines": 71,
-      "innerEdges": 377,
-      "outlineEdges": 3011,
+      "innerEdges": 391,
+      "outlineEdges": 3036,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/GR.smap",
-      "assetBytes": 15671
+      "assetBytes": 16192
     },
     "country_focus_gt": {
       "regions": 22,
-      "vertices": 2039,
-      "bytes": 7869,
-      "maxRegionVertices": 192,
+      "vertices": 2179,
+      "bytes": 8499,
+      "maxRegionVertices": 208,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
-      "innerBorders": 48,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.005042348611554192,
+      "simplificationTolerance": 0.012101636667730061,
+      "estimatedMaxError": 0.012101636667730061,
+      "innerBorders": 49,
       "outlinePolylines": 1,
-      "innerEdges": 852,
-      "outlineEdges": 335,
+      "innerEdges": 910,
+      "outlineEdges": 359,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/GT.smap",
-      "assetBytes": 7869
+      "assetBytes": 8499
     },
     "country_focus_gw": {
       "regions": 9,
-      "vertices": 1964,
-      "bytes": 7800,
-      "maxRegionVertices": 382,
+      "vertices": 1904,
+      "bytes": 7655,
+      "maxRegionVertices": 372,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.002829207502460574,
+      "simplificationTolerance": 0.006790098005905377,
+      "estimatedMaxError": 0.006790098005905377,
       "innerBorders": 12,
       "outlinePolylines": 13,
-      "innerEdges": 382,
-      "outlineEdges": 1200,
+      "innerEdges": 361,
+      "outlineEdges": 1182,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/GW.smap",
-      "assetBytes": 7800
+      "assetBytes": 7655
     },
     "country_focus_gy": {
       "regions": 10,
-      "vertices": 1342,
-      "bytes": 5354,
-      "maxRegionVertices": 320,
+      "vertices": 1455,
+      "bytes": 5806,
+      "maxRegionVertices": 339,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.008789947218185722,
+      "simplificationTolerance": 0.021095873323645733,
+      "estimatedMaxError": 0.021095873323645733,
       "innerBorders": 18,
       "outlinePolylines": 2,
-      "innerEdges": 347,
-      "outlineEdges": 648,
+      "innerEdges": 380,
+      "outlineEdges": 695,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/GY.smap",
-      "assetBytes": 5354
+      "assetBytes": 5806
     },
     "country_focus_hn": {
       "regions": 18,
-      "vertices": 2386,
-      "bytes": 9113,
-      "maxRegionVertices": 314,
+      "vertices": 2492,
+      "bytes": 9622,
+      "maxRegionVertices": 329,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.005748700362385457,
+      "simplificationTolerance": 0.013796880869725097,
+      "estimatedMaxError": 0.013796880869725097,
       "innerBorders": 34,
-      "outlinePolylines": 6,
-      "innerEdges": 765,
-      "outlineEdges": 856,
+      "outlinePolylines": 7,
+      "innerEdges": 796,
+      "outlineEdges": 900,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/HN.smap",
-      "assetBytes": 9113
+      "assetBytes": 9622
     },
     "country_focus_hr": {
       "regions": 21,
-      "vertices": 3390,
-      "bytes": 13378,
-      "maxRegionVertices": 360,
+      "vertices": 3343,
+      "bytes": 13412,
+      "maxRegionVertices": 351,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.006899781048559102,
+      "simplificationTolerance": 0.016559474516541845,
+      "estimatedMaxError": 0.016559474516541845,
       "innerBorders": 38,
       "outlinePolylines": 25,
-      "innerEdges": 843,
-      "outlineEdges": 1704,
+      "innerEdges": 833,
+      "outlineEdges": 1677,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/HR.smap",
-      "assetBytes": 13378
+      "assetBytes": 13412
     },
     "country_focus_ht": {
       "regions": 10,
-      "vertices": 1050,
-      "bytes": 4517,
-      "maxRegionVertices": 181,
+      "vertices": 1065,
+      "bytes": 4690,
+      "maxRegionVertices": 182,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.0026284614691450396,
+      "simplificationTolerance": 0.006308307525948095,
+      "estimatedMaxError": 0.006308307525948095,
       "innerBorders": 16,
       "outlinePolylines": 5,
-      "innerEdges": 223,
-      "outlineEdges": 604,
+      "innerEdges": 226,
+      "outlineEdges": 613,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/HT.smap",
-      "assetBytes": 4517
+      "assetBytes": 4690
     },
     "country_focus_hu": {
       "regions": 43,
-      "vertices": 3016,
-      "bytes": 12294,
-      "maxRegionVertices": 199,
+      "vertices": 3042,
+      "bytes": 12667,
+      "maxRegionVertices": 201,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.006256139028281447,
+      "simplificationTolerance": 0.01501473366787547,
+      "estimatedMaxError": 0.01501473366787547,
       "innerBorders": 86,
       "outlinePolylines": 1,
-      "innerEdges": 1177,
-      "outlineEdges": 662,
+      "innerEdges": 1184,
+      "outlineEdges": 674,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/HU.smap",
-      "assetBytes": 12294
+      "assetBytes": 12667
     },
     "country_focus_id": {
       "regions": 33,
-      "vertices": 4412,
-      "bytes": 19755,
-      "maxRegionVertices": 351,
+      "vertices": 3750,
+      "bytes": 17712,
+      "maxRegionVertices": 280,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.04239112108026238,
+      "simplificationTolerance": 0.1017386905926297,
+      "estimatedMaxError": 0.1017386905926297,
       "innerBorders": 31,
-      "outlinePolylines": 156,
-      "innerEdges": 465,
-      "outlineEdges": 3482,
-      "nearlySharedEdges": 0,
+      "outlinePolylines": 137,
+      "innerEdges": 411,
+      "outlineEdges": 2928,
+      "nearlySharedEdges": 2,
       "asset": "assets/maps/country_focus/ID.smap",
-      "assetBytes": 19755
+      "assetBytes": 17712
     },
     "country_focus_ie": {
       "regions": 34,
-      "vertices": 4704,
-      "bytes": 17959,
-      "maxRegionVertices": 405,
+      "vertices": 4326,
+      "bytes": 16903,
+      "maxRegionVertices": 371,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.007890227795449957,
+      "simplificationTolerance": 0.018936546709079898,
+      "estimatedMaxError": 0.018936546709079898,
       "innerBorders": 74,
       "outlinePolylines": 7,
-      "innerEdges": 1416,
-      "outlineEdges": 1872,
+      "innerEdges": 1293,
+      "outlineEdges": 1740,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/IE.smap",
-      "assetBytes": 17959
+      "assetBytes": 16903
     },
     "country_focus_il": {
       "regions": 6,
-      "vertices": 559,
-      "bytes": 2371,
-      "maxRegionVertices": 155,
+      "vertices": 581,
+      "bytes": 2472,
+      "maxRegionVertices": 164,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.0054623639297437365,
+      "simplificationTolerance": 0.013109673431384966,
+      "estimatedMaxError": 0.013109673431384966,
       "innerBorders": 6,
       "outlinePolylines": 1,
-      "innerEdges": 108,
-      "outlineEdges": 343,
+      "innerEdges": 116,
+      "outlineEdges": 349,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/IL.smap",
-      "assetBytes": 2371
+      "assetBytes": 2472
     },
     "country_focus_in": {
       "regions": 36,
-      "vertices": 4779,
-      "bytes": 17756,
-      "maxRegionVertices": 368,
+      "vertices": 5341,
+      "bytes": 19924,
+      "maxRegionVertices": 424,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.03713475065384715,
+      "simplificationTolerance": 0.08912340156923317,
+      "estimatedMaxError": 0.08912340156923317,
       "innerBorders": 70,
-      "outlinePolylines": 11,
-      "innerEdges": 1770,
-      "outlineEdges": 1239,
-      "nearlySharedEdges": 5,
+      "outlinePolylines": 14,
+      "innerEdges": 1958,
+      "outlineEdges": 1425,
+      "nearlySharedEdges": 7,
       "asset": "assets/maps/country_focus/IN.smap",
-      "assetBytes": 17756
+      "assetBytes": 19924
     },
     "country_focus_iq": {
       "regions": 18,
-      "vertices": 2068,
-      "bytes": 7790,
-      "maxRegionVertices": 213,
+      "vertices": 2155,
+      "bytes": 8215,
+      "maxRegionVertices": 227,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.011838413274372808,
+      "simplificationTolerance": 0.028412191858494737,
+      "estimatedMaxError": 0.028412191858494737,
       "innerBorders": 40,
       "outlinePolylines": 1,
-      "innerEdges": 817,
-      "outlineEdges": 434,
+      "innerEdges": 849,
+      "outlineEdges": 457,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/IQ.smap",
-      "assetBytes": 7790
+      "assetBytes": 8215
     },
     "country_focus_ir": {
       "regions": 31,
-      "vertices": 3556,
-      "bytes": 13732,
+      "vertices": 3702,
+      "bytes": 14472,
       "maxRegionVertices": 309,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.02083288706488487,
+      "simplificationTolerance": 0.049998928955723686,
+      "estimatedMaxError": 0.049998928955723686,
       "innerBorders": 74,
       "outlinePolylines": 9,
-      "innerEdges": 1268,
-      "outlineEdges": 1020,
+      "innerEdges": 1314,
+      "outlineEdges": 1074,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/IR.smap",
-      "assetBytes": 13732
+      "assetBytes": 14472
     },
     "country_focus_is": {
       "regions": 9,
-      "vertices": 2207,
-      "bytes": 9053,
-      "maxRegionVertices": 542,
+      "vertices": 2869,
+      "bytes": 11684,
+      "maxRegionVertices": 718,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.010178854967744708,
+      "simplificationTolerance": 0.0244292519225873,
+      "estimatedMaxError": 0.0244292519225873,
       "innerBorders": 15,
       "outlinePolylines": 5,
-      "innerEdges": 227,
-      "outlineEdges": 1753,
+      "innerEdges": 279,
+      "outlineEdges": 2311,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/IS.smap",
-      "assetBytes": 9053
+      "assetBytes": 11684
     },
     "country_focus_it": {
       "regions": 110,
-      "vertices": 6440,
-      "bytes": 27076,
-      "maxRegionVertices": 109,
+      "vertices": 6432,
+      "bytes": 27822,
+      "maxRegionVertices": 112,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.01845404813928821,
+      "simplificationTolerance": 0.0442897155342917,
+      "estimatedMaxError": 0.0442897155342917,
       "innerBorders": 249,
-      "outlinePolylines": 19,
-      "innerEdges": 2568,
-      "outlineEdges": 1304,
+      "outlinePolylines": 18,
+      "innerEdges": 2571,
+      "outlineEdges": 1290,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/IT.smap",
-      "assetBytes": 27076
+      "assetBytes": 27822
     },
     "country_focus_jm": {
       "regions": 14,
-      "vertices": 786,
-      "bytes": 3606,
-      "maxRegionVertices": 87,
+      "vertices": 749,
+      "bytes": 3542,
+      "maxRegionVertices": 83,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.002016670043766801,
+      "simplificationTolerance": 0.004840008105040322,
+      "estimatedMaxError": 0.004840008105040322,
       "innerBorders": 23,
       "outlinePolylines": 1,
-      "innerEdges": 262,
-      "outlineEdges": 262,
+      "innerEdges": 244,
+      "outlineEdges": 261,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/JM.smap",
-      "assetBytes": 3606
+      "assetBytes": 3542
     },
     "country_focus_jo": {
       "regions": 12,
-      "vertices": 755,
-      "bytes": 3369,
-      "maxRegionVertices": 100,
+      "vertices": 770,
+      "bytes": 3500,
+      "maxRegionVertices": 102,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.005821288101326472,
+      "simplificationTolerance": 0.013971091443183533,
+      "estimatedMaxError": 0.013971091443183533,
       "innerBorders": 23,
       "outlinePolylines": 1,
-      "innerEdges": 266,
-      "outlineEdges": 223,
+      "innerEdges": 272,
+      "outlineEdges": 226,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/JO.smap",
-      "assetBytes": 3369
+      "assetBytes": 3500
     },
     "country_focus_jp": {
       "regions": 47,
-      "vertices": 2618,
-      "bytes": 11979,
-      "maxRegionVertices": 202,
+      "vertices": 2752,
+      "bytes": 12897,
+      "maxRegionVertices": 242,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.03125802526490107,
+      "simplificationTolerance": 0.07501926063576256,
+      "estimatedMaxError": 0.07501926063576256,
       "innerBorders": 86,
       "outlinePolylines": 43,
-      "innerEdges": 661,
-      "outlineEdges": 1296,
+      "innerEdges": 685,
+      "outlineEdges": 1382,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/JP.smap",
-      "assetBytes": 11979
+      "assetBytes": 12897
     },
     "country_focus_ke": {
       "regions": 8,
-      "vertices": 1522,
-      "bytes": 5578,
-      "maxRegionVertices": 422,
+      "vertices": 1699,
+      "bytes": 6195,
+      "maxRegionVertices": 479,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.011538311132686904,
+      "simplificationTolerance": 0.02769194671844857,
+      "estimatedMaxError": 0.02769194671844857,
       "innerBorders": 14,
       "outlinePolylines": 2,
-      "innerEdges": 561,
-      "outlineEdges": 400,
+      "innerEdges": 631,
+      "outlineEdges": 437,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/KE.smap",
-      "assetBytes": 5578
+      "assetBytes": 6195
     },
     "country_focus_kg": {
       "regions": 8,
-      "vertices": 2126,
-      "bytes": 7827,
-      "maxRegionVertices": 401,
+      "vertices": 2033,
+      "bytes": 7554,
+      "maxRegionVertices": 385,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.010173577252579167,
+      "simplificationTolerance": 0.02441658540619,
+      "estimatedMaxError": 0.02441658540619,
       "innerBorders": 11,
       "outlinePolylines": 4,
-      "innerEdges": 576,
-      "outlineEdges": 974,
+      "innerEdges": 552,
+      "outlineEdges": 929,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/KG.smap",
-      "assetBytes": 7827
+      "assetBytes": 7554
     },
     "country_focus_kh": {
       "regions": 24,
-      "vertices": 2897,
-      "bytes": 11101,
-      "maxRegionVertices": 316,
+      "vertices": 3091,
+      "bytes": 11923,
+      "maxRegionVertices": 356,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.005219098715999816,
+      "simplificationTolerance": 0.012525836918399558,
+      "estimatedMaxError": 0.012525836918399558,
       "innerBorders": 44,
       "outlinePolylines": 6,
-      "innerEdges": 1000,
-      "outlineEdges": 897,
+      "innerEdges": 1067,
+      "outlineEdges": 957,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/KH.smap",
-      "assetBytes": 11101
+      "assetBytes": 11923
     },
     "country_focus_km": {
       "regions": 3,
       "vertices": 124,
-      "bytes": 733,
+      "bytes": 758,
       "maxRegionVertices": 57,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.0012365141789001638,
+      "simplificationTolerance": 0.002967634029360393,
+      "estimatedMaxError": 0.002967634029360393,
       "innerBorders": 0,
       "outlinePolylines": 3,
       "innerEdges": 0,
       "outlineEdges": 124,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/KM.smap",
-      "assetBytes": 733
+      "assetBytes": 758
     },
     "country_focus_kn": {
       "regions": 14,
       "vertices": 165,
-      "bytes": 1706,
+      "bytes": 1848,
       "maxRegionVertices": 22,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.0003921810548973066,
+      "simplificationTolerance": 0.0009412345317535358,
+      "estimatedMaxError": 0.0009412345317535358,
       "innerBorders": 19,
       "outlinePolylines": 2,
       "innerEdges": 57,
       "outlineEdges": 51,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/KN.smap",
-      "assetBytes": 1706
+      "assetBytes": 1848
     },
     "country_focus_kp": {
       "regions": 11,
-      "vertices": 2534,
-      "bytes": 9503,
-      "maxRegionVertices": 349,
+      "vertices": 2547,
+      "bytes": 9648,
+      "maxRegionVertices": 348,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.008339543409245122,
+      "simplificationTolerance": 0.020014904182188292,
+      "estimatedMaxError": 0.020014904182188292,
       "innerBorders": 18,
       "outlinePolylines": 10,
       "innerEdges": 680,
-      "outlineEdges": 1174,
+      "outlineEdges": 1187,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/KP.smap",
-      "assetBytes": 9503
+      "assetBytes": 9648
     },
     "country_focus_kr": {
       "regions": 17,
-      "vertices": 2970,
-      "bytes": 12116,
-      "maxRegionVertices": 801,
+      "vertices": 3047,
+      "bytes": 12702,
+      "maxRegionVertices": 829,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.007978447044671499,
+      "simplificationTolerance": 0.019148272907211595,
+      "estimatedMaxError": 0.019148272907211595,
       "innerBorders": 27,
       "outlinePolylines": 52,
-      "innerEdges": 587,
-      "outlineEdges": 1796,
+      "innerEdges": 594,
+      "outlineEdges": 1859,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/KR.smap",
-      "assetBytes": 12116
+      "assetBytes": 12702
     },
     "country_focus_kw": {
       "regions": 6,
-      "vertices": 273,
-      "bytes": 1560,
+      "vertices": 274,
+      "bytes": 1626,
       "maxRegionVertices": 143,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.002133825826445121,
+      "simplificationTolerance": 0.00512118198346829,
+      "estimatedMaxError": 0.00512118198346829,
       "innerBorders": 10,
       "outlinePolylines": 4,
       "innerEdges": 26,
-      "outlineEdges": 221,
+      "outlineEdges": 222,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/KW.smap",
-      "assetBytes": 1560
+      "assetBytes": 1626
     },
     "country_focus_kz": {
       "regions": 16,
-      "vertices": 2678,
-      "bytes": 10283,
-      "maxRegionVertices": 278,
+      "vertices": 2857,
+      "bytes": 11007,
+      "maxRegionVertices": 291,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.037669753885250415,
+      "simplificationTolerance": 0.09040740932460099,
+      "estimatedMaxError": 0.09040740932460099,
       "innerBorders": 28,
-      "outlinePolylines": 6,
-      "innerEdges": 750,
-      "outlineEdges": 1178,
+      "outlinePolylines": 5,
+      "innerEdges": 797,
+      "outlineEdges": 1263,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/KZ.smap",
-      "assetBytes": 10283
+      "assetBytes": 11007
     },
     "country_focus_la": {
       "regions": 17,
-      "vertices": 2237,
-      "bytes": 8569,
-      "maxRegionVertices": 184,
+      "vertices": 2395,
+      "bytes": 9216,
+      "maxRegionVertices": 198,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.010742190691674133,
+      "simplificationTolerance": 0.02578125766001792,
+      "estimatedMaxError": 0.02578125766001792,
       "innerBorders": 27,
       "outlinePolylines": 1,
-      "innerEdges": 667,
-      "outlineEdges": 903,
+      "innerEdges": 706,
+      "outlineEdges": 983,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/LA.smap",
-      "assetBytes": 8569
+      "assetBytes": 9216
     },
     "country_focus_lb": {
       "regions": 6,
-      "vertices": 758,
-      "bytes": 2995,
-      "maxRegionVertices": 182,
+      "vertices": 784,
+      "bytes": 3116,
+      "maxRegionVertices": 184,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.002338315231402915,
+      "simplificationTolerance": 0.005611956555366996,
+      "estimatedMaxError": 0.005611956555366996,
       "innerBorders": 8,
       "outlinePolylines": 1,
-      "innerEdges": 232,
+      "innerEdges": 245,
       "outlineEdges": 294,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/LB.smap",
-      "assetBytes": 2995
+      "assetBytes": 3116
     },
     "country_focus_lc": {
       "regions": 11,
       "vertices": 179,
-      "bytes": 1469,
+      "bytes": 1555,
       "maxRegionVertices": 28,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.0004859794649219303,
+      "simplificationTolerance": 0.0011663507158126327,
+      "estimatedMaxError": 0.0011663507158126327,
       "innerBorders": 19,
       "outlinePolylines": 1,
       "innerEdges": 63,
       "outlineEdges": 53,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/LC.smap",
-      "assetBytes": 1469
+      "assetBytes": 1555
     },
     "country_focus_li": {
       "regions": 11,
       "vertices": 207,
-      "bytes": 1729,
+      "bytes": 1842,
       "maxRegionVertices": 38,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.0003686409508600373,
+      "simplificationTolerance": 0.0008847382820640895,
+      "estimatedMaxError": 0.0008847382820640895,
       "innerBorders": 29,
       "outlinePolylines": 1,
       "innerEdges": 84,
       "outlineEdges": 39,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/LI.smap",
-      "assetBytes": 1729
+      "assetBytes": 1842
     },
     "country_focus_lk": {
       "regions": 25,
-      "vertices": 2423,
-      "bytes": 9396,
-      "maxRegionVertices": 156,
+      "vertices": 2543,
+      "bytes": 10001,
+      "maxRegionVertices": 161,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.004682344814931169,
+      "simplificationTolerance": 0.011237627555834805,
+      "estimatedMaxError": 0.011237627555834805,
       "innerBorders": 58,
       "outlinePolylines": 5,
-      "innerEdges": 935,
-      "outlineEdges": 553,
+      "innerEdges": 972,
+      "outlineEdges": 599,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/LK.smap",
-      "assetBytes": 9396
+      "assetBytes": 10001
     },
     "country_focus_lr": {
       "regions": 13,
-      "vertices": 1589,
-      "bytes": 6175,
-      "maxRegionVertices": 198,
+      "vertices": 1715,
+      "bytes": 6700,
+      "maxRegionVertices": 209,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.005040963642621639,
+      "simplificationTolerance": 0.012098312742291933,
+      "estimatedMaxError": 0.012098312742291933,
       "innerBorders": 19,
       "outlinePolylines": 1,
-      "innerEdges": 479,
-      "outlineEdges": 631,
+      "innerEdges": 517,
+      "outlineEdges": 681,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/LR.smap",
-      "assetBytes": 6175
+      "assetBytes": 6700
     },
     "country_focus_ls": {
       "regions": 10,
-      "vertices": 1564,
-      "bytes": 5674,
-      "maxRegionVertices": 207,
+      "vertices": 1604,
+      "bytes": 5878,
+      "maxRegionVertices": 213,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.0028561046806816364,
+      "simplificationTolerance": 0.006854651233635927,
+      "estimatedMaxError": 0.006854651233635927,
       "innerBorders": 20,
       "outlinePolylines": 1,
-      "innerEdges": 630,
-      "outlineEdges": 304,
+      "innerEdges": 648,
+      "outlineEdges": 308,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/LS.smap",
-      "assetBytes": 5674
+      "assetBytes": 5878
     },
     "country_focus_lt": {
       "regions": 10,
-      "vertices": 2301,
-      "bytes": 8041,
-      "maxRegionVertices": 381,
+      "vertices": 2495,
+      "bytes": 8735,
+      "maxRegionVertices": 408,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.005419277272487185,
+      "simplificationTolerance": 0.013006265453969244,
+      "estimatedMaxError": 0.013006265453969244,
       "innerBorders": 18,
       "outlinePolylines": 2,
-      "innerEdges": 907,
-      "outlineEdges": 487,
+      "innerEdges": 998,
+      "outlineEdges": 499,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/LT.smap",
-      "assetBytes": 8041
+      "assetBytes": 8735
     },
     "country_focus_lu": {
       "regions": 3,
       "vertices": 333,
-      "bytes": 1507,
+      "bytes": 1501,
       "maxRegionVertices": 140,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.0013548595128608622,
+      "simplificationTolerance": 0.0032516628308660693,
+      "estimatedMaxError": 0.0032516628308660693,
       "innerBorders": 3,
       "outlinePolylines": 1,
       "innerEdges": 70,
       "outlineEdges": 193,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/LU.smap",
-      "assetBytes": 1507
+      "assetBytes": 1501
     },
     "country_focus_lv": {
       "regions": 119,
-      "vertices": 5286,
-      "bytes": 23190,
-      "maxRegionVertices": 121,
+      "vertices": 5570,
+      "bytes": 24970,
+      "maxRegionVertices": 127,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.0066850878293803215,
+      "simplificationTolerance": 0.01604421079051277,
+      "estimatedMaxError": 0.01604421079051277,
       "innerBorders": 304,
       "outlinePolylines": 1,
-      "innerEdges": 2405,
-      "outlineEdges": 476,
+      "innerEdges": 2533,
+      "outlineEdges": 504,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/LV.smap",
-      "assetBytes": 23190
+      "assetBytes": 24970
     },
     "country_focus_ly": {
       "regions": 22,
-      "vertices": 1301,
-      "bytes": 5646,
-      "maxRegionVertices": 116,
+      "vertices": 1333,
+      "bytes": 5879,
+      "maxRegionVertices": 117,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.01821671584541707,
+      "simplificationTolerance": 0.04372011802900097,
+      "estimatedMaxError": 0.04372011802900097,
       "innerBorders": 44,
       "outlinePolylines": 1,
-      "innerEdges": 491,
-      "outlineEdges": 319,
+      "innerEdges": 498,
+      "outlineEdges": 337,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/LY.smap",
-      "assetBytes": 5646
+      "assetBytes": 5879
     },
     "country_focus_ma": {
       "regions": 16,
-      "vertices": 1572,
-      "bytes": 6291,
-      "maxRegionVertices": 188,
+      "vertices": 1692,
+      "bytes": 6772,
+      "maxRegionVertices": 195,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.0197432986773229,
+      "simplificationTolerance": 0.047383916825574954,
+      "estimatedMaxError": 0.047383916825574954,
       "innerBorders": 26,
       "outlinePolylines": 1,
-      "innerEdges": 529,
-      "outlineEdges": 514,
+      "innerEdges": 572,
+      "outlineEdges": 548,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/MA.smap",
-      "assetBytes": 6291
+      "assetBytes": 6772
     },
     "country_focus_md": {
       "regions": 40,
-      "vertices": 2393,
-      "bytes": 10170,
-      "maxRegionVertices": 97,
+      "vertices": 2373,
+      "bytes": 10357,
+      "maxRegionVertices": 95,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.005282456130250262,
+      "simplificationTolerance": 0.012677894712600628,
+      "estimatedMaxError": 0.012677894712600628,
       "innerBorders": 95,
       "outlinePolylines": 1,
-      "innerEdges": 882,
-      "outlineEdges": 629,
+      "innerEdges": 877,
+      "outlineEdges": 619,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/MD.smap",
-      "assetBytes": 10170
+      "assetBytes": 10357
     },
     "country_focus_me": {
       "regions": 21,
-      "vertices": 949,
-      "bytes": 4514,
+      "vertices": 948,
+      "bytes": 4626,
       "maxRegionVertices": 77,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.0027475059532203992,
+      "simplificationTolerance": 0.006594014287728958,
+      "estimatedMaxError": 0.006594014287728958,
       "innerBorders": 41,
       "outlinePolylines": 1,
       "innerEdges": 302,
-      "outlineEdges": 345,
+      "outlineEdges": 344,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/ME.smap",
-      "assetBytes": 4514
+      "assetBytes": 4626
     },
     "country_focus_mg": {
       "regions": 22,
-      "vertices": 2191,
-      "bytes": 8493,
-      "maxRegionVertices": 195,
+      "vertices": 2340,
+      "bytes": 9151,
+      "maxRegionVertices": 208,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.01718302847401763,
+      "simplificationTolerance": 0.04123926833764231,
+      "estimatedMaxError": 0.04123926833764231,
       "innerBorders": 50,
       "outlinePolylines": 3,
-      "innerEdges": 776,
-      "outlineEdges": 639,
+      "innerEdges": 823,
+      "outlineEdges": 694,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/MG.smap",
-      "assetBytes": 8493
+      "assetBytes": 9151
     },
     "country_focus_mh": {
       "regions": 2,
-      "vertices": 28,
-      "bytes": 264,
+      "vertices": 33,
+      "bytes": 292,
       "maxRegionVertices": 17,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.012102372556419994,
+      "simplificationTolerance": 0.029045694135407984,
+      "estimatedMaxError": 0.029045694135407984,
       "innerBorders": 0,
-      "outlinePolylines": 5,
+      "outlinePolylines": 4,
       "innerEdges": 0,
-      "outlineEdges": 28,
+      "outlineEdges": 33,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/MH.smap",
-      "assetBytes": 264
+      "assetBytes": 292
     },
     "country_focus_mk": {
       "regions": 84,
-      "vertices": 5724,
-      "bytes": 22596,
-      "maxRegionVertices": 155,
+      "vertices": 5713,
+      "bytes": 23154,
+      "maxRegionVertices": 154,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.002422144292049913,
+      "simplificationTolerance": 0.005813146300919792,
+      "estimatedMaxError": 0.005813146300919792,
       "innerBorders": 212,
       "outlinePolylines": 1,
-      "innerEdges": 2689,
-      "outlineEdges": 346,
+      "innerEdges": 2684,
+      "outlineEdges": 345,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/MK.smap",
-      "assetBytes": 22596
+      "assetBytes": 23154
     },
     "country_focus_ml": {
       "regions": 9,
-      "vertices": 1242,
-      "bytes": 4860,
-      "maxRegionVertices": 250,
+      "vertices": 1332,
+      "bytes": 5249,
+      "maxRegionVertices": 273,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.0185716825679662,
+      "simplificationTolerance": 0.04457203816311888,
+      "estimatedMaxError": 0.04457203816311888,
       "innerBorders": 11,
       "outlinePolylines": 1,
-      "innerEdges": 346,
-      "outlineEdges": 550,
+      "innerEdges": 364,
+      "outlineEdges": 604,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/ML.smap",
-      "assetBytes": 4860
+      "assetBytes": 5249
     },
     "country_focus_mm": {
       "regions": 14,
-      "vertices": 2230,
-      "bytes": 8679,
-      "maxRegionVertices": 290,
+      "vertices": 2502,
+      "bytes": 9855,
+      "maxRegionVertices": 332,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.02371157394483751,
+      "simplificationTolerance": 0.05690777746761002,
+      "estimatedMaxError": 0.05690777746761002,
       "innerBorders": 27,
-      "outlinePolylines": 21,
-      "innerEdges": 590,
-      "outlineEdges": 1050,
+      "outlinePolylines": 25,
+      "innerEdges": 654,
+      "outlineEdges": 1194,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/MM.smap",
-      "assetBytes": 8679
+      "assetBytes": 9855
     },
     "country_focus_mn": {
       "regions": 22,
-      "vertices": 2471,
-      "bytes": 9416,
-      "maxRegionVertices": 174,
+      "vertices": 2672,
+      "bytes": 10211,
+      "maxRegionVertices": 198,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.0296699788207538,
+      "simplificationTolerance": 0.07120794916980912,
+      "estimatedMaxError": 0.07120794916980912,
       "innerBorders": 45,
       "outlinePolylines": 1,
-      "innerEdges": 906,
-      "outlineEdges": 659,
+      "innerEdges": 980,
+      "outlineEdges": 712,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/MN.smap",
-      "assetBytes": 9416
+      "assetBytes": 10211
     },
     "country_focus_mo": {
       "regions": 1,
       "vertices": 87,
-      "bytes": 556,
+      "bytes": 598,
       "maxRegionVertices": 87,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.00014805850157107353,
+      "simplificationTolerance": 0.0003553404037705765,
+      "estimatedMaxError": 0.0003553404037705765,
       "innerBorders": 0,
       "outlinePolylines": 2,
       "innerEdges": 0,
       "outlineEdges": 87,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/MO.smap",
-      "assetBytes": 556
+      "assetBytes": 598
     },
     "country_focus_mr": {
       "regions": 13,
-      "vertices": 812,
-      "bytes": 3690,
-      "maxRegionVertices": 168,
+      "vertices": 866,
+      "bytes": 3962,
+      "maxRegionVertices": 182,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.016016157362146993,
+      "simplificationTolerance": 0.03843877766915278,
+      "estimatedMaxError": 0.03843877766915278,
       "innerBorders": 21,
       "outlinePolylines": 2,
-      "innerEdges": 233,
-      "outlineEdges": 346,
+      "innerEdges": 248,
+      "outlineEdges": 370,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/MR.smap",
-      "assetBytes": 3690
+      "assetBytes": 3962
     },
     "country_focus_ms": {
       "regions": 3,
       "vertices": 39,
-      "bytes": 438,
+      "bytes": 467,
       "maxRegionVertices": 16,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.00017856638434712906,
+      "simplificationTolerance": 0.00042855932243310974,
+      "estimatedMaxError": 0.00042855932243310974,
       "innerBorders": 3,
       "outlinePolylines": 1,
       "innerEdges": 8,
       "outlineEdges": 23,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/MS.smap",
-      "assetBytes": 438
+      "assetBytes": 467
     },
     "country_focus_mt": {
       "regions": 68,
       "vertices": 1164,
-      "bytes": 7636,
+      "bytes": 8347,
       "maxRegionVertices": 50,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.000403215907603619,
+      "simplificationTolerance": 0.0009677181782486856,
+      "estimatedMaxError": 0.0009677181782486856,
       "innerBorders": 160,
       "outlinePolylines": 2,
       "innerEdges": 542,
       "outlineEdges": 80,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/MT.smap",
-      "assetBytes": 7636
+      "assetBytes": 8347
     },
     "country_focus_mu": {
       "regions": 16,
-      "vertices": 180,
-      "bytes": 1547,
-      "maxRegionVertices": 23,
+      "vertices": 198,
+      "bytes": 1709,
+      "maxRegionVertices": 26,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.012577864942482427,
+      "simplificationTolerance": 0.030186875861957823,
+      "estimatedMaxError": 0.030186875861957823,
       "innerBorders": 32,
       "outlinePolylines": 3,
-      "innerEdges": 63,
-      "outlineEdges": 54,
+      "innerEdges": 70,
+      "outlineEdges": 58,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/MU.smap",
-      "assetBytes": 1547
+      "assetBytes": 1709
     },
     "country_focus_mv": {
       "regions": 21,
-      "vertices": 83,
-      "bytes": 1483,
-      "maxRegionVertices": 10,
+      "vertices": 81,
+      "bytes": 1559,
+      "maxRegionVertices": 11,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.009276474519599218,
+      "simplificationTolerance": 0.022263538847038123,
+      "estimatedMaxError": 0.022263538847038123,
       "innerBorders": 0,
       "outlinePolylines": 21,
       "innerEdges": 0,
-      "outlineEdges": 83,
-      "nearlySharedEdges": 9,
+      "outlineEdges": 81,
+      "nearlySharedEdges": 4,
       "asset": "assets/maps/country_focus/MV.smap",
-      "assetBytes": 1483
+      "assetBytes": 1559
     },
     "country_focus_mw": {
       "regions": 28,
-      "vertices": 1527,
-      "bytes": 6661,
-      "maxRegionVertices": 148,
+      "vertices": 1681,
+      "bytes": 7355,
+      "maxRegionVertices": 161,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.009468447449728678,
+      "simplificationTolerance": 0.022724273879348826,
+      "estimatedMaxError": 0.022724273879348826,
       "innerBorders": 55,
       "outlinePolylines": 3,
-      "innerEdges": 517,
-      "outlineEdges": 493,
+      "innerEdges": 573,
+      "outlineEdges": 535,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/MW.smap",
-      "assetBytes": 6661
+      "assetBytes": 7355
     },
     "country_focus_mx": {
       "regions": 32,
-      "vertices": 4598,
-      "bytes": 17444,
-      "maxRegionVertices": 301,
+      "vertices": 4154,
+      "bytes": 16210,
+      "maxRegionVertices": 283,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
-      "innerBorders": 70,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.029205990235332487,
+      "simplificationTolerance": 0.07009437656479797,
+      "estimatedMaxError": 0.07009437656479797,
+      "innerBorders": 69,
       "outlinePolylines": 19,
-      "innerEdges": 1541,
-      "outlineEdges": 1516,
+      "innerEdges": 1385,
+      "outlineEdges": 1384,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/MX.smap",
-      "assetBytes": 17444
+      "assetBytes": 16210
     },
     "country_focus_my": {
       "regions": 16,
-      "vertices": 1829,
-      "bytes": 7603,
-      "maxRegionVertices": 436,
+      "vertices": 1613,
+      "bytes": 6963,
+      "maxRegionVertices": 377,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.018106392266263566,
+      "simplificationTolerance": 0.043455341439032555,
+      "estimatedMaxError": 0.043455341439032555,
       "innerBorders": 20,
       "outlinePolylines": 16,
-      "innerEdges": 341,
-      "outlineEdges": 1147,
+      "innerEdges": 295,
+      "outlineEdges": 1023,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/MY.smap",
-      "assetBytes": 7603
+      "assetBytes": 6963
     },
     "country_focus_mz": {
       "regions": 11,
-      "vertices": 1600,
-      "bytes": 6206,
-      "maxRegionVertices": 197,
+      "vertices": 1729,
+      "bytes": 6732,
+      "maxRegionVertices": 207,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.020640012096236778,
+      "simplificationTolerance": 0.049536029030968265,
+      "estimatedMaxError": 0.049536029030968265,
       "innerBorders": 16,
       "outlinePolylines": 6,
-      "innerEdges": 420,
-      "outlineEdges": 760,
+      "innerEdges": 456,
+      "outlineEdges": 817,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/MZ.smap",
-      "assetBytes": 6206
+      "assetBytes": 6732
     },
     "country_focus_na": {
       "regions": 13,
-      "vertices": 1590,
-      "bytes": 6059,
-      "maxRegionVertices": 219,
+      "vertices": 1692,
+      "bytes": 6467,
+      "maxRegionVertices": 238,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.015535926808887017,
+      "simplificationTolerance": 0.03728622434132884,
+      "estimatedMaxError": 0.03728622434132884,
       "innerBorders": 24,
       "outlinePolylines": 1,
-      "innerEdges": 565,
-      "outlineEdges": 460,
+      "innerEdges": 600,
+      "outlineEdges": 492,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/NA.smap",
-      "assetBytes": 6059
+      "assetBytes": 6467
     },
     "country_focus_ne": {
       "regions": 8,
-      "vertices": 752,
-      "bytes": 3161,
-      "maxRegionVertices": 192,
+      "vertices": 796,
+      "bytes": 3390,
+      "maxRegionVertices": 200,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.014764011866492574,
+      "simplificationTolerance": 0.035433628479582174,
+      "estimatedMaxError": 0.035433628479582174,
       "innerBorders": 11,
       "outlinePolylines": 1,
-      "innerEdges": 213,
-      "outlineEdges": 326,
+      "innerEdges": 223,
+      "outlineEdges": 350,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/NE.smap",
-      "assetBytes": 3161
+      "assetBytes": 3390
     },
     "country_focus_ng": {
       "regions": 37,
-      "vertices": 4489,
-      "bytes": 16490,
-      "maxRegionVertices": 255,
+      "vertices": 4780,
+      "bytes": 17755,
+      "maxRegionVertices": 279,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.011566825470653828,
+      "simplificationTolerance": 0.027760381129569186,
+      "estimatedMaxError": 0.027760381129569186,
       "innerBorders": 85,
       "outlinePolylines": 3,
-      "innerEdges": 1814,
-      "outlineEdges": 861,
+      "innerEdges": 1912,
+      "outlineEdges": 956,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/NG.smap",
-      "assetBytes": 16490
+      "assetBytes": 17755
     },
     "country_focus_ni": {
       "regions": 17,
-      "vertices": 1900,
-      "bytes": 7493,
-      "maxRegionVertices": 339,
+      "vertices": 2022,
+      "bytes": 8053,
+      "maxRegionVertices": 362,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.005260568504244242,
+      "simplificationTolerance": 0.01262536441018618,
+      "estimatedMaxError": 0.01262536441018618,
       "innerBorders": 37,
       "outlinePolylines": 4,
-      "innerEdges": 610,
-      "outlineEdges": 680,
+      "innerEdges": 650,
+      "outlineEdges": 722,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/NI.smap",
-      "assetBytes": 7493
+      "assetBytes": 8053
     },
     "country_focus_nl": {
       "regions": 15,
-      "vertices": 217,
-      "bytes": 1608,
-      "maxRegionVertices": 28,
+      "vertices": 284,
+      "bytes": 1912,
+      "maxRegionVertices": 35,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.06973671355322272,
+      "simplificationTolerance": 0.16736811252773454,
+      "estimatedMaxError": 0.16736811252773454,
       "innerBorders": 24,
-      "outlinePolylines": 5,
-      "innerEdges": 69,
-      "outlineEdges": 79,
-      "nearlySharedEdges": 3,
+      "outlinePolylines": 8,
+      "innerEdges": 87,
+      "outlineEdges": 110,
+      "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/NL.smap",
-      "assetBytes": 1608
+      "assetBytes": 1912
     },
     "country_focus_no": {
       "regions": 20,
-      "vertices": 3549,
-      "bytes": 16091,
-      "maxRegionVertices": 532,
+      "vertices": 2457,
+      "bytes": 11003,
+      "maxRegionVertices": 820,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
-      "innerBorders": 36,
-      "outlinePolylines": 269,
-      "innerEdges": 453,
-      "outlineEdges": 2643,
-      "nearlySharedEdges": 0,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.08674939180860623,
+      "simplificationTolerance": 0.20819854034065496,
+      "estimatedMaxError": 0.20819854034065496,
+      "innerBorders": 35,
+      "outlinePolylines": 74,
+      "innerEdges": 277,
+      "outlineEdges": 1903,
+      "nearlySharedEdges": 2,
       "asset": "assets/maps/country_focus/NO.smap",
-      "assetBytes": 16091
+      "assetBytes": 11003
     },
     "country_focus_np": {
       "regions": 14,
-      "vertices": 2253,
-      "bytes": 8313,
-      "maxRegionVertices": 245,
+      "vertices": 2269,
+      "bytes": 8434,
+      "maxRegionVertices": 249,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.007505984734748819,
+      "simplificationTolerance": 0.018014363363397165,
+      "estimatedMaxError": 0.018014363363397165,
       "innerBorders": 21,
       "outlinePolylines": 1,
-      "innerEdges": 738,
-      "outlineEdges": 777,
+      "innerEdges": 744,
+      "outlineEdges": 781,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/NP.smap",
-      "assetBytes": 8313
+      "assetBytes": 8434
     },
     "country_focus_nr": {
       "regions": 14,
       "vertices": 78,
-      "bytes": 1172,
+      "bytes": 1341,
       "maxRegionVertices": 13,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.00007294115889336225,
+      "simplificationTolerance": 0.00017505878134406938,
+      "estimatedMaxError": 0.00017505878134406938,
       "innerBorders": 24,
       "outlinePolylines": 1,
       "innerEdges": 31,
       "outlineEdges": 16,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/NR.smap",
-      "assetBytes": 1172
+      "assetBytes": 1341
     },
     "country_focus_nz": {
       "regions": 17,
-      "vertices": 2360,
-      "bytes": 9565,
-      "maxRegionVertices": 306,
+      "vertices": 2385,
+      "bytes": 9821,
+      "maxRegionVertices": 343,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.020375655248156502,
+      "simplificationTolerance": 0.0489015725955756,
+      "estimatedMaxError": 0.0489015725955756,
       "innerBorders": 23,
-      "outlinePolylines": 13,
-      "innerEdges": 468,
-      "outlineEdges": 1424,
+      "outlinePolylines": 16,
+      "innerEdges": 469,
+      "outlineEdges": 1447,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/NZ.smap",
-      "assetBytes": 9565
+      "assetBytes": 9821
     },
     "country_focus_om": {
       "regions": 11,
-      "vertices": 605,
-      "bytes": 3092,
-      "maxRegionVertices": 118,
+      "vertices": 650,
+      "bytes": 3363,
+      "maxRegionVertices": 122,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.012463982434905424,
+      "simplificationTolerance": 0.029913557843773017,
+      "estimatedMaxError": 0.029913557843773017,
       "innerBorders": 17,
       "outlinePolylines": 7,
       "innerEdges": 67,
-      "outlineEdges": 471,
+      "outlineEdges": 516,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/OM.smap",
-      "assetBytes": 3092
+      "assetBytes": 3363
     },
     "country_focus_pa": {
       "regions": 12,
-      "vertices": 2839,
-      "bytes": 10920,
-      "maxRegionVertices": 472,
+      "vertices": 2638,
+      "bytes": 10296,
+      "maxRegionVertices": 431,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.005432027227891263,
+      "simplificationTolerance": 0.013036865346939031,
+      "estimatedMaxError": 0.013036865346939031,
       "innerBorders": 21,
       "outlinePolylines": 15,
-      "innerEdges": 651,
-      "outlineEdges": 1537,
+      "innerEdges": 606,
+      "outlineEdges": 1426,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/PA.smap",
-      "assetBytes": 10920
+      "assetBytes": 10296
     },
     "country_focus_pe": {
       "regions": 26,
-      "vertices": 2765,
-      "bytes": 10538,
-      "maxRegionVertices": 344,
+      "vertices": 3040,
+      "bytes": 11634,
+      "maxRegionVertices": 383,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.022120759080791762,
+      "simplificationTolerance": 0.053089821793900226,
+      "estimatedMaxError": 0.053089821793900226,
       "innerBorders": 54,
-      "outlinePolylines": 1,
-      "innerEdges": 1012,
-      "outlineEdges": 741,
+      "outlinePolylines": 2,
+      "innerEdges": 1104,
+      "outlineEdges": 832,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/PE.smap",
-      "assetBytes": 10538
+      "assetBytes": 11634
     },
     "country_focus_pg": {
       "regions": 20,
-      "vertices": 2694,
-      "bytes": 11704,
-      "maxRegionVertices": 386,
+      "vertices": 2750,
+      "bytes": 12199,
+      "maxRegionVertices": 395,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.013942869777792502,
+      "simplificationTolerance": 0.03346288746670201,
+      "estimatedMaxError": 0.03346288746670201,
       "innerBorders": 32,
-      "outlinePolylines": 53,
-      "innerEdges": 373,
-      "outlineEdges": 1948,
+      "outlinePolylines": 51,
+      "innerEdges": 380,
+      "outlineEdges": 1990,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/PG.smap",
-      "assetBytes": 11704
+      "assetBytes": 12199
     },
     "country_focus_ph": {
       "regions": 118,
-      "vertices": 3711,
-      "bytes": 20462,
-      "maxRegionVertices": 214,
+      "vertices": 4100,
+      "bytes": 22865,
+      "maxRegionVertices": 251,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.020137253007667822,
+      "simplificationTolerance": 0.04832940721840277,
+      "estimatedMaxError": 0.04832940721840277,
       "innerBorders": 206,
-      "outlinePolylines": 80,
-      "innerEdges": 847,
-      "outlineEdges": 2017,
+      "outlinePolylines": 84,
+      "innerEdges": 921,
+      "outlineEdges": 2258,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/PH.smap",
-      "assetBytes": 20462
+      "assetBytes": 22865
     },
     "country_focus_pk": {
       "regions": 8,
-      "vertices": 1991,
-      "bytes": 7497,
-      "maxRegionVertices": 450,
+      "vertices": 2116,
+      "bytes": 7958,
+      "maxRegionVertices": 462,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.018485878925051387,
+      "simplificationTolerance": 0.044366109420123326,
+      "estimatedMaxError": 0.044366109420123326,
       "innerBorders": 14,
       "outlinePolylines": 2,
-      "innerEdges": 529,
-      "outlineEdges": 933,
+      "innerEdges": 571,
+      "outlineEdges": 974,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/PK.smap",
-      "assetBytes": 7497
+      "assetBytes": 7958
     },
     "country_focus_pl": {
       "regions": 16,
-      "vertices": 2701,
-      "bytes": 10070,
+      "vertices": 2679,
+      "bytes": 10071,
       "maxRegionVertices": 246,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.011315636069989804,
+      "simplificationTolerance": 0.02715752656797553,
+      "estimatedMaxError": 0.02715752656797553,
       "innerBorders": 34,
       "outlinePolylines": 1,
-      "innerEdges": 925,
-      "outlineEdges": 851,
+      "innerEdges": 922,
+      "outlineEdges": 835,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/PL.smap",
-      "assetBytes": 10070
+      "assetBytes": 10071
     },
     "country_focus_pt": {
       "regions": 20,
-      "vertices": 1228,
-      "bytes": 5280,
-      "maxRegionVertices": 101,
+      "vertices": 1226,
+      "bytes": 5419,
+      "maxRegionVertices": 100,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.023129050639996096,
+      "simplificationTolerance": 0.05550972153599063,
+      "estimatedMaxError": 0.05550972153599063,
       "innerBorders": 34,
       "outlinePolylines": 12,
-      "innerEdges": 403,
-      "outlineEdges": 422,
+      "innerEdges": 406,
+      "outlineEdges": 414,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/PT.smap",
-      "assetBytes": 5280
+      "assetBytes": 5419
     },
     "country_focus_pw": {
       "regions": 16,
-      "vertices": 160,
-      "bytes": 1469,
-      "maxRegionVertices": 28,
+      "vertices": 170,
+      "bytes": 1595,
+      "maxRegionVertices": 32,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.006141718173904716,
+      "simplificationTolerance": 0.014740123617371318,
+      "estimatedMaxError": 0.014740123617371318,
       "innerBorders": 15,
       "outlinePolylines": 9,
       "innerEdges": 25,
-      "outlineEdges": 110,
+      "outlineEdges": 120,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/PW.smap",
-      "assetBytes": 1469
+      "assetBytes": 1595
     },
     "country_focus_py": {
       "regions": 18,
-      "vertices": 1995,
-      "bytes": 7704,
-      "maxRegionVertices": 224,
+      "vertices": 2139,
+      "bytes": 8325,
+      "maxRegionVertices": 234,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.010763547912813363,
+      "simplificationTolerance": 0.02583251499075207,
+      "estimatedMaxError": 0.02583251499075207,
       "innerBorders": 39,
       "outlinePolylines": 1,
-      "innerEdges": 705,
-      "outlineEdges": 585,
+      "innerEdges": 753,
+      "outlineEdges": 633,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/PY.smap",
-      "assetBytes": 7704
+      "assetBytes": 8325
     },
     "country_focus_qa": {
       "regions": 7,
-      "vertices": 339,
-      "bytes": 1842,
+      "vertices": 342,
+      "bytes": 1904,
       "maxRegionVertices": 128,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.002104905341737416,
+      "simplificationTolerance": 0.005051772820169798,
+      "estimatedMaxError": 0.005051772820169798,
       "innerBorders": 13,
       "outlinePolylines": 1,
-      "innerEdges": 51,
-      "outlineEdges": 237,
+      "innerEdges": 52,
+      "outlineEdges": 238,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/QA.smap",
-      "assetBytes": 1842
+      "assetBytes": 1904
     },
     "country_focus_ro": {
       "regions": 42,
-      "vertices": 4860,
-      "bytes": 17865,
-      "maxRegionVertices": 202,
+      "vertices": 5060,
+      "bytes": 18805,
+      "maxRegionVertices": 210,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.008721462609654057,
+      "simplificationTolerance": 0.020931510263169736,
+      "estimatedMaxError": 0.020931510263169736,
       "innerBorders": 102,
       "outlinePolylines": 1,
-      "innerEdges": 2024,
-      "outlineEdges": 812,
+      "innerEdges": 2105,
+      "outlineEdges": 850,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/RO.smap",
-      "assetBytes": 17865
+      "assetBytes": 18805
     },
     "country_focus_rs": {
       "regions": 25,
-      "vertices": 4016,
-      "bytes": 14256,
-      "maxRegionVertices": 249,
+      "vertices": 3913,
+      "bytes": 14094,
+      "maxRegionVertices": 236,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.006547850933058467,
+      "simplificationTolerance": 0.01571484223934032,
+      "estimatedMaxError": 0.01571484223934032,
       "innerBorders": 53,
       "outlinePolylines": 1,
-      "innerEdges": 1633,
-      "outlineEdges": 750,
+      "innerEdges": 1588,
+      "outlineEdges": 737,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/RS.smap",
-      "assetBytes": 14256
+      "assetBytes": 14094
     },
     "country_focus_ru": {
       "regions": 85,
-      "vertices": 5201,
-      "bytes": 22539,
-      "maxRegionVertices": 349,
+      "vertices": 8704,
+      "bytes": 35718,
+      "maxRegionVertices": 1011,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
-      "innerBorders": 201,
-      "outlinePolylines": 32,
-      "innerEdges": 1819,
-      "outlineEdges": 1563,
-      "nearlySharedEdges": 0,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.14791999848823065,
+      "simplificationTolerance": 0.35500799637175356,
+      "estimatedMaxError": 0.35500799637175356,
+      "innerBorders": 200,
+      "outlinePolylines": 106,
+      "innerEdges": 2531,
+      "outlineEdges": 3642,
+      "nearlySharedEdges": 4,
       "asset": "assets/maps/country_focus/RU.smap",
-      "assetBytes": 22539
+      "assetBytes": 35718
     },
     "country_focus_rw": {
       "regions": 5,
-      "vertices": 776,
-      "bytes": 2970,
-      "maxRegionVertices": 233,
+      "vertices": 794,
+      "bytes": 3076,
+      "maxRegionVertices": 236,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.0021002984065672786,
+      "simplificationTolerance": 0.0050407161757614685,
+      "estimatedMaxError": 0.0050407161757614685,
       "innerBorders": 8,
       "outlinePolylines": 1,
-      "innerEdges": 236,
-      "outlineEdges": 304,
+      "innerEdges": 244,
+      "outlineEdges": 306,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/RW.smap",
-      "assetBytes": 2970
+      "assetBytes": 3076
     },
     "country_focus_sa": {
       "regions": 13,
-      "vertices": 2020,
-      "bytes": 7545,
-      "maxRegionVertices": 297,
+      "vertices": 2120,
+      "bytes": 8003,
+      "maxRegionVertices": 313,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.02062184172531467,
+      "simplificationTolerance": 0.04949242014075521,
+      "estimatedMaxError": 0.04949242014075521,
       "innerBorders": 27,
-      "outlinePolylines": 8,
-      "innerEdges": 731,
-      "outlineEdges": 558,
+      "outlinePolylines": 7,
+      "innerEdges": 759,
+      "outlineEdges": 602,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/SA.smap",
-      "assetBytes": 7545
+      "assetBytes": 8003
     },
     "country_focus_sb": {
       "regions": 10,
-      "vertices": 1155,
-      "bytes": 5428,
-      "maxRegionVertices": 317,
+      "vertices": 956,
+      "bytes": 4806,
+      "maxRegionVertices": 257,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.0122823986846316,
+      "simplificationTolerance": 0.02947775684311584,
+      "estimatedMaxError": 0.02947775684311584,
       "innerBorders": 1,
-      "outlinePolylines": 45,
-      "innerEdges": 6,
-      "outlineEdges": 1143,
+      "outlinePolylines": 44,
+      "innerEdges": 5,
+      "outlineEdges": 946,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/SB.smap",
-      "assetBytes": 5428
+      "assetBytes": 4806
     },
     "country_focus_sc": {
       "regions": 25,
-      "vertices": 367,
-      "bytes": 2879,
+      "vertices": 370,
+      "bytes": 3094,
       "maxRegionVertices": 50,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.0012055807445181413,
+      "simplificationTolerance": 0.002893393786843539,
+      "estimatedMaxError": 0.002893393786843539,
       "innerBorders": 41,
       "outlinePolylines": 18,
       "innerEdges": 73,
-      "outlineEdges": 221,
+      "outlineEdges": 224,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/SC.smap",
-      "assetBytes": 2879
+      "assetBytes": 3094
     },
     "country_focus_sd": {
       "regions": 17,
-      "vertices": 1441,
-      "bytes": 6101,
-      "maxRegionVertices": 163,
+      "vertices": 1533,
+      "bytes": 6577,
+      "maxRegionVertices": 182,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.016736368913000167,
+      "simplificationTolerance": 0.040167285391200395,
+      "estimatedMaxError": 0.040167285391200395,
       "innerBorders": 46,
       "outlinePolylines": 2,
-      "innerEdges": 478,
-      "outlineEdges": 485,
+      "innerEdges": 502,
+      "outlineEdges": 529,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/SD.smap",
-      "assetBytes": 6101
+      "assetBytes": 6577
     },
     "country_focus_se": {
       "regions": 21,
-      "vertices": 2974,
-      "bytes": 12010,
-      "maxRegionVertices": 305,
+      "vertices": 2158,
+      "bytes": 11156,
+      "maxRegionVertices": 265,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.03573579519038169,
+      "simplificationTolerance": 0.08576590845691605,
+      "estimatedMaxError": 0.08576590845691605,
       "innerBorders": 40,
-      "outlinePolylines": 33,
-      "innerEdges": 733,
-      "outlineEdges": 1508,
+      "outlinePolylines": 366,
+      "innerEdges": 565,
+      "outlineEdges": 1028,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/SE.smap",
-      "assetBytes": 12010
+      "assetBytes": 11156
     },
     "country_focus_sg": {
       "regions": 5,
       "vertices": 167,
-      "bytes": 1187,
+      "bytes": 1188,
       "maxRegionVertices": 44,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.0003348107584811667,
+      "simplificationTolerance": 0.0008035458203548001,
+      "estimatedMaxError": 0.0008035458203548001,
       "innerBorders": 6,
       "outlinePolylines": 1,
       "innerEdges": 62,
       "outlineEdges": 43,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/SG.smap",
-      "assetBytes": 1187
+      "assetBytes": 1188
     },
     "country_focus_sh": {
       "regions": 3,
-      "vertices": 12,
-      "bytes": 255,
-      "maxRegionVertices": 4,
+      "vertices": 14,
+      "bytes": 289,
+      "maxRegionVertices": 7,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.04318315741885387,
+      "simplificationTolerance": 0.10363957780524928,
+      "estimatedMaxError": 0.10363957780524928,
       "innerBorders": 0,
-      "outlinePolylines": 3,
+      "outlinePolylines": 4,
       "innerEdges": 0,
-      "outlineEdges": 12,
+      "outlineEdges": 14,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/SH.smap",
-      "assetBytes": 255
+      "assetBytes": 289
     },
     "country_focus_si": {
       "regions": 193,
-      "vertices": 5705,
-      "bytes": 29739,
-      "maxRegionVertices": 83,
+      "vertices": 5761,
+      "bytes": 31296,
+      "maxRegionVertices": 84,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.002905122774907046,
+      "simplificationTolerance": 0.006972294659776911,
+      "estimatedMaxError": 0.006972294659776911,
       "innerBorders": 492,
       "outlinePolylines": 1,
-      "innerEdges": 2607,
+      "innerEdges": 2635,
       "outlineEdges": 491,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/SI.smap",
-      "assetBytes": 29739
+      "assetBytes": 31296
     },
     "country_focus_sk": {
       "regions": 8,
-      "vertices": 1797,
-      "bytes": 6385,
-      "maxRegionVertices": 300,
+      "vertices": 1851,
+      "bytes": 6598,
+      "maxRegionVertices": 312,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.005252354459661769,
+      "simplificationTolerance": 0.012605650703188245,
+      "estimatedMaxError": 0.012605650703188245,
       "innerBorders": 12,
       "outlinePolylines": 1,
-      "innerEdges": 651,
-      "outlineEdges": 495,
+      "innerEdges": 676,
+      "outlineEdges": 499,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/SK.smap",
-      "assetBytes": 6385
+      "assetBytes": 6598
     },
     "country_focus_sl": {
       "regions": 4,
-      "vertices": 1069,
-      "bytes": 4096,
-      "maxRegionVertices": 421,
+      "vertices": 1114,
+      "bytes": 4290,
+      "maxRegionVertices": 440,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.003693387144941672,
+      "simplificationTolerance": 0.008864129147860013,
+      "estimatedMaxError": 0.008864129147860013,
       "innerBorders": 5,
       "outlinePolylines": 2,
-      "innerEdges": 235,
-      "outlineEdges": 599,
+      "innerEdges": 249,
+      "outlineEdges": 616,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/SL.smap",
-      "assetBytes": 4096
+      "assetBytes": 4290
     },
     "country_focus_sm": {
       "regions": 9,
       "vertices": 149,
-      "bytes": 1336,
+      "bytes": 1432,
       "maxRegionVertices": 30,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.0001496928433034124,
+      "simplificationTolerance": 0.00035926282392818973,
+      "estimatedMaxError": 0.00035926282392818973,
       "innerBorders": 15,
       "outlinePolylines": 1,
       "innerEdges": 63,
       "outlineEdges": 23,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/SM.smap",
-      "assetBytes": 1336
+      "assetBytes": 1432
     },
     "country_focus_sn": {
       "regions": 14,
-      "vertices": 2206,
-      "bytes": 8556,
-      "maxRegionVertices": 315,
+      "vertices": 2291,
+      "bytes": 8941,
+      "maxRegionVertices": 325,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.0056794558356543555,
+      "simplificationTolerance": 0.013630694005570453,
+      "estimatedMaxError": 0.013630694005570453,
       "innerBorders": 24,
       "outlinePolylines": 1,
-      "innerEdges": 598,
-      "outlineEdges": 1010,
+      "innerEdges": 620,
+      "outlineEdges": 1051,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/SN.smap",
-      "assetBytes": 8556
+      "assetBytes": 8941
     },
     "country_focus_so": {
       "regions": 13,
-      "vertices": 449,
-      "bytes": 2472,
-      "maxRegionVertices": 114,
+      "vertices": 472,
+      "bytes": 2638,
+      "maxRegionVertices": 127,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.016352723793906287,
+      "simplificationTolerance": 0.03924653710537509,
+      "estimatedMaxError": 0.03924653710537509,
       "innerBorders": 21,
       "outlinePolylines": 1,
-      "innerEdges": 99,
-      "outlineEdges": 251,
+      "innerEdges": 102,
+      "outlineEdges": 268,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/SO.smap",
-      "assetBytes": 2472
+      "assetBytes": 2638
     },
     "country_focus_sr": {
       "regions": 10,
-      "vertices": 1135,
-      "bytes": 4607,
-      "maxRegionVertices": 536,
+      "vertices": 1216,
+      "bytes": 4969,
+      "maxRegionVertices": 572,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.004972727734901295,
+      "simplificationTolerance": 0.011934546563763108,
+      "estimatedMaxError": 0.011934546563763108,
       "innerBorders": 18,
       "outlinePolylines": 1,
-      "innerEdges": 282,
-      "outlineEdges": 571,
+      "innerEdges": 300,
+      "outlineEdges": 616,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/SR.smap",
-      "assetBytes": 4607
+      "assetBytes": 4969
     },
     "country_focus_ss": {
       "regions": 10,
-      "vertices": 1375,
-      "bytes": 5551,
-      "maxRegionVertices": 229,
+      "vertices": 1424,
+      "bytes": 5790,
+      "maxRegionVertices": 239,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.010881878755265792,
+      "simplificationTolerance": 0.0261165090126379,
+      "estimatedMaxError": 0.0261165090126379,
       "innerBorders": 18,
       "outlinePolylines": 1,
-      "innerEdges": 371,
-      "outlineEdges": 633,
+      "innerEdges": 382,
+      "outlineEdges": 660,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/SS.smap",
-      "assetBytes": 5551
+      "assetBytes": 5790
     },
     "country_focus_st": {
       "regions": 2,
-      "vertices": 90,
-      "bytes": 489,
-      "maxRegionVertices": 51,
+      "vertices": 93,
+      "bytes": 509,
+      "maxRegionVertices": 53,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.001989481348322545,
+      "simplificationTolerance": 0.004774755235974108,
+      "estimatedMaxError": 0.004774755235974108,
       "innerBorders": 0,
       "outlinePolylines": 2,
       "innerEdges": 0,
-      "outlineEdges": 90,
+      "outlineEdges": 93,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/ST.smap",
-      "assetBytes": 489
+      "assetBytes": 509
     },
     "country_focus_sv": {
       "regions": 14,
-      "vertices": 1713,
-      "bytes": 6518,
-      "maxRegionVertices": 199,
+      "vertices": 1631,
+      "bytes": 6316,
+      "maxRegionVertices": 186,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.002233305785135766,
+      "simplificationTolerance": 0.005359933884325838,
+      "estimatedMaxError": 0.005359933884325838,
       "innerBorders": 26,
       "outlinePolylines": 3,
-      "innerEdges": 673,
-      "outlineEdges": 367,
+      "innerEdges": 633,
+      "outlineEdges": 365,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/SV.smap",
-      "assetBytes": 6518
+      "assetBytes": 6316
     },
     "country_focus_sy": {
       "regions": 14,
-      "vertices": 1507,
-      "bytes": 5866,
-      "maxRegionVertices": 209,
+      "vertices": 1534,
+      "bytes": 6052,
+      "maxRegionVertices": 216,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.007267572116401749,
+      "simplificationTolerance": 0.017442173079364198,
+      "estimatedMaxError": 0.017442173079364198,
       "innerBorders": 23,
       "outlinePolylines": 1,
-      "innerEdges": 545,
-      "outlineEdges": 417,
+      "innerEdges": 556,
+      "outlineEdges": 422,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/SY.smap",
-      "assetBytes": 5866
+      "assetBytes": 6052
     },
     "country_focus_sz": {
       "regions": 4,
-      "vertices": 541,
-      "bytes": 2053,
-      "maxRegionVertices": 177,
+      "vertices": 553,
+      "bytes": 2127,
+      "maxRegionVertices": 179,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.002099555723070103,
+      "simplificationTolerance": 0.005038933735368247,
+      "estimatedMaxError": 0.005038933735368247,
       "innerBorders": 5,
       "outlinePolylines": 1,
-      "innerEdges": 232,
+      "innerEdges": 238,
       "outlineEdges": 77,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/SZ.smap",
-      "assetBytes": 2053
+      "assetBytes": 2127
     },
     "country_focus_td": {
       "regions": 21,
-      "vertices": 1452,
-      "bytes": 6093,
-      "maxRegionVertices": 115,
+      "vertices": 1558,
+      "bytes": 6601,
+      "maxRegionVertices": 120,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.01977678973450326,
+      "simplificationTolerance": 0.04746429536280782,
+      "estimatedMaxError": 0.04746429536280782,
       "innerBorders": 42,
       "outlinePolylines": 1,
-      "innerEdges": 529,
-      "outlineEdges": 394,
+      "innerEdges": 561,
+      "outlineEdges": 436,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/TD.smap",
-      "assetBytes": 6093
+      "assetBytes": 6601
     },
     "country_focus_tg": {
       "regions": 5,
-      "vertices": 626,
-      "bytes": 2514,
-      "maxRegionVertices": 176,
+      "vertices": 682,
+      "bytes": 2740,
+      "maxRegionVertices": 194,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.0060476762789522616,
+      "simplificationTolerance": 0.014514423069485426,
+      "estimatedMaxError": 0.014514423069485426,
       "innerBorders": 4,
       "outlinePolylines": 1,
-      "innerEdges": 142,
-      "outlineEdges": 342,
+      "innerEdges": 159,
+      "outlineEdges": 364,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/TG.smap",
-      "assetBytes": 2514
+      "assetBytes": 2740
     },
     "country_focus_th": {
       "regions": 77,
-      "vertices": 4580,
-      "bytes": 19411,
-      "maxRegionVertices": 156,
+      "vertices": 5224,
+      "bytes": 22073,
+      "maxRegionVertices": 177,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.018115230058429906,
+      "simplificationTolerance": 0.04347655214023177,
+      "estimatedMaxError": 0.04347655214023177,
       "innerBorders": 176,
-      "outlinePolylines": 15,
-      "innerEdges": 1778,
-      "outlineEdges": 1024,
+      "outlinePolylines": 17,
+      "innerEdges": 2029,
+      "outlineEdges": 1166,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/TH.smap",
-      "assetBytes": 19411
+      "assetBytes": 22073
     },
     "country_focus_tj": {
       "regions": 4,
-      "vertices": 1214,
-      "bytes": 5093,
-      "maxRegionVertices": 464,
+      "vertices": 1259,
+      "bytes": 5303,
+      "maxRegionVertices": 486,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.0072133135251694,
+      "simplificationTolerance": 0.01731195246040656,
+      "estimatedMaxError": 0.01731195246040656,
       "innerBorders": 1,
       "outlinePolylines": 5,
       "innerEdges": 20,
-      "outlineEdges": 1174,
+      "outlineEdges": 1219,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/TJ.smap",
-      "assetBytes": 5093
+      "assetBytes": 5303
     },
     "country_focus_tl": {
       "regions": 13,
-      "vertices": 683,
-      "bytes": 3149,
+      "vertices": 681,
+      "bytes": 3194,
       "maxRegionVertices": 69,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.0030279321266329334,
+      "simplificationTolerance": 0.00726703710391904,
+      "estimatedMaxError": 0.00726703710391904,
       "innerBorders": 22,
       "outlinePolylines": 3,
       "innerEdges": 204,
-      "outlineEdges": 275,
+      "outlineEdges": 273,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/TL.smap",
-      "assetBytes": 3149
+      "assetBytes": 3194
     },
     "country_focus_tm": {
       "regions": 5,
-      "vertices": 1332,
-      "bytes": 5326,
-      "maxRegionVertices": 510,
+      "vertices": 1402,
+      "bytes": 5632,
+      "maxRegionVertices": 552,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.01310342198210851,
+      "simplificationTolerance": 0.031448212757060424,
+      "estimatedMaxError": 0.031448212757060424,
       "innerBorders": 7,
       "outlinePolylines": 3,
-      "innerEdges": 206,
-      "outlineEdges": 920,
+      "innerEdges": 212,
+      "outlineEdges": 978,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/TM.smap",
-      "assetBytes": 5326
+      "assetBytes": 5632
     },
     "country_focus_tn": {
       "regions": 23,
-      "vertices": 1722,
-      "bytes": 7009,
-      "maxRegionVertices": 159,
+      "vertices": 1803,
+      "bytes": 7437,
+      "maxRegionVertices": 164,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.010198067356605087,
+      "simplificationTolerance": 0.02447536165585221,
+      "estimatedMaxError": 0.02447536165585221,
       "innerBorders": 47,
       "outlinePolylines": 4,
-      "innerEdges": 616,
-      "outlineEdges": 490,
+      "innerEdges": 644,
+      "outlineEdges": 515,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/TN.smap",
-      "assetBytes": 7009
+      "assetBytes": 7437
     },
     "country_focus_to": {
       "regions": 5,
-      "vertices": 109,
-      "bytes": 737,
-      "maxRegionVertices": 33,
+      "vertices": 127,
+      "bytes": 831,
+      "maxRegionVertices": 37,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.008521070724961667,
+      "simplificationTolerance": 0.020450569739908,
+      "estimatedMaxError": 0.020450569739908,
       "innerBorders": 0,
       "outlinePolylines": 10,
       "innerEdges": 0,
-      "outlineEdges": 109,
+      "outlineEdges": 127,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/TO.smap",
-      "assetBytes": 737
+      "assetBytes": 831
     },
     "country_focus_tr": {
       "regions": 81,
-      "vertices": 5949,
-      "bytes": 23947,
-      "maxRegionVertices": 220,
+      "vertices": 6004,
+      "bytes": 24744,
+      "maxRegionVertices": 216,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.017655296835419346,
+      "simplificationTolerance": 0.04237271240500643,
+      "estimatedMaxError": 0.04237271240500643,
       "innerBorders": 209,
       "outlinePolylines": 6,
-      "innerEdges": 2298,
-      "outlineEdges": 1353,
+      "innerEdges": 2314,
+      "outlineEdges": 1376,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/TR.smap",
-      "assetBytes": 23947
+      "assetBytes": 24744
     },
     "country_focus_tt": {
       "regions": 16,
-      "vertices": 528,
-      "bytes": 2840,
+      "vertices": 531,
+      "bytes": 2964,
       "maxRegionVertices": 74,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.0015818001890184157,
+      "simplificationTolerance": 0.0037963204536441975,
+      "estimatedMaxError": 0.0037963204536441975,
       "innerBorders": 22,
       "outlinePolylines": 2,
-      "innerEdges": 167,
-      "outlineEdges": 194,
+      "innerEdges": 168,
+      "outlineEdges": 195,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/TT.smap",
-      "assetBytes": 2840
+      "assetBytes": 2964
     },
     "country_focus_tw": {
       "regions": 21,
-      "vertices": 1629,
-      "bytes": 6547,
-      "maxRegionVertices": 143,
+      "vertices": 1658,
+      "bytes": 6790,
+      "maxRegionVertices": 148,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.004387732137027674,
+      "simplificationTolerance": 0.010530557128866417,
+      "estimatedMaxError": 0.010530557128866417,
       "innerBorders": 33,
       "outlinePolylines": 8,
-      "innerEdges": 585,
-      "outlineEdges": 459,
+      "innerEdges": 591,
+      "outlineEdges": 476,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/TW.smap",
-      "assetBytes": 6547
+      "assetBytes": 6790
     },
     "country_focus_tz": {
       "regions": 30,
-      "vertices": 3316,
-      "bytes": 12475,
-      "maxRegionVertices": 226,
+      "vertices": 3555,
+      "bytes": 13489,
+      "maxRegionVertices": 246,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.012855540816726721,
+      "simplificationTolerance": 0.03085329796014413,
+      "estimatedMaxError": 0.03085329796014413,
       "innerBorders": 60,
       "outlinePolylines": 7,
-      "innerEdges": 1296,
-      "outlineEdges": 724,
+      "innerEdges": 1376,
+      "outlineEdges": 803,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/TZ.smap",
-      "assetBytes": 12475
+      "assetBytes": 13489
     },
     "country_focus_ua": {
       "regions": 25,
-      "vertices": 5242,
-      "bytes": 18484,
-      "maxRegionVertices": 342,
+      "vertices": 5608,
+      "bytes": 19833,
+      "maxRegionVertices": 357,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.016625116371078674,
+      "simplificationTolerance": 0.039900279290588814,
+      "estimatedMaxError": 0.039900279290588814,
       "innerBorders": 54,
       "outlinePolylines": 4,
-      "innerEdges": 1987,
-      "outlineEdges": 1268,
+      "innerEdges": 2133,
+      "outlineEdges": 1342,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/UA.smap",
-      "assetBytes": 18484
+      "assetBytes": 19833
     },
     "country_focus_ug": {
       "regions": 112,
-      "vertices": 4275,
-      "bytes": 19932,
-      "maxRegionVertices": 79,
+      "vertices": 4433,
+      "bytes": 21295,
+      "maxRegionVertices": 82,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.0067652259761410505,
+      "simplificationTolerance": 0.01623654234273852,
+      "estimatedMaxError": 0.01623654234273852,
       "innerBorders": 288,
       "outlinePolylines": 1,
-      "innerEdges": 1933,
-      "outlineEdges": 409,
+      "innerEdges": 1995,
+      "outlineEdges": 443,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/UG.smap",
-      "assetBytes": 19932
+      "assetBytes": 21295
     },
     "country_focus_us": {
       "regions": 51,
-      "vertices": 2420,
-      "bytes": 11803,
-      "maxRegionVertices": 610,
+      "vertices": 2879,
+      "bytes": 13788,
+      "maxRegionVertices": 1095,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.10344519121203592,
+      "simplificationTolerance": 0.2482684589088862,
+      "estimatedMaxError": 0.2482684589088862,
       "innerBorders": 110,
-      "outlinePolylines": 36,
-      "innerEdges": 598,
-      "outlineEdges": 1224,
-      "nearlySharedEdges": 6,
+      "outlinePolylines": 50,
+      "innerEdges": 594,
+      "outlineEdges": 1691,
+      "nearlySharedEdges": 8,
       "asset": "assets/maps/country_focus/US.smap",
-      "assetBytes": 11803
+      "assetBytes": 13788
     },
     "country_focus_uy": {
       "regions": 19,
-      "vertices": 2543,
-      "bytes": 9273,
-      "maxRegionVertices": 200,
+      "vertices": 2632,
+      "bytes": 9680,
+      "maxRegionVertices": 205,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.006883699450037502,
+      "simplificationTolerance": 0.016520878680090004,
+      "estimatedMaxError": 0.016520878680090004,
       "innerBorders": 37,
       "outlinePolylines": 1,
-      "innerEdges": 1017,
-      "outlineEdges": 509,
+      "innerEdges": 1055,
+      "outlineEdges": 522,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/UY.smap",
-      "assetBytes": 9273
+      "assetBytes": 9680
     },
     "country_focus_uz": {
       "regions": 14,
-      "vertices": 1593,
-      "bytes": 6430,
-      "maxRegionVertices": 179,
+      "vertices": 1688,
+      "bytes": 6850,
+      "maxRegionVertices": 188,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.015837606343926506,
+      "simplificationTolerance": 0.03801025522542361,
+      "estimatedMaxError": 0.03801025522542361,
       "innerBorders": 20,
       "outlinePolylines": 4,
-      "innerEdges": 416,
-      "outlineEdges": 761,
+      "innerEdges": 440,
+      "outlineEdges": 808,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/UZ.smap",
-      "assetBytes": 6430
+      "assetBytes": 6850
     },
     "country_focus_vc": {
       "regions": 6,
       "vertices": 146,
-      "bytes": 944,
+      "bytes": 1000,
       "maxRegionVertices": 55,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.0009695893230323308,
+      "simplificationTolerance": 0.002327014375277594,
+      "estimatedMaxError": 0.002327014375277594,
       "innerBorders": 7,
       "outlinePolylines": 5,
       "innerEdges": 32,
       "outlineEdges": 82,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/VC.smap",
-      "assetBytes": 944
+      "assetBytes": 1000
     },
     "country_focus_ve": {
       "regions": 25,
-      "vertices": 3541,
-      "bytes": 13454,
-      "maxRegionVertices": 388,
+      "vertices": 4019,
+      "bytes": 15332,
+      "maxRegionVertices": 426,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.013822700576386739,
+      "simplificationTolerance": 0.033174481383328173,
+      "estimatedMaxError": 0.033174481383328173,
       "innerBorders": 50,
-      "outlinePolylines": 17,
-      "innerEdges": 1127,
-      "outlineEdges": 1287,
+      "outlinePolylines": 20,
+      "innerEdges": 1273,
+      "outlineEdges": 1473,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/VE.smap",
-      "assetBytes": 13454
+      "assetBytes": 15332
     },
     "country_focus_vn": {
       "regions": 63,
-      "vertices": 2965,
-      "bytes": 13628,
-      "maxRegionVertices": 105,
+      "vertices": 3337,
+      "bytes": 16546,
+      "maxRegionVertices": 125,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.01834433238000722,
+      "simplificationTolerance": 0.04402639771201733,
+      "estimatedMaxError": 0.04402639771201733,
       "innerBorders": 128,
-      "outlinePolylines": 16,
-      "innerEdges": 958,
-      "outlineEdges": 1049,
-      "nearlySharedEdges": 0,
+      "outlinePolylines": 186,
+      "innerEdges": 1065,
+      "outlineEdges": 1207,
+      "nearlySharedEdges": 2,
       "asset": "assets/maps/country_focus/VN.smap",
-      "assetBytes": 13628
+      "assetBytes": 16546
     },
     "country_focus_vu": {
       "regions": 6,
-      "vertices": 559,
-      "bytes": 2716,
-      "maxRegionVertices": 124,
+      "vertices": 615,
+      "bytes": 3048,
+      "maxRegionVertices": 135,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.008918905791443103,
+      "simplificationTolerance": 0.021405373899463447,
+      "estimatedMaxError": 0.021405373899463447,
       "innerBorders": 0,
       "outlinePolylines": 27,
       "innerEdges": 0,
-      "outlineEdges": 559,
+      "outlineEdges": 615,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/VU.smap",
-      "assetBytes": 2716
+      "assetBytes": 3048
     },
     "country_focus_wf": {
       "regions": 3,
       "vertices": 61,
-      "bytes": 414,
+      "bytes": 425,
       "maxRegionVertices": 29,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.001899962864050727,
+      "simplificationTolerance": 0.004559910873721745,
+      "estimatedMaxError": 0.004559910873721745,
       "innerBorders": 1,
       "outlinePolylines": 3,
       "innerEdges": 4,
       "outlineEdges": 53,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/WF.smap",
-      "assetBytes": 414
+      "assetBytes": 425
     },
     "country_focus_ws": {
       "regions": 11,
       "vertices": 220,
-      "bytes": 1657,
+      "bytes": 1714,
       "maxRegionVertices": 30,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.001240323377152364,
+      "simplificationTolerance": 0.0029767761051656735,
+      "estimatedMaxError": 0.0029767761051656735,
       "innerBorders": 22,
       "outlinePolylines": 2,
       "innerEdges": 42,
       "outlineEdges": 136,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/WS.smap",
-      "assetBytes": 1657
+      "assetBytes": 1714
     },
     "country_focus_ye": {
       "regions": 21,
-      "vertices": 2149,
-      "bytes": 8400,
-      "maxRegionVertices": 259,
+      "vertices": 2010,
+      "bytes": 8081,
+      "maxRegionVertices": 242,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.011061964312183939,
+      "simplificationTolerance": 0.026548714349241453,
+      "estimatedMaxError": 0.026548714349241453,
       "innerBorders": 45,
-      "outlinePolylines": 9,
-      "innerEdges": 773,
-      "outlineEdges": 603,
+      "outlinePolylines": 8,
+      "innerEdges": 726,
+      "outlineEdges": 558,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/YE.smap",
-      "assetBytes": 8400
+      "assetBytes": 8081
     },
     "country_focus_za": {
       "regions": 9,
-      "vertices": 1641,
-      "bytes": 6046,
-      "maxRegionVertices": 316,
+      "vertices": 1590,
+      "bytes": 5941,
+      "maxRegionVertices": 300,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.03644389036755781,
+      "simplificationTolerance": 0.08746533688213874,
+      "estimatedMaxError": 0.08746533688213874,
       "innerBorders": 17,
-      "outlinePolylines": 3,
-      "innerEdges": 550,
-      "outlineEdges": 541,
+      "outlinePolylines": 4,
+      "innerEdges": 532,
+      "outlineEdges": 526,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/ZA.smap",
-      "assetBytes": 6046
+      "assetBytes": 5941
     },
     "country_focus_zm": {
       "regions": 10,
-      "vertices": 2248,
-      "bytes": 8089,
-      "maxRegionVertices": 338,
+      "vertices": 2495,
+      "bytes": 8973,
+      "maxRegionVertices": 369,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
-      "innerBorders": 15,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.012058477963137781,
+      "simplificationTolerance": 0.028940347111530672,
+      "estimatedMaxError": 0.028940347111530672,
+      "innerBorders": 16,
       "outlinePolylines": 1,
-      "innerEdges": 756,
-      "outlineEdges": 736,
+      "innerEdges": 840,
+      "outlineEdges": 815,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/ZM.smap",
-      "assetBytes": 8089
+      "assetBytes": 8973
     },
     "country_focus_zw": {
       "regions": 10,
-      "vertices": 2352,
-      "bytes": 8251,
-      "maxRegionVertices": 341,
+      "vertices": 2550,
+      "bytes": 8949,
+      "maxRegionVertices": 366,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.008528098303690496,
+      "simplificationTolerance": 0.020467435928857188,
+      "estimatedMaxError": 0.020467435928857188,
       "innerBorders": 20,
       "outlinePolylines": 1,
-      "innerEdges": 923,
-      "outlineEdges": 506,
+      "innerEdges": 1009,
+      "outlineEdges": 532,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/ZW.smap",
-      "assetBytes": 8251
+      "assetBytes": 8949
     },
     "brazil_states": {
       "regions": 27,
@@ -34541,33 +35337,38 @@
     }
   },
   "measurements": {
-    "newCountryFocusAssetsBytes": 1604029,
+    "newCountryFocusAssetsBytes": 1681129,
     "largestCountryFocus": {
       "regions": 232,
-      "vertices": 8837,
-      "bytes": 43940,
-      "maxRegionVertices": 542,
+      "vertices": 7277,
+      "bytes": 40529,
+      "maxRegionVertices": 468,
       "viewBox": [
-        900,
-        700
+        1200,
+        790
       ],
-      "quantizationScale": 0.25,
-      "simplificationTolerance": 0.6,
-      "estimatedMaxError": 0.6,
+      "mercatorLatitudes": {
+        "north": 83.9604,
+        "south": -60.2177
+      },
+      "quantizationScale": 0.023143138729035784,
+      "simplificationTolerance": 0.05554353294968588,
+      "estimatedMaxError": 0.05554353294968588,
       "innerBorders": 549,
-      "outlinePolylines": 52,
-      "innerEdges": 3104,
-      "outlineEdges": 2629,
+      "outlinePolylines": 47,
+      "innerEdges": 2538,
+      "outlineEdges": 2201,
       "nearlySharedEdges": 0,
       "asset": "assets/maps/country_focus/GB.smap",
-      "assetBytes": 43940,
+      "assetBytes": 40529,
       "iso2": "GB"
     },
-    "averageCountryFocusAssetBytes": 8101,
+    "averageCountryFocusAssetBytes": 8491,
     "totalSubdivisions": 4395,
     "packageRuntimeBytesBefore": 467570,
-    "packageRuntimeBytesAfter": 3817595,
-    "embeddedGeneratedBytesAfter": 467570,
-    "catalogBytes": 1745996
+    "packageRuntimeBytesAfter": 3915433,
+    "embeddedGeneratedBytesAfter": 488308,
+    "catalogBytes": 1745996,
+    "runtimeCatalogBytes": 285581
   }
 }

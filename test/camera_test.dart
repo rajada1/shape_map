@@ -46,6 +46,15 @@ class _FakeCameraHost implements ShapeMapCameraHost {
     Duration? duration,
     Curve? curve,
   }) => commands++;
+
+  @override
+  Offset? cameraViewBoxPoint(Offset viewportPoint) => null;
+
+  @override
+  Rect? cameraVisibleViewBox() => null;
+
+  @override
+  Size? get cameraViewportSize => null;
 }
 
 void main() {

@@ -126,6 +126,43 @@ Widget _map(
 );
 
 void main() {
+  testWidgets('World with Brazil layer zoomed to the country', (tester) async {
+    _setGoldenSize(tester, const Size(800, 800));
+    final map = (await tester.runAsync(
+      () => ShapeMaps.loadWorldWithCountry('BR'),
+    ))!;
+    final camera = ShapeMapCameraController();
+    await tester.pumpWidget(
+      MaterialApp(
+        home: SizedBox(
+          width: 800,
+          height: 800,
+          child: ShapeMap(
+            map: map,
+            cameraController: camera,
+            zoomEnabled: true,
+            maxScale: 64,
+            animationDuration: Duration.zero,
+            cameraAnimationDuration: Duration.zero,
+            data: {
+              for (final region in map.regions)
+                if (region.id.startsWith('BR-'))
+                  region.id: const MapRegionData(fill: Color(0xFFFFDBC9)),
+            },
+            markers: const [MapMarkerData(regionId: 'BR-SP', value: 980)],
+          ),
+        ),
+      ),
+    );
+    camera.zoomToBounds(map.primaryFocusBounds!, padding: 24);
+    await tester.pump();
+    await tester.pump();
+    await expectLater(
+      find.byType(ShapeMap),
+      matchesGoldenFile('goldens/world_with_brazil.png'),
+    );
+  });
+
   testWidgets('South America layout', (tester) async {
     _setGoldenSize(tester, const Size(820, 1040));
     await tester.pumpWidget(
@@ -176,7 +213,7 @@ void main() {
   });
 
   testWidgets('World layout', (tester) async {
-    _setGoldenSize(tester, const Size(1200, 620));
+    _setGoldenSize(tester, const Size(1200, 790));
     await tester.pumpWidget(_map(ShapeMaps.world, _worldData, _worldMarkers));
     await tester.pump();
     await expectLater(

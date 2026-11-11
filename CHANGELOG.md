@@ -1,3 +1,13 @@
+## 0.6.0
+
+* `ShapeMaps.world` passa a usar Mercator (recorte -60..84°, viewBox 1200×790) para que os países mantenham a forma familiar durante o zoom.
+* As camadas de `ShapeMaps.loadCountryFocus(iso)` são geradas no mesmo quadro do mundo, com detalhe relativo ao tamanho do país e tratamento do antimeridiano. Novo `ShapeMaps.loadWorldWithCountry(iso)`, `ShapeMaps.worldWithCountryIfLoaded(iso)` e `MapDefinition.withDetail(...)` para compor a camada sobre o mundo.
+* `ShapeMap` mantém a câmera ao trocar `map` entre definições com o mesmo viewBox; só reinicia quando o viewBox muda.
+* `ShapeMapCameraController` ganha `viewBoxPointAt`, `visibleViewBox` e `viewportSize`.
+* `MapDefinition.mercatorLatitudes` e `primaryFocusBounds` com peso de área corrigido para Mercator, clustering relativo ao país e recorte do antimeridiano.
+* Novo `GeoCatalog` (asset `assets/catalog/geo_names.json`) com nomes en/pt/es de países e subdivisões, incluindo Guiana Francesa.
+* Pipeline: regiões que colapsam em área zero na quantização recebem um footprint 2×2 visível e clicável.
+
 ## 0.5.1
 
 * Adiciona `MapDefinition.contentBounds`, união memoizada da geometria das regiões.

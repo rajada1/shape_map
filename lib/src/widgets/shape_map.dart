@@ -400,7 +400,12 @@ class _ShapeMapState extends State<ShapeMap>
       _previousMarkerDiameters = const {};
       _dataController.value = 1;
       _markerController.value = 1;
-      _resetCameraImmediately();
+      // A map in the same viewBox (for example the world with one country's
+      // admin-1 layer added) shares the camera coordinate space, so the
+      // current zoom and pan stay valid and the swap is seamless.
+      if (oldWidget.map.viewBox != widget.map.viewBox) {
+        _resetCameraImmediately();
+      }
       if (widget.entranceAnimation == null && widget.entrance != null) {
         _entranceController?.value = 0;
         _entranceController?.forward();
@@ -727,6 +732,31 @@ class _ShapeMapState extends State<ShapeMap>
       curve: curve,
     );
   }
+
+  @override
+  Offset? cameraViewBoxPoint(Offset viewportPoint) {
+    if (_lastLayoutSize == null) return null;
+    return ShapeMapCameraMath.inverse(
+      _cache.transform,
+      _activeCameraController.scale,
+      _activeCameraController.pan,
+      viewportPoint,
+    );
+  }
+
+  @override
+  Rect? cameraVisibleViewBox() {
+    final size = _lastLayoutSize;
+    if (size == null) return null;
+    return _cache.visibleViewBox(
+      size,
+      cameraScale: _activeCameraController.scale,
+      pan: _activeCameraController.pan,
+    );
+  }
+
+  @override
+  Size? get cameraViewportSize => _lastLayoutSize;
 
   void _resetCameraImmediately() {
     _cameraAnimationController.stop();

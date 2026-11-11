@@ -46,8 +46,13 @@ abstract final class ShapeMaps {
 
   static final Map<String, MapDefinition> _countryFocusCache = {};
   static final Map<String, Future<MapDefinition>> _countryFocusLoads = {};
+  static final Map<String, MapDefinition> _worldWithCountryCache = {};
 
   /// Map of countries and territories in Natural Earth 50m data.
+  ///
+  /// Mercator projection clipped to latitudes -60..84, viewBox 1200x790. The
+  /// country layers from [loadCountryFocus] share this frame, so they can be
+  /// drawn on top with [MapDefinition.withDetail] or [loadWorldWithCountry].
   static MapDefinition get world => generatedWorld;
 
   /// Map of 33 sovereign Latin American and Caribbean countries plus GF.
@@ -66,17 +71,43 @@ abstract final class ShapeMaps {
   static bool hasFocus(String countryIso) =>
       focusCountries.contains(_normalizeCountryIso(countryIso));
 
-  /// Loads a country-only focus map from this package's SMAP asset.
+  /// Loads a country's admin-1 layer from this package's SMAP asset.
   ///
   /// The asset is decoded in an isolate and cached by ISO alpha-2 code. The
-  /// returned map contains only that country's admin-1 regions and uses a
-  /// focus prefix such as `US-` for camera fitting.
+  /// returned map contains only that country's admin-1 regions, uses a focus
+  /// prefix such as `US-` for camera fitting, and is expressed in the same
+  /// viewBox as [world], so it can be drawn above the world map.
   static Future<MapDefinition> loadCountryFocus(String countryIso) {
     final iso = _requireFocusCountry(countryIso);
     final cached = _countryFocusCache[iso];
     if (cached != null) return Future.value(cached);
     return _countryFocusLoads[iso] ??= _loadCountryFocus(iso);
   }
+
+  /// The world map with [countryIso]'s admin-1 regions drawn on top.
+  ///
+  /// Keeps every other country visible, so a camera zoom from the world into
+  /// the country is continuous. The result is cached per country and shares
+  /// the [world] viewBox, which lets [ShapeMap] keep its camera when swapping
+  /// between [world] and this map. See [MapDefinition.withDetail].
+  static Future<MapDefinition> loadWorldWithCountry(String countryIso) async {
+    final iso = _requireFocusCountry(countryIso);
+    final cached = _worldWithCountryCache[iso];
+    if (cached != null) return cached;
+    final results = await Future.wait([
+      preloadGeneratedWorld(),
+      loadCountryFocus(iso),
+    ]);
+    return _worldWithCountryCache[iso] ??= results[0].withDetail(
+      results[1],
+      id: 'worldWith$iso',
+    );
+  }
+
+  /// Returns the cached result of [loadWorldWithCountry], or null before it
+  /// has been loaded.
+  static MapDefinition? worldWithCountryIfLoaded(String countryIso) =>
+      _worldWithCountryCache[_normalizeCountryIso(countryIso)];
 
   /// Preloads a country-only focus map and retains it in the package cache.
   static Future<void> preloadCountryFocus(String countryIso) async {
@@ -88,10 +119,12 @@ abstract final class ShapeMaps {
       final bytes = await rootBundle.load(
         'packages/shape_map/assets/maps/country_focus/$iso.smap',
       );
+      final world = await preloadGeneratedWorld();
       final map = await ShapeMapData.decode(
         bytes,
         id: 'countryFocus$iso',
         focusRegionPrefix: '$iso-',
+        mercatorLatitudes: world.mercatorLatitudes,
       );
       _countryFocusCache[iso] = map;
       return map;

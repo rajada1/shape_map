@@ -62,7 +62,9 @@ void main() {
         reason: iso,
       );
     }
-    for (final iso in ['ID', 'JP', 'NZ']) {
+    // NZ is cut at the antimeridian in the world frame; its principal side is
+    // covered by world_layers_test.
+    for (final iso in ['ID', 'JP']) {
       final map = await ShapeMaps.loadCountryFocus(iso);
       final primary = map.primaryFocusBounds!;
       final focus = map.focusBounds!;

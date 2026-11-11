@@ -2107,6 +2107,15 @@
       "name_es": "Tuvalu",
       "region": "oceania",
       "has_focus": false
+    },
+    {
+      "iso2": "GF",
+      "iso3": "GUF",
+      "name_en": "French Guiana",
+      "name_pt": "Guiana Francesa",
+      "name_es": "Guayana Francesa",
+      "region": "south_america",
+      "has_focus": false
     }
   ],
   "subdivisions": [

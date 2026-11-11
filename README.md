@@ -6,12 +6,13 @@
 
 | Mapa | Regiões | IDs |
 |---|---|---|
-| `ShapeMaps.world` | 234 países e territórios (Natural Earth 50m, sem Antártida) | ISO 3166-1 alpha-2 (`BR`, `US`, `FR`…) |
+| `ShapeMaps.world` | 234 países e territórios (Natural Earth 50m, sem Antártida), Mercator recortado em -60..84°, viewBox 1200×790 | ISO 3166-1 alpha-2 (`BR`, `US`, `FR`…) |
 | `ShapeMaps.latinAmerica` | 33 países soberanos da América Latina e Caribe + `GF` | ISO alpha-2 |
 | `ShapeMaps.southAmerica` | `AR BO BR CL CO EC GF GY PE PY SR UY VE` | ISO alpha-2 |
 | `ShapeMaps.brazilStates` | 27 UFs (IBGE), incluindo `BR-DF` | `BR-XX` |
 | `ShapeMaps.southAmericaFocus(iso)` | Admin-1 do país selecionado + os demais países como contexto, no viewBox continental | ISO 3166-2 no país selecionado e ISO alpha-2 no contexto |
-| `ShapeMaps.loadCountryFocus(iso)` | Admin-1 country-only sob demanda para países com foco no catálogo | `<ISO>-...` |
+| `ShapeMaps.loadCountryFocus(iso)` | Camada admin-1 do país, sob demanda, **no mesmo quadro de coordenadas de `world`** | `<ISO>-...` |
+| `ShapeMaps.loadWorldWithCountry(iso)` | `world` com a camada admin-1 do país desenhada por cima (zoom contínuo mundo → país) | alpha-2 + `<ISO>-...` |
 
 Opcional, fora do core: os 5.570 municípios brasileiros (IBGE), IDs `BR-<código IBGE de 7 dígitos>` (ex.: `BR-3550308` = São Paulo). Veja [Municípios brasileiros](#municípios-brasileiros-opcionais).
 
@@ -35,22 +36,40 @@ ShapeMap(
 
 Os marcadores usam `MapRegion.markerAnchor` por padrão; `MapMarkerData.position` serve para layouts customizados. `MapMarkerData(showLabel: false)` cria um marcador sem texto. `ShapeMaps.southAmericaCountries` continua disponível como alias deprecated de `southAmerica`.
 
-### Focos por país
+### Camadas de país sobre o mundo (zoom contínuo)
 
-O pacote distribui sob demanda um asset SMAP country-only para cada país com admin-1 confiável no Natural Earth 10m. `ShapeMaps.focusCountries` é o conjunto canônico gerado pelo pipeline, e `ShapeMaps.hasFocus(iso)` verifica a disponibilidade sem decodificar geometria.
+O pacote distribui sob demanda um asset SMAP com os admin-1 de cada país com dados confiáveis no Natural Earth 10m. Essas camadas são geradas **na mesma projeção, normalização e viewBox de `ShapeMaps.world`**, então podem ser desenhadas por cima do mundo sem reprojeção. `ShapeMaps.focusCountries` é o conjunto canônico gerado pelo pipeline, e `ShapeMaps.hasFocus(iso)` verifica a disponibilidade sem decodificar geometria.
 
 ```dart
-if (ShapeMaps.hasFocus(countryIso)) {
-  final map = await ShapeMaps.loadCountryFocus(countryIso);
-  await map.warmUp();
-  camera.zoomToBounds(map.focusBounds!);
-}
+// Mundo com os estados do Brasil por cima; os vizinhos continuam visíveis.
+final map = await ShapeMaps.loadWorldWithCountry('BR');
+await map.warmUp();
+camera.zoomToBounds(map.primaryFocusBounds!, insets: overlays);
 
-// Pré-carrega em isolate e reutiliza a mesma instância em chamadas futuras.
-await ShapeMaps.preloadCountryFocus('JP');
+// Só a camada do país (mesmo viewBox do mundo), para compor manualmente:
+final layer = await ShapeMaps.loadCountryFocus('BR');
+final merged = ShapeMaps.world.withDetail(layer);
 ```
 
-`loadCountryFocus` normaliza o ISO alpha-2, carrega `assets/maps/country_focus/<ISO>.smap`, decodifica em isolate e mantém cache por país. O mapa retornado contém somente regiões com prefixo `<ISO>-`; um país sem foco lança `ArgumentError` claro. `focusBounds` sempre é calculado a partir dessas regiões.
+Como `world` e `loadWorldWithCountry(iso)` compartilham o viewBox, `ShapeMap` **mantém a câmera** ao trocar `map` entre eles: dê `zoomToBounds` para o país, troque o `map` quando a camada carregar e o usuário vê um zoom contínuo. A câmera só é reiniciada quando o viewBox muda.
+
+`MapDefinition.withDetail` mantém as regiões do mapa base (a forma grossa do país fica por baixo e cobre frestas na costa), acrescenta as regiões do detalhe depois (pintam por cima e ganham o hit-test) e descarta o contorno do detalhe para não duplicar a costa.
+
+O nível de detalhe de cada camada é relativo ao tamanho do país (tolerância e quantização escalam com a extensão em unidades do mundo), então Luxemburgo tem geometria tão fina quanto o Brasil. Países cortados no antimeridiano (Fiji, Nova Zelândia, EUA) medem só o lado com mais território; `primaryFocusBounds` também enquadra esse lado.
+
+`loadCountryFocus` normaliza o ISO alpha-2, carrega `assets/maps/country_focus/<ISO>.smap`, decodifica em isolate e mantém cache por país. O mapa retornado contém somente regiões com prefixo `<ISO>-`; um país sem foco lança `ArgumentError` claro. `focusBounds` sempre é calculado a partir dessas regiões. `MapDefinition.mercatorLatitudes` registra as latitudes das bordas do viewBox para que as heurísticas de área (`primaryFocusBounds`) descontem a inflação do Mercator.
+
+Para saber em que ponto do mapa o usuário está, a câmera expõe `viewBoxPointAt(viewportPoint)`, `visibleViewBox` e `viewportSize`; combine com `map.hitTest(...)` para, por exemplo, focar o país no centro da tela após um pinch.
+
+### Catálogo de nomes em runtime
+
+`GeoCatalog.load()` lê `assets/catalog/geo_names.json` (≈280 KB, decodificado fora da UI isolate e cacheado) com os 234 países do mundo + Guiana Francesa e as 4.395 subdivisões, nomes em en/pt/es, região e `hasFocus`. Os códigos são exatamente os IDs das regiões dos mapas.
+
+```dart
+final catalog = await GeoCatalog.load();
+catalog.country('BR')!.name('pt');          // Brasil
+catalog.subdivisions('BR').first.name('es'); // Estado de Acre
+```
 
 O catálogo canônico gerado está em `catalog/geo_catalog.json`. Ele contém países, subdivisões, nomes em inglês/português/espanhol, tipo, códigos de origem e aliases para integração com GeoNames. `source_codes` preserva os valores brutos; `aliases` contém somente formas canônicas não ambíguas, e o relatório registra colisões que não podem ser usadas para resolução automática. `code` é único no catálogo e em cada mapa de foco. Quando a fonte fornece o mesmo ISO 3166-2 para feições diferentes, o pipeline preserva cada geometria e usa um sufixo curto de código de origem quando ele é único; caso contrário, usa os três primeiros dígitos base36 de um hash SHA-256 de país, código base e identificador estável da fonte. O código antigo não vira alias quando é ambíguo. Feições multipartes reais permanecem uma única região porque já chegam como uma geometria `MultiPolygon`.
 

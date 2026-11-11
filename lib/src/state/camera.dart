@@ -185,6 +185,15 @@ abstract interface class ShapeMapCameraHost {
 
   /// Executes a pending reset command.
   void cameraReset({Duration? duration, Curve? curve});
+
+  /// Converts a viewport point to view-box coordinates, or null before layout.
+  Offset? cameraViewBoxPoint(Offset viewportPoint);
+
+  /// The view-box rectangle currently visible, or null before layout.
+  Rect? cameraVisibleViewBox();
+
+  /// The size of the attached viewport, or null before layout.
+  Size? get cameraViewportSize;
 }
 
 class _CameraRequest {
@@ -232,6 +241,20 @@ class ShapeMapCameraController extends ChangeNotifier {
 
   /// Whether a camera animation is running.
   bool get isAnimating => _isAnimating;
+
+  /// Converts a point in viewport pixels to map view-box coordinates.
+  ///
+  /// Returns null while no [ShapeMap] is attached or laid out. Combine with
+  /// `MapDefinition.hitTest` to find the region under a viewport point, for
+  /// example the region at the viewport center after a zoom gesture.
+  Offset? viewBoxPointAt(Offset viewportPoint) =>
+      _host?.cameraViewBoxPoint(viewportPoint);
+
+  /// The part of the map view box currently visible, or null before layout.
+  Rect? get visibleViewBox => _host?.cameraVisibleViewBox();
+
+  /// The attached viewport size, or null before layout.
+  Size? get viewportSize => _host?.cameraViewportSize;
 
   /// Zooms to an absolute relative [scale], optionally around [focal].
   void zoomTo(double scale, {Offset? focal, Duration? duration, Curve? curve}) {

@@ -15,11 +15,13 @@ const namesPath = path.join(here, 'names_pt.json');
 const generatedDir = path.join(root, 'lib/src/data/generated');
 const exampleAssetsDir = path.join(root, 'example/assets/maps');
 const packageAssetsDir = path.join(root, 'assets/maps/country_focus');
+const packageCatalogDir = path.join(root, 'assets/catalog');
 const catalogDir = path.join(root, 'catalog');
 fs.mkdirSync(cacheDir, { recursive: true });
 fs.mkdirSync(generatedDir, { recursive: true });
 fs.mkdirSync(exampleAssetsDir, { recursive: true });
 fs.mkdirSync(packageAssetsDir, { recursive: true });
+fs.mkdirSync(packageCatalogDir, { recursive: true });
 fs.mkdirSync(catalogDir, { recursive: true });
 
 const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
@@ -463,8 +465,59 @@ function crossesAntimeridian(collection) {
   return min < -150 && max > 150 && max - min > 180;
 }
 
-function projectCommand(proj, input, output, dissolveById = false) {
-  return `-i ${quote(input)}${dissolveById ? ' -dissolve2 field=id' : ''} -proj ${proj} -o format=geojson ${quote(output)}`;
+function projectCommand(proj, input, output, dissolveById = false, clipBbox = null) {
+  const clip = clipBbox ? ` -clip bbox=${clipBbox.join(',')}` : '';
+  return `-i ${quote(input)}${dissolveById ? ' -dissolve2 field=id' : ''}${clip} -proj ${proj} -o format=geojson ${quote(output)}`;
+}
+
+// Layers that share the world frame keep the detail level of the old
+// country-only maps: the tolerance and quantization step scale with the
+// country's footprint in world units, so a small country still gets fine
+// geometry while a large one stays within the vertex budget.
+const SHARED_FRAME_REFERENCE_EXTENT = { width: 900 - 24, height: 700 - 24 };
+
+// Bounding box of the collection in frame units. Features cut at the
+// antimeridian (Fiji, New Zealand's Chatham Islands, the Aleutians) would
+// otherwise span the whole frame width; only the side holding most of the
+// vertices is measured in that case, which is where the camera will zoom.
+function frameExtent(geo, frameWidth) {
+  const parts = geo.features.flatMap((feature) => featureParts(feature));
+  const measure = (selected) => {
+    let minX = Infinity; let minY = Infinity; let maxX = -Infinity; let maxY = -Infinity;
+    for (const part of selected) for (const ring of part) for (const [x, y] of ring) {
+      minX = Math.min(minX, x); minY = Math.min(minY, y); maxX = Math.max(maxX, x); maxY = Math.max(maxY, y);
+    }
+    return { minX, minY, maxX, maxY };
+  };
+  const whole = measure(parts);
+  if (whole.maxX - whole.minX <= frameWidth * 0.5) return whole;
+  const sides = { left: [], right: [] };
+  const weight = { left: 0, right: 0 };
+  for (const part of parts) {
+    const b = partBounds(part);
+    const side = (b.minX + b.maxX) / 2 < frameWidth / 2 ? 'left' : 'right';
+    sides[side].push(part);
+    weight[side] += part.reduce((sum, ring) => sum + ring.length, 0);
+  }
+  const chosen = weight.left >= weight.right ? sides.left : sides.right;
+  const extent = measure(chosen);
+  // A genuinely wide country (Russia) keeps its full extent.
+  return extent.maxX - extent.minX > frameWidth * 0.5 ? whole : extent;
+}
+
+function relativeDetail(geo, mapConfig) {
+  const extent = frameExtent(geo, mapConfig.width);
+  const ratio = Math.max(
+    (extent.maxX - extent.minX) / SHARED_FRAME_REFERENCE_EXTENT.width,
+    (extent.maxY - extent.minY) / SHARED_FRAME_REFERENCE_EXTENT.height,
+    1e-4,
+  );
+  const base = mapConfig.relativeDetail;
+  return {
+    simplifyTolerance: Math.min(base.simplifyTolerance, base.simplifyTolerance * ratio),
+    quantizationScale: Math.min(base.quantizationScale, base.quantizationScale * ratio),
+    extent,
+  };
 }
 
 async function projectAndNormalize(collection, mapConfig) {
@@ -473,11 +526,12 @@ async function projectAndNormalize(collection, mapConfig) {
   const normalized = path.join(cacheDir, `${mapConfig.id}-normalized.json`);
   const simplified = path.join(cacheDir, `${mapConfig.id}-simplified.json`);
   const isCountryFocus = mapConfig.id.startsWith('country_focus_');
-  const projection = isCountryFocus && crossesAntimeridian(collection)
+  const sharesFrame = mapConfig.sharedFrame != null;
+  const projection = isCountryFocus && !sharesFrame && crossesAntimeridian(collection)
     ? `${mapConfig.proj} +lon_0=180`
     : mapConfig.proj;
   fs.writeFileSync(raw, JSON.stringify(collection));
-  await runMapshaper(projectCommand(projection, raw, projected, mapConfig.dissolveById));
+  await runMapshaper(projectCommand(projection, raw, projected, mapConfig.dissolveById, mapConfig.clipBbox));
   const geo = JSON.parse(fs.readFileSync(projected, 'utf8'));
   const inputNames = new Map(JSON.parse(fs.readFileSync(raw, 'utf8')).features.map((feature) => [feature.properties?.id, feature.properties?.name]));
   for (const feature of geo.features) {
@@ -488,14 +542,23 @@ async function projectAndNormalize(collection, mapConfig) {
   let minX = Infinity; let minY = Infinity; let maxX = -Infinity; let maxY = -Infinity;
   for (const [x, y] of all) { minX = Math.min(minX, x); minY = Math.min(minY, y); maxX = Math.max(maxX, x); maxY = Math.max(maxY, y); }
   const computedBounds = { minX, minY, maxX, maxY };
-  // Country focus maps are independently normalized. They must never inherit
-  // or update the projection-wide bounds used by the regional/world maps.
-  const bounds = isCountryFocus
-    ? computedBounds
-    : mapConfig.normalizationBounds ?? normalizationBoundsByProjection.get(mapConfig.proj) ?? computedBounds;
+  // Layers with `sharedFrame` reuse the bounds captured by the frame owner so
+  // they can be drawn on top of it. Other country focus maps are normalized
+  // independently and never inherit or update the projection-wide bounds.
+  const sharedBounds = sharesFrame ? normalizationBoundsByProjection.get(`frame:${mapConfig.sharedFrame}`) : null;
+  if (sharesFrame && !sharedBounds) {
+    throw new Error(`${mapConfig.id}: frame ${mapConfig.sharedFrame} must be built before this layer`);
+  }
+  const bounds = sharedBounds
+    ?? (isCountryFocus
+      ? computedBounds
+      : mapConfig.normalizationBounds ?? normalizationBoundsByProjection.get(mapConfig.proj) ?? computedBounds);
   if (!isCountryFocus && mapConfig.captureNormalizationBounds) {
     normalizationBoundsByProjection.set(mapConfig.proj, computedBounds);
     mapConfig.normalizationBounds = computedBounds;
+  }
+  if (mapConfig.frameId) {
+    normalizationBoundsByProjection.set(`frame:${mapConfig.frameId}`, computedBounds);
   }
   ({ minX, minY, maxX, maxY } = bounds);
   const padding = 12;
@@ -504,6 +567,15 @@ async function projectAndNormalize(collection, mapConfig) {
   const factor = Math.min(sx, sy);
   const offsetX = (mapConfig.width - (maxX - minX) * factor) / 2;
   const offsetY = (mapConfig.height - (maxY - minY) * factor) / 2;
+  if (mapConfig.proj === '+proj=merc') {
+    // Latitudes at the top and bottom edges of the viewBox, so the runtime can
+    // undo Mercator's area inflation (spherical approximation is enough).
+    const toLatitude = (y) => (2 * Math.atan(Math.exp(y / 6378137)) - Math.PI / 2) * 180 / Math.PI;
+    mapConfig.mercatorLatitudes = {
+      north: Number(toLatitude(maxY + offsetY / factor).toFixed(4)),
+      south: Number(toLatitude(minY - (mapConfig.height - offsetY - (maxY - minY) * factor) / factor).toFixed(4)),
+    };
+  }
   // Projections use Y increasing northward; Flutter's canvas uses Y increasing
   // downward. Flipping here also flips every ring consistently, preserving
   // the relative winding of outer rings and holes for non-zero filling.
@@ -515,13 +587,20 @@ async function projectAndNormalize(collection, mapConfig) {
     for (const part of featureParts(feature)) for (const ring of part) for (let i = 0; i < ring.length; i++) ring[i] = transformPoint(ring[i]);
   }
   fs.writeFileSync(normalized, JSON.stringify(geo));
+  if (mapConfig.relativeDetail) {
+    const detail = relativeDetail(geo, mapConfig);
+    mapConfig.simplifyTolerance = detail.simplifyTolerance;
+    mapConfig.quantizationScale = detail.quantizationScale;
+    mapConfig.frameExtent = detail.extent;
+  }
+  const quantizationScale = mapConfig.quantizationScale ?? 0.25;
   await runMapshaper(
     `-i ${quote(normalized)} -simplify interval=${mapConfig.simplifyTolerance} keep-shapes -o format=geojson ${quote(simplified)}`,
   );
   const result = JSON.parse(fs.readFileSync(simplified, 'utf8'));
   const originalById = new Map(geo.features.map((feature) => [feature.properties?.id, feature]));
   for (const feature of result.features) {
-    if (polygonRings(feature, 0.25).length === 0) {
+    if (polygonRings(feature, quantizationScale).length === 0) {
       const original = originalById.get(feature.properties?.id);
       if (original) feature.geometry = original.geometry;
     }
@@ -561,6 +640,18 @@ function anchorFor(rings, scale) {
   const candidate = polylabel([largest], 0.25);
   const quantized = [Math.round(candidate[0] / scale), Math.round(candidate[1] / scale)];
   if (inside(quantized, rings)) return quantized;
+  // Tiny regions (a few quantum steps wide) can round the polylabel point onto
+  // an edge. Try the centre of the largest ring, then its vertices offset by
+  // half a step towards the inside, before giving up on the first vertex.
+  const xs = largest.map((p) => p[0] / scale); const ys = largest.map((p) => p[1] / scale);
+  const center = [Math.round((Math.min(...xs) + Math.max(...xs)) / 2), Math.round((Math.min(...ys) + Math.max(...ys)) / 2)];
+  if (inside(center, rings)) return center;
+  for (const ring of rings) for (let i = 0; i < ring.length; i += 2) {
+    for (const [dx, dy] of [[1, 1], [-1, 1], [1, -1], [-1, -1], [1, 0], [-1, 0], [0, 1], [0, -1]]) {
+      const point = [ring[i] + dx, ring[i + 1] + dy];
+      if (inside(point, rings)) return point;
+    }
+  }
   return [Math.round(largest[0][0] / scale), Math.round(largest[0][1] / scale)];
 }
 
@@ -711,7 +802,7 @@ function encode(map) {
 }
 
 function mapModel(geo, config) {
-  const scale = 0.25;
+  const scale = config.quantizationScale ?? 0.25;
   const regions = geo.features.map((feature) => {
     const id = feature.properties.id; const name = feature.properties.name; const rings = polygonRings(feature, scale);
     if (rings.length === 0) {
@@ -728,8 +819,28 @@ function mapModel(geo, config) {
         rings.push(points);
       }
     }
-    const coords = rings.flatMap((ring) => ring.reduce((all, value, i) => { if (i % 2 === 0) all.push([value, ring[i + 1]]); return all; }, []));
-    const bbox = [Math.min(...coords.map((p) => p[0])), Math.min(...coords.map((p) => p[1])), Math.max(...coords.map((p) => p[0])), Math.max(...coords.map((p) => p[1]))];
+    // Rings that quantize to a zero-area zigzag (atolls, islets) have no fill
+    // and no interior for the marker anchor. Give each a 2x2 footprint.
+    for (let r = 0; r < rings.length; r++) {
+      const ring = rings[r];
+      let twiceArea = 0;
+      for (let i = 0, j = ring.length - 2; i < ring.length; j = i, i += 2) twiceArea += ring[j] * ring[i + 1] - ring[i] * ring[j + 1];
+      if (Math.abs(twiceArea) >= 2) continue;
+      let x = Infinity; let y = Infinity;
+      for (let i = 0; i < ring.length; i += 2) { x = Math.min(x, ring[i]); y = Math.min(y, ring[i + 1]); }
+      rings[r] = [x, y, x + 2, y, x + 2, y + 2, x, y + 2];
+    }
+    let coords = rings.flatMap((ring) => ring.reduce((all, value, i) => { if (i % 2 === 0) all.push([value, ring[i + 1]]); return all; }, []));
+    let bbox = [Math.min(...coords.map((p) => p[0])), Math.min(...coords.map((p) => p[1])), Math.max(...coords.map((p) => p[0])), Math.max(...coords.map((p) => p[1]))];
+    if (bbox[2] - bbox[0] === 0 || bbox[3] - bbox[1] === 0) {
+      // Quantization collapsed the region to a sliver; keep a visible,
+      // hittable 2x2 footprint instead (same rule as sub-quantum regions).
+      const x = bbox[0]; const y = bbox[1];
+      rings.length = 0;
+      rings.push([x, y, x + 2, y, x + 2, y + 2, x, y + 2]);
+      coords = [[x, y], [x + 2, y + 2]];
+      bbox = [x, y, x + 2, y + 2];
+    }
     return { id, name, rings, bbox, anchor: anchorFor(rings, scale) };
   });
   const ids = new Set();
@@ -749,7 +860,8 @@ function mapModel(geo, config) {
     }
   }
   const lines = sharedLines(regions);
-  return { id: config.id, width: config.width, height: config.height, scale, focusRegionPrefix: config.focusRegionPrefix, regions, inner: lines.inner, outline: lines.outline, nearlyShared: lines.nearlyShared, edgeCounts: lines.edgeCounts };
+  const mercatorLatitudes = config.mercatorLatitudes ?? null;
+  return { id: config.id, width: config.width, height: config.height, scale, focusRegionPrefix: config.focusRegionPrefix, mercatorLatitudes, regions, inner: lines.inner, outline: lines.outline, nearlyShared: lines.nearlyShared, edgeCounts: lines.edgeCounts };
 }
 
 function boundsForRegions(regions, scale, predicate = () => true) {
@@ -820,7 +932,9 @@ function writeGenerated(map) {
   const symbol = map.id.replace(/(^|_)(.)/g, (_, __, c) => c.toUpperCase());
   const target = path.join(generatedDir, `${map.id}.g.dart`);
   const publicId = map.id.replaceAll('_', '');
-  fs.writeFileSync(target, `// GENERATED CODE - DO NOT MODIFY BY HAND.\nimport 'dart:convert';\nimport '../codec.dart';\nimport '../models.dart';\n\nconst String _data = '${base64}';\nMapDefinition? _cache${symbol};\n\n/// Lazily decodes the embedded ${publicId} map.\nMapDefinition get generated${symbol} => _cache${symbol} ??= decodeGenerated(\n  base64Decode(_data),\n  id: '${publicId}',${map.focusRegionPrefix ? `\n  focusRegionPrefix: '${map.focusRegionPrefix}',` : ''}\n);\n\n/// Decodes and caches the embedded ${publicId} map off the UI isolate.\nFuture<MapDefinition> preloadGenerated${symbol}() async {\n  final cached = _cache${symbol};\n  if (cached != null) return cached;\n  final decoded = await decodeGeneratedAsync(_data, id: '${publicId}',${map.focusRegionPrefix ? ` focusRegionPrefix: '${map.focusRegionPrefix}',` : ''});\n  return _cache${symbol} ??= decoded;\n}\n`);
+  const latitudes = map.mercatorLatitudes ? `\n  mercatorLatitudes: (north: ${map.mercatorLatitudes.north}, south: ${map.mercatorLatitudes.south}),` : '';
+  const latitudesInline = map.mercatorLatitudes ? ` mercatorLatitudes: (north: ${map.mercatorLatitudes.north}, south: ${map.mercatorLatitudes.south}),` : '';
+  fs.writeFileSync(target, `// GENERATED CODE - DO NOT MODIFY BY HAND.\nimport 'dart:convert';\nimport '../codec.dart';\nimport '../models.dart';\n\nconst String _data = '${base64}';\nMapDefinition? _cache${symbol};\n\n/// Lazily decodes the embedded ${publicId} map.\nMapDefinition get generated${symbol} => _cache${symbol} ??= decodeGenerated(\n  base64Decode(_data),\n  id: '${publicId}',${map.focusRegionPrefix ? `\n  focusRegionPrefix: '${map.focusRegionPrefix}',` : ''}${latitudes}\n);\n\n/// Decodes and caches the embedded ${publicId} map off the UI isolate.\nFuture<MapDefinition> preloadGenerated${symbol}() async {\n  final cached = _cache${symbol};\n  if (cached != null) return cached;\n  final decoded = await decodeGeneratedAsync(_data, id: '${publicId}',${map.focusRegionPrefix ? ` focusRegionPrefix: '${map.focusRegionPrefix}',` : ''}${latitudesInline});\n  return _cache${symbol} ??= decoded;\n}\n`);
   return { bytes: bytes.length, vertices: map.regions.reduce((sum, region) => sum + region.rings.reduce((n, ring) => n + ring.length / 2, 0), 0), maxRegionVertices: Math.max(...map.regions.map((r) => r.rings.reduce((n, ring) => n + ring.length / 2, 0))) };
 }
 
@@ -866,8 +980,22 @@ async function main() {
   const latinIds = new Set(['AR','BO','BR','CL','CO','EC','GF','GY','PE','PY','SR','UY','VE','MX','BZ','CR','SV','GT','HN','NI','PA','AG','BS','BB','CU','DM','DO','GD','HT','JM','KN','LC','VC','TT']);
   const buildFeatures = (ids, includeGf) => countries.filter((item) => ids.has(item.id)).map((item) => featureFor(item.id === 'FR' ? franceWithoutGf : item.feature, item.id, item.name)).concat(includeGf ? [gf] : []);
   const southConfig = { id: 'south_america', width: 820, height: 1040, proj: '+proj=aea +lat_1=-5 +lat_2=-42 +lon_0=-60', simplifyTolerance: 0.6, captureNormalizationBounds: true, features: buildFeatures(southIds, true) };
+  // The world uses Mercator so every country keeps its familiar (conformal)
+  // shape when the camera zooms in, which is what makes a continuous
+  // world -> country zoom look right. Latitudes are clipped to [-60, 84]:
+  // Antarctica is excluded and the clip keeps Greenland's size tolerable.
+  const worldConfig = {
+    id: 'world',
+    frameId: 'world',
+    width: 1200,
+    height: 790,
+    proj: '+proj=merc',
+    clipBbox: [-180, -60, 180, 84],
+    simplifyTolerance: 0.6,
+    features: countries.filter((item) => item.id !== 'AQ').map((item) => featureFor(item.id === 'FR' ? france : item.feature, item.id, item.name)),
+  };
   const configs = [
-    { id: 'world', width: 1200, height: 620, proj: '+proj=eqearth', simplifyTolerance: 0.6, features: countries.filter((item) => item.id !== 'AQ').map((item) => featureFor(item.id === 'FR' ? france : item.feature, item.id, item.name)) },
+    worldConfig,
     { id: 'latin_america', width: 1100, height: 780, proj: '+proj=lcc +lat_1=10 +lat_2=-25 +lon_0=-65', simplifyTolerance: 0.6, features: buildFeatures(latinIds, true) },
     southConfig,
   ];
@@ -985,13 +1113,16 @@ async function main() {
     }
     configs.push({
       id: `country_focus_${countryId.toLowerCase()}`,
-      width: 900,
-      height: 700,
-      proj: '+proj=eqearth',
-      simplifyTolerance: 0.6,
+      // Drawn on top of the world map: same projection, clip, normalization
+      // bounds and viewBox, so coordinates line up without re-projection.
+      sharedFrame: 'world',
+      width: worldConfig.width,
+      height: worldConfig.height,
+      proj: worldConfig.proj,
+      clipBbox: worldConfig.clipBbox,
+      relativeDetail: { simplifyTolerance: 0.6, quantizationScale: 0.25 },
       focusRegionPrefix: `${countryId}-`,
       packageAsset: `${countryId}.smap`,
-      allowLongSegments: true,
       features: selected,
     });
   }
@@ -1105,6 +1236,17 @@ async function main() {
       has_focus: focusCountries.includes(country.id),
     };
   });
+  // French Guiana is drawn as part of France on the world map but is its own
+  // entry in regional maps and in geographic data, so apps can list it.
+  catalogCountries.push({
+    iso2: 'GF',
+    iso3: 'GUF',
+    name_en: 'French Guiana',
+    name_pt: overrides.GF,
+    name_es: 'Guayana Francesa',
+    region: 'south_america',
+    has_focus: false,
+  });
   if (new Set(catalogCountries.map((country) => country.iso3)).size !== catalogCountries.length) {
     throw new Error('Country ISO3 codes must be unique');
   }
@@ -1181,6 +1323,7 @@ async function main() {
       bytes: stats.bytes,
       maxRegionVertices: stats.maxRegionVertices,
       viewBox: [config.width, config.height],
+      ...(model.mercatorLatitudes ? { mercatorLatitudes: model.mercatorLatitudes } : {}),
       quantizationScale: model.scale,
       simplificationTolerance: config.simplifyTolerance,
       estimatedMaxError: config.simplifyTolerance,
@@ -1205,6 +1348,25 @@ async function main() {
     catalogBytes: fs.statSync(path.join(catalogDir, 'geo_catalog.json')).size,
   };
   fs.writeFileSync(path.join(catalogDir, 'geo_catalog.json'), `${JSON.stringify(catalog, null, 2)}\n`);
+  // Compact runtime copy of the catalog (names only, no source codes or
+  // aliases) shipped as a package asset for apps that need localized country
+  // and subdivision names without bundling their own copy.
+  const runtimeCatalog = {
+    version: 1,
+    countries: catalogCountries.map((country) => [
+      country.iso2, country.iso3, country.name_en, country.name_pt, country.name_es, country.region, country.has_focus ? 1 : 0,
+    ]),
+    subdivisions: Object.fromEntries(
+      focusCountries.map((countryId) => [
+        countryId,
+        catalogSubdivisions
+          .filter((item) => item.country_iso === countryId)
+          .map((item) => [item.code, item.name_en, item.name_pt, item.name_es, item.type]),
+      ]),
+    ),
+  };
+  fs.writeFileSync(path.join(packageCatalogDir, 'geo_names.json'), JSON.stringify(runtimeCatalog));
+  report.measurements.runtimeCatalogBytes = fs.statSync(path.join(packageCatalogDir, 'geo_names.json')).size;
   fs.writeFileSync(path.join(generatedDir, 'country_focus_catalog.g.dart'), `// GENERATED CODE - DO NOT MODIFY BY HAND.\n\nconst Set<String> generatedCountryFocusCountries = <String>{\n${focusCountries.map((countryId) => "  '" + countryId + "',").join('\n')}\n};\n`);
   fs.writeFileSync(path.join(root, 'ATTRIBUTION.md'), `# Map data attribution\n\n- Natural Earth 50m admin-0 cultural (manifest date 2025-02-01): public domain, downloaded from https://naciscdn.org/naturalearth/50m/cultural/ne_50m_admin_0_countries.zip.\n- Natural Earth 10m admin-1 states and provinces (manifest date 2025-02-01): public domain, SHA-256 efc59726337323058f9446210adc96673179cd344e053666ee3d28cb58ba2b05, downloaded from https://naciscdn.org/naturalearth/10m/cultural/ne_10m_admin_1_states_provinces.zip. These focus layers contain admin-1 regions only; country-only assets are distributed under assets/maps/country_focus/ and never contain cities or municipalities.\n- IBGE UFs (manifest date 2025-02-01): https://servicodados.ibge.gov.br/api/v3/malhas/paises/BR?formato=application/vnd.geo+json&intrarregiao=UF&qualidade=intermediaria, intermediate quality; names from https://servicodados.ibge.gov.br/api/v1/localidades/estados. The geometry was simplified with a 0.6 view-box-unit tolerance, topology-preserving keep-shapes, and quantized to a 0.25 view-box-unit grid.\n- IBGE municipalities (manifest date 2025-02-01): https://servicodados.ibge.gov.br/api/v3/malhas/paises/BR?formato=application/vnd.geo+json&intrarregiao=municipio&qualidade=intermediaria, intermediate quality; names from https://servicodados.ibge.gov.br/api/v1/localidades/municipios. Simplified and quantized like the UFs; distributed only as the optional example asset example/assets/maps/brazil_municipalities.smap, not inside lib/.\n- Source credit: \"Fonte: IBGE\" must accompany apps that display the Brazilian layers. Confirm the current IBGE terms of use before commercial distribution.\n- Build tools: mapshaper 0.7.98 (MIT), polylabel 2.1.0 (ISC). They are build-only dependencies; the Flutter package has no runtime dependency.\n\nCollision policy: for duplicate admin-1 source codes, the feature matching the known ISO name keeps the canonical code; otherwise the largest geometry is the deterministic tie-breaker. A secondary feature uses an alternate ISO code or short source suffix, then a stable base36 hash only when every source suffix is occupied. A secondary feature is dissolved into its owner only when it is named as an island or territory, is at most 5% of the owner geometry, and shares the owner's duplicate source code.\n\nKosovo is retained as XK when present. Somaliland, Northern Cyprus and other unrecognized disputed fragments are omitted in favor of their sovereign feature; Antarctica is excluded. French Guiana is merged into FR for the world map and retained as GF in regional maps.\n`);
   fs.writeFileSync(path.join(here, 'report.json'), `${JSON.stringify(report, null, 2)}\n`);

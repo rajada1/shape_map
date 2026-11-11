@@ -286,6 +286,9 @@ class MapRegion {
   Offset get centroid => bounds.center;
 }
 
+/// Latitudes at the top and bottom edges of a Mercator map's view box.
+typedef MercatorLatitudes = ({double north, double south});
+
 /// A complete map and its view-box geometry.
 class MapDefinition {
   /// Creates a map definition.
@@ -296,6 +299,7 @@ class MapDefinition {
     List<MapPolyline> innerBorders = const [],
     List<MapPolyline> outline = const [],
     this.focusRegionPrefix,
+    this.mercatorLatitudes,
   }) : regions = List.unmodifiable(regions),
        innerBorders = List.unmodifiable(innerBorders),
        outline = List.unmodifiable(outline);
@@ -321,6 +325,27 @@ class MapDefinition {
   /// alpha-2 IDs for the surrounding context. The prefix lets camera code fit
   /// the whole country without requiring a synthetic region.
   final String? focusRegionPrefix;
+
+  /// For Mercator maps, the latitudes at the view box's top and bottom edges.
+  ///
+  /// Mercator inflates areas towards the poles. When set, area-based
+  /// heuristics such as [primaryFocusBounds] weight each piece by the true
+  /// ground area so Svalbard does not outweigh mainland Norway.
+  final MercatorLatitudes? mercatorLatitudes;
+
+  /// Relative ground-area weight of a point at view-box [y] (1 at the equator).
+  double _areaWeightAt(double y) {
+    final latitudes = mercatorLatitudes;
+    if (latitudes == null || viewBox.height <= 0) return 1;
+    double mercator(double degrees) =>
+        math.log(math.tan(math.pi / 4 + degrees * math.pi / 360));
+    final top = mercator(latitudes.north);
+    final bottom = mercator(latitudes.south);
+    final value = top + (bottom - top) * (y / viewBox.height).clamp(0.0, 1.0);
+    final latitude = 2 * math.atan(math.exp(value)) - math.pi / 2;
+    final cosine = math.cos(latitude);
+    return cosine * cosine;
+  }
 
   /// Bounds enclosing the geometry of every region in this map.
   ///
@@ -376,13 +401,33 @@ class MapDefinition {
         .toList();
     if (focused.isEmpty) return null;
 
-    final pieces = _focusPieces(focused);
+    var pieces = _focusPieces(focused, _areaWeightAt);
     if (pieces.length == 1) {
       return _primaryFocusBounds = pieces.single.bounds;
     }
-    final components = _focusComponents(pieces, viewBox);
+    // In a shared world frame a country cut at the antimeridian (Fiji, the
+    // Aleutians) spans the whole width. Keep the side holding most of the
+    // land; a genuinely wide country such as Russia keeps every piece.
+    var extent = _unionPieceBounds(pieces);
+    if (extent.width > viewBox.width * 0.5) {
+      final middle = viewBox.width / 2;
+      final left = pieces.where((p) => p.bounds.center.dx < middle).toList();
+      final right = pieces.where((p) => p.bounds.center.dx >= middle).toList();
+      double score(List<_FocusPiece> side) =>
+          side.fold(0, (sum, piece) => sum + piece.score);
+      final majority = score(left) >= score(right) ? left : right;
+      final majorityExtent = _unionPieceBounds(majority);
+      if (majority.isNotEmpty && majorityExtent.width <= viewBox.width * 0.5) {
+        pieces = majority;
+        extent = majorityExtent;
+      }
+    }
+    // Clustering distances are relative to the country's own footprint, so
+    // the heuristics behave the same in a per-country frame and in the world.
+    final reference = extent.longestSide;
+    final components = _focusComponents(pieces, reference);
     if (components.length == 1) {
-      return _primaryFocusBounds = focusBounds;
+      return _primaryFocusBounds = extent;
     }
     final scored = [
       for (final component in components)
@@ -395,16 +440,16 @@ class MapDefinition {
     final countryIso = prefix.length >= 2 ? prefix.substring(0, 2) : '';
     const noPrincipalTerritory = {'ID', 'JP', 'NZ'};
     if (noPrincipalTerritory.contains(countryIso)) {
-      return _primaryFocusBounds = focusBounds;
+      return _primaryFocusBounds = extent;
     }
     final totalScore = scored.fold<double>(0, (sum, item) => sum + item.score);
     if (largest.score / totalScore < 0.70) {
-      return _primaryFocusBounds = focusBounds;
+      return _primaryFocusBounds = extent;
     }
 
     var selected = <_FocusPiece>[...largest.pieces];
     var selectedBounds = _unionPieceBounds(selected);
-    final proximity = viewBox.longestSide * 0.06;
+    final proximity = reference * 0.06;
     for (final candidate in scored.skip(1)) {
       final candidateBounds = _unionPieceBounds(candidate.pieces);
       final gap = _rectGap(selectedBounds, candidateBounds);
@@ -418,6 +463,49 @@ class MapDefinition {
 
   /// Whether this definition contains shared border streams.
   bool get hasSharedBorders => innerBorders.isNotEmpty || outline.isNotEmpty;
+
+  /// Returns a map that draws [detail] on top of this map.
+  ///
+  /// Both maps must share the same [viewBox] (same projection and
+  /// normalization), as the generated world map and the country layers from
+  /// [ShapeMaps.loadCountryFocus] do. Regions of [detail] come after this
+  /// map's regions, so they paint above them and win hit tests. Base regions
+  /// listed in [hiddenRegionIds] are dropped; by default every base region is
+  /// kept, so the coarse country shape still fills tiny gaps along the coast
+  /// of the finer admin-1 geometry.
+  ///
+  /// The detail's [innerBorders] are kept and its [outline] is dropped: the
+  /// base already draws the country outline, and two slightly different
+  /// coastlines would otherwise overlap.
+  MapDefinition withDetail(
+    MapDefinition detail, {
+    String? id,
+    Set<String> hiddenRegionIds = const {},
+  }) {
+    if (detail.viewBox != viewBox) {
+      throw ArgumentError.value(
+        detail,
+        'detail',
+        'Expected a map with viewBox $viewBox, got ${detail.viewBox}.',
+      );
+    }
+    final detailIds = {for (final region in detail.regions) region.id};
+    return MapDefinition(
+      id: id ?? '${this.id}+${detail.id}',
+      viewBox: viewBox,
+      regions: [
+        for (final region in regions)
+          if (!hiddenRegionIds.contains(region.id) &&
+              !detailIds.contains(region.id))
+            region,
+        ...detail.regions,
+      ],
+      innerBorders: [...innerBorders, ...detail.innerBorders],
+      outline: outline,
+      focusRegionPrefix: detail.focusRegionPrefix ?? focusRegionPrefix,
+      mercatorLatitudes: mercatorLatitudes ?? detail.mercatorLatitudes,
+    );
+  }
 
   Map<String, int>? _regionIndices;
   _MapSpatialGrid? _spatialGrid;
@@ -481,13 +569,21 @@ class _FocusPiece {
   final double score;
 }
 
-List<_FocusPiece> _focusPieces(List<MapRegion> regions) {
+List<_FocusPiece> _focusPieces(
+  List<MapRegion> regions,
+  double Function(double y) areaWeightAt,
+) {
   final pieces = <_FocusPiece>[];
   for (final region in regions) {
     final rings = region.geometry.quantizedRings;
     if (rings.isEmpty) {
       final bounds = region.bounds;
-      pieces.add(_FocusPiece(bounds, bounds.width * bounds.height));
+      pieces.add(
+        _FocusPiece(
+          bounds,
+          bounds.width * bounds.height * areaWeightAt(bounds.center.dy),
+        ),
+      );
       continue;
     }
     for (final ring in rings) {
@@ -511,7 +607,11 @@ List<_FocusPiece> _focusPieces(List<MapRegion> regions) {
       final bounds = Rect.fromLTRB(minX, minY, maxX, maxY);
       final score = signedArea.abs() / 2;
       pieces.add(
-        _FocusPiece(bounds, score == 0 ? bounds.width * bounds.height : score),
+        _FocusPiece(
+          bounds,
+          (score == 0 ? bounds.width * bounds.height : score) *
+              areaWeightAt(bounds.center.dy),
+        ),
       );
     }
   }
@@ -542,9 +642,9 @@ double _rectGap(Rect a, Rect b) {
 
 List<List<_FocusPiece>> _focusComponents(
   List<_FocusPiece> pieces,
-  Size viewBox,
+  double reference,
 ) {
-  final threshold = math.max(viewBox.width, viewBox.height) * 0.015;
+  final threshold = math.max(reference, 1e-6) * 0.015;
   final buckets = <String, List<int>>{};
   String key(int x, int y) => '$x:$y';
   for (var index = 0; index < pieces.length; index++) {
